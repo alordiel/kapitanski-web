@@ -12,4 +12,8 @@ class ProductController extends Controller
             'products' => Product::all()
         ]);
     }
+
+    public function create() {
+        return view('product.create');
+    }
 }
