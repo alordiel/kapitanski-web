@@ -26,6 +26,6 @@ class ProductController extends Controller
 
         Product::create($formFields);
 
-        return redirect('/products');
+        return redirect('/products')->with('message', 'Product successfully created');
     }
 }

@@ -5,7 +5,7 @@ Creating a new product
     <p>
         <label for="product-name">
             Product name <br>
-            <input type="text" id="product-name" name="product_name">
+            <input type="text" id="product-name" name="product_name" value={{old("product_name")}}>
         </label>
         @error('product_name')
         <br>
@@ -16,7 +16,7 @@ Creating a new product
     <p>
         <label for="price">
             Price <br>
-            <input type="number" min="1.00" placeholder="product price" id="price" name="price">
+            <input type="number" min="1.00" placeholder="product price" id="price" name="price" value={{old("price")}}>
         </label> 
         @error('price')
         <br>
