@@ -4,6 +4,11 @@
         <p style='color:green'>{{session('message')}}</p>
     @endif
     <ul class="list-of-products">
+        <li>
+            <span class="product-name"><strong>Product name</strong></span>
+            <span class="price"><strong>Price</strong></span>
+            <span class="line-actions"><strong>Manage</strong></span>
+        </li>
     @foreach($products as $product)
         <li> 
             <span class="product-name">{{$product->product_name}}</span> 
