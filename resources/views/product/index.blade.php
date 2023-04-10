@@ -11,7 +11,9 @@
         </li>
     @foreach($products as $product)
         <li> 
-            <span class="product-name">{{$product->product_name}}</span> 
+            <span class="product-name">
+                <a href="/products/{{$product->id}}" title="View">{{$product->product_name}} </a>
+            </span> 
             <span class="price">{{$product->price}}</span>
             <span class="line-actions">
                 <span class="edit">

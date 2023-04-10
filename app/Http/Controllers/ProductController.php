@@ -29,6 +29,10 @@ class ProductController extends Controller
         return redirect('/products')->with('message', 'Product successfully created');
     }
 
+    public function show (Product $product) {
+        return view('product.show', ['product'=>$product]);
+    }
+
     public function edit(Product $product) {
         return view('product.edit',['product'=> $product]);
     }
