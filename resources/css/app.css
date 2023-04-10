@@ -11,9 +11,9 @@ display: inline-block;
 min-width: 200px;
 }
 
-.list-of-products li .product-name {
+.list-of-products li .price {
 display: inline-block;
-min-width: 200px;
+min-width: 100px;
 }
 
 .list-of-products li .line-actions {

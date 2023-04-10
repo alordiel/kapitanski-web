@@ -17,8 +17,10 @@
             </ul>
         </nav>
     </header>
-    
-    @yield('content');
+
+    <main>
+        {{$slot}}
+    </main>
     
     <footer>
         <p style="text-align:center">all right reserved</p>
