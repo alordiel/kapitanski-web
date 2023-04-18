@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,16 +30,14 @@ Route::get('/', function () {
 
 
 Route::get('/hello', function () {
-     return view('hello');
+    return view('hello');
 });
 
 
-
-
-Route::get( '/products', [ ProductController::class,'index' ] );
-Route::get( '/products/create', [ ProductController::class, 'create' ] );
-Route::post( '/products', [ ProductController::class, 'store' ] );
-Route::get( '/products/{product}',[ ProductController::class, 'show' ] );
-Route::get( '/products/{product}/edit', [ ProductController::class, 'edit' ] );
+Route::get('/products', [ProductController::class, 'index']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products/{product}', [ProductController::class, 'show']);
+//Route::get('/products/create', [ProductController::class, 'create']);
+//Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
 //Route::put('/products/{product}', [ProductController::class, 'update']);
 //Route::delete('/products/{product}', [ProductController::class, 'destroy']);
