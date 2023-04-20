@@ -3,18 +3,6 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 // Common Resource Routes:
 // index - Show all listings
 // show - Show single listing
@@ -25,19 +13,19 @@ use Illuminate\Support\Facades\Route;
 // destroy - Delete listing
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
-Route::get('/hello', function () {
-    return view('hello');
+Route::get('/about', function () {
+    return view('about');
 });
 
 
 Route::get('/products', [ProductController::class, 'index']);
 Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products/create', [ProductController::class, 'create']);
 Route::get('/products/{product}', [ProductController::class, 'show']);
-//Route::get('/products/create', [ProductController::class, 'create']);
-//Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
-//Route::put('/products/{product}', [ProductController::class, 'update']);
-//Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::put('/products/{product}', [ProductController::class, 'update']);
+Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
