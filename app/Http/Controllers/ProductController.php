@@ -53,4 +53,9 @@ class ProductController extends Controller
 
         return back()->with('message', 'Product updated successfully!');
     }
+
+    public function destroy(Product $product) {
+        $product->delete();
+        return redirect('/products')->with('message','Deleted successfully');
+    }
 }
