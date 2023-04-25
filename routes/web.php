@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Serves all 3 roles the student, the partner, and the admin
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
