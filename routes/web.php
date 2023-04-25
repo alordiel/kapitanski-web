@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
+
 // Serves all 3 roles the student, the partner, and the admin
 Route::get('/dashboard', function () {
     return view('dashboard');

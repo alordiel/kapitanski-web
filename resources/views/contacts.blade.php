@@ -4,12 +4,12 @@
             {{ __('Contacts') }}
         </h2>
     </x-slot>
-     <div class="text-white flex justify-center">
+    <div class="text-white flex justify-center">
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                     <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                         <div class="max-w-xl">
-                            <h1>About page, you know</h1>
+                            <h1>This is how you can contact us</h1>
                         </div>
                     </div>
             </div>
