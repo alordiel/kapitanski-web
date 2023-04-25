@@ -1,31 +1,3 @@
-
-.list-of-products {
-    max-width: 380px;
-}
-
-.list-of-products li {
-    border-bottom: 1px solid #ebebeb;
-    margin-bottom: 10px;
-}
-.list-of-products li .product-name {
-    display: inline-block;
-    min-width: 200px;
-}
-
-.list-of-products li .price {
-    display: inline-block;
-    min-width: 100px;
-}
-
-.list-of-products li .line-actions {
-    display: inline-flex;
-    width: 50px;
-    justify-content: space-between;
-}
-
-.list-of-products li .line-actions span {
-  cursor: pointer;
-}
-.delete {
-    color: red;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
