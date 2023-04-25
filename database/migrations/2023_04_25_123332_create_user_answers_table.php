@@ -8,12 +8,20 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * taking_id integer
+  question_id integer
+  user_answer integer
+  is_correct boolean
      */
     public function up(): void
     {
         Schema::create('user_answers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('exam_taking_id');
+            $table->integer('question_id');
+            $table->integer('answer_id');
+            $table->boolean('is_correct');
         });
     }
 

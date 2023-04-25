@@ -8,11 +8,18 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *   exam_id integer
+  user_id integer
+  exam_type varchar
+  result integer
      */
     public function up(): void
     {
         Schema::create('exam_takings', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->string('exam_type');
+            $table->float('result');
             $table->timestamps();
         });
     }

@@ -10,18 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        /*
-  id integer [pk]
-  title varchar
-  slug varchar unique
-  description text
-  featured_image varchar
-  excerpt text
-  created_at timestamp
-  updated_on timestamp
-        */
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('content');
+            $table->string('featured_image');
+            $table->string('excerpt');
             $table->timestamps();
         });
     }

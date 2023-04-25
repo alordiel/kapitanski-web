@@ -13,10 +13,20 @@ class CreateProductTable extends Migration
      */
     public function up()
     {
+        /**
+         *   product_name varchar
+  product_order integer
+  description text
+  credits integer
+  price float
+         */
         Schema::create('product', function (Blueprint $table) {
             $table->id();
             $table->string('product_name')->unique();
             $table->float('price');
+            $table->integer('product_order');
+            $table->text('description');
+            $table->integer('number_of_credits');
         });
     }
 
