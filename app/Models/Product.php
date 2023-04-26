@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
-    use HasFactory;
+      use HasFactory;
 
-    public $table = "products";
     public $timestamps = false;
     protected $fillable = ['product_name', 'price', 'product_order', 'description', 'number_of_credits'];
 
