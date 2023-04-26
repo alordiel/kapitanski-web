@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('product_id');
             $table->string('order_status');
-            $table->integer('exam_id');
             $table->integer('payment_id');
             $table->string('payment_method');
             $table->string('invoice_number');

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('exam_id');
             $table->integer('user_id');
             $table->integer('order_id');
+            $table->integer('created_by');
             $table->dateTime('expires_on');
             $table->timestamps();
         });

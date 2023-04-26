@@ -43,7 +43,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function userAnswers(): hasMany {
-        return $this->hasMany(UserAnswers::class);
+    public function examTaking(): hasMany
+    {
+        return $this->hasMany(UserAnswer::class);
+    }
+
+    public function oder(): hasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function subscription():hasMany{
+        return $this->hasMany(Subscription::class);
+    }
+    public function subscriptionCreatedBy():hasMany{
+        return $this->hasMany(Subscription::class, 'created_by');
     }
 }

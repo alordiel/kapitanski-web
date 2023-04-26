@@ -18,6 +18,7 @@ return new class extends Migration
         Schema::create('exam_takings', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->integer('exam_id');
             $table->string('exam_type');
             $table->float('result');
             $table->timestamps();
