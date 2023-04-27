@@ -18,19 +18,19 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Spasov',
             'email' => 'spasov@timelinedev.com',
             'password' => Hash::make('123!@#123'),
-            'role' => 1
+            'role_id' => 1
         ]);
         DB::table('users')->insert([
             'name' => 'Student Spasov',
             'email' => 'student@timelinedev.com',
             'password' => Hash::make('123!@#123'),
-            'role' => 2
+            'role_id' => 2
         ]);
         DB::table('users')->insert([
             'name' => 'Teacher Spasov',
             'email' => 'teacher@timelinedev.com',
             'password' => Hash::make('123!@#123'),
-            'role' => 3
+            'role_id' => 3
         ]);
 
         DB::table('roles')->insert([
