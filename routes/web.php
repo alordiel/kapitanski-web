@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ExamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,4 +48,22 @@ Route::put('/products/{product}',[ProductController::class,'update'])->middlewar
 Route::delete('/products/{product}',[ProductController::class,'destroy'])->middleware(['auth','role:super-admin']);
 Route::get('/products/{product}',[ProductController::class,'show'])->middleware(['auth','role:super-admin']);
 
+
+Route::get('/posts',[PostController::class,'index'])->middleware(['auth','role:super-admin']);
+Route::post('/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
+Route::get('/posts/create',[PostController::class,'create'])->middleware(['auth','role:super-admin']);
+Route::get('/posts/{post}/edit',[PostController::class,'edit'])->middleware(['auth','role:super-admin']);
+Route::put('/posts/{post}',[PostController::class,'update'])->middleware(['auth','role:super-admin']);
+Route::delete('/posts/{post}',[PostController::class,'destroy'])->middleware(['auth','role:super-admin']);
+Route::get('/posts/{post}',[PostController::class,'show'])->middleware(['auth','role:super-admin']);
+
+
+
+Route::get('/exams',[ExamController::class,'index'])->middleware(['auth','role:super-admin']);
+Route::post('/exams',[ExamController::class,'store'])->middleware(['auth','role:super-admin']);
+Route::get('/exams/create',[ExamController::class,'create'])->middleware(['auth','role:super-admin']);
+Route::get('/exams/{exam}/edit',[ExamController::class,'edit'])->middleware(['auth','role:super-admin']);
+Route::put('/exams/{exam}',[ExamController::class,'update'])->middleware(['auth','role:super-admin']);
+Route::delete('/exams/{exam}',[ExamController::class,'destroy'])->middleware(['auth','role:super-admin']);
+Route::get('/exams/{exam}',[ExamController::class,'show'])->middleware(['auth','role:super-admin']);
 require __DIR__.'/auth.php';
