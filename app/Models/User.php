@@ -55,15 +55,14 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
-    public function subscription():hasMany{
+    public function subscription(): hasMany
+    {
         return $this->hasMany(Subscription::class);
     }
-    public function subscriptionCreatedBy():hasMany{
+
+    public function subscriptionCreatedBy(): hasMany
+    {
         return $this->hasMany(Subscription::class, 'created_by');
     }
 
-    public function role():belongsTo
-    {
-        return $this->belongsTo(Role::class);
-    }
 }
