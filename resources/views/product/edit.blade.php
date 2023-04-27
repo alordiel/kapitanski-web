@@ -1,5 +1,9 @@
-Creating a new product
-<x-layout>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Create new product') }}
+        </h2>
+    </x-slot>
     <h1>Update: {{$product->product_name}}</h1>
     <form action="/products/{{$product->id}}" method="POST">
         @csrf
@@ -27,4 +31,4 @@ Creating a new product
         </p>
         <button type="submit">Update</button>
     </form>
-</x-layout>
+</x-app-layout>

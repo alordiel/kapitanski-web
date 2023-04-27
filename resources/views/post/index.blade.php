@@ -1,4 +1,9 @@
-<x-layout>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Create new product') }}
+        </h2>
+    </x-slot>
     <h1>List of posts</h1>
     @if(session()->has('message'))
         <p style='color:green'>{{session('message')}}</p>
@@ -42,4 +47,4 @@
             </li>
         @endforeach
     </ul>
-</x-layout>
+</x-app-layout>

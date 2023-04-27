@@ -1,5 +1,9 @@
-Creating a new exam
-<x-layout>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Create new product') }}
+        </h2>
+    </x-slot>
     <h1>Create new exam</h1>
     <form action="/exams" method="POST">
         @csrf
@@ -29,4 +33,4 @@ Creating a new exam
         <input type="hidden" value="Product description" name="description">
         <input type="hidden" value="1" name="number_of_credits">
     </form>
-</x-layout>
+</x-app-layout>
