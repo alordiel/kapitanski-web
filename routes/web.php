@@ -38,6 +38,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/products',[ProductController::class,'index'])->middleware(['auth','role:editor']);
+Route::get('/products',[ProductController::class,'index'])->middleware(['auth','role:super-admin']);
+Route::post('/products',[ProductController::class,'store'])->middleware(['auth','role:super-admin']);
+Route::get('/products/create',[ProductController::class,'create'])->middleware(['auth','role:super-admin']);
+Route::get('/products/{product}/edit',[ProductController::class,'edit'])->middleware(['auth','role:super-admin']);
+Route::put('/products/{product}',[ProductController::class,'update'])->middleware(['auth','role:super-admin']);
+Route::delete('/products/{product}',[ProductController::class,'destroy'])->middleware(['auth','role:super-admin']);
+Route::get('/products/{product}',[ProductController::class,'show'])->middleware(['auth','role:super-admin']);
 
 require __DIR__.'/auth.php';

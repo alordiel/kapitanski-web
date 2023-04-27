@@ -18,12 +18,15 @@ Creating a new product
             <label for="price">
                 Price <br>
                 <input type="number" min="1.00" placeholder="product price" id="price" name="price" value={{old("price")}}>
-            </label> 
+            </label>
             @error('price')
             <br>
             <small style="color:red">{{$message}}</small>
             @enderror
         </p>
         <button type="submit">Create</button>
+        <input type="hidden" value="0" name="product_order">
+        <input type="hidden" value="Product description" name="description">
+        <input type="hidden" value="1" name="number_of_credits">
     </form>
 </x-layout>

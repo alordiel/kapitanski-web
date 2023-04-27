@@ -21,11 +21,14 @@ class ProductController extends Controller
         return view('product.create');
     }
 
-    public function store(Request $request): View
+    public function store(Request $request)
     {
         $formFields = $request->validate([
             'product_name' => 'required',
-            'price' => ['required', 'numeric']
+            'price' => ['required'],
+            'description' => 'required',
+            'product_order' => 'required',
+            'number_of_credits' => 'required',
         ]);
 
         Product::create($formFields);
@@ -48,6 +51,9 @@ class ProductController extends Controller
         $formFields = $request->validate([
             'product_name' => 'required',
             'price' => ['required'],
+            'description' => 'required',
+            'product_order' => 'required',
+            'number_of_credits' => 'required',
         ]);
 
         $product->update($formFields);
