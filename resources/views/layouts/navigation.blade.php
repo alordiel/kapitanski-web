@@ -12,11 +12,7 @@
                     </div>
 
                     <!-- Navigation Links -->
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-nav-link>
-                    </div>
+                    <x-main-navigation></x-main-navigation>
                 </div>
 
                 <!-- Settings Dropdown -->
@@ -109,30 +105,21 @@
         </div>
     </nav>
 
-@endauth
-<nav>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="/">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"/>
-                    </a>
-                </div>
+@else
+    <nav>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between">
+                <div class="flex">
+                    <!-- Logo -->
+                    <div class="shrink-0 flex items-center">
+                        <a href="/">
+                            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"/>
+                        </a>
+                    </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
-                        {{ __('Contacts') }}
-                    </x-nav-link>
+                    <!-- Navigation Links -->
+                    <x-main-navigation></x-main-navigation>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('About') }}
-                    </x-nav-link>
-                </div>
-            </div>
 
                 <div>
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
@@ -151,6 +138,7 @@
                         @endauth
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+@endauth
