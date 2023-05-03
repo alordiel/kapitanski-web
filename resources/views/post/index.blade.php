@@ -10,17 +10,13 @@
     @if(count($posts) > 0)
         <h1>List of Posts</h1>
         <ul class="list-of-posts">
-            <li>
-                <span class="post-name"><strong>Title</strong></span>
-                <span class="price"><strong>Created on</strong></span>
-                <span class="line-actions"><strong>Manage</strong></span>
-            </li>
             @foreach($posts as $post)
                 <li>
                     <span class="post-name">
                         <a href="/posts/{{$post->slug}}" title="View">{{$post->title}} </a>
-                    </span>
+                    </span><br>
                     <span class="price">{{$post->created_on}}</span>
+                    <span>{{$post->excerpt}}</span>
                 </li>
             @endforeach
         </ul>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -37,6 +38,8 @@ class PostController extends Controller
             'excerpt' => 'required',
         ]);
 
+          $formFields['excerpt'] = $this->createExcerpt($formFields['content']);
+
         Post::create($formFields);
 
         return redirect('/admin/posts')->with('message', 'Post successfully created');
@@ -62,6 +65,8 @@ class PostController extends Controller
             'excerpt' => 'required',
         ]);
 
+        $formFields['excerpt'] = $this->createExcerpt($formFields['content']);
+
         $post->update($formFields);
 
         return back()->with('message', 'Post updated successfully!');
@@ -71,5 +76,10 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect('/admin/posts')->with('message', 'Deleted successfully');
+    }
+
+    private function createExcerpt(string $text): string
+    {
+        return Str::words(strip_tags($text), 20, '...');
     }
 }
