@@ -8,9 +8,16 @@ use Illuminate\View\View;
 
 class PostController extends Controller
 {
-      public function index(): View
+    public function index(): View
     {
         return view('post.index', [
+            'posts' => Post::all()
+        ]);
+    }
+
+    public function manage(): View
+    {
+        return view('post.manage', [
             'posts' => Post::all()
         ]);
     }
@@ -32,7 +39,7 @@ class PostController extends Controller
 
         Post::create($formFields);
 
-        return redirect('/posts')->with('message', 'Post successfully created');
+        return redirect('/admin/posts')->with('message', 'Post successfully created');
     }
 
     public function show(Post $post): View
@@ -60,8 +67,9 @@ class PostController extends Controller
         return back()->with('message', 'Post updated successfully!');
     }
 
-    public function destroy(Post $post) {
+    public function destroy(Post $post)
+    {
         $post->delete();
-        return redirect('/posts')->with('message','Deleted successfully');
+        return redirect('/admin/posts')->with('message', 'Deleted successfully');
     }
 }

@@ -5,7 +5,7 @@
             {{ __('Create new post') }}
         </h2>
     </x-slot>
-    <form action="/posts" method="POST">
+    <form action="/admin/posts" method="POST">
         @csrf
         <p>
             <x-input-label for="title" :value="__('Post title')"/>

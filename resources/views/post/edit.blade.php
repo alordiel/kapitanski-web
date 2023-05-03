@@ -8,7 +8,7 @@
     @if(session()->has('message'))
         <p style='color:green'>{{session('message')}}</p>
     @endif
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="/admin/posts/{{$post->id}}" method="POST">
         @csrf
         @method("PUT")
         <p>

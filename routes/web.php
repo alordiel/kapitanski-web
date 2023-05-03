@@ -49,13 +49,14 @@ Route::delete('/products/{product}',[ProductController::class,'destroy'])->middl
 Route::get('/products/{product}',[ProductController::class,'show'])->middleware(['auth','role:super-admin']);
 
 
-Route::get('/posts',[PostController::class,'index'])->middleware(['auth','role:super-admin']);
-Route::post('/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
-Route::get('/posts/create',[PostController::class,'create'])->middleware(['auth','role:super-admin']);
-Route::get('/posts/{post}/edit',[PostController::class,'edit'])->middleware(['auth','role:super-admin']);
-Route::put('/posts/{post}',[PostController::class,'update'])->middleware(['auth','role:super-admin']);
-Route::delete('/posts/{post}',[PostController::class,'destroy'])->middleware(['auth','role:super-admin']);
-Route::get('/posts/{post}',[PostController::class,'show'])->middleware(['auth','role:super-admin']);
+Route::get('/posts',[PostController::class,'index']);
+Route::get('/posts/{post}',[PostController::class,'show']);
+Route::get('/admin/posts',[PostController::class,'manage'])->middleware(['auth','role:super-admin']);
+Route::post('/admin/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
+Route::get('/admin/posts/create',[PostController::class,'create'])->middleware(['auth','role:super-admin']);
+Route::get('/admin/posts/{post}/edit',[PostController::class,'edit'])->middleware(['auth','role:super-admin']);
+Route::put('/admin/posts/{post}',[PostController::class,'update'])->middleware(['auth','role:super-admin']);
+Route::delete('/admin/posts/{post}',[PostController::class,'destroy'])->middleware(['auth','role:super-admin']);
 
 
 
