@@ -14,6 +14,10 @@ module.exports = {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            primary: '#586be5',
+            secondary: '#59677e'
+        }
     },
 
     plugins: [require('@tailwindcss/forms')],
