@@ -27,6 +27,9 @@
             <div class="text-black">
                 <textarea id="editor" name="content"></textarea>
             </div>
+            @error('content')
+            <x-input-error :messages="$message" class="mt-2"/>
+            @enderror
         </div>
         <script>
             ClassicEditor
