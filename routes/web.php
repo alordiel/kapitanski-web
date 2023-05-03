@@ -50,7 +50,7 @@ Route::get('/products/{product}',[ProductController::class,'show'])->middleware(
 
 
 Route::get('/posts',[PostController::class,'index']);
-Route::get('/posts/{post}',[PostController::class,'show']);
+Route::get('/posts/{post:slug}',[PostController::class,'show']);
 Route::get('/admin/posts',[PostController::class,'manage'])->middleware(['auth','role:super-admin']);
 Route::post('/admin/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
 Route::get('/admin/posts/create',[PostController::class,'create'])->middleware(['auth','role:super-admin']);

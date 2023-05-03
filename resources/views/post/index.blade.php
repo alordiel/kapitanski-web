@@ -18,7 +18,7 @@
             @foreach($posts as $post)
                 <li>
                     <span class="post-name">
-                        <a href="/posts/{{$post->id}}" title="View">{{$post->title}} </a>
+                        <a href="/posts/{{$post->slug}}" title="View">{{$post->title}} </a>
                     </span>
                     <span class="price">{{$post->created_on}}</span>
                 </li>
