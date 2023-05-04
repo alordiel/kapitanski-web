@@ -49,7 +49,7 @@ Route::delete('/products/{product}',[ProductController::class,'destroy'])->middl
 Route::get('/products/{product}',[ProductController::class,'show'])->middleware(['auth','role:super-admin']);
 
 
-Route::get('/posts',[PostController::class,'index']);
+Route::get('/posts',[PostController::class,'index'])->name('posts');
 Route::get('/posts/{post:slug}',[PostController::class,'show']);
 Route::get('/admin/posts',[PostController::class,'manage'])->middleware(['auth','role:super-admin']);
 Route::post('/admin/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
