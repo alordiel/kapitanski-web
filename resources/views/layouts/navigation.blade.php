@@ -17,6 +17,7 @@
 
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
+                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">Admin</x-nav-link>
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button

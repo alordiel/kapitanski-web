@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+})->middleware(['auth','role:super-admin'])->name('admin');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
