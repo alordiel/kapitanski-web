@@ -8,18 +8,20 @@
     </x-slot>
 
     @if(count($posts) > 0)
-        <h1>List of Posts</h1>
-        <ul class="list-of-posts">
+        <div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1 max-sm:gap-1">
             @foreach($posts as $post)
-                <li>
-                    <span class="post-name">
+                <div class="px-4 py-2 text-sm dark:text-white rounded-md border-indigo-500 dark:border-sky-500 border-2 border-solid">
+                    <h2 class="text-xl font-bold">
                         <a href="/posts/{{$post->slug}}" title="View">{{$post->title}} </a>
-                    </span><br>
-                    <span class="price">{{$post->created_on}}</span>
-                    <span>{{$post->excerpt}}</span>
-                </li>
+                    </h2>
+                    <p>{{date('Y-m-d',strtotime($post->created_at))}}</p>
+                    <p class="my-6">{{$post->excerpt}}</p>
+                    <p class="mb-4">
+                        <a class="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md border-indigo-500 border" href="/posts/{{$post->slug}}">{{__('Read more')}}</a>
+                    </p>
+                </div>
             @endforeach
-        </ul>
+        </div>
     @else
         <h3>No posts were found</h3>
     @endif

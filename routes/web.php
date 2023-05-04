@@ -67,4 +67,6 @@ Route::get('/exams/{exam}/edit',[ExamController::class,'edit'])->middleware(['au
 Route::put('/exams/{exam}',[ExamController::class,'update'])->middleware(['auth','role:super-admin']);
 Route::delete('/exams/{exam}',[ExamController::class,'destroy'])->middleware(['auth','role:super-admin']);
 Route::get('/exams/{exam}',[ExamController::class,'show'])->middleware(['auth','role:super-admin']);
+
+
 require __DIR__.'/auth.php';
