@@ -9,7 +9,7 @@
         @csrf
         <p>
             <x-input-label for="title" :value="__('Post title')"/>
-            <x-text-input class="block w-1/5" id="title" name="title" required value="{{old('title')}}"  type="text" />
+            <x-text-input class="block w-1/5" id="title" name="title" required value="{{old('title')}}" type="text"/>
             @error('title')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -17,7 +17,7 @@
         </p>
         <p>
             <x-input-label for="slug" :value="__('Post slug')"/>
-            <x-text-input class="block w-1/5" type="text" id="slug" name="slug" required value="{{old('slug')}}" />
+            <x-text-input class="block w-1/5" type="text" id="slug" name="slug" required value="{{old('slug')}}"/>
             @error('slug')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -25,7 +25,7 @@
         <div style="max-width: 800px" class="my-5">
             <label for="editor">Post content</label><br>
             <div class="text-black">
-                <textarea id="editor" name="content"></textarea>
+                <textarea id="editor" name="content" rows="10"></textarea>
             </div>
             @error('content')
             <x-input-error :messages="$message" class="mt-2"/>
@@ -33,7 +33,12 @@
         </div>
         <script>
             ClassicEditor
-                .create(document.querySelector('#editor'))
+                .create(document.querySelector('#editor'), {})
+                .then(editor => {
+                    editor.editing.view.change(writer => {
+                        writer.setStyle('height', '400px', editor.editing.view.document.getRoot());
+                    });
+                })
                 .catch(error => {
                     console.error(error);
                 });

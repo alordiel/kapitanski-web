@@ -13,7 +13,7 @@
         @method("PUT")
         <p>
             <x-input-label for="title" :value="__('Post title')"/>
-            <x-text-input class="block w-1/5" id="title" name="title" required :value="$post->title"  type="text" />
+            <x-text-input class="block w-1/5" id="title" name="title" required :value="$post->title" type="text"/>
             @error('title')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -21,7 +21,7 @@
         </p>
         <p>
             <x-input-label for="slug" :value="__('Post slug')"/>
-            <x-text-input class="block w-1/5" type="text" id="slug" name="slug" required :value="$post->slug" />
+            <x-text-input class="block w-1/5" type="text" id="slug" name="slug" required :value="$post->slug"/>
             @error('slug')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -37,7 +37,14 @@
         </div>
         <script>
             ClassicEditor
-                .create(document.querySelector('#editor'))
+                .create(document.querySelector('#editor'), {
+                    height: 600
+                })
+                .then(editor => {
+                    editor.editing.view.change(writer => {
+                        writer.setStyle('height', '400px', editor.editing.view.document.getRoot());
+                    });
+                })
                 .catch(error => {
                     console.error(error);
                 });
