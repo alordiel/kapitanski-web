@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('title');
             $table->string('slug');
             $table->longText('content');
-            $table->string('featured_image');
+            $table->string('featured_image')->default(0);
             $table->string('excerpt');
             $table->timestamps();
         });
