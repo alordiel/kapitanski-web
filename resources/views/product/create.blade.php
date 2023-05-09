@@ -8,15 +8,14 @@
     <form action="/products" method="POST">
         @csrf
         <p>
-            <label for="product-name">
+            <label for="name">
                 Product name <br>
-                <input type="text" id="product-name" name="product_name" value={{old("product_name")}}>
+                <input type="text" id="name" name="name" value={{old("name")}}>
             </label>
-            @error('product_name')
+            @error('name')
             <br>
             <small style="color:red">{{$message}}</small>
             @enderror
-
         </p>
         <p>
             <label for="price">
@@ -28,9 +27,22 @@
             <small style="color:red">{{$message}}</small>
             @enderror
         </p>
-        <button type="submit">Create</button>
-        <input type="hidden" value="0" name="product_order">
-        <input type="hidden" value="Product description" name="description">
-        <input type="hidden" value="1" name="number_of_credits">
+        <p>
+            <label for="credits">
+                Number of credits <br>
+                <input type="number" min="1" id="credits" name="credits" value={{old("credits")}}>
+            </label>
+            @error('credits')
+            <br>
+            <small style="color:red">{{$message}}</small>
+            @enderror
+        </p>
+        <p>
+            <label for="description">
+                Product description <br>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+            </label>
+        </p>
+        <x-primary-button>Create</x-primary-button>
     </form>
 </x-app-layout>
