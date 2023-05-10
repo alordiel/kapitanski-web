@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->float('price');
-            $table->integer('product_order')->unique();
             $table->integer('credits')->unique();
             $table->text('description');
         });
