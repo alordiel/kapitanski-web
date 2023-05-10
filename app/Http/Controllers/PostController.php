@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
@@ -56,7 +57,7 @@ class PostController extends Controller
         return view('post.edit', ['post' => $post]);
     }
 
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post): RedirectResponse
     {
         $formFields = $request->validate([
             'title' => 'required',
@@ -73,7 +74,7 @@ class PostController extends Controller
         return back()->with('message', 'Post updated successfully!');
     }
 
-    public function destroy(Post $post)
+    public function destroy(Post $post): RedirectResponse
     {
         $post->delete();
         return redirect('/admin/posts')->with('message', 'Deleted successfully');

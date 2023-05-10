@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\ProfileUpdateRequest;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -59,21 +62,37 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
-    public function adminIndex():View
+    public function adminIndex(): View
     {
         return view('user.index', [
             'users' => User::all(),
         ]);
     }
 
-    public function adminCreate():View
+    public function adminCreate(): View
     {
         return view('user.create');
     }
 
-    public function adminStore()
+    public function adminStore(Request $request): RedirectResponse
     {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
 
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        $user->addRole($request['role']);
+
+        event(new Registered($user));
+
+        return redirect('user.admin.index');
     }
 
     public function adminEdit(Request $request): View
@@ -83,18 +102,26 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function adminUpdate()
+    public function adminUpdate(Request $request, User $user): RedirectResponse
     {
-
-    }
-
-    public function adminDestroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = $request->user();
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        $user->syncRoles($request['role']);
+
+        return back()->with('message','User successfully updated');
+    }
+
+    public function adminDestroy(User $user): RedirectResponse
+    {
         $user->delete();
 
         return Redirect::to('user.index');

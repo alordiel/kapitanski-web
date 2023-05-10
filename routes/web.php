@@ -50,7 +50,7 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::get('/admin/users/create', [ProfileController::class, 'adminCreate'])->name('user.admin.create');
     Route::post('/admin/users', [ProfileController::class, 'adminStore'])->name('user.admin.create');
     Route::get('/admin/users/{$id}/edit', [ProfileController::class, 'adminEdit'])->name('user.admin.edit');
-    Route::post('/admin/users/{$id}/edit', [ProfileController::class, 'adminUpdate'])->name('user.admin.edit');
+    Route::put('/admin/users/{$id}', [ProfileController::class, 'adminUpdate'])->name('user.admin.edit');
     Route::delete('/admin/users/{$id}', [ProfileController::class, 'adminDestroy'])->name('user.admin.destroy');
     Route::get('/admin/users/{$id}', [ProfileController::class, 'adminShow'])->name('user.admin.show');
     // Product Routes
