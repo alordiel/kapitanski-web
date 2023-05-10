@@ -32,7 +32,6 @@ class DatabaseSeeder extends Seeder
         DB::table('products')->insert([
             'name' => '',
             'price' => 59.00,
-            'product_order' => 1,
             'description' => '',
             'credits' => 1
         ]);
