@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin');
-})->middleware(['auth','role:super-admin'])->name('admin');
+})->middleware(['auth', 'role:super-admin'])->name('admin');
 
 Route::get('/about', function () {
     return view('about');
@@ -44,45 +44,43 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'role:super-admin'])->group(function(){
-
-   Route::get('/admin/users', [ProfileController::class,'adminIndex'])->name('user.admin.manage');
-   Route::get('/admin/users/create', [ProfileController::class,'adminCreate'])->name('user.admin.create');
-   Route::post('/admin/users', [ProfileController::class,'adminStore'])->name('user.admin.create');
-   Route::get('/admin/users/{$id}/edit', [ProfileController::class,'adminEdit'])->name('user.admin.edit');
-   Route::post('/admin/users/{$id}/edit', [ProfileController::class,'adminUpdate'])->name('user.admin.edit');
-   Route::delete('/admin/users/{$id}', [ProfileController::class,'adminDestroy'])->name('user.admin.destroy');
-   Route::get('/admin/users/{$id}', [ProfileController::class,'adminShow'])->name('user.admin.show');
-
+Route::middleware(['auth', 'role:super-admin'])->group(function () {
+    // User Routes
+    Route::get('/admin/users', [ProfileController::class, 'adminIndex'])->name('user.admin.manage');
+    Route::get('/admin/users/create', [ProfileController::class, 'adminCreate'])->name('user.admin.create');
+    Route::post('/admin/users', [ProfileController::class, 'adminStore'])->name('user.admin.create');
+    Route::get('/admin/users/{$id}/edit', [ProfileController::class, 'adminEdit'])->name('user.admin.edit');
+    Route::post('/admin/users/{$id}/edit', [ProfileController::class, 'adminUpdate'])->name('user.admin.edit');
+    Route::delete('/admin/users/{$id}', [ProfileController::class, 'adminDestroy'])->name('user.admin.destroy');
+    Route::get('/admin/users/{$id}', [ProfileController::class, 'adminShow'])->name('user.admin.show');
+    // Product Routes
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
+    Route::post('/admin/products', [ProductController::class, 'store']);
+    Route::get('/admin/products/create', [ProductController::class, 'create']);
+    Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit']);
+    Route::put('/admin/products/{product}', [ProductController::class, 'update']);
+    Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']);
+    Route::get('/admin/products/{product}', [ProductController::class, 'show']);
+    // Post Routes
+    Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.index');
+    Route::post('/admin/posts', [PostController::class, 'store']);
+    Route::get('/admin/posts/create', [PostController::class, 'create']);
+    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit']);
+    Route::put('/admin/posts/{post}', [PostController::class, 'update']);
+    Route::delete('/admin/posts/{post}', [PostController::class, 'destroy']);
+    // Exam Routes
+    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.index");
+    Route::post('/admin/exams', [ExamController::class, 'store']);
+    Route::get('/admin/exams/create', [ExamController::class, 'create']);
+    Route::get('/admin/exams/{exam}/edit', [ExamController::class, 'edit']);
+    Route::put('/admin/exams/{exam}', [ExamController::class, 'update']);
+    Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy']);
+    Route::get('/admin/exams/{exam}', [ExamController::class, 'show']);
 });
 
-Route::get('/admin/products',[ProductController::class,'index'])->middleware(['auth','role:super-admin'])->name('product.index');
-Route::post('/admin/products',[ProductController::class,'store'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/products/create',[ProductController::class,'create'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/products/{product}/edit',[ProductController::class,'edit'])->middleware(['auth','role:super-admin']);
-Route::put('/admin/products/{product}',[ProductController::class,'update'])->middleware(['auth','role:super-admin']);
-Route::delete('/admin/products/{product}',[ProductController::class,'destroy'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/products/{product}',[ProductController::class,'show'])->middleware(['auth','role:super-admin']);
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 
-Route::get('/posts',[PostController::class,'index'])->name('posts');
-Route::get('/posts/{post:slug}',[PostController::class,'show']);
-Route::get('/admin/posts',[PostController::class,'manage'])->middleware(['auth','role:super-admin'])->name('post.index');
-Route::post('/admin/posts',[PostController::class,'store'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/posts/create',[PostController::class,'create'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/posts/{post}/edit',[PostController::class,'edit'])->middleware(['auth','role:super-admin']);
-Route::put('/admin/posts/{post}',[PostController::class,'update'])->middleware(['auth','role:super-admin']);
-Route::delete('/admin/posts/{post}',[PostController::class,'destroy'])->middleware(['auth','role:super-admin']);
-
-
-
-Route::get('/admin/exams',[ExamController::class,'index'])->middleware(['auth','role:super-admin'])->name("exam.index");
-Route::post('/admin/exams',[ExamController::class,'store'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/exams/create',[ExamController::class,'create'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/exams/{exam}/edit',[ExamController::class,'edit'])->middleware(['auth','role:super-admin']);
-Route::put('/admin/exams/{exam}',[ExamController::class,'update'])->middleware(['auth','role:super-admin']);
-Route::delete('/admin/exams/{exam}',[ExamController::class,'destroy'])->middleware(['auth','role:super-admin']);
-Route::get('/admin/exams/{exam}',[ExamController::class,'show'])->middleware(['auth','role:super-admin']);
-
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
