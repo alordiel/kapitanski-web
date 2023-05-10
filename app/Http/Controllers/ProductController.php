@@ -24,16 +24,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
-            'product_name' => 'required',
-            'price' => ['required'],
+            'name' => ['required', 'unique:products'],
+            'price' => ['required','min:1','decimal:2'],
+            'credits' => ['required','numeric', 'unique:products'],
             'description' => 'required',
-            'product_order' => 'required',
-            'number_of_credits' => 'required',
         ]);
 
         Product::create($formFields);
 
-        return redirect('/products')->with('message', 'Product successfully created');
+        return redirect('/admin/products')->with('message', 'Product successfully created');
     }
 
     public function show(Product $product): View
@@ -49,11 +48,10 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $formFields = $request->validate([
-            'product_name' => 'required',
+            'name' => 'required',
             'price' => ['required'],
             'description' => 'required',
-            'product_order' => 'required',
-            'number_of_credits' => 'required',
+            'credits' => 'required',
         ]);
 
         $product->update($formFields);
@@ -63,6 +61,6 @@ class ProductController extends Controller
 
     public function destroy(Product $product) {
         $product->delete();
-        return redirect('/products')->with('message','Deleted successfully');
+        return redirect('/admin/products')->with('message','Deleted successfully');
     }
 }

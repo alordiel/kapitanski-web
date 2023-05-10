@@ -1,34 +1,88 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Create new product') }}
-        </h2>
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Edit Product') }}
+            </h2>
+            <a
+                href="/admin/products"
+                class="flex items-center justify-between rounded bg-primary px-6 pb-2 pt-2.5 text-base font-bold text-white transition duration-150 ease-in-out hover:bg-primary-600  focus:bg-primary-600  focus:outline-none focus:ring-0 active:bg-primary-700 ">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                     width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+                </svg>
+                All Products
+            </a>
+        </div>
     </x-slot>
-    <h1>Update: {{$product->product_name}}</h1>
-    <form action="/products/{{$product->id}}" method="POST">
+    <div>
+        @if(session()->has('message'))
+            <p style='color:green'>{{session('message')}}</p>
+        @endif
+    </div>
+    <form action="/admin/products/{{$product->id}}" method="POST">
         @csrf
-        @method("PUT")
-        <p>
-            <label for="product-name">
-                Product name <br>
-                <input type="text" id="product-name" name="product_name" value={{$product->product_name}}>
-            </label>
-            @error('product_name')
-                <br>
-                <small style="color:red">{{$message}}</small>
+        @method('PUT')
+        <p class="mb-3">
+            <x-input-label for="name" :value="__('Product name')"/>
+            <x-text-input
+                class="block w-1/5"
+                id="name"
+                name="name"
+                required
+                :value="$product->name"
+                type="text"
+            />
+            @error('name')
+            <x-input-error :messages="$message" class="mt-2"/>
             @enderror
-
         </p>
-        <p>
-            <label for="price">
-                Price <br>
-                <input type="number" min="1.00" placeholder="product price" id="price" name="price" value={{$product->price}}>
-            </label>
+        <p class="mb-3">
+            <x-input-label for="price" :value="__('Price')"/>
+            <x-text-input
+                type="number"
+                id="price"
+                name="price"
+                :value="$product->price"
+                class="block w-20"
+                min="1"
+                required
+            />
             @error('price')
-                <br>
-                <small style="color:red">{{$message}}</small>
+            <x-input-error :messages="$message" class="mt-2"/>
             @enderror
         </p>
-        <button type="submit">Update</button>
+        <p class="mb-3">
+            <x-input-label for="credits" :value="__('Credits')"/>
+            <x-text-input
+                type="number"
+                id="credits"
+                name="credits"
+                :value="$product->credits"
+                class="block w-20"
+                min="1"
+                required
+            />
+            @error('credits')
+            <x-input-error :messages="$message" class="mt-2"/>
+            @enderror
+        </p>
+        <p class="mb-3">
+            <x-input-label for="description" :value="__('Product description')"/>
+            <textarea
+                id="description"
+                name="description"
+                rows="4"
+                cols="30"
+                class="text-black"
+            >
+                {{$product->description}}
+            </textarea>
+            @error('description')
+            <x-input-error :messages="$message" class="mt-2"/>
+            @enderror
+        </p>
+        <x-primary-button>Update</x-primary-button>
     </form>
 </x-app-layout>

@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123!@#123'),
         ]);
         DB::table('products')->insert([
-            'name' => '',
+            'name' => 'Single account',
             'price' => 59.00,
-            'description' => '',
+            'description' => '30 days one account',
             'credits' => 1
         ]);
         DB::table('posts')->insert([

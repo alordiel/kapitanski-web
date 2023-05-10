@@ -1,7 +1,7 @@
 <x-app-layout>
     <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
     <x-slot name="header">
-                <div class="flex justify-between">
+        <div class="flex justify-between">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('New posts') }}
             </h2>

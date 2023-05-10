@@ -11,7 +11,7 @@ class Product extends Model
       use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['product_name', 'price', 'product_order', 'description', 'number_of_credits'];
+    protected $fillable = ['name', 'price', 'description', 'credits'];
 
     protected function order(): hasMany
     {

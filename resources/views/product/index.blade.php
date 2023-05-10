@@ -21,27 +21,22 @@
         <p style='color:green'>{{session('message')}}</p>
     @endif
     <ul class="list-of-products">
-        <li>
-            <span class="product-name"><strong>Product name</strong></span>
-            <span class="price"><strong>Price</strong></span>
-            <span class="line-actions"><strong>Manage</strong></span>
-        </li>
         @foreach($products as $product)
             <li>
             <span class="product-name">
-                <a href="/products/{{$product->id}}" title="View">{{$product->name}} </a>
+                <a href="/admin/products/{{$product->id}}" title="View">{{$product->name}} </a>
             </span>
                 <span class="price">{{$product->price}} лв.</span>
                 <span>{{$product->credits}} кредита</span>
                 <div class="line-actions">
                 <span class="edit">
-                    <a href="/products/{{$product->id}}/edit" title="edit">
+                    <a href="/admin/products/{{$product->id}}/edit" title="edit">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
                              width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path
                                 d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 5.63l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 000-1.41z"></path></svg>
                     </a>
                 </span>
-                    <form method="POST" action="/products/{{$product->id}}">
+                    <form method="POST" action="/admin/products/{{$product->id}}">
                         @csrf
                         @method('DELETE')
                         <button class="delete" type="submit">
