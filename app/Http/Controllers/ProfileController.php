@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -56,5 +57,51 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function adminIndex():View
+    {
+        return view('user.index', [
+            'users' => User::all(),
+        ]);
+    }
+
+    public function adminCreate():View
+    {
+        return view('user.create');
+    }
+
+    public function adminStore()
+    {
+
+    }
+
+    public function adminEdit(Request $request): View
+    {
+        return view('user.edit', [
+            'user' => $request->user(),
+        ]);
+    }
+
+    public function adminUpdate()
+    {
+
+    }
+
+    public function adminDestroy(Request $request): RedirectResponse
+    {
+        $request->validateWithBag('userDeletion', [
+            'password' => ['required', 'current_password'],
+        ]);
+
+        $user = $request->user();
+        $user->delete();
+
+        return Redirect::to('user.index');
+    }
+
+    public function adminShow(User $user): View
+    {
+        return view('user.show', ['user' => $user]);
     }
 }

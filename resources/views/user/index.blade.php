@@ -16,4 +16,12 @@
             </a>
         </div>
     </x-slot>
+    <div>
+        @foreach($users as $user)
+            <p>
+                {{$user->name}} | {{$user->email}} | {{$user->getRoleNames()->first() }} |
+                <a href="/admin/users/{{$user->id}}/edit">(edit)</a> | <a href="/admin/users/{{$user->id}}">(view)</a> | <a>(delete)</a>
+            </p>
+        @endforeach
+    </div>
 </x-app-layout>
