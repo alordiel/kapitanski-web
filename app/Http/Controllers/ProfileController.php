@@ -74,6 +74,11 @@ class ProfileController extends Controller
         return view('user.create');
     }
 
+    public function adminEdit(User $user): View
+    {
+        return view('user.edit', [ 'user' => $user ]);
+    }
+
     public function adminStore(Request $request): RedirectResponse
     {
         $request->validate([
@@ -95,13 +100,6 @@ class ProfileController extends Controller
         return redirect('user.admin.index');
     }
 
-    public function adminEdit(Request $request): View
-    {
-        return view('user.edit', [
-            'user' => $request->user(),
-        ]);
-    }
-
     public function adminUpdate(Request $request, User $user): RedirectResponse
     {
         $request->validate([
@@ -117,7 +115,7 @@ class ProfileController extends Controller
         ]);
         $user->syncRoles($request['role']);
 
-        return back()->with('message','User successfully updated');
+        return back()->with('message', 'User successfully updated');
     }
 
     public function adminDestroy(User $user): RedirectResponse
