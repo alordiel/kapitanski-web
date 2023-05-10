@@ -27,12 +27,11 @@ class ExamController extends Controller
     {
         $formFields = $request->validate([
             'name' => 'required',
-            'category' => ['required'],
         ]);
 
         Exam::create($formFields);
 
-        return redirect('/exams')->with('message', 'Exam successfully created');
+        return redirect('/admin/exams')->with('message', 'Exam successfully created');
     }
 
     public function show(Exam $exam): View
@@ -49,7 +48,6 @@ class ExamController extends Controller
     {
         $formFields = $request->validate([
             'name' => 'required',
-            'category' => ['required'],
         ]);
 
         $exam->update($formFields);
@@ -59,6 +57,6 @@ class ExamController extends Controller
 
     public function destroy(Exam $exam) {
         $exam->delete();
-        return redirect('/exams')->with('message','Deleted successfully');
+        return redirect('/admin/exams')->with('message','Deleted successfully');
     }
 }

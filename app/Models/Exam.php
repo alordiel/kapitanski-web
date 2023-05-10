@@ -10,7 +10,7 @@ class Exam extends Model
 {
     use HasFactory;
 
-    protected bool $timestamp = false;
+    public $timestamps = false;
     protected $fillable = ['name'];
 
     public function examTaking(): hasMany
