@@ -25,7 +25,14 @@
         @method("PUT")
         <p>
             <x-input-label for="title" :value="__('Post title')"/>
-            <x-text-input class="block w-1/5" id="title" name="title" required :value="$post->title" type="text"/>
+            <x-text-input
+                class="block w-1/5"
+                id="title"
+                name="title"
+                required
+                :value="$post->title"
+                type="text"
+            />
             @error('title')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -33,7 +40,14 @@
         </p>
         <p>
             <x-input-label for="slug" :value="__('Post slug')"/>
-            <x-text-input class="block w-1/5" type="text" id="slug" name="slug" required :value="$post->slug"/>
+            <x-text-input
+                class="block w-1/5"
+                type="text"
+                id="slug"
+                name="slug"
+                required
+                :value="$post->slug"
+            />
             @error('slug')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
@@ -47,6 +61,7 @@
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
         </div>
+
         <script>
             ClassicEditor
                 .create(document.querySelector('#editor'), {
@@ -61,8 +76,9 @@
                     console.error(error);
                 });
         </script>
+
         <x-primary-button>Update</x-primary-button>
         <input type="hidden" value="0" name="featured_image">
-        <input type="hidden" value="Product description" name="excerpt">
+        <input type="hidden" value="" name="excerpt">
     </form>
 </x-app-layout>
