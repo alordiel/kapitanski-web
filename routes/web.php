@@ -44,6 +44,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth', 'role:super-admin'])->group(function(){
+
+   Route::get('/admin/users', [ProfileController::class,'adminIndex'])->name('user.admin.manage');
+   Route::get('/admin/users/create', [ProfileController::class,'adminCreate'])->name('user.admin.create');
+   Route::post('/admin/users', [ProfileController::class,'adminStore'])->name('user.admin.create');
+   Route::get('/admin/users/{$id}/edit', [ProfileController::class,'adminEdit'])->name('user.admin.edit');
+   Route::post('/admin/users/{$id}/edit', [ProfileController::class,'adminUpdate'])->name('user.admin.edit');
+   Route::delete('/admin/users/{$id}', [ProfileController::class,'adminDestroy'])->name('user.admin.destroy');
+   Route::get('/admin/users/{$id}', [ProfileController::class,'adminShow'])->name('user.admin.show');
+
+});
+
 Route::get('/admin/products',[ProductController::class,'index'])->middleware(['auth','role:super-admin'])->name('product.index');
 Route::post('/admin/products',[ProductController::class,'store'])->middleware(['auth','role:super-admin']);
 Route::get('/admin/products/create',[ProductController::class,'create'])->middleware(['auth','role:super-admin']);
