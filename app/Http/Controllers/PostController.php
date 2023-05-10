@@ -35,10 +35,11 @@ class PostController extends Controller
             'slug' => ['required'],
             'content' => 'required',
             'featured_image' => 'required',
-            'excerpt' => 'required',
         ]);
 
-          $formFields['excerpt'] = $this->createExcerpt($formFields['content']);
+        if (empty($formFields['excerpt'])) {
+            $formFields['excerpt'] = $this->createExcerpt($formFields['content']);
+        }
 
         Post::create($formFields);
 
