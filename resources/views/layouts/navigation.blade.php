@@ -42,7 +42,7 @@
                                 <x-dropdown-link :href="route('product.index')">
                                     {{ __('Products') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="'#'">
+                                <x-dropdown-link :href="route('user.admin.manage')">
                                     {{ __('Users') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="'#'">
