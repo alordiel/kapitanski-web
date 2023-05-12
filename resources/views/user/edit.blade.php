@@ -50,11 +50,11 @@ use Spatie\Permission\Models\Role;
                         <option value="{{$role}}" @selected($role === $user_role)>{{$role}}</option>
                     @endforeach
                 </select>
-                <x-input-error :messages="$errors->get('password')" class="mt-2"/>
+                <x-input-error :messages="$errors->get('role')" class="mt-2"/>
             </div>
 
-            <x-primary-button class="mt-4 ml-4">
-                {{ __('Register') }}
+            <x-primary-button class="mt-4">
+                {{ __('Update') }}
             </x-primary-button>
         </form>
     </div>
