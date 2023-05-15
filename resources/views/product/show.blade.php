@@ -9,5 +9,5 @@
 
     <x-edit-entry url="{{route('product.admin.edit',['product' => $product])}}" title="Edit product"/>
     <x-delete-entry url="{{route('product.admin.destroy',['product' => $product])}}"
-                    title="Delete product" entry="product"/>
+                    button-title="Delete product" entry="product"/>
 </x-app-layout>

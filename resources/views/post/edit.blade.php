@@ -1,11 +1,14 @@
 <x-app-layout>
     <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+
     <x-slot name="header">
        <x-subheader title="Edit post" url="{{route('post.admin.manage')}}" icon="all" button-text="All posts"/>
     </x-slot>
+
     @if(session()->has('message'))
         <x-success-message message="{{session('message')}}"/>
     @endif
+
     <form action="/admin/posts/{{$post->id}}" method="POST">
         @csrf
         @method("PUT")
