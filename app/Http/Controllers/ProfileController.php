@@ -125,6 +125,6 @@ class ProfileController extends Controller
 
     public function adminShow(User $user): View
     {
-        return view('user.admin.show', ['user' => $user]);
+        return view('user.show', ['user' => $user]);
     }
 }
