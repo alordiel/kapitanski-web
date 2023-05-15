@@ -39,6 +39,10 @@ class ExamController extends Controller
         return view('exam.show', ['exam' => $exam]);
     }
 
+    public function questions(Exam $exam): View {
+          return view('exam.questions', ['exam'=> $exam]);
+    }
+
     public function edit(Exam $exam): View
     {
         return view('exam.edit', ['exam' => $exam]);

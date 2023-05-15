@@ -76,6 +76,7 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::put('/admin/exams/{exam}', [ExamController::class, 'update'])->name("exam.admin.update");
     Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy'])->name("exam.admin.destroy");
     Route::get('/admin/exams/{exam}', [ExamController::class, 'show'])->name("exam.admin.show");
+    Route::get('/admin/exams/{exam}/questions', [ExamController::class, 'questions'])->name("exam.admin.questions");
 });
 
 
