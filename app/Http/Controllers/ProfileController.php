@@ -84,7 +84,7 @@ class ProfileController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
@@ -93,18 +93,18 @@ class ProfileController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user->addRole($request['role']);
+        $user->assignRole($request['role']);
 
         event(new Registered($user));
 
-        return redirect('user.admin.index');
+        return redirect(route('user.admin.manage'));
     }
 
     public function adminUpdate(Request $request, User $user): RedirectResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'string', 'email', 'max:255'],
         ]);
 
         $user->update([

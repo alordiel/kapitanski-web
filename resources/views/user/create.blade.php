@@ -42,9 +42,11 @@ use Spatie\Permission\Models\Role;
                 <x-input-label for="password" :value="__('Password')"/>
 
                 <x-text-input id="password" class="block mt-1 w-full"
-                              type="password"
+                              type="text"
                               name="password"
-                              required autocomplete="new-password"/>
+                              required
+                              autocomplete="new-password"
+                />
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2"/>
             </div>
