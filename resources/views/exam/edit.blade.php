@@ -7,7 +7,7 @@
         <p style='color:green'>{{session('message')}}</p>
     @endif
 
-    <form action="{{route('exam.admin.update', ['exam'=>'update'])}}" method="POST">
+    <form action="{{route('exam.admin.update', ['exam'=> $exam])}}" method="POST">
         @csrf
         @method('PUT')
         <p class="mb-3">

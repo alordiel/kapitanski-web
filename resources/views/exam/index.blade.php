@@ -11,7 +11,7 @@
             <li>
                 <a href="{{route('exam.admin.show',['exam' => $exam])}}" title="View">{{$exam->name}} </a> |
                 <x-edit-entry url="{{route('exam.admin.edit',['exam'=>$exam])}}" title="Edit exam"/>
-                <x-delete-entry url="{{route('exam.admin.destroy',['exam'=>$exam])}}" entry="exam" title="Delete exam"/>
+                <x-delete-entry url="{{route('exam.admin.destroy',['exam'=>$exam])}}" entry="exam" button-title="Delete exam"/>
             </li>
         @endforeach
     </ul>

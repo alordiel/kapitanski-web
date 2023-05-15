@@ -33,13 +33,13 @@
                                 </button>
                             </x-slot>
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('post.index')">
+                                <x-dropdown-link :href="route('post.admin.manage')">
                                     {{ __('Posts') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('exam.index')">
+                                <x-dropdown-link :href="route('exam.admin.manage')">
                                     {{ __('Exams') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('product.index')">
+                                <x-dropdown-link :href="route('product.admin.manage')">
                                     {{ __('Products') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('user.admin.manage')">

@@ -54,7 +54,7 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::put('/admin/users/{user}', [ProfileController::class, 'adminUpdate'])->name('user.admin.update');
     Route::delete('/admin/users/{user}', [ProfileController::class, 'adminDestroy'])->name('user.admin.destroy');
     // Product Routes
-    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.admin.index');
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.admin.manage');
     Route::post('/admin/products', [ProductController::class, 'store'])->name('product.admin.store');
     Route::get('/admin/products/create', [ProductController::class, 'create'])->name('product.admin.create');
     Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('product.admin.edit');
@@ -69,7 +69,7 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('post.admin.update');
     Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('post.admin.destroy');
     // Exam Routes
-    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.admin.mange");
+    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.admin.manage");
     Route::post('/admin/exams', [ExamController::class, 'store'])->name("exam.admin.store");
     Route::get('/admin/exams/create', [ExamController::class, 'create'])->name("exam.admin.create");
     Route::get('/admin/exams/{exam}/edit', [ExamController::class, 'edit'])->name("exam.admin.edit");
@@ -79,8 +79,8 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
 });
 
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.all');
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post.show');
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post');
 
 
 require __DIR__ . '/auth.php';
