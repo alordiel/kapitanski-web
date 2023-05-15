@@ -120,11 +120,11 @@ class ProfileController extends Controller
     {
         $user->delete();
 
-        return Redirect::to('user.index');
+        return Redirect::route('user.admin.manage');
     }
 
     public function adminShow(User $user): View
     {
-        return view('user.show', ['user' => $user]);
+        return view('user.admin.show', ['user' => $user]);
     }
 }
