@@ -62,14 +62,14 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('product.admin.destroy');
     Route::get('/admin/products/{product}', [ProductController::class, 'show'])->name('product.admin.show');
     // Post Routes
-    Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.admin.index');
+    Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.admin.manage');
     Route::post('/admin/posts', [PostController::class, 'store'])->name('post.admin.store');
     Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.admin.create');
     Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('post.admin.edit');
     Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('post.admin.update');
     Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('post.admin.destroy');
     // Exam Routes
-    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.admin.index");
+    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.admin.mange");
     Route::post('/admin/exams', [ExamController::class, 'store'])->name("exam.admin.store");
     Route::get('/admin/exams/create', [ExamController::class, 'create'])->name("exam.admin.create");
     Route::get('/admin/exams/{exam}/edit', [ExamController::class, 'edit'])->name("exam.admin.edit");
