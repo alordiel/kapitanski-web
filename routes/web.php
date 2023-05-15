@@ -54,33 +54,33 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::put('/admin/users/{user}', [ProfileController::class, 'adminUpdate'])->name('user.admin.update');
     Route::delete('/admin/users/{user}', [ProfileController::class, 'adminDestroy'])->name('user.admin.destroy');
     // Product Routes
-    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
-    Route::post('/admin/products', [ProductController::class, 'store']);
-    Route::get('/admin/products/create', [ProductController::class, 'create']);
-    Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit']);
-    Route::put('/admin/products/{product}', [ProductController::class, 'update']);
-    Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']);
-    Route::get('/admin/products/{product}', [ProductController::class, 'show']);
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.admin.index');
+    Route::post('/admin/products', [ProductController::class, 'store'])->name('product.admin.store');
+    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('product.admin.create');
+    Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('product.admin.edit');
+    Route::put('/admin/products/{product}', [ProductController::class, 'update'])->name('product.admin.update');
+    Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('product.admin.destroy');
+    Route::get('/admin/products/{product}', [ProductController::class, 'show'])->name('product.admin.show');
     // Post Routes
-    Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.index');
-    Route::post('/admin/posts', [PostController::class, 'store']);
-    Route::get('/admin/posts/create', [PostController::class, 'create']);
-    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit']);
-    Route::put('/admin/posts/{post}', [PostController::class, 'update']);
-    Route::delete('/admin/posts/{post}', [PostController::class, 'destroy']);
+    Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.admin.index');
+    Route::post('/admin/posts', [PostController::class, 'store'])->name('post.admin.store');
+    Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.admin.create');
+    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('post.admin.edit');
+    Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('post.admin.update');
+    Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('post.admin.destroy');
     // Exam Routes
-    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.index");
-    Route::post('/admin/exams', [ExamController::class, 'store']);
-    Route::get('/admin/exams/create', [ExamController::class, 'create']);
-    Route::get('/admin/exams/{exam}/edit', [ExamController::class, 'edit']);
-    Route::put('/admin/exams/{exam}', [ExamController::class, 'update']);
-    Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy']);
-    Route::get('/admin/exams/{exam}', [ExamController::class, 'show']);
+    Route::get('/admin/exams', [ExamController::class, 'index'])->name("exam.admin.index");
+    Route::post('/admin/exams', [ExamController::class, 'store'])->name("exam.admin.store");
+    Route::get('/admin/exams/create', [ExamController::class, 'create'])->name("exam.admin.create");
+    Route::get('/admin/exams/{exam}/edit', [ExamController::class, 'edit'])->name("exam.admin.edit");
+    Route::put('/admin/exams/{exam}', [ExamController::class, 'update'])->name("exam.admin.update");
+    Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy'])->name("exam.admin.destroy");
+    Route::get('/admin/exams/{exam}', [ExamController::class, 'show'])->name("exam.admin.show");
 });
 
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
-Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/posts', [PostController::class, 'index'])->name('posts.all');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post.show');
 
 
 require __DIR__ . '/auth.php';
