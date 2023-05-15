@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-            <x-subheader title="Edit Exam" icon="all" button-text="All exams" url="{{route('exam.index')}}"/>
+            <x-subheader title="Edit Exam" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
     </x-slot>
     @if(session()->has('message'))
         <p style='color:green'>{{session('message')}}</p>

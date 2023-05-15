@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="Add new exam" icon="all" button-text="All exams" url="{{route('exam.index')}}"/>
+        <x-subheader title="Add new exam" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
     </x-slot>
     <form action="/admin/exams" method="POST">
         @csrf
