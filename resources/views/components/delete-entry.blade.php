@@ -1,6 +1,6 @@
 @props(['url', 'buttonTitle', 'entry'])
 
-<form method="POST" action="{{$url}}">
+<form method="POST" action="{{$url}}"  onsubmit="return confirm('Are you sure you want to delete this {{$entry}}?')">
     @csrf
     @method('DELETE')
     <button title="{{$buttonTitle}}" type="submit">
