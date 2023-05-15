@@ -4,10 +4,9 @@
     </x-slot>
 
     @if(session()->has('message'))
-        <p style='color:green'>{{session('message')}}</p>
+        <x-success-message message="{{session('message')}}"/>
     @endif
-
-    <form action="{{route('exam.admin.update', ['exam'=> $exam])}}" method="POST">
+    <form action="{{route('exam.admin.update', ['exam'=> $exama])}}" method="POST">
         @csrf
         @method('PUT')
         <p class="mb-3">

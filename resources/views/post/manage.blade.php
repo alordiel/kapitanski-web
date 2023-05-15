@@ -18,7 +18,7 @@
     </x-slot>
 
     @if(session()->has('message'))
-        <p style='color:green'>{{session('message')}}</p>
+        <x-success-message message="{{session('message')}}"/>
     @endif
     @if(count($posts) > 0)
         <h1>List of Posts</h1>

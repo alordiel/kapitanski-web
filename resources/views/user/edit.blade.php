@@ -5,7 +5,7 @@ use Spatie\Permission\Models\Role;
     <x-subheader title="Edit User" url="{{route('user.admin.manage')}}" icon="all" button-text="All users"/>
     <div class="w-1/2">
         @if(session()->has('message'))
-            <p class="text-emerald-600 dark:text-emerald-300">{{session('message')}}</p>
+           <x-success-message message="{{session('message')}}" />
         @endif
         <form method="POST" action="{{ route('user.admin.update',['user'=>$user]) }}">
             @csrf

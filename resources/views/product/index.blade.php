@@ -17,8 +17,8 @@
         </div>
     </x-slot>
 
-    @if(session()->has('message'))
-        <p style='color:green'>{{session('message')}}</p>
+   @if(session()->has('message'))
+        <x-success-message message="{{session('message')}}"/>
     @endif
     <ul class="list-of-products">
         @foreach($products as $product)

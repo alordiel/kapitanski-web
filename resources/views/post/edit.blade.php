@@ -18,7 +18,7 @@
         </div>
     </x-slot>
     @if(session()->has('message'))
-        <p style='color:green'>{{session('message')}}</p>
+        <x-success-message message="{{session('message')}}"/>
     @endif
     <form action="/admin/posts/{{$post->id}}" method="POST">
         @csrf
