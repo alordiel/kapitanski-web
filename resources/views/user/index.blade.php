@@ -6,7 +6,7 @@
         @foreach($users as $user)
             <p>
                 {{$user->name}} | {{$user->email}} | {{$user->getRoleNames()->first() }} |
-                <a href="/admin/users/{{$user->id}}/edit">(edit)</a> | <a href="/admin/users/{{$user->id}}">(view)</a> |
+                <a href="{{route('user.admin.edit', ['user'=>$user])}}">(edit)</a> | <a href="{{route('user.admin.show', ['user'=>$user])}}">(view)</a> |
                 <x-delete-entry url="{{route('user.admin.destroy',['user' => $user])}}" button-title="Delete user" entry="user" />
             </p>
         @endforeach
