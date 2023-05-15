@@ -2,6 +2,7 @@
     <x-slot name="header">
         <x-subheader title="Add new exam" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
     </x-slot>
+
     <form action="{{route('exam.admin.store')}}" method="POST">
         @csrf
         <p class="mb-3">

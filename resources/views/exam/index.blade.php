@@ -6,6 +6,7 @@
     @if(session()->has('message'))
         <x-success-message message="{{session('message')}}"/>
     @endif
+
     <ul>
         @foreach($exams as $exam)
             <li>

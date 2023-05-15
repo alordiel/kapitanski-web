@@ -2,6 +2,7 @@
     <x-slot name="header">
         <x-subheader title="Add user" icon="add" button-text="Add user" url="{{route('user.admin.create')}}"/>
     </x-slot>
+
     <div>
         @foreach($users as $user)
             <p>

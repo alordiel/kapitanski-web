@@ -6,6 +6,7 @@
     @if(session()->has('message'))
         <x-success-message message="{{session('message')}}"/>
     @endif
+
     <form action="{{route('exam.admin.update', ['exam'=> $exama])}}" method="POST">
         @csrf
         @method('PUT')

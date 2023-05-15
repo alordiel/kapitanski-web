@@ -2,6 +2,7 @@
     <x-slot name="header">
         <x-subheader title="{{$user->name}}" icon="all" button-text="All users" url="{{route('user.admin.manage')}}"/>
     </x-slot>
+
     <div>
         <p>Name: {{$user->name}}</p>
         <p>Email: {{$user->email}}</p>

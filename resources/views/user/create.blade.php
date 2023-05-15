@@ -4,7 +4,9 @@ use Spatie\Permission\Models\Role;
 
 ?>
 <x-app-layout>
+
     <x-subheader title="Add User" url="{{route('user.admin.manage')}}" icon="all" button-text="All users"/>
+
     <div class="w-1/2">
         <form method="POST" action="{{ route('user.admin.store') }}">
             @csrf

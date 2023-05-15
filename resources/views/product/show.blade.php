@@ -1,10 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Create new product') }}
-        </h2>
+        <x-subheader title="{{$product->name}}" url="{{route('product.admin.manage')}}" icon="all" button-text="All products"/>
     </x-slot>
-    <h1>{{$product->product_name}}</h1>
+    <h1>{{$product->name}}</h1>
     <small>Price: {{$product->price}}</small>
     <span class="edit">
         <a href="/products/{{$product->id}}/edit" title="edit">
