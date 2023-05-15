@@ -2,14 +2,16 @@
     <x-slot name="header">
             <x-subheader title="Edit Exam" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
     </x-slot>
+
     @if(session()->has('message'))
         <p style='color:green'>{{session('message')}}</p>
     @endif
-    <form action="/admin/exams/{{$exam->id}}" method="POST">
+
+    <form action="{{route('exam.admin.update', ['exam'=>'update'])}}" method="POST">
         @csrf
         @method('PUT')
         <p class="mb-3">
-            <x-input-label for="name" :value="__('Product name')" />
+            <x-input-label for="name" :value="__('Product name')"/>
             <x-text-input
                 type="text"
                 id="name"
