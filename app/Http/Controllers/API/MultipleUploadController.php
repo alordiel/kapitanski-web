@@ -7,6 +7,7 @@ use App\Models\Image;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\File;
 use Illuminate\Http\Request;
 
@@ -15,30 +16,31 @@ class MultipleUploadController extends Controller
     public function store(Request $request): JsonResponse
     {
 
-        $validatedData = $request->validate([
+        $request->validate([
             'type' => 'required',
             'image' => 'required',
             File::types(['jpeg', 'pdf', 'png'])->max(4 * 1024)
         ]);
 
-        $typeFolder = $request->input('type');
         $file = $request->file('image');
-
-        $path = $file->store('public/images/' . $typeFolder);
+        $type = $request->input('type');
         $name = $file->getClientOriginalName();
+        $hashedName = $file->hashName();
+        $file->move(public_path('images/' . $type), $hashedName);
+        $url = 'images/' . $type . '/' . $hashedName;
 
         //store image file into directory and db
         $image = new Image();
         $image->title = $name;
-        $image->path = $path;
+        $image->path = $url;
         $image->alt = '';
-        $image->type = $typeFolder;
+        $image->type = $request->input('type');
         $image->save();
 
         return response()->json([
             'status' => 1,
             'id' => $image->id,
-            'url' => $image->path,
+            'url' => $url,
         ], 200);
     }
 }

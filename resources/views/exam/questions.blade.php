@@ -18,13 +18,16 @@
                 <p class="w-1/3">
                     <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Question type<br>
-                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type" value="text"> Text
+                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type"
+                               value="text"> Text
                         <br>
-                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type" value="image"> Image
+                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type"
+                               value="image"> Image
                     </label>
                 </p>
                 <p class="w-1/3">
-                    <label :for="'cat-' + questionIndex" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                    <label :for="'cat-' + questionIndex"
+                           class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Question category <br>
                         <select v-model="question.category" :id="'cat-' + questionIndex"
                                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
@@ -41,7 +44,12 @@
 
             <div v-if="question.type !== 'image'" class="flex justify-between flex-wrap mb-3">
                 <p class="w-1/2" v-for="textIndex in [0,1,2,3]" :key="'textAnswer-'+textIndex">
-                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.textAnswers[textIndex].text"/>
+                    <x-text-input
+                        type="text"
+                        placeholder="answer"
+                        class="w-full"
+                        v-model="question.textAnswers[textIndex].text"
+                    />
                     <br>
                     <label>
                         <input
@@ -59,9 +67,10 @@
                     <x-text-input
                         type="file"
                         accept="image/*"
-                        @change="uploadImage($event, questionIndex ,imageIndex)"
+                        @change="uploadImage($event, questionIndex, imageIndex)"
                         class="w-full"
-                    /><br>
+                    />
+                    <br>
                     <label>
                         <input
                             :value="question.imageAnswers[imageIndex].id ? question.imageAnswers[imageIndex].id : imageIndex"
@@ -71,7 +80,12 @@
                         /> is the correct answer
                     </label>
                     <br>
-                    <img v-if="question.imageAnswers[imageIndex].url !== ''" :src="question.imageAnswers[imageIndex].url" alt="exam" height="100">
+                    <img
+                        v-if="question.imageAnswers[imageIndex].url !== ''"
+                        :src="question.imageAnswers[imageIndex].url"
+                        alt="exam"
+                        style="height: 100px"
+                    >
                 </p>
             </div>
             <hr>
@@ -87,8 +101,8 @@
             type: '',
             category: '',
             correctAnswer: '',
-            textAnswers: Array(4).fill({id: 0, text: ''}, 0, 4),
-            imageAnswers: Array(4).fill({id: 0, url: '', file: ''}, 0, 4)
+            textAnswers: [{id: 0, text: ''},{id: 0, text: ''},{id: 0, text: ''},{id: 0, text: ''}],
+            imageAnswers: [{id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}],
         };
 
         createApp({
@@ -98,7 +112,7 @@
                 }
             },
             created() {
-              this.questions[0] = Object.assign({}, questionStructure)
+                this.questions[0] = Object.assign({}, questionStructure)
             },
             methods: {
                 addQuestion() {
@@ -122,7 +136,7 @@
                                 console.log(res)
                                 if (res.data.status === 1) {
                                     vm.questions[questionIndex].imageAnswers[answerIndex].id = res.data.id;
-                                    vm.questions[questionIndex].imageAnswers[answerIndex].url = res.data.url;
+                                    vm.questions[questionIndex].imageAnswers[answerIndex].url = location.origin + '/' + res.data.url;
                                 } else {
                                     alert(res.data.message);
                                 }
