@@ -7,27 +7,26 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <div id="app">
-        @{{ message }}
-        <div v-for="(question,key) in questions" :key="key" class="mb-3">
+        <div v-for="(question,questionIndex) in questions" :key="questionIndex" class="mb-3">
             <div class="flex flex-wrap justify-between mb-3">
                 <p class="w-1/3">
-                    <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">@{{ key + 1 }}. Question
-                        body<br>
+                    <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                        @{{ questionIndex + 1 }}. Question body<br>
                         <x-text-input type="text" v-model="question.body"/>
                     </label>
                 </p>
                 <p class="w-1/3">
                     <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Question type<br>
-                        <input type="radio" :name="'question-type-' + key" v-model="question.type" value="text"> Text
+                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type" value="text"> Text
                         <br>
-                        <input type="radio" :name="'question-type-' + key" v-model="question.type" value="image"> Image
+                        <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type" value="image"> Image
                     </label>
                 </p>
                 <p class="w-1/3">
-                    <label :for="'cat-' + key" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                    <label :for="'cat-' + questionIndex" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Question category <br>
-                        <select v-model="question.category" :id="'cat-' + key"
+                        <select v-model="question.category" :id="'cat-' + questionIndex"
                                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             <option value="0"> - - -</option>
                             <option value="1">Морски знаци</option>
@@ -41,35 +40,38 @@
 
 
             <div v-if="question.type !== 'image'" class="flex justify-between flex-wrap mb-3">
-                <p class="w-1/2">
-                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.asnwerA"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.asnwerB"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.asnwerC"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.asnwerD"/>
+                <p class="w-1/2" v-for="textIndex in [0,1,2,3]" :key="'textAnswer-'+textIndex">
+                    <x-text-input type="text" placeholder="answer" class="w-full" v-model="question.textAnswers[textIndex].text"/>
+                    <br>
+                    <label>
+                        <input
+                            :value="question.textAnswers[textIndex].id ? question.textAnswers[textIndex].id : textIndex"
+                            type="radio"
+                            v-model="question.correctAnswer"
+                            :name="'correctAnswer' + textIndex"
+                        /> is the correct answer
+                    </label>
                 </p>
             </div>
+
             <div v-else class="flex justify-between flex-wrap mb-3">
-                <p class="w-1/2">
-                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img1')" class="w-full"
-                                  v-model="question.asnwerA"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img2')" class="w-full"
-                                  v-model="question.asnwerB"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img3')" class="w-full"
-                                  v-model="question.asnwerC"/>
-                </p>
-                <p class="w-1/2">
-                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img4')" class="w-full"
-                                  v-model="question.asnwerD"/>
+                <p class="w-1/2" v-for="imageIndex in [0,1,2,3]" :key="'imageAnswer-'+imageIndex">
+                    <x-text-input
+                        type="file"
+                        accept="image/*"
+                        @change="uploadImage($event, questionIndex ,imageIndex)"
+                        class="w-full"
+                    /><br>
+                    <label>
+                        <input
+                            :value="question.imageAnswers[imageIndex].id ? question.imageAnswers[imageIndex].id : imageIndex"
+                            type="radio"
+                            v-model="question.correctAnswer"
+                            name="correctAnswer"
+                        /> is the correct answer
+                    </label>
+                    <br>
+                    <img v-if="question.imageAnswers[imageIndex].url !== ''" :src="question.imageAnswers[imageIndex].url" alt="exam" height="100">
                 </p>
             </div>
             <hr>
@@ -79,88 +81,37 @@
 
     <script>
         const {createApp} = Vue;
+        const questionStructure = {
+            id: '',
+            body: '',
+            type: '',
+            category: '',
+            correctAnswer: '',
+            textAnswers: Array(4).fill({id: 0, text: ''}, 0, 4),
+            imageAnswers: Array(4).fill({id: 0, url: '', file: ''}, 0, 4)
+        };
 
         createApp({
             data() {
                 return {
-                    questions: [
-                        {
-                            id: '',
-                            body: '',
-                            type: '',
-                            category: '',
-                            answerA: '',
-                            answerB: '',
-                            answerC: '',
-                            answerD: '',
-                            correctAnswer: '',
-                            images: {
-                                img1: {
-                                    id: 0,
-                                    url: '',
-                                    file: '',
-                                },
-                                img12: {
-                                    id: 0,
-                                    url: '',
-                                    file: '',
-                                },
-                                img3: {
-                                    id: 0,
-                                    url: '',
-                                    file: '',
-                                },
-                                img4: {
-                                    id: 0,
-                                    url: '',
-                                    file: '',
-                                },
-                            }
-                        }
-                    ],
+                    questions: [{}],
                 }
+            },
+            created() {
+              this.questions[0] = Object.assign({}, questionStructure)
             },
             methods: {
                 addQuestion() {
-                    this.questions.push({
-                        question: '',
-                        answerA: '',
-                        answerB: '',
-                        answerC: '',
-                        answerD: '',
-                        correctAnswer: '',
-                        images: {
-                            img1: {
-                                id: 0,
-                                url: '',
-                                file: '',
-                            },
-                            img12: {
-                                id: 0,
-                                url: '',
-                                file: '',
-                            },
-                            img3: {
-                                id: 0,
-                                url: '',
-                                file: '',
-                            },
-                            img4: {
-                                id: 0,
-                                url: '',
-                                file: '',
-                            },
-                        }
-                    })
+                    this.questions.push(Object.assign({}, questionStructure));
                 },
-                async uploadImage($event, questionIndex, answer) {
+                async uploadImage($event, questionIndex, answerIndex) {
                     const target = $event.target;
                     if (target && target.files) {
                         const vm = this;
-                        this.questions[questionIndex].images[answer] = target.files[0];
-                        await axios.post('', {
+                        this.questions[questionIndex].imageAnswers[answerIndex].file = target.files[0];
+                        await axios.post('/api/v1/file-upload', {
                                 type: 'exams',
-                                photo: target.files[0]
+                                image: target.files[0]
                             },
                             {
                                 headers: {
@@ -169,11 +120,11 @@
                             })
                             .then(res => {
                                 console.log(res)
-                                if (res.status === 1) {
-                                    vm.questions[questionIndex].images[answer].id = res.id;
-                                    vm.questions[questionIndex].images[answer].url = res.url;
+                                if (res.data.status === 1) {
+                                    vm.questions[questionIndex].imageAnswers[answerIndex].id = res.data.id;
+                                    vm.questions[questionIndex].imageAnswers[answerIndex].url = res.data.url;
                                 } else {
-                                    alert(res.message);
+                                    alert(res.data.message);
                                 }
                             })
                             .catch(error => {

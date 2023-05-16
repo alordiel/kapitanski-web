@@ -4,44 +4,41 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Image;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\File;
 use Illuminate\Http\Request;
 
 class MultipleUploadController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
-        if (!$request->hasFile('fileName')) {
-            return response()->json(['upload_file_not_found'], 400);
-        }
 
-        $allowedFileExtension = ['pdf', 'jpg', 'png'];
-        $files = $request->file('fileName');
+        $validatedData = $request->validate([
+            'type' => 'required',
+            'image' => 'required',
+            File::types(['jpeg', 'pdf', 'png'])->max(4 * 1024)
+        ]);
 
-        foreach ($files as $file) {
+        $typeFolder = $request->input('type');
+        $file = $request->file('image');
 
-            $extension = $file->getClientOriginalExtension();
+        $path = $file->store('public/images/' . $typeFolder);
+        $name = $file->getClientOriginalName();
 
-            $check = in_array($extension, $allowedFileExtension);
+        //store image file into directory and db
+        $image = new Image();
+        $image->title = $name;
+        $image->path = $path;
+        $image->alt = '';
+        $image->type = $typeFolder;
+        $image->save();
 
-            if ($check) {
-                foreach ($request->fileName as $mediaFiles) {
-
-                    $path = $mediaFiles->store('public/images');
-                    $name = $mediaFiles->getClientOriginalName();
-
-                    //store image file into directory and db
-                    $save = new Image();
-                    $save->title = $name;
-                    $save->path = $path;
-                    $save->save();
-                }
-            } else {
-                return response()->json(['invalid_file_format'], 422);
-            }
-
-            return response()->json(['file_uploaded'], 200);
-
-        }
+        return response()->json([
+            'status' => 1,
+            'id' => $image->id,
+            'url' => $image->path,
+        ], 200);
     }
 }

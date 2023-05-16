@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('multiple-image-upload', [MultipleUploadController::class, 'store']);
+Route::post('/v1/file-upload', [MultipleUploadController::class, 'store']);

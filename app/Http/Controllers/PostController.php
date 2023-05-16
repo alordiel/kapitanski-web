@@ -29,7 +29,7 @@ class PostController extends Controller
         return view('post.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $formFields = $request->validate([
             'title' => 'required',
