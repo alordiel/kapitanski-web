@@ -7,7 +7,7 @@
         <x-success-message message="{{session('message')}}"/>
     @endif
 
-    <form action="{{route('exam.admin.update', ['exam'=> $exama])}}" method="POST">
+    <form action="{{route('exam.admin.update', ['exam'=> $exam])}}" method="POST">
         @csrf
         @method('PUT')
         <p class="mb-3">
