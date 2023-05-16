@@ -4,6 +4,7 @@
     </x-slot>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <div id="app">
         @{{ message }}
@@ -55,16 +56,20 @@
             </div>
             <div v-else class="flex justify-between flex-wrap mb-3">
                 <p class="w-1/2">
-                    <x-text-input type="file" class="w-full" v-model="question.asnwerA"/>
+                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img1')" class="w-full"
+                                  v-model="question.asnwerA"/>
                 </p>
                 <p class="w-1/2">
-                    <x-text-input type="file" class="w-full" v-model="question.asnwerB"/>
+                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img2')" class="w-full"
+                                  v-model="question.asnwerB"/>
                 </p>
                 <p class="w-1/2">
-                    <x-text-input type="file" class="w-full" v-model="question.asnwerC"/>
+                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img3')" class="w-full"
+                                  v-model="question.asnwerC"/>
                 </p>
                 <p class="w-1/2">
-                    <x-text-input type="file" class="w-full" v-model="question.asnwerD"/>
+                    <x-text-input type="file" accept="image/*" @change="uploadImage($event, key, 'img4')" class="w-full"
+                                  v-model="question.asnwerD"/>
                 </p>
             </div>
             <hr>
@@ -73,7 +78,7 @@
     </div>
 
     <script>
-        const {createApp} = Vue
+        const {createApp} = Vue;
 
         createApp({
             data() {
@@ -88,7 +93,29 @@
                             answerB: '',
                             answerC: '',
                             answerD: '',
-                            correctAnswer: ''
+                            correctAnswer: '',
+                            images: {
+                                img1: {
+                                    id: 0,
+                                    url: '',
+                                    file: '',
+                                },
+                                img12: {
+                                    id: 0,
+                                    url: '',
+                                    file: '',
+                                },
+                                img3: {
+                                    id: 0,
+                                    url: '',
+                                    file: '',
+                                },
+                                img4: {
+                                    id: 0,
+                                    url: '',
+                                    file: '',
+                                },
+                            }
                         }
                     ],
                 }
@@ -101,8 +128,59 @@
                         answerB: '',
                         answerC: '',
                         answerD: '',
-                        correctAnswer: ''
+                        correctAnswer: '',
+                        images: {
+                            img1: {
+                                id: 0,
+                                url: '',
+                                file: '',
+                            },
+                            img12: {
+                                id: 0,
+                                url: '',
+                                file: '',
+                            },
+                            img3: {
+                                id: 0,
+                                url: '',
+                                file: '',
+                            },
+                            img4: {
+                                id: 0,
+                                url: '',
+                                file: '',
+                            },
+                        }
                     })
+                },
+                async uploadImage($event, questionIndex, answer) {
+                    const target = $event.target;
+                    if (target && target.files) {
+                        const vm = this;
+                        this.questions[questionIndex].images[answer] = target.files[0];
+                        await axios.post('', {
+                                type: 'exams',
+                                photo: target.files[0]
+                            },
+                            {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
+                            })
+                            .then(res => {
+                                console.log(res)
+                                if (res.status === 1) {
+                                    vm.questions[questionIndex].images[answer].id = res.id;
+                                    vm.questions[questionIndex].images[answer].url = res.url;
+                                } else {
+                                    alert(res.message);
+                                }
+                            })
+                            .catch(error => {
+                                alert(error)
+                                console.log(error)
+                            });
+                    }
                 },
             }
         }).mount('#app')
