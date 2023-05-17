@@ -49,7 +49,7 @@
                         type="text"
                         placeholder="answer"
                         class="w-full"
-                        v-model="question.textAnswers[textIndex].text"
+                        v-model="question.textAnswers[textIndex].content"
                     />
                     <br>
                     <label>
@@ -82,8 +82,8 @@
                     </label>
                     <br>
                     <img
-                        v-if="question.imageAnswers[imageIndex].url !== ''"
-                        :src="question.imageAnswers[imageIndex].url"
+                        v-if="question.imageAnswers[imageIndex].content !== ''"
+                        :src="question.imageAnswers[imageIndex].content"
                         alt="exam"
                         style="height: 100px"
                     >
@@ -104,16 +104,16 @@
             type: 'text',
             category: '',
             textAnswers: [
-                {id: 0, text: '', isCorrect: false},
-                {id: 0, text: '', isCorrect: false},
-                {id: 0, text: '', isCorrect: false},
-                {id: 0, text: '', isCorrect: false}
+                {id: 0, content: '', isCorrect: false},
+                {id: 0, content: '', isCorrect: false},
+                {id: 0, content: '', isCorrect: false},
+                {id: 0, content: '', isCorrect: false}
             ],
             imageAnswers: [
-                {id: 0, url: '', file: '', isCorrect: false},
-                {id: 0, url: '', file: '', isCorrect: false},
-                {id: 0, url: '', file: '', isCorrect: false},
-                {id: 0, url: '', file: '', isCorrect: false},
+                {id: 0, content: '', file: '', isCorrect: false},
+                {id: 0, content: '', file: '', isCorrect: false},
+                {id: 0, content: '', file: '', isCorrect: false},
+                {id: 0, content: '', file: '', isCorrect: false},
               ],
         };
 
@@ -162,7 +162,7 @@
                             .then(res => {
                                 if (res.data.status === 1) {
                                     vm.questions[questionIndex].imageAnswers[answerIndex].id = res.data.id;
-                                    vm.questions[questionIndex].imageAnswers[answerIndex].url = location.origin + '/' + res.data.url;
+                                    vm.questions[questionIndex].imageAnswers[answerIndex].content = location.origin + '/' + res.data.url;
                                 } else {
                                     alert(res.data.message);
                                 }
@@ -175,6 +175,7 @@
                 },
 
                 saveQuestions() {
+                    // TODO - validate the answers
                     axios.post('/api/v1/save-questions', {
                         examId: document.getElementById('exam-id').value,
                         questions: this.questions

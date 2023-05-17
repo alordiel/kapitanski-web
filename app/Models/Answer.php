@@ -11,7 +11,7 @@ class Answer extends Model
 {
     use HasFactory;
 
-    protected bool $timestamp = false;
+    public $timestamps = false;
     protected $fillable = ['answer'];
 
     public function userAnswer(): hasMany
