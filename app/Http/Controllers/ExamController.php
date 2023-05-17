@@ -72,48 +72,54 @@ class ExamController extends Controller
 
     public function manageQuestions(Request $request): JsonResponse
     {
+
         $request->validate([
             'examId' => ['required', 'numeric'],
             'questions' => 'required'
         ]);
 
-        $examId = $request->input('examId');
-        $exam = Exam::find($examId);
+        $exam = Exam::find($request->input('examId'));
         $questions = $request->input('questions');
 
-        foreach ($questions as $single_question) {
+        foreach ($questions as $question_entry) {
             // create the question if it doesn't exist
-            if ( (int) $single_question['id'] === 0) {
+            if ((int)$question_entry['id'] === 0) {
                 $question = new Question([
-                    'question' =>$single_question['body'],
-                    'type' => $single_question['type'],
+                    'question' => $question_entry['body'],
+                    'type' => $question_entry['type'],
                 ]);
             } else {
-                $question = Question::find($single_question['id']);
+                $question = Question::find($question_entry['id']);
             }
-            // saving the text answers
-            if ($single_question['type'] === 'text') {
-                foreach ($single_question['textAnswers'] as $single_answer) {
-                    if ((int)$single_answer['id'] === 0) {
-                        $answer = new Answer(['answer' => $single_answer['text']]);
-                        $single_answer['id'] = $answer->id;
-                    } else {
-                        $answer = Answer::find($single_answer['id']);
-                        $answer->answer = $single_answer['text'];
-                        $answer->save();
-                    }
-                    $question->answer()->save($answer);
-                }
-            } else {
 
-            }
+            // saving the answers
+            $answersType = $question_entry['type'] === 'text' ? 'textAnswers' : 'imageAnswers';
+            foreach ($question_entry[$answersType] as $answer_entry) {
+                // check if the current answer doesn't have and ID and create one for it
+                if ((int)$answer_entry['id'] === 0) {
+                    $answer = new Answer(['answer' => $answer_entry['content']]);
+                    $answer_entry['id'] = $answer->id;
+                } else {
+                    $answer = Answer::find($answer_entry['id']);
+                    $answer->answer = $answer_entry['content'];
+                    $answer->save();
+                }
+
+                // store the correct answer
+                if ($answer_entry['isCorrect']) {
+                    $question->correctAnswer = $answer->id;
+                }
+                $question->answer()->save($answer);
+            } // end foreach answer
+
             $exam->question()->save($question);
-            // check if the current question is a new one, or we are updating
-        }
+
+        } // end foreach question
 
 
         return response()->json([
-            'message' => 'connected successfully'
+            'message' => 'All updated successfully',
+            'questions' => $questions,
         ], 201);
     }
 }
