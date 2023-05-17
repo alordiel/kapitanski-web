@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="{{$exam->name}}" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
+        <x-subheader title="{{$exam->name}} | Manage questions" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
     </x-slot>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -90,7 +90,9 @@
             </div>
             <hr>
         </div>
-        <x-primary-button type="button" @click="addQuestion">Add question</x-primary-button>
+        <x-secondary-button type="button" @click="addQuestion">Add question</x-secondary-button>
+        <x-primary-button type="button" @click="saveQuestions" class="ml-3">Save</x-primary-button>
+        <input type="hidden" value="{{$exam->id}}" id="exam-id">
     </div>
 
     <script>
@@ -101,8 +103,12 @@
             type: '',
             category: '',
             correctAnswer: '',
-            textAnswers: [{id: 0, text: ''},{id: 0, text: ''},{id: 0, text: ''},{id: 0, text: ''}],
-            imageAnswers: [{id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}],
+            textAnswers: [{id: 0, text: ''}, {id: 0, text: ''}, {id: 0, text: ''}, {id: 0, text: ''}],
+            imageAnswers: [{id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {
+                id: 0,
+                url: '',
+                file: ''
+            }],
         };
 
         createApp({
@@ -118,12 +124,13 @@
                 addQuestion() {
                     this.questions.push(Object.assign({}, questionStructure));
                 },
-                async uploadImage($event, questionIndex, answerIndex) {
+
+                uploadImage($event, questionIndex, answerIndex) {
                     const target = $event.target;
                     if (target && target.files) {
                         const vm = this;
                         this.questions[questionIndex].imageAnswers[answerIndex].file = target.files[0];
-                        await axios.post('/api/v1/file-upload', {
+                        axios.post('/api/v1/file-upload', {
                                 type: 'exams',
                                 image: target.files[0]
                             },
@@ -133,7 +140,6 @@
                                 }
                             })
                             .then(res => {
-                                console.log(res)
                                 if (res.data.status === 1) {
                                     vm.questions[questionIndex].imageAnswers[answerIndex].id = res.data.id;
                                     vm.questions[questionIndex].imageAnswers[answerIndex].url = location.origin + '/' + res.data.url;
@@ -146,6 +152,20 @@
                                 console.log(error)
                             });
                     }
+                },
+
+                saveQuestions() {
+                    axios.post('/api/v1/save-questions', {
+                        examId: document.getElementById('exam-id').value,
+                        questions: this.questions
+                    })
+                        .then(res => {
+                            alert(res.data.message)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                            alert(error)
+                        })
                 },
             }
         }).mount('#app')
