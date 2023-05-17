@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Exam;
+use App\Models\Question;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -77,34 +78,42 @@ class ExamController extends Controller
         ]);
 
         $examId = $request->input('examId');
+        $exam = Exam::find($examId);
         $questions = $request->input('questions');
 
-        foreach ($questions as $question) {
+        foreach ($questions as $single_question) {
+            // create the question if it doesn't exist
+            if ( (int) $single_question['id'] === 0) {
+                $question = new Question([
+                    'question' =>$single_question['body'],
+                    'type' => $single_question['type'],
+                ]);
+            } else {
+                $question = Question::find($single_question['id']);
+            }
             // saving the text answers
-            $answer_ids = [];
-            if ($question['type'] === 'text') {
-                foreach ($question['textAnswers'] as $single_answer) {
+            if ($single_question['type'] === 'text') {
+                foreach ($single_question['textAnswers'] as $single_answer) {
                     if ((int)$single_answer['id'] === 0) {
                         $answer = new Answer(['answer' => $single_answer['text']]);
                         $single_answer['id'] = $answer->id;
-                        $answer_ids[] = $answer->id;
                     } else {
                         $answer = Answer::find($single_answer['id']);
                         $answer->answer = $single_answer['text'];
                         $answer->save();
-                        $answer_ids[] = $answer->id;
                     }
+                    $question->answer()->save($answer);
                 }
             } else {
 
             }
-
-            // check if the current question is a new one or we are updating
+            $exam->question()->save($question);
+            // check if the current question is a new one, or we are updating
         }
 
 
         return response()->json([
             'message' => 'connected successfully'
-        ], 200);
+        ], 201);
     }
 }
