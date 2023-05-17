@@ -1,6 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="{{$exam->name}} | Manage questions" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
+        <x-subheader title="{{$exam->name}} | Manage questions" icon="all" button-text="All exams"
+                     url="{{route('exam.admin.manage')}}"/>
     </x-slot>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -53,10 +54,10 @@
                     <br>
                     <label>
                         <input
-                            :value="question.textAnswers[textIndex].id ? question.textAnswers[textIndex].id : textIndex"
                             type="radio"
-                            v-model="question.correctAnswer"
+                            :checked="(question.textAnswers[textIndex].isCorrect === true)"
                             :name="'correctAnswer' + textIndex"
+                            @change="changeOfCorrect(questionIndex, textIndex)"
                         /> is the correct answer
                     </label>
                 </p>
@@ -73,9 +74,8 @@
                     <br>
                     <label>
                         <input
-                            :value="question.imageAnswers[imageIndex].id ? question.imageAnswers[imageIndex].id : imageIndex"
                             type="radio"
-                            v-model="question.correctAnswer"
+                            @change="changeOfCorrect(questionIndex, imageIndex)"
                             name="correctAnswer"
                         /> is the correct answer
                     </label>
@@ -100,15 +100,21 @@
         const questionStructure = {
             id: '',
             body: '',
-            type: '',
+            type: 'text',
             category: '',
             correctAnswer: '',
-            textAnswers: [{id: 0, text: ''}, {id: 0, text: ''}, {id: 0, text: ''}, {id: 0, text: ''}],
-            imageAnswers: [{id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {id: 0, url: '', file: ''}, {
-                id: 0,
-                url: '',
-                file: ''
-            }],
+            textAnswers: [
+                {id: 0, text: '', isCorrect: false},
+                {id: 0, text: '', isCorrect: false},
+                {id: 0, text: '', isCorrect: false},
+                {id: 0, text: '', isCorrect: false}
+            ],
+            imageAnswers: [
+                {id: 0, url: '', file: '', isCorrect: false},
+                {id: 0, url: '', file: '', isCorrect: false},
+                {id: 0, url: '', file: '', isCorrect: false},
+                {id: 0, url: '', file: '', isCorrect: false},
+              ],
         };
 
         createApp({
@@ -123,6 +129,20 @@
             methods: {
                 addQuestion() {
                     this.questions.push(Object.assign({}, questionStructure));
+                },
+
+                changeOfCorrect(questionIndex, answerIndex) {
+                    const answerType = this.questions[questionIndex].type === 'text' ? 'textAnswers' : 'imageAnswers';
+                    if (this.questions[questionIndex][answerType][answerIndex].isCorrect === true) {
+                        this.questions[questionIndex][answerType][answerIndex].isCorrect = false
+                    } else {
+                        // set all other answers to false
+                        this.questions[questionIndex][answerType].forEach(e => {
+                            e.isCorrect =  false
+                        })
+
+                         this.questions[questionIndex][answerType][answerIndex].isCorrect = true;
+                    }
                 },
 
                 uploadImage($event, questionIndex, answerIndex) {
