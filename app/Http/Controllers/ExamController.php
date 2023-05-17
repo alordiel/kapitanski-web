@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\Exam;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -25,7 +26,7 @@ class ExamController extends Controller
         return view('exam.create');
     }
 
-    public function store(Request $request) : RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $formFields = $request->validate([
             'name' => 'required',
@@ -51,7 +52,7 @@ class ExamController extends Controller
         return view('exam.edit', ['exam' => $exam]);
     }
 
-    public function update(Request $request, Exam $exam) : RedirectResponse
+    public function update(Request $request, Exam $exam): RedirectResponse
     {
         $formFields = $request->validate([
             'name' => 'required',
@@ -62,7 +63,7 @@ class ExamController extends Controller
         return back()->with('message', 'Exam updated successfully!');
     }
 
-    public function destroy(Exam $exam) :RedirectResponse
+    public function destroy(Exam $exam): RedirectResponse
     {
         $exam->delete();
         return redirect('/admin/exams')->with('message', 'Deleted successfully');
@@ -71,9 +72,36 @@ class ExamController extends Controller
     public function manageQuestions(Request $request): JsonResponse
     {
         $request->validate([
-            'examId' => 'required',
+            'examId' => ['required', 'numeric'],
             'questions' => 'required'
         ]);
+
+        $examId = $request->input('examId');
+        $questions = $request->input('questions');
+
+        foreach ($questions as $question) {
+            // saving the text answers
+            $answer_ids = [];
+            if ($question['type'] === 'text') {
+                foreach ($question['textAnswers'] as $single_answer) {
+                    if ((int)$single_answer['id'] === 0) {
+                        $answer = new Answer(['answer' => $single_answer['text']]);
+                        $single_answer['id'] = $answer->id;
+                        $answer_ids[] = $answer->id;
+                    } else {
+                        $answer = Answer::find($single_answer['id']);
+                        $answer->answer = $single_answer['text'];
+                        $answer->save();
+                        $answer_ids[] = $answer->id;
+                    }
+                }
+            } else {
+
+            }
+
+            // check if the current question is a new one or we are updating
+        }
+
 
         return response()->json([
             'message' => 'connected successfully'

@@ -10,4 +10,5 @@ class Image extends Model
     use HasFactory;
     public $timestamps = false;
     public $fillable = ['title','path', 'type', 'alt'];
+
 }
