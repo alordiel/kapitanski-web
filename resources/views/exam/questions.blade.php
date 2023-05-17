@@ -75,6 +75,7 @@
                     <label>
                         <input
                             type="radio"
+                            :checked="(question.imageAnswers[imageIndex].isCorrect === true)"
                             @change="changeOfCorrect(questionIndex, imageIndex)"
                             name="correctAnswer"
                         /> is the correct answer
@@ -102,7 +103,6 @@
             body: '',
             type: 'text',
             category: '',
-            correctAnswer: '',
             textAnswers: [
                 {id: 0, text: '', isCorrect: false},
                 {id: 0, text: '', isCorrect: false},
