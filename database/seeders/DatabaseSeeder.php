@@ -52,6 +52,9 @@ class DatabaseSeeder extends Seeder
             'updated_at' => '2023-05-09 07:43:07'
          ]);
 
+        DB::table('exams')->insert([
+            'name' => 'Captains course 40BT'
+        ]);
 
         $this->call([
             RoleAndPermissionSeeder::class,

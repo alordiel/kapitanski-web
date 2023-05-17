@@ -32,11 +32,6 @@ class Question extends Model
         return $this->hasMany(Answer::class);
     }
 
-    public function correctAnswer(): hasMany
-    {
-        return $this->hasMany(Answer::class);
-    }
-
     public function exam(): belongsTo {
         return $this->belongsTo(Exam::class);
     }

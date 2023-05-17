@@ -16,7 +16,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_answers', function (Blueprint $table) {
+        Schema::create('user_answers', static function (Blueprint $table) {
             $table->id();
             $table->integer('exam_taking_id');
             $table->integer('question_id');

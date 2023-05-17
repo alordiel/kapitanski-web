@@ -10,7 +10,7 @@ class QuestionCategory extends Model
 {
     use HasFactory;
     protected bool $timestamp = false;
-    protected $fillable = ['category_name', 'slug'];
+    protected $fillable = ['name', 'slug'];
 
     public function question():belongsTo{
         return $this->belongsTo(Question::class);
