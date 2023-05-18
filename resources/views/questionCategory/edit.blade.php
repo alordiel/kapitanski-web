@@ -25,15 +25,15 @@
 
         </p>
         <p class="mb-3">
-            <x-input-label for="name" :value="__('Name')"/>
+            <x-input-label for="slug" :value="__('Slug')"/>
             <x-text-input
                 type="text"
-                id="name"
-                name="name"
+                id="slug"
+                name="slug"
                 class="w-1/4 block"
-                :value="$questionCategory->name"
+                :value="$questionCategory->slug"
             />
-            @error('name')
+            @error('slug')
             <x-input-error :messages="$message" class="mt-2"/>
             @enderror
 

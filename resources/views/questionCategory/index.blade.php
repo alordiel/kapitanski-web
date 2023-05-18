@@ -10,7 +10,7 @@
     <ul>
         @foreach($questionCategories as $questionCategory)
             <li>
-                <a href="{{route('questionCategory.show',['questionCategory' => $questionCategory])}}" title="View">{{$questionCategory->name}} </a> |
+                {{$questionCategory->name}}
                 <x-edit-entry url="{{route('questionCategory.edit',['questionCategory'=>$questionCategory])}}" title="Edit category"/>
                 <x-delete-entry url="{{route('questionCategory.destroy',['questionCategory'=>$questionCategory])}}" entry="category" button-title="Delete category"/>
             </li>

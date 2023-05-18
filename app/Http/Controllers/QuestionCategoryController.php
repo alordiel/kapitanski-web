@@ -12,7 +12,7 @@ class QuestionCategoryController extends Controller
     public function index(): View
     {
         return view('questionCategory.index', [
-            'exams' => QuestionCategory::all()
+            'questionCategories' => QuestionCategory::all()
         ]);
     }
 
@@ -30,22 +30,12 @@ class QuestionCategoryController extends Controller
 
         QuestionCategory::create($formFields);
 
-        return redirect(route('questionCategory.mange'))->with('message', 'Exam successfully created');
-    }
-
-    public function show(QuestionCategory $questionCategory): View
-    {
-        return view('questionCategory.show', ['exam' => $questionCategory]);
-    }
-
-    public function questions(QuestionCategory $questionCategory): View
-    {
-        return view('questionCategory.questions', ['exam' => $questionCategory]);
+        return redirect(route('questionCategory.manage'))->with('message', 'Category successfully created');
     }
 
     public function edit(QuestionCategory $questionCategory): View
     {
-        return view('questionCategory.edit', ['exam' => $questionCategory]);
+        return view('questionCategory.edit', ['questionCategory' => $questionCategory]);
     }
 
     public function update(Request $request, QuestionCategory $questionCategory): RedirectResponse
@@ -56,7 +46,7 @@ class QuestionCategoryController extends Controller
 
         $questionCategory->update($formFields);
 
-        return back()->with('message', 'Exam updated successfully!');
+        return back()->with('message', 'Category updated successfully!');
     }
 
     public function destroy(QuestionCategory $questionCategory): RedirectResponse
