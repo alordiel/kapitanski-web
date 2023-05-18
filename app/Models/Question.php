@@ -16,11 +16,11 @@ class Question extends Model
      *
      * @var bool
      */
-    protected bool $timestamp = false;
+    public $timestamps  = false;
     protected $fillable = ['question', 'answer_id', 'correct_answer', 'category_id', 'type'];
 
-    public function questionCategory():hasMany {
-        return $this->hasMany(questionCategory::class);
+    public function questionCategory():belongsTo {
+        return $this->belongsTo(questionCategory::class);
     }
     public function userAnswer(): hasMany
     {

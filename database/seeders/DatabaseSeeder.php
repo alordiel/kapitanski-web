@@ -56,6 +56,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Captains course 40BT'
         ]);
 
+        DB::table('question_categories')->insert([
+            'name' => 'Четене на карти',
+            'slug' => 'mapping'
+        ]);
+
         $this->call([
             RoleAndPermissionSeeder::class,
         ]);

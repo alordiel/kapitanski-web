@@ -10,7 +10,7 @@ class UserAnswer extends Model
 {
     use HasFactory;
 
-    protected bool $timestamp = false;
+    public $timestamps = false;
     protected $fillable = ['exam_taking_id', 'question_id', 'answer_id', 'is_correct'];
 
     public function examTaking():belongsTo {

@@ -96,10 +96,14 @@ class ExamController extends Controller
             // saving the answers
             $answersType = $question_entry['type'] === 'text' ? 'textAnswers' : 'imageAnswers';
             foreach ($question_entry[$answersType] as $answer_entry) {
+                if (empty($answer_entry['content'])) {
+                    continue;
+                }
                 // check if the current answer doesn't have and ID and create one for it
                 if ((int)$answer_entry['id'] === 0) {
                     $answer = new Answer(['answer' => $answer_entry['content']]);
                     $answer_entry['id'] = $answer->id;
+                    $question->answer()->save($answer);
                 } else {
                     $answer = Answer::find($answer_entry['id']);
                     $answer->answer = $answer_entry['content'];
@@ -108,15 +112,16 @@ class ExamController extends Controller
 
                 // store the correct answer
                 if ($answer_entry['isCorrect']) {
-                    $question->correctAnswer = $answer->id;
+                    $question->correct_answer = $answer->id;
                 }
                 // connect the answer to the question
                 $question->answer()->save($answer);
-                // connect the question category to the question
-                $questionCategory = QuestionCategory::find($question_entry['category']);
-                $question->questionCategory()->save($questionCategory);
             } // end foreach answer
 
+            // connect the question category to the question
+            $questionCategory = QuestionCategory::find($question_entry['category']);
+            $questionCategory->question()->save($question);
+            // $question->questionCategory()->save($questionCategory);
             $exam->question()->save($question);
 
         } // end foreach question
