@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ExamController;
+use App\Models\QuestionCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,6 +78,13 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy'])->name("exam.admin.destroy");
     Route::get('/admin/exams/{exam}', [ExamController::class, 'show'])->name("exam.admin.show");
     Route::get('/admin/exams/{exam}/questions', [ExamController::class, 'questions'])->name("exam.admin.questions");
+
+    Route::get('/admin/question-category', [questionCategory::class, 'index'])->name("questionCategory.manage");
+    Route::post('/admin/question-category', [questionCategory::class, 'store'])->name("questionCategory.store");
+    Route::get('/admin/question-category/create', [questionCategory::class, 'create'])->name("questionCategory.create");
+    Route::get('/admin/question-category/{questionCategory}/edit', [questionCategory::class, 'edit'])->name("questionCategory.edit");
+    Route::put('/admin/question-category/{questionCategory}', [questionCategory::class, 'update'])->name("questionCategory.update");
+    Route::delete('/admin/question-category/{questionCategory}', [questionCategory::class, 'destroy'])->name("questionCategory.destroy");
 });
 
 
