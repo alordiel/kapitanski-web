@@ -3,63 +3,64 @@
 namespace App\Http\Controllers;
 
 use App\Models\QuestionCategory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class QuestionCategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('questionCategory.index', [
+            'exams' => QuestionCategory::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('questionCategory.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $formFields = $request->validate([
+            'name' => 'required',
+        ]);
+
+        QuestionCategory::create($formFields);
+
+        return redirect('/admin/exams')->with('message', 'Exam successfully created');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(QuestionCategory $questionCategory)
+    public function show(QuestionCategory $questionCategory): View
     {
-        //
+        return view('questionCategory.show', ['exam' => $questionCategory]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(QuestionCategory $questionCategory)
+    public function questions(QuestionCategory $questionCategory): View
     {
-        //
+        return view('questionCategory.questions', ['exam' => $questionCategory]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, QuestionCategory $questionCategory)
+    public function edit(QuestionCategory $questionCategory): View
     {
-        //
+        return view('questionCategory.edit', ['exam' => $questionCategory]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(QuestionCategory $questionCategory)
+    public function update(Request $request, QuestionCategory $questionCategory): RedirectResponse
     {
-        //
+        $formFields = $request->validate([
+            'name' => 'required',
+        ]);
+
+        $questionCategory->update($formFields);
+
+        return back()->with('message', 'Exam updated successfully!');
+    }
+
+    public function destroy(QuestionCategory $questionCategory): RedirectResponse
+    {
+        $questionCategory->delete();
+        return redirect('/admin/exams')->with('message', 'Deleted successfully');
     }
 }
