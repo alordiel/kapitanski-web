@@ -1,3 +1,7 @@
+@php
+use \App\Models\QuestionCategory;
+$categories = QuestionCategory::all();
+@endphp
 <x-app-layout>
     <x-slot name="header">
         <x-subheader title="{{$exam->name}} | Manage questions" icon="all" button-text="All exams"
@@ -6,6 +10,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script> const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK) ?></script>
 
     <div id="app">
         <div v-for="(question,questionIndex) in questions" :key="questionIndex" class="mb-3">
@@ -32,11 +37,12 @@
                         Question category <br>
                         <select v-model="question.category" :id="'cat-' + questionIndex"
                                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                            <option value="0"> - - -</option>
-                            <option value="1">Морски знаци</option>
-                            <option value="2">Четене на карта</option>
-                            <option value="3">Навигация</option>
-                            <option value="4">Части на кораба</option>
+                            <option
+                                v-for="(category, key) in categories"
+                                :value="category.id"
+                                :selected="category.id === questions[questionIndex].category">
+                                @{{category.name}}
+                            </option>
                         </select>
                     </label>
                 </p>
@@ -121,10 +127,12 @@
             data() {
                 return {
                     questions: [{}],
+                    categories: [],
                 }
             },
             created() {
                 this.questions[0] = Object.assign({}, questionStructure)
+                this.categories = questionCategories;
             },
             methods: {
                 addQuestion() {
