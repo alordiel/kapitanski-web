@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="Add new question category" icon="all" button-text="All question categories" url="{{route('question_category.manage')}}"/>
+        <x-subheader title="Add new question category" icon="all" button-text="All question categories" url="{{route('questionCategory.manage')}}"/>
     </x-slot>
 
-    <form action="{{route('question_category.store')}}" method="POST">
+    <form action="{{route('questionCategory.store')}}" method="POST">
         @csrf
         <p class="mb-3">
             <x-input-label for="name" :value="__('Category name')" />

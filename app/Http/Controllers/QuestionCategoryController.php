@@ -25,11 +25,12 @@ class QuestionCategoryController extends Controller
     {
         $formFields = $request->validate([
             'name' => 'required',
+            'slug' => 'required',
         ]);
 
         QuestionCategory::create($formFields);
 
-        return redirect('/admin/exams')->with('message', 'Exam successfully created');
+        return redirect(route('questionCategory.mange'))->with('message', 'Exam successfully created');
     }
 
     public function show(QuestionCategory $questionCategory): View
@@ -61,6 +62,6 @@ class QuestionCategoryController extends Controller
     public function destroy(QuestionCategory $questionCategory): RedirectResponse
     {
         $questionCategory->delete();
-        return redirect('/admin/exams')->with('message', 'Deleted successfully');
+        return redirect(route('questionCategory.manage'))->with('message', 'Deleted successfully');
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class QuestionCategory extends Model
 {
     use HasFactory;
-    protected bool $timestamp = false;
+    public $timestamps = false;
     protected $fillable = ['name', 'slug'];
 
     public function question():belongsTo{
