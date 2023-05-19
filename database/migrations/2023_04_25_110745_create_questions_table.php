@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('questions', static function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->integer('correct_answer');
-            $table->integer('question_category_id');
+            $table->integer('correct_answer')->nullable();
+            $table->integer('question_category_id')->default(1);
             $table->integer('exam_id')->nullable();
             $table->string('type')->default('text');
         });

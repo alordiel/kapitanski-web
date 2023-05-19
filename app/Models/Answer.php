@@ -21,11 +21,7 @@ class Answer extends Model
 
     public function question(): belongsTo
     {
-        return $this->belongsTo(Question::class, 'answer_id');
+        return $this->belongsTo(Question::class);
     }
 
-    public function correctAnswer(): hasMany
-    {
-        return $this->hasMany(Question::class, 'correct_answer');
-    }
 }

@@ -89,6 +89,7 @@ class ExamController extends Controller
                     'question' => $question_entry['body'],
                     'type' => $question_entry['type'],
                 ]);
+                $question_entry['id'] = $question->id;
             } else {
                 $question = Question::find($question_entry['id']);
             }
@@ -103,7 +104,6 @@ class ExamController extends Controller
                 if ((int)$answer_entry['id'] === 0) {
                     $answer = new Answer(['answer' => $answer_entry['content']]);
                     $answer_entry['id'] = $answer->id;
-                    $question->answer()->save($answer);
                 } else {
                     $answer = Answer::find($answer_entry['id']);
                     $answer->answer = $answer_entry['content'];
@@ -115,6 +115,7 @@ class ExamController extends Controller
                     $question->correct_answer = $answer->id;
                 }
                 // connect the answer to the question
+                $question->save();
                 $question->answer()->save($answer);
             } // end foreach answer
 
