@@ -82,27 +82,27 @@ class ExamController extends Controller
         $exam = Exam::find($request->input('examId'));
         $questions = $request->input('questions');
 
-        foreach ($questions as $question_entry) {
+        foreach ($questions as &$question_entry) {
             // create the question if it doesn't exist
             if ((int)$question_entry['id'] === 0) {
                 $question = new Question([
                     'question' => $question_entry['body'],
                     'type' => $question_entry['type'],
                 ]);
-                $question_entry['id'] = $question->id;
             } else {
                 $question = Question::find($question_entry['id']);
             }
 
             // saving the answers
             $answersType = $question_entry['type'] === 'text' ? 'textAnswers' : 'imageAnswers';
-            foreach ($question_entry[$answersType] as $answer_entry) {
+            foreach ($question_entry[$answersType] as &$answer_entry) {
                 if (empty($answer_entry['content'])) {
                     continue;
                 }
                 // check if the current answer doesn't have and ID and create one for it
                 if ((int)$answer_entry['id'] === 0) {
                     $answer = new Answer(['answer' => $answer_entry['content']]);
+                    $answer->save();
                     $answer_entry['id'] = $answer->id;
                 } else {
                     $answer = Answer::find($answer_entry['id']);
@@ -118,15 +118,15 @@ class ExamController extends Controller
                 $question->save();
                 $question->answer()->save($answer);
             } // end foreach answer
+            unset($answer_entry);
 
             // connect the question category to the question
             $questionCategory = QuestionCategory::find($question_entry['category']);
             $questionCategory->question()->save($question);
             // $question->questionCategory()->save($questionCategory);
             $exam->question()->save($question);
-
+            $question_entry['id'] = $question->id;
         } // end foreach question
-
 
         return response()->json([
             'message' => 'All updated successfully',
