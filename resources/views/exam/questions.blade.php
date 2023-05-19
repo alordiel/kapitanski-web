@@ -183,6 +183,7 @@ $categories = QuestionCategory::all();
                 },
 
                 saveQuestions() {
+                    const vm = this;
                     // TODO - validate the answers
                     axios.post('/api/v1/save-questions', {
                         examId: document.getElementById('exam-id').value,
@@ -190,12 +191,14 @@ $categories = QuestionCategory::all();
                     })
                         .then(res => {
                             alert(res.data.message)
+                            vm.questions = res.data.questions;
                         })
                         .catch(error => {
                             console.log(error)
                             alert(error)
                         })
                 },
+
             }
         }).mount('#app')
     </script>
