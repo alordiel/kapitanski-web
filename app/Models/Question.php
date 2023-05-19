@@ -33,6 +33,6 @@ class Question extends Model
     }
 
     public function exam(): belongsTo {
-        return $this->belongsTo(Exam::class);
+        return $this->belongsTo(Exam::class, 'exam_id');
     }
 }

@@ -1,5 +1,8 @@
 @php
 use \App\Models\QuestionCategory;
+use \App\Models\Question;
+use \App\Models\Exam;
+use Illuminate\Support\Facades\DB;
 $categories = QuestionCategory::all();
 @endphp
 <x-app-layout>
@@ -8,6 +11,9 @@ $categories = QuestionCategory::all();
                      url="{{route('exam.admin.manage')}}"/>
     </x-slot>
 
+    @php
+    $examm = Exam::find($exam->id)->questions;
+    @endphp
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script> const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK) ?></script>
