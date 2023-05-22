@@ -30,6 +30,10 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('about');
 
+Route::get('/buy', function () {
+    return view('pages.buy');
+})->name('buy');
+
 Route::get('/contacts', function () {
     return view('pages.contacts');
 })->name('contacts');

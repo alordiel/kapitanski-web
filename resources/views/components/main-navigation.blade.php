@@ -10,7 +10,19 @@
                 {{ __('Exams') }}
             </x-nav-link>
         </div>
+        @role('suspended-member')
+        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <x-nav-link :href="route('buy')" :active="request()->routeIs('buy')">
+                {{ __('Exams') }}
+            </x-nav-link>
+        </div>
+        @endrole
     @endauth
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+        <x-nav-link :href="route('buy')" :active="request()->routeIs('buy')">
+            {{ __('Buy') }}
+        </x-nav-link>
+    </div>
     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
         <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
             {{ __('Contacts') }}
