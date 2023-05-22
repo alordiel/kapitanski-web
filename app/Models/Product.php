@@ -13,7 +13,7 @@ class Product extends Model
     public $timestamps = false;
     protected $fillable = ['name', 'price', 'description', 'credits'];
 
-    protected function order(): hasMany
+    protected function orders(): HasMany
     {
         return $this->hasMany(Order::class);
     }

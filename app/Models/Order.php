@@ -12,15 +12,18 @@ class Order extends Model
 
     protected $fillable = ['user_id', 'product_id', 'order_status', 'payment_id', 'payment_method', 'invoice_number'];
 
-    public function user():belongsTo {
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function product():belongsTo {
+    public function product(): BelongsTo
+    {
         return $this->belongsTo(Product::class);
     }
 
-    public function exam():belongsTo {
+    public function exam(): BelongsTo
+    {
         return $this->belongsTo(Exam::class);
     }
 }

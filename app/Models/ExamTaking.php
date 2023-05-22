@@ -23,7 +23,7 @@ class ExamTaking extends Model
         return $this->belongsTo(Exam::class);
     }
 
-    public function userAnswers():hasMany {
+    public function userAnswers():HasMany {
         return $this->hasMany(UserAnswer::class);
     }
 }

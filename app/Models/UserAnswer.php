@@ -13,15 +13,18 @@ class UserAnswer extends Model
     public $timestamps = false;
     protected $fillable = ['exam_taking_id', 'question_id', 'answer_id', 'is_correct'];
 
-    public function examTaking():belongsTo {
+    public function examTaking(): BelongsTo
+    {
         return $this->belongsTo(ExamTaking::class);
     }
 
-    public function question():belongsTo {
+    public function question(): BelongsTo
+    {
         return $this->belongsTo(Question::class);
     }
 
-    public function answer():belongsTo {
+    public function answer(): BelongsTo
+    {
         return $this->belongsTo(Answer::class);
     }
 }

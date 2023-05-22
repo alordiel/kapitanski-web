@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('question');
             $table->integer('correct_answer')->nullable();
             $table->integer('question_category_id')->default(1);
-            $table->integer('exam_id')->nullable();
+            $table->integer('exam_id');
             $table->string('type')->default('text');
         });
     }

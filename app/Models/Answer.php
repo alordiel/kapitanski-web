@@ -14,12 +14,12 @@ class Answer extends Model
     public $timestamps = false;
     protected $fillable = ['answer'];
 
-    public function userAnswer(): hasMany
+    public function userAnswer(): HasMany
     {
         return $this->hasMany(UserAnswer::class);
     }
 
-    public function question(): belongsTo
+    public function question(): BelongsTo
     {
         return $this->belongsTo(Question::class);
     }

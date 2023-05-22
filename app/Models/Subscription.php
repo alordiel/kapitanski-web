@@ -12,22 +12,22 @@ class Subscription extends Model
 
     protected $fillable = ['exam_id', 'user_id', 'created_by', 'order_id', 'expires_on'];
 
-    public function exam(): belongsTo
+    public function exam(): BelongsTo
     {
         return $this->belongsTo(Exam::class);
     }
 
-    public function user(): belongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function createdBy(): belongsTo
+    public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function order(): belongsTo
+    public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
     }

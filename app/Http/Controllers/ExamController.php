@@ -85,13 +85,21 @@ class ExamController extends Controller
         foreach ($questions as &$question_entry) {
             // create the question if it doesn't exist
             if ((int)$question_entry['id'] === 0) {
-                $question = new Question([
-                    'question' => $question_entry['body'],
-                    'type' => $question_entry['type'],
-                ]);
+                $question = new Question();
+                $question->exam_id = $exam->id;
             } else {
                 $question = Question::find($question_entry['id']);
             }
+
+            $question->question = $question_entry['body'];
+            $question->type = $question_entry['type'];
+            $question->question_category_id = $question_entry['category'];
+            $question->save();
+
+
+            // $question->questionCategory()->save($questionCategory);
+            // $exam->question()->save($question);
+            $question_entry['id'] = $question->id;
 
             // saving the answers
             $answersType = $question_entry['type'] === 'text' ? 'textAnswers' : 'imageAnswers';
@@ -120,12 +128,6 @@ class ExamController extends Controller
             } // end foreach answer
             unset($answer_entry);
 
-            // connect the question category to the question
-            $questionCategory = QuestionCategory::find($question_entry['category']);
-            $questionCategory->question()->save($question);
-            // $question->questionCategory()->save($questionCategory);
-            $exam->question()->save($question);
-            $question_entry['id'] = $question->id;
         } // end foreach question
 
         return response()->json([

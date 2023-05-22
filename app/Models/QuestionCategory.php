@@ -13,8 +13,8 @@ class QuestionCategory extends Model
     public $timestamps = false;
     protected $fillable = ['name', 'slug'];
 
-    public function question(): hasMany
+    public function questions(): HasMany
     {
-        return $this->hasMany(Question::class);
+        return $this->HasMany(Question::class);
     }
 }
