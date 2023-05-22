@@ -1,6 +1,6 @@
 <x-app-layout>
     <div>
-        Select your plan
+        <h1 class="my-5 text-3xl text-center">Select your plan</h1>
         <div class="flex">
             <div class="w-1/12"></div>
             <div class="w-5/12 mr-2 border rounded border-indigo-500">
@@ -15,7 +15,9 @@
                     </ul>
                 </div>
                 <div class="text-center m-3">
-                    <x-primary-button>Select plan</x-primary-button>
+                    <a href="{{route('checkout', ['plan'=>'single'])}}">
+                        <x-primary-button>Select plan</x-primary-button>
+                    </a>
                 </div>
             </div>
             <div class="w-5/12 ml-2 border rounded border-indigo-500">
@@ -29,7 +31,9 @@
                     <small>* планът се прилага само за обучаващи организации</small>
                 </div>
                 <div class="text-center m-3">
-                    <x-primary-button>Select plan</x-primary-button>
+                    <a href="{{route('checkout', ['plan' => 'multi-user'])}}">
+                        <x-primary-button>Select plan</x-primary-button>
+                    </a>
                 </div>
             </div>
             <div class="w-1/12"></div>

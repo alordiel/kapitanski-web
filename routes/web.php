@@ -34,6 +34,10 @@ Route::get('/buy', function () {
     return view('pages.buy');
 })->name('buy');
 
+Route::get('/checkout/{plan?}', function (string $plan = 'single') {
+    return view('pages.checkout', ['plan' => $plan]);
+})->name('checkout');
+
 Route::get('/contacts', function () {
     return view('pages.contacts');
 })->name('contacts');
