@@ -1,9 +1,8 @@
 @php
-use \App\Models\QuestionCategory;
-use \App\Models\Question;
-use \App\Models\Exam;
-use Illuminate\Support\Facades\DB;
-$categories = QuestionCategory::all();
+    use \App\Models\QuestionCategory;
+    use \App\Models\Question;
+    use \App\Models\Exam;
+    $categories = QuestionCategory::all();
 @endphp
 <x-app-layout>
     <x-slot name="header">
@@ -12,11 +11,51 @@ $categories = QuestionCategory::all();
     </x-slot>
 
     @php
-    $examm = Exam::find($exam->id)->questions;
+        $current_questions = Exam::find($exam->id)->questions;
+        $passing_questions = [];
+        if (!empty($current_questions)) {
+            $question_index = 0;
+            foreach ($current_questions as &$current_question) {
+                $passing_questions[] =
+                 [
+                    'id' => $current_question->id,
+                    'body' => $current_question->question,
+                    'type' => $current_question->type,
+                    'category' => $current_question->question_category_id,
+                    'textAnswers' => [
+                        ['id' => 0, 'content' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'isCorrect' => false]
+                    ],
+                    'imageAnswers' => [
+                        ['id' => 0, 'content' => '', 'file' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'file' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'file' => '', 'isCorrect' => false],
+                        ['id' => 0, 'content' => '', 'file' => '', 'isCorrect' => false],
+                   ],
+                 ];
+                $answer_type = $current_question->type === 'text' ? 'textAnswers' : 'imageAnswers';
+                $answers = $current_question->answers;
+                $index = 0;
+                foreach ($answers as $answer) {
+                    $passing_questions[$question_index][$answer_type][$index]['id'] = $answer->id;
+                    $passing_questions[$question_index][$answer_type][$index]['content'] = $answer->answer;
+                    $passing_questions[$question_index][$answer_type][$index]['isCorrect'] = $answer->id === $current_question->correct_answer;
+                    $index++;
+                }
+                $question_index++;
+            }
+        }
+        // free some memory
+        unset($current_questions)
     @endphp
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script> const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK) ?></script>
+    <script>
+        const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK); ?>;
+        const currentQuestions = <?php echo json_encode($passing_questions, JSON_NUMERIC_CHECK); ?>;
+    </script>
 
     <div id="app">
         <div v-for="(question,questionIndex) in questions" :key="questionIndex" class="mb-3">
@@ -126,7 +165,7 @@ $categories = QuestionCategory::all();
                 {id: 0, content: '', file: '', isCorrect: false},
                 {id: 0, content: '', file: '', isCorrect: false},
                 {id: 0, content: '', file: '', isCorrect: false},
-              ],
+            ],
         };
 
         createApp({
@@ -137,7 +176,12 @@ $categories = QuestionCategory::all();
                 }
             },
             created() {
-                this.questions[0] = Object.assign({}, questionStructure)
+                if (currentQuestions !== []) {
+                    this.questions = currentQuestions;
+                } else {
+                    this.questions[0] = Object.assign({}, questionStructure)
+                }
+
                 this.categories = questionCategories;
             },
             methods: {
@@ -152,10 +196,10 @@ $categories = QuestionCategory::all();
                     } else {
                         // set all other answers to false
                         this.questions[questionIndex][answerType].forEach(e => {
-                            e.isCorrect =  false
+                            e.isCorrect = false
                         })
 
-                         this.questions[questionIndex][answerType][answerIndex].isCorrect = true;
+                        this.questions[questionIndex][answerType][answerIndex].isCorrect = true;
                     }
                 },
 
