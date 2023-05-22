@@ -27,16 +27,16 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'role:super-admin'])->name('admin');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('pages.about');
 })->name('about');
 
 Route::get('/contacts', function () {
-    return view('contacts');
+    return view('pages.contacts');
 })->name('contacts');
 
 // Serves all 3 roles the student, the partner, and the admin
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
