@@ -72,14 +72,14 @@
                 <x-input-error :messages="$errors->get('card-name')" class="mt-2"/>
             </div>
             <div class="flex">
-                <div class="mt-4">
+                <div class="mt-4 w-32">
                     <x-input-label for="card-date" :value="__('Expiration date')"/>
                     <x-text-input id="card-date" class="block mt-1 w-full" type="text" name="card-date"
                                   :value="old('card-date')"
                                   required placeholder="mm/yy"/>
                     <x-input-error :messages="$errors->get('card-date')" class="mt-2"/>
                 </div>
-                <div class="mt-4 ml-4">
+                <div class="mt-4 ml-4 w-20">
                     <x-input-label for="card-cvv" :value="__('CVV')"/>
                     <x-text-input id="card-cvv" class="block mt-1 w-full" type="password" name="card-cvv"
                                   :value="old('card-cvv')" max="3" min="3"
@@ -88,13 +88,100 @@
                 </div>
 
             </div>
-            <div class="my-5 border border-indigo-500"></div>
+            <div class="mt-5 border border-indigo-500"></div>
         </div>
-        <div>
-            <h3>Checkout details</h3>
-            <div class="flex justify-center">
-                <x-primary-button>Checkout</x-primary-button>
-            </div>
+        <div class="px-5">
+            <h3 class="mb-5 font-bold">Checkout details</h3>
+            <form>
+                @if($plan === 'single')
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Product</td>
+                            <td>Quantity</td>
+                            <td>Taxes</td>
+                            <td>Price</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Single plan <br> <small>30 days</small></td>
+                            <td>1 package</td>
+                            <td>0.00</td>
+                            <td>49.<sup>00</sup></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                @else
+                    <div class="mb-5">
+                        <label for="students" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                            {{__('Select number of students:')}} <span id="display-selected">5</span>
+                        </label>
+                        <input
+                            class="w-full"
+                            type="range"
+                            id="students"
+                            name="students"
+                            min="5"
+                            max="50"
+                            list="values"
+                            value="5"
+                        >
+                        <datalist id="values" class="flex justify-between flex-row">
+                            <option value="5" label="5"></option>
+                            <option value="10" label="10"></option>
+                            <option value="15" label="15"></option>
+                            <option value="20" label="20"></option>
+                            <option value="25" label="25"></option>
+                            <option value="30" label="30"></option>
+                            <option value="35" label="35"></option>
+                            <option value="40" label="40"></option>
+                            <option value="45" label="45"></option>
+                            <option value="50" label="50"></option>
+                        </datalist>
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Product</td>
+                            <td>Quantity</td>
+                            <td>Taxes</td>
+                            <td>Price</td>
+                            <td>Total</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                Multiple students plan <br>
+                                <small>30 days</small>
+                            </td>
+                            <td><span id="table-count">5</span> students</td>
+                            <td>0.00</td>
+                            <td>39.<sup>00</sup></td>
+                            <td id="table-total">195.<sup>00</sup></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <script>
+                        const countStudents = document.querySelector("#display-selected")
+                        const input = document.getElementById("students")
+                        const tableCount = document.getElementById("table-count")
+                        const tableTotal = document.getElementById("table-total")
+                        input.addEventListener("input", (event) => {
+                            const students = parseInt(event.target.value);
+                            const total = students * 39;
+                            countStudents.innerText = students;
+                            tableCount.innerText = students;
+                            tableTotal.innerHTML = total + '.<sup>00</sup>';
+                        })
+                    </script>
+                @endif
+                <div class="flex justify-center">
+                    <x-primary-button>Checkout</x-primary-button>
+                </div>
+            </form>
+
         </div>
     </div>
 </x-app-layout>

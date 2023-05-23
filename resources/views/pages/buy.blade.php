@@ -31,7 +31,7 @@
                     <small>* планът се прилага само за обучаващи организации</small>
                 </div>
                 <div class="text-center m-3">
-                    <a href="{{route('checkout', ['plan' => 'multi-user'])}}">
+                    <a href="{{route('checkout', ['plan' => 'flex'])}}">
                         <x-primary-button>Select plan</x-primary-button>
                     </a>
                 </div>
