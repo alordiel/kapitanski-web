@@ -62,14 +62,6 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::get('/admin/users/{user}', [ProfileController::class, 'adminShow'])->name('user.admin.show');
     Route::put('/admin/users/{user}', [ProfileController::class, 'adminUpdate'])->name('user.admin.update');
     Route::delete('/admin/users/{user}', [ProfileController::class, 'adminDestroy'])->name('user.admin.destroy');
-    // Product Routes
-    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.admin.manage');
-    Route::post('/admin/products', [ProductController::class, 'store'])->name('product.admin.store');
-    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('product.admin.create');
-    Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('product.admin.edit');
-    Route::put('/admin/products/{product}', [ProductController::class, 'update'])->name('product.admin.update');
-    Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('product.admin.destroy');
-    Route::get('/admin/products/{product}', [ProductController::class, 'show'])->name('product.admin.show');
     // Post Routes
     Route::get('/admin/posts', [PostController::class, 'manage'])->name('post.admin.manage');
     Route::post('/admin/posts', [PostController::class, 'store'])->name('post.admin.store');
