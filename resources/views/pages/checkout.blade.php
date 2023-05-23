@@ -4,114 +4,103 @@
     </div>
 
     <div class="w-2/4 mx-auto border rounded border-indigo-500">
-        @auth
-        @else
+        <form method="post" action="">
+            @auth
+            @else
+                <div class="p-5">
+                    <h3>Registration details</h3>
+                    <div>
+                        <x-input-label for="name" :value="__('Name')"/>
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
+                                      required autofocus autocomplete="name"/>
+                        <x-input-error :messages="$errors->get('name')" class="mt-2"/>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="mt-4">
+                        <x-input-label for="email" :value="__('Email')"/>
+                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                      :value="old('email')"
+                                      required autocomplete="username"/>
+                        <x-input-error :messages="$errors->get('email')" class="mt-2"/>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mt-4">
+                        <x-input-label for="password" :value="__('Password')"/>
+
+                        <x-text-input id="password" class="block mt-1 w-full"
+                                      type="password"
+                                      name="password"
+                                      required autocomplete="new-password"/>
+
+                        <x-input-error :messages="$errors->get('password')" class="mt-2"/>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mt-4">
+                        <x-input-label for="password_confirmation" :value="__('Confirm Password')"/>
+
+                        <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                      type="password"
+                                      name="password_confirmation" required autocomplete="new-password"/>
+
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
+                    </div>
+
+                    <div class="flex items-center justify-end mt-4">
+                        <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                           href="{{ route('login',['redirect' => urlencode( request()->getRequestUri() )]) }}">
+                            {{ __('Already having an account?') }}
+                        </a>
+                    </div>
+                    <div class="border-b-indigo-500"></div>
+                </div>
+            @endauth
             <div class="p-5">
-                <h3>Registration details</h3>
-                <div>
-                    <x-input-label for="name" :value="__('Name')"/>
-                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
-                                  required autofocus autocomplete="name"/>
-                    <x-input-error :messages="$errors->get('name')" class="mt-2"/>
-                </div>
-
-                <!-- Email Address -->
+                <h3>Payment details</h3>
                 <div class="mt-4">
-                    <x-input-label for="email" :value="__('Email')"/>
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                                  required autocomplete="username"/>
-                    <x-input-error :messages="$errors->get('email')" class="mt-2"/>
-                </div>
-
-                <!-- Password -->
-                <div class="mt-4">
-                    <x-input-label for="password" :value="__('Password')"/>
-
-                    <x-text-input id="password" class="block mt-1 w-full"
-                                  type="password"
-                                  name="password"
-                                  required autocomplete="new-password"/>
-
-                    <x-input-error :messages="$errors->get('password')" class="mt-2"/>
-                </div>
-
-                <!-- Confirm Password -->
-                <div class="mt-4">
-                    <x-input-label for="password_confirmation" :value="__('Confirm Password')"/>
-
-                    <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                  type="password"
-                                  name="password_confirmation" required autocomplete="new-password"/>
-
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
-                </div>
-
-                <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                       href="{{ route('login',['redirect' => urlencode( request()->getRequestUri() )]) }}">
-                        {{ __('Already having an account?') }}
-                    </a>
-                </div>
-                <div class="border-b-indigo-500"></div>
-            </div>
-        @endauth
-        <div class="p-5">
-            <h3>Payment details</h3>
-            <div class="mt-4">
-                <x-input-label for="card-number" :value="__('Card number')"/>
-                <x-text-input id="card-number" class="block mt-1 w-full" type="text" name="card-number"
-                              :value="old('card-number')"
-                              required/>
-                <x-input-error :messages="$errors->get('card-number')" class="mt-2"/>
-            </div>
-            <div class="mt-4">
-                <x-input-label for="card-name" :value="__('Name on the card')"/>
-                <x-text-input id="card-name" class="block mt-1 w-full" type="text" name="card-name"
-                              :value="old('card-name')"
-                              required/>
-                <x-input-error :messages="$errors->get('card-name')" class="mt-2"/>
-            </div>
-            <div class="flex">
-                <div class="mt-4 w-32">
-                    <x-input-label for="card-date" :value="__('Expiration date')"/>
-                    <x-text-input id="card-date" class="block mt-1 w-full" type="text" name="card-date"
-                                  :value="old('card-date')"
-                                  required placeholder="mm/yy"/>
-                    <x-input-error :messages="$errors->get('card-date')" class="mt-2"/>
-                </div>
-                <div class="mt-4 ml-4 w-20">
-                    <x-input-label for="card-cvv" :value="__('CVV')"/>
-                    <x-text-input id="card-cvv" class="block mt-1 w-full" type="password" name="card-cvv"
-                                  :value="old('card-cvv')" max="3" min="3"
+                    <x-input-label for="card-number" :value="__('Card number')"/>
+                    <x-text-input id="card-number" class="block mt-1 w-full" type="text" name="card-number"
+                                  :value="old('card-number')"
                                   required/>
-                    <x-input-error :messages="$errors->get('card-cvv')" class="mt-2"/>
+                    <x-input-error :messages="$errors->get('card-number')" class="mt-2"/>
                 </div>
+                <div class="mt-4">
+                    <x-input-label for="card-name" :value="__('Name on the card')"/>
+                    <x-text-input id="card-name" class="block mt-1 w-full" type="text" name="card-name"
+                                  :value="old('card-name')"
+                                  required/>
+                    <x-input-error :messages="$errors->get('card-name')" class="mt-2"/>
+                </div>
+                <div class="flex">
+                    <div class="mt-4 w-32">
+                        <x-input-label for="card-date" :value="__('Expiration date')"/>
+                        <x-text-input id="card-date" class="block mt-1 w-full" type="text" name="card-date"
+                                      :value="old('card-date')"
+                                      required placeholder="mm/yy"/>
+                        <x-input-error :messages="$errors->get('card-date')" class="mt-2"/>
+                    </div>
+                    <div class="mt-4 ml-4 w-20">
+                        <x-input-label for="card-cvv" :value="__('CVV')"/>
+                        <x-text-input id="card-cvv" class="block mt-1 w-full" type="password" name="card-cvv"
+                                      :value="old('card-cvv')" max="3" min="3"
+                                      required/>
+                        <x-input-error :messages="$errors->get('card-cvv')" class="mt-2"/>
+                    </div>
 
+                </div>
+                <div class="mt-5 border border-indigo-500"></div>
             </div>
-            <div class="mt-5 border border-indigo-500"></div>
-        </div>
-        <div class="px-5">
-            <h3 class="mb-5 font-bold">Checkout details</h3>
-            <form>
+            <div class="px-5">
+                <h3 class="mb-5 font-bold">Checkout details</h3>
                 @if($plan === 'single')
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Product</td>
-                            <td>Quantity</td>
-                            <td>Taxes</td>
-                            <td>Price</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Single plan <br> <small>30 days</small></td>
-                            <td>1 package</td>
-                            <td>0.00</td>
-                            <td>49.<sup>00</sup></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <p><span class="inline-block font-bold w-32">Product:</span>
+                        Single plan<sup class="text-red-700">*</sup>
+                    </p>
+                    <p><span class="inline-block font-bold w-32">Taxes:</span> 0.<sup>00</sup> BGN</p>
+                    <p><span class="inline-block font-bold w-32">Price:</span> 49.<sup>00</sup> BGN</p>
+                    <p><small><span class="text-red-700">*</span> {{__('The activation for 30 days of your plan will start immediately after the payment is confirmed.')}}</small></p>
                 @else
                     <div class="mb-5">
                         <label for="students" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
@@ -140,29 +129,22 @@
                             <option value="50" label="50"></option>
                         </datalist>
                     </div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Product</td>
-                            <td>Quantity</td>
-                            <td>Taxes</td>
-                            <td>Price</td>
-                            <td>Total</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                Multiple students plan <br>
-                                <small>30 days</small>
-                            </td>
-                            <td><span id="table-count">5</span> students</td>
-                            <td>0.00</td>
-                            <td>39.<sup>00</sup></td>
-                            <td id="table-total">195.<sup>00</sup></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div>
+                        <p><span class="inline-block font-bold w-32">Product:</span> Multiple students plan<sup
+                                class="text-red-700">*</sup></p>
+                        <p><span class="inline-block font-bold w-32">Quantity:</span> <span id="table-count">5</span>
+                            students</p>
+                        <p><span class="inline-block font-bold w-32">Taxes:</span> 0.<sup>00</sup> BGN</p>
+                        <p><span class="inline-block font-bold w-32">Price:</span> 39.<sup>00</sup> BGN</p>
+                        <p><span class="inline-block font-bold w-32">Total:</span> <span
+                                id="table-total">195.<sup>00</sup> BGN</span></p>
+                        <p class="mt-3">
+                            <small>
+                                <span class="text-red-700">*</span>
+                                {{__('Once the payment is confirmed you will be able to add manually each of your students. Each added student account will have 30 days of active plan to use the platform. There is no time limite for addin the students. ')}}
+                            </small>
+                        </p>
+                    </div>
                     <script>
                         const countStudents = document.querySelector("#display-selected")
                         const input = document.getElementById("students")
@@ -177,11 +159,10 @@
                         })
                     </script>
                 @endif
-                <div class="flex justify-center">
+                <div class="flex justify-center my-4">
                     <x-primary-button>Checkout</x-primary-button>
                 </div>
-            </form>
-
-        </div>
+            </div>
+        </form>
     </div>
 </x-app-layout>
