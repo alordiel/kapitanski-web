@@ -29,12 +29,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'teacher@timelinedev.com',
             'password' => Hash::make('123!@#123'),
         ]);
-        DB::table('products')->insert([
-            'name' => 'Single account',
-            'price' => 59.00,
-            'description' => '30 days one account',
-            'credits' => 1
-        ]);
         DB::table('posts')->insert([
             'title'=>'Белла Дона',
             'slug'=> 'bela-dona',
