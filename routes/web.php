@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ExamController;
@@ -18,32 +18,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', static function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
+Route::get('/admin', static function () {
     return view('admin');
 })->middleware(['auth', 'role:super-admin'])->name('admin');
 
-Route::get('/about', function () {
+Route::get('/about', static function () {
     return view('pages.about');
 })->name('about');
 
-Route::get('/buy', function () {
+Route::get('/buy', static function () {
     return view('pages.buy');
 })->name('buy');
 
-Route::get('/checkout/{plan?}', function (string $plan = 'single') {
+Route::get('/checkout/{plan?}', static function (string $plan = 'single') {
     return view('pages.checkout', ['plan' => $plan]);
 })->name('checkout');
 
-Route::get('/contacts', function () {
+Route::post('/order', [OrderController::class,'store'])->name('new-order');
+
+Route::get('/contacts', static function () {
     return view('pages.contacts');
 })->name('contacts');
 
 // Serves all 3 roles the student, the partner, and the admin
-Route::get('/dashboard', function () {
+Route::get('/dashboard', static function () {
     return view('pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

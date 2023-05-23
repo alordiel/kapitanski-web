@@ -4,7 +4,8 @@
     </div>
 
     <div class="w-2/4 mx-auto border rounded border-indigo-500">
-        <form method="post" action="">
+        <form method="post" action="/order">
+            @csrf
             @auth
             @else
                 <div class="p-5">
