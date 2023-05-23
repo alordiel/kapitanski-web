@@ -43,5 +43,7 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        <input type="hidden" name="redirect" value="{{ !empty(request()->input('redirect')) ? urldecode(request()->input('redirect')) : '' }}">
     </form>
 </x-guest-layout>
