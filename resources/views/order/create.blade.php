@@ -16,7 +16,6 @@ use App\Models\User
         <p class="mb-3">
             @php
             $users = User::all();
-            var_dump($errors);
             @endphp
             <x-input-label for="user_id" :value="__('Customer name')"/>
             <select
@@ -46,7 +45,7 @@ use App\Models\User
                 <option value="completed" @selected(old('order_status') === 'completed')>{{__('Completed')}}</option>
                 <option value="refunded" @selected(old('order_status') === 'refunded')>{{__('Refunded')}}</option>
             </select>
-             <x-input-error :messages="$errors->get('order_status')" class="mt-2" />
+            <x-input-error :messages="$errors->get('order_status')" class="mt-2" />
         </p>
         <p class="mb-3">
             <x-input-label for="credits" :value="__('Number of credits')"/>

@@ -126,9 +126,23 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Order $order): RedirectResponse
     {
-        //
+        $data = $request->validate([
+            'credits' => ['required'],
+            'single_price' => ['required'],
+            'order_status' => ['required'],
+            'payment_id' => ['required'],
+            'payment_method' => ['required'],
+        ]);
+
+        $data['invoice_number'] = 'hellborn';
+        $data['total'] = (int)$request->input('credits') * (int)$request->input('single_price');
+        $data['id'] = $order->id;
+        $data['user_id'] = $order->user_id;
+        $order->update($data);
+
+        return back()->with('message','Successfully updated');
     }
 
     /**
