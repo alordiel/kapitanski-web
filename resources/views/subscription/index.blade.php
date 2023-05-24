@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="All Exams" icon="add" button-text="Add new" url="{{route('exam.admin.create')}}"/>
+        <x-subheader title="All Subscriptions" icon="add" button-text="Add new" url="{{route('subscription.create')}}"/>
     </x-slot>
 
     @if(session()->has('message'))
@@ -8,14 +8,15 @@
     @endif
 
     <ul>
-        @foreach($orders as $order)
+        @foreach($subscriptions as $subscription)
             <li class="flex">
-                Order: #{{$order->id}} | Total: {{$order->total}} BGN | Credits: {{$order->credits}} |
-                Status: {{$order->order_status}} |
-                <a href="{{route('user.admin.show',['user'=>$order->user])}}">{{$order->user->name}}</a>
-                <x-edit-entry url="{{route('order.edit',['order'=>$order])}}" title="Edit order"/>
-                <x-delete-entry url="{{route('order.destroy',['order'=>$order])}}" entry="order"
-                                button-title="Delete order"/>
+                Order: #{{$subscription->order_id}} | Exam: {{$subscription->exam->name}} |
+                Started on: {{date('d-m-Y', strtotime($subscription->created_at))}} |
+                Expires on: {{date('d-m-Y', strtotime($subscription->expires_on))}} |
+                By: <a href="{{route('user.admin.show',['user'=>$subscription->user])}}">{{$subscription->user->name}}</a>
+                <x-edit-entry url="{{route('subscription.edit',['subscription'=>$subscription])}}" title="Edit subscription"/>
+                <x-delete-entry url="{{route('subscription.destroy',['subscription'=>$subscription])}}" entry="subscription"
+                                button-title="Delete subscription"/>
             </li>
         @endforeach
     </ul>
