@@ -78,9 +78,23 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function adminStore(Request $request)
+    public function adminStore(Request $request): RedirectResponse
     {
-        //
+          // store the order
+        $data = $request->validate([
+            'user_id' => ['required'],
+            'credits' => ['required'],
+            'single_price' => ['required'],
+            'order_status' => ['required'],
+            'payment_id' => ['required'],
+            'payment_method' => ['required'],
+        ]);
+        $data['invoice_number'] = 'hellborn';
+        $data['total'] = (int)$request->input('credits') * (int)$request->input('single_price');
+
+        Order::create($data);
+
+        return redirect(route('order.manage'))->with('message','Order created');
     }
 
         /**

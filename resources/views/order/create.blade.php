@@ -10,17 +10,18 @@ use App\Models\User
         <x-success-message message="{{session('message')}}"/>
     @endif
 
-    <form action="{{route('order.create')}}" method="POST">
+    <form action="{{route('order.store')}}" method="POST">
         @csrf
 
         <p class="mb-3">
             @php
             $users = User::all();
+            var_dump($errors);
             @endphp
             <x-input-label for="user_id" :value="__('Customer name')"/>
             <select
-                name="order_status"
-                id="status"
+                name="user_id"
+                id="user_id"
                 required
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
             >
@@ -33,10 +34,10 @@ use App\Models\User
             </select>
         </p>
         <p class="mb-3">
-            <x-input-label for="status" :value="__('Order status')"/>
+            <x-input-label for="order_status" :value="__('Order status')"/>
             <select
                 name="order_status"
-                id="status"
+                id="order_status"
                 required
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
             >
@@ -45,6 +46,7 @@ use App\Models\User
                 <option value="completed" @selected(old('order_status') === 'completed')>{{__('Completed')}}</option>
                 <option value="refunded" @selected(old('order_status') === 'refunded')>{{__('Refunded')}}</option>
             </select>
+             <x-input-error :messages="$errors->get('order_status')" class="mt-2" />
         </p>
         <p class="mb-3">
             <x-input-label for="credits" :value="__('Number of credits')"/>
@@ -56,6 +58,7 @@ use App\Models\User
                 class="w-1/4 block"
                 :value="old('credits')"
             />
+             <x-input-error :messages="$errors->get('credits')" class="mt-2" />
         </p>
         <p class="mb-3">
             <x-input-label for="single_price" :value="__('Single price')"/>
@@ -67,6 +70,7 @@ use App\Models\User
                 class="w-1/4 block"
                 :value="old('single_price')"
             />
+             <x-input-error :messages="$errors->get('single_price')" class="mt-2" />
         </p>
         <p class="mb-3">
             <x-input-label for="payment_method" :value="__('Payment method')"/>
@@ -79,6 +83,7 @@ use App\Models\User
                  <option value="paysera" @selected(old('payment_method') === 'paysera')>Paysera Card payment</option>
                  <option value="sepa" @selected(old('payment_method') === 'sepa')>Bank Transfer (SEPA)</option>
              </select>
+             <x-input-error :messages="$errors->get('payment_method')" class="mt-2" />
         </p>
         <p class="mb-3">
             <x-input-label for="payment_id" :value="__('Payment reference')"/>
@@ -90,7 +95,9 @@ use App\Models\User
                 class="w-1/4 block"
                 :value="old('payment_id')"
             />
+             <x-input-error :messages="$errors->get('payment_id')" class="mt-2" />
         </p>
+        <input type="hidden" name="invoice_number" value="1">
         <x-primary-button>Create</x-primary-button>
     </form>
 </x-app-layout>
