@@ -80,13 +80,20 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::delete('/admin/exams/{exam}', [ExamController::class, 'destroy'])->name("exam.admin.destroy");
     Route::get('/admin/exams/{exam}', [ExamController::class, 'show'])->name("exam.admin.show");
     Route::get('/admin/exams/{exam}/questions', [ExamController::class, 'questions'])->name("exam.admin.questions");
-
+    // Question categories
     Route::get('/admin/question-category', [QuestionCategoryController::class, 'index'])->name("questionCategory.manage");
     Route::post('/admin/question-category', [QuestionCategoryController::class, 'store'])->name("questionCategory.store");
     Route::get('/admin/question-category/create', [QuestionCategoryController::class, 'create'])->name("questionCategory.create");
     Route::get('/admin/question-category/{questionCategory}/edit', [QuestionCategoryController::class, 'edit'])->name("questionCategory.edit");
     Route::put('/admin/question-category/{questionCategory}', [QuestionCategoryController::class, 'update'])->name("questionCategory.update");
     Route::delete('/admin/question-category/{questionCategory}', [QuestionCategoryController::class, 'destroy'])->name("questionCategory.destroy");
+    // Order Routes
+    Route::get('/admin/order', [OrderController::class, 'index'])->name("order.manage");
+    Route::post('/admin/order', [OrderController::class, 'adminStore'])->name("order.store");
+    Route::get('/admin/order/create', [OrderController::class, 'create'])->name("order.create");
+    Route::get('/admin/order/{order}/edit', [OrderController::class, 'edit'])->name("order.edit");
+    Route::put('/admin/order/{order}', [OrderController::class, 'update'])->name("order.update");
+    Route::delete('/admin/order/{order}', [OrderController::class, 'destroy'])->name("order.destroy");
 });
 
 

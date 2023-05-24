@@ -11,24 +11,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\View\View;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -92,17 +78,35 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function adminStore(Request $request)
     {
         //
+    }
+
+        /**
+     * Display a listing of the resource.
+     */
+    public function index(): View
+    {
+        return view('order.index', [
+            'orders' => Order::all(),
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(): View
+    {
+       return view('order.create');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function edit(Order $order): View
     {
-        //
+        return view('order.edit', ['order' => $order]);
     }
 
     /**
@@ -116,8 +120,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy(Order $order): RedirectResponse
     {
-        //
+        // TODO May be delete subscriptions as well?
+        $order->delete();
+        return redirect(route('order.manage'))->with('message', 'Deleted successfully');
     }
 }
