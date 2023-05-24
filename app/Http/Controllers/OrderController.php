@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Subscription;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class OrderController extends Controller
 {
@@ -49,10 +52,12 @@ class OrderController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $role = $isSingle ? 'student' : 'partner';
+            $role = $isSingle ? 'active-member' : 'partner';
             $user->assignRole($role);
 
             event(new Registered($user));
+
+            Auth::login($user);
         }
         // TODO: proceed payment
         $credits = $isSingle ? 1 : (int)$request->input('students');

@@ -9,7 +9,7 @@
             @auth
             @else
                 <div class="p-5">
-                    <h3>Registration details</h3>
+                    <h3 class="mb-5 font-bold">Registration details</h3>
                     <div>
                         <x-input-label for="name" :value="__('Name')"/>
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
@@ -56,10 +56,11 @@
                         </a>
                     </div>
                     <div class="border-b-indigo-500"></div>
+                     <div class="mt-5 border border-indigo-500"></div>
                 </div>
             @endauth
             <div class="p-5">
-                <h3>Payment details</h3>
+                <h3  class="mb-5 font-bold">Payment details</h3>
                 <div class="mt-4">
                     <x-input-label for="card-number" :value="__('Card number')"/>
                     <x-text-input id="card-number" class="block mt-1 w-full" type="text" name="card-number"
