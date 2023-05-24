@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\QuestionCategoryController;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -94,6 +95,13 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::get('/admin/order/{order}/edit', [OrderController::class, 'edit'])->name("order.edit");
     Route::put('/admin/order/{order}', [OrderController::class, 'update'])->name("order.update");
     Route::delete('/admin/order/{order}', [OrderController::class, 'destroy'])->name("order.destroy");
+    // Subscription Route
+     Route::get('/admin/subscription', [SubscriptionController::class, 'index'])->name("subscription.manage");
+    Route::post('/admin/subscription', [SubscriptionController::class, 'store'])->name("subscription.store");
+    Route::get('/admin/subscription/create', [SubscriptionController::class, 'create'])->name("subscription.create");
+    Route::get('/admin/subscription/{subscription}/edit', [SubscriptionController::class, 'edit'])->name("subscription.edit");
+    Route::put('/admin/subscription/{subscription}', [SubscriptionController::class, 'update'])->name("subscription.update");
+    Route::delete('/admin/subscription/{subscription}', [SubscriptionController::class, 'destroy'])->name("subscription.destroy");
 });
 
 

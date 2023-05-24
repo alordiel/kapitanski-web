@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscription;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class SubscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('subscription.index',[
+            'subscriptions' => Subscription::all()
+        ]);
     }
 
     /**
@@ -32,19 +36,11 @@ class SubscriptionController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Subscription $subscription)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subscription $subscription)
+    public function edit(Subscription $subscription): View
     {
-        //
+        return view('subscription.edit',['subscription' => $subscription]);
     }
 
     /**
@@ -58,8 +54,9 @@ class SubscriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subscription $subscription)
+    public function destroy(Subscription $subscription):RedirectResponse
     {
-        //
+        $subscription->delete();
+        return redirect(route('subscription.manage'))->with('message','Successfully deleted');
     }
 }

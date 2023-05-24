@@ -52,7 +52,7 @@
                                 <x-dropdown-link :href="route('order.manage')">
                                     {{ __('Orders') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="'#'">
+                                <x-dropdown-link :href="route('subscription.manage')">
                                     {{ __('Subscriptions') }}
                                 </x-dropdown-link>
                             </x-slot>
