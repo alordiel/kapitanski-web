@@ -50,12 +50,12 @@
             />
         </p>
           <p class="mb-3">
-            <x-input-label for="payment_type" :value="__('Payment method')"/>
+            <x-input-label for="payment_method" :value="__('Payment method')"/>
             <x-text-input
                 type="text"
                 disabled
-                id="payment_type"
-                name="payment_type"
+                id="payment_method"
+                name="payment_method"
                 class="w-1/4 block"
                 :value="$order->payment_method"
             />

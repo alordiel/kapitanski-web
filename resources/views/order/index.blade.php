@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="All Exams" icon="add" button-text="Add new" url="{{route('exam.admin.create')}}"/>
+        <x-subheader title="All Orders" icon="add" button-text="Add new" url="{{route('order.create')}}"/>
     </x-slot>
 
     @if(session()->has('message'))

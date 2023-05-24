@@ -1,24 +1,96 @@
-<x-app-layout>
+@php
+use App\Models\User
+@endphp
+ <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="Add new exam" icon="all" button-text="All exams" url="{{route('exam.admin.manage')}}"/>
+        <x-subheader title="Add Order" icon="all" button-text="All orders" url="{{route('order.manage')}}"/>
     </x-slot>
 
-    <form action="{{route('exam.admin.store')}}" method="POST">
-        @csrf
-        <p class="mb-3">
-            <x-input-label for="name" :value="__('Product name')" />
-            <x-text-input
-                type="text"
-                id="name"
-                name="name"
-                class="w-1/4 block"
-                value="{{old('name')}}"
-            />
-            @error('name')
-            <x-input-error :messages="$message" class="mt-2"/>
-            @enderror
+    @if(session()->has('message'))
+        <x-success-message message="{{session('message')}}"/>
+    @endif
 
+    <form action="{{route('order.create')}}" method="POST">
+        @csrf
+
+        <p class="mb-3">
+            @php
+            $users = User::all();
+            @endphp
+            <x-input-label for="user_id" :value="__('Customer name')"/>
+            <select
+                name="order_status"
+                id="status"
+                required
+                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+            >
+                <option value="">--- {{__('Select customer')}} ---</option>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}" @selected(old('user_id') === $user->id)>
+                        {{$user->name . ' (' . $user->email . ')'}}
+                    </option>
+                @endforeach
+            </select>
         </p>
-        <x-primary-button> Create </x-primary-button>
+        <p class="mb-3">
+            <x-input-label for="status" :value="__('Order status')"/>
+            <select
+                name="order_status"
+                id="status"
+                required
+                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+            >
+                <option value="pending" @selected(old('order_status') === 'pending')>{{__('Pending payment')}}</option>
+                <option value="cancelled" @selected(old('order_status') === 'cancelled')>{{__('Cancelled')}}</option>
+                <option value="completed" @selected(old('order_status') === 'completed')>{{__('Completed')}}</option>
+                <option value="refunded" @selected(old('order_status') === 'refunded')>{{__('Refunded')}}</option>
+            </select>
+        </p>
+        <p class="mb-3">
+            <x-input-label for="credits" :value="__('Number of credits')"/>
+            <x-text-input
+                type="number"
+                id="credits"
+                required
+                name="credits"
+                class="w-1/4 block"
+                :value="old('credits')"
+            />
+        </p>
+        <p class="mb-3">
+            <x-input-label for="single_price" :value="__('Single price')"/>
+            <x-text-input
+                required
+                type="number"
+                id="single_price"
+                name="single_price"
+                class="w-1/4 block"
+                :value="old('single_price')"
+            />
+        </p>
+        <p class="mb-3">
+            <x-input-label for="payment_method" :value="__('Payment method')"/>
+             <select
+                name="payment_method"
+                id="payment_method"
+                required
+                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+            >
+                 <option value="paysera" @selected(old('payment_method') === 'paysera')>Paysera Card payment</option>
+                 <option value="sepa" @selected(old('payment_method') === 'sepa')>Bank Transfer (SEPA)</option>
+             </select>
+        </p>
+        <p class="mb-3">
+            <x-input-label for="payment_id" :value="__('Payment reference')"/>
+            <x-text-input
+                required
+                type="text"
+                id="payment_id"
+                name="payment_id"
+                class="w-1/4 block"
+                :value="old('payment_id')"
+            />
+        </p>
+        <x-primary-button>Create</x-primary-button>
     </form>
 </x-app-layout>
