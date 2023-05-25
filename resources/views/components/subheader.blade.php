@@ -1,9 +1,10 @@
-@props(['title', 'icon', 'buttonText', 'url'])
+@props(['title', 'icon' => 'all', 'buttonText' => 'all', 'url' => ''])
 
 <div class="flex justify-between">
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
         {{ $title }}
     </h2>
+    @if($url !== '')
     <a
         href="{{$url}}"
         class="flex items-center justify-between rounded bg-primary px-6 pb-2 pt-2.5 text-base font-bold text-white transition duration-150 ease-in-out hover:bg-primary-600  focus:bg-primary-600  focus:outline-none focus:ring-0 active:bg-primary-700 ">
@@ -22,4 +23,5 @@
         @endif
         {{$buttonText}}
     </a>
+    @endif
 </div>
