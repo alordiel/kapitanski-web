@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscription;
+use App\Rules\hasCredits;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,7 @@ class SubscriptionController extends Controller
             'exam_id' => 'required',
             'expires_on' => 'required',
             'user_id' => ['required'],
-            'order_id' => ['required'],
+            'order_id' => ['required',new hasCredits],
         ]);
 
         $data['created_by'] = Auth::user()->id;
