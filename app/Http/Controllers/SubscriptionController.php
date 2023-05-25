@@ -46,9 +46,21 @@ class SubscriptionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Subscription $subscription)
+    public function update(Request $request, Subscription $subscription): RedirectResponse
     {
-        //
+        $data = $request->validate([
+            'created_at' => 'required',
+            'exam_id' => 'required',
+            'expires_on' => 'required'
+        ]);
+        // Prevent the following values to be updated
+        $data['user_id'] = $subscription->user_id;
+        $data['created_by'] = $subscription->created_by;
+        $data['order_id'] = $subscription->order_id;
+
+        $subscription->update($data);
+
+        return back()->with('message', 'Successfully updated');
     }
 
     /**
