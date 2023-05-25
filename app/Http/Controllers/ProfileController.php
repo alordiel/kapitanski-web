@@ -93,7 +93,7 @@ class ProfileController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user->assignRole($request['role']);
+        $user->syncRoles($request['role']);
 
         event(new Registered($user));
 

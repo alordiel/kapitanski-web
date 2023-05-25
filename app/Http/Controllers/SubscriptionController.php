@@ -40,7 +40,7 @@ class SubscriptionController extends Controller
             'exam_id' => 'required',
             'expires_on' => 'required',
             'user_id' => ['required'],
-            'order_id' => ['required',new hasCredits],
+            'order_id' => ['required', new hasCredits],
         ]);
 
         $data['created_by'] = Auth::user()->id;
@@ -53,6 +53,44 @@ class SubscriptionController extends Controller
         $order->save();
 
         return redirect(route('subscription.manage'))->with('message', 'Successfully created');
+    }
+
+    public function activate(): RedirectResponse
+    {
+        $user = Auth::user();
+        $orders = $user->orders;
+        if (!empty($orders)) {
+            // check if order has a subscription attached or needs one to be activated
+            foreach ($orders as $order) {
+                if ($order->credits > $order->used_credits) {
+                    $data = [
+                        'exam_id' => 1,
+                        'user_id' => $user->id,
+                        'order_id' => $order->id,
+                        'created_by' => $user->id,
+                        'expires_on' => date('Y-m-d', strtotime('+31 days')),
+                    ];
+
+                    Subscription::create($data);
+
+                    // check user role and change it accordingly
+                    $user_role = $user->getRoleNames();
+                    if (in_array('suspended-member', $user_role, true)) {
+                        $user->syncRoles('active-member');
+                    } elseif (in_array('partner', $user_role, true)) {
+                        $user->syncRoles('student-partner');
+                    }
+
+                    $order->used_credits++;
+                    $order->save();
+                    break;
+                }
+            }
+        } else {
+
+            return back()->with('message', __('No order was found. Have you purchased an exam.'));
+        }
+        return back()->with('message', __('Your subscription was activated. You can proceed with the tests'));
     }
 
     /**

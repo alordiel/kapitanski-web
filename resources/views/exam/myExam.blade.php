@@ -74,7 +74,9 @@
             <p class="my-8 text-center w-full text-xl font-bold">{{__("Your subscription is still inactive. You can activate it by clicking the button below.")}}</p>
             <div class="w-1/4">
                 <div class="w-48 mx-auto mb-4">
-                    <x-primary-button>{{__('Activate plan')}}</x-primary-button>
+                    <form action="{{route('subscription.activate')}}" method="POST">
+                        <x-primary-button>{{__('Activate plan')}}</x-primary-button>
+                    </form>
                 </div>
                 <small>{{__('By clicking the "Activate plan" button you will start the 30 days period for which you will have access to full exam functionality.')}}</small>
             </div>

@@ -45,14 +45,11 @@ class RoleAndPermissionSeeder extends Seeder
         $activeMemberRole = Role::create(['name' => 'active-member']);
         $inactiveMemberRole = Role::create(['name' => 'suspended-member']);
         $partnerRole = Role::create(['name' => 'partner']);
+        $studentPartnerRole = Role::create(['name' => 'student-partner']);
 
         $adminRole->givePermissionTo(Permission::all());
-
-        $partnerRole->givePermissionTo([
-            'create-members',
-            'view-members-statistics',
-        ]);
-
+        $partnerRole->givePermissionTo(['create-members','view-members-statistics']);
+        $studentPartnerRole->givePermissionTo(['take-exam',  'create-members',]);
         $activeMemberRole->givePermissionTo(['take-exam']);
         $inactiveMemberRole->givePermissionTo([]);
 

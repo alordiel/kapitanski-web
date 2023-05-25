@@ -54,9 +54,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/my-exam/', static function () {
+    Route::get('/my-exam', static function () {
         return view('exam.myExam');
     });
+    Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
 });
 
 Route::middleware(['auth', 'role:super-admin'])->group(function () {
