@@ -102,7 +102,7 @@
                     </p>
                     <p><span class="inline-block font-bold w-32">Taxes:</span> 0.<sup>00</sup> BGN</p>
                     <p><span class="inline-block font-bold w-32">Price:</span> 49.<sup>00</sup> BGN</p>
-                    <p><small><span class="text-red-700">*</span> {{__('The activation for 30 days of your plan will start immediately after the payment is confirmed.')}}</small></p>
+                    <p><small><span class="text-red-700">*</span> {{__('The activation for 30 days of your plan will start only after you activate it from the exam page.')}}</small></p>
                 @else
                     <div class="mb-5">
                         <label for="students" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
@@ -143,7 +143,7 @@
                         <p class="mt-3">
                             <small>
                                 <span class="text-red-700">*</span>
-                                {{__('Once the payment is confirmed you will be able to add manually each of your students. Each added student account will have 30 days of active plan to use the platform. There is no time limite for addin the students. ')}}
+                                {{__('Once the payment is confirmed you will be able to add manually each of your students. ')}}
                             </small>
                         </p>
                     </div>

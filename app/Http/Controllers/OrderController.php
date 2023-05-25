@@ -61,17 +61,6 @@ class OrderController extends Controller
         ];
         $order = Order::create($orderFields);
 
-        // if it is a single plan purchase - create a subscription
-        if ($isSingle) {
-            $subscription = new Subscription([
-                'exam_id' => 1, // Currently we have only one exam
-                'user_id' => $user->id,
-                'created_by' => $user->id,
-                'order_id' => $order->id,
-                'expires_on' => date('Y-m-d', strtotime('+31 days'))
-            ]);
-            $subscription->save();
-        }
         return redirect(route('dashboard'))->with('message', __('Your order was successfully created'));
     }
 
