@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Subscription;
 use App\Rules\hasCredits;
 use Illuminate\Http\RedirectResponse;
@@ -46,6 +47,11 @@ class SubscriptionController extends Controller
         // TODO we should not be able to create a subscription on orders that don't have more available space
         Subscription::create($data);
 
+        // Update the order with the used credit for this subscription
+        $order = Order::find($subscription->order_id);
+        $order->used_credits++;
+        $order->save();
+
         return redirect(route('subscription.manage'))->with('message', 'Successfully created');
     }
 
@@ -82,6 +88,11 @@ class SubscriptionController extends Controller
      */
     public function destroy(Subscription $subscription): RedirectResponse
     {
+        // Let's first update the number of used credits in the order
+        $order = Order::find($subscription->order_id);
+        $order->used_credits--;
+        $order->save();
+
         $subscription->delete();
         return redirect(route('subscription.manage'))->with('message', 'Successfully deleted');
     }
