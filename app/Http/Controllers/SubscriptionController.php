@@ -48,7 +48,7 @@ class SubscriptionController extends Controller
         Subscription::create($data);
 
         // Update the order with the used credit for this subscription
-        $order = Order::find($subscription->order_id);
+        $order = Order::find($data['order_id']);
         $order->used_credits++;
         $order->save();
 
