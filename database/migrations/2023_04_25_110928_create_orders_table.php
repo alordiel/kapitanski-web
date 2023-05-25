@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('credits');
+            $table->integer('used_credits')->default(0);
             $table->integer('single_price');
             $table->integer('total');
             $table->string('order_status');

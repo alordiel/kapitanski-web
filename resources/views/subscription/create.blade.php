@@ -1,19 +1,21 @@
 @php
-use App\Models\Exam;
-use App\Models\User;
-use App\Models\Order;
-$exams = Exam::all();
-$users = User::all();
-$orders = Order::all(); // That should be all orders without subscription
+    use App\Models\Exam;
+    use App\Models\User;
+    use App\Models\Order;
+
+    $exams = Exam::all();
+    $users = User::all();
+    $orders = Order::whereColumn('credits','>','used_credits')->get();// Show only orders with unused credits
 @endphp
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="Add new subscription" icon="all" button-text="All subscriptions" url="{{route('subscription.manage')}}"/>
+        <x-subheader title="Add new subscription" icon="all" button-text="All subscriptions"
+                     url="{{route('subscription.manage')}}"/>
     </x-slot>
 
     <form action="{{route('subscription.store')}}" method="POST">
         @csrf
-       <p class="mb-3">
+        <p class="mb-3">
             <x-input-label for="exam-name" :value="__('Exam name')"/>
             <select
                 name="exam_id"
@@ -22,7 +24,7 @@ $orders = Order::all(); // That should be all orders without subscription
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
             >
                 @foreach($exams as $exam)
-                <option value="{{$exam->id}}" @selected(old('exam_id') === $exam->id)>{{$exam->name}}</option>
+                    <option value="{{$exam->id}}" @selected(old('exam_id') === $exam->id)>{{$exam->name}}</option>
                 @endforeach
             </select>
             <x-input-error :messages="$errors->get('exam_id')" class="mt-2"/>
@@ -36,7 +38,7 @@ $orders = Order::all(); // That should be all orders without subscription
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
             >
                 @foreach($users as $user)
-                <option value="{{$user->id}}" @selected(old('user_id') === $user->id)>{{$user->name}}</option>
+                    <option value="{{$user->id}}" @selected(old('user_id') === $user->id)>{{$user->name}}</option>
                 @endforeach
             </select>
             <x-input-error :messages="$errors->get('user_id')" class="mt-2"/>
@@ -50,7 +52,9 @@ $orders = Order::all(); // That should be all orders without subscription
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
             >
                 @foreach($orders as $order)
-                <option value="{{$order->id}}" @selected(old('order_id') === $order->id)>Order #{{$order->id}} ({{$order->user->name}})</option>
+                    <option value="{{$order->id}}" @selected(old('order_id') === $order->id)>Order #{{$order->id}}
+                        ({{$order->user->name}})
+                    </option>
                 @endforeach
             </select>
             <x-input-error :messages="$errors->get('order_id')" class="mt-2"/>
