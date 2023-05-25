@@ -4,7 +4,7 @@ use App\Models\User;
 use App\Models\Order;
 $exams = Exam::all();
 $users = User::all();
-$orders = Order::all();
+$orders = Order::all(); // That should be all orders without subscription
 @endphp
 <x-app-layout>
     <x-slot name="header">
@@ -39,7 +39,7 @@ $orders = Order::all();
                 <option value="{{$user->id}}" @selected(old('user_id') === $user->id)>{{$user->name}}</option>
                 @endforeach
             </select>
-            <x-input-error :messages="$errors->get('exam_id')" class="mt-2"/>
+            <x-input-error :messages="$errors->get('user_id')" class="mt-2"/>
         </p>
         <p class="mb-3">
             <x-input-label for="order" :value="__('Attache order')"/>
@@ -53,7 +53,7 @@ $orders = Order::all();
                 <option value="{{$order->id}}" @selected(old('order_id') === $order->id)>Order #{{$order->id}} ({{$order->user->name}})</option>
                 @endforeach
             </select>
-            <x-input-error :messages="$errors->get('exam_id')" class="mt-2"/>
+            <x-input-error :messages="$errors->get('order_id')" class="mt-2"/>
         </p>
         <p class="mb-3">
             <x-input-label for="created_at" :value="__('Started on')"/>

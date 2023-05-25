@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subscription;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class SubscriptionController extends Controller
@@ -14,7 +15,7 @@ class SubscriptionController extends Controller
      */
     public function index(): View
     {
-        return view('subscription.index',[
+        return view('subscription.index', [
             'subscriptions' => Subscription::all()
         ]);
     }
@@ -32,7 +33,19 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'created_at' => 'required',
+            'exam_id' => 'required',
+            'expires_on' => 'required',
+            'user_id' => ['required'],
+            'order_id' => ['required'],
+        ]);
+
+        $data['created_by'] = Auth::user()->id;
+        // TODO we should not be able to create a subscription on orders that don't have more available space
+        Subscription::create($data);
+
+        return redirect(route('subscription.manage'))->with('message', 'Successfully created');
     }
 
     /**
@@ -40,7 +53,7 @@ class SubscriptionController extends Controller
      */
     public function edit(Subscription $subscription): View
     {
-        return view('subscription.edit',['subscription' => $subscription]);
+        return view('subscription.edit', ['subscription' => $subscription]);
     }
 
     /**
@@ -66,9 +79,9 @@ class SubscriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subscription $subscription):RedirectResponse
+    public function destroy(Subscription $subscription): RedirectResponse
     {
         $subscription->delete();
-        return redirect(route('subscription.manage'))->with('message','Successfully deleted');
+        return redirect(route('subscription.manage'))->with('message', 'Successfully deleted');
     }
 }
