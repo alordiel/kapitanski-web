@@ -65,11 +65,11 @@
     @endphp
 
     @if($subscription_expired)
-        Your subscription has expired.
+       <h3 class="text-center font-bold text-2xl"> Your subscription has expired.</h3>
     @endif
 
     @if($go_and_buy_plan)
-        Go and Buy subscription.
+       <h3 class="text-center font-bold text-2xl">{!! sprintf(__("You can buy a new plan from <a href='%s' title='Buy a plan'>here</a>"),route('buy')) !!}.</h3>
     @endif
 
     {{-- User have an order that hasn't got a subscription so let's suggest activating it --}}
