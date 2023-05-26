@@ -60,12 +60,11 @@
     @endphp
 
     @if($subscription_expired)
-        Your subscription has expired
+        Your subscription has expired.
     @endif
 
     @if($go_and_buy_plan)
-        No subscriptions found.
-        go and Buy subscription
+        Go and Buy subscription.
     @endif
 
     {{-- User have an order that hasn't got a subscription so let's suggest activating it --}}
@@ -75,6 +74,7 @@
             <div class="w-1/4">
                 <div class="w-48 mx-auto mb-4">
                     <form action="{{route('subscription.activate')}}" method="POST">
+                        @csrf
                         <x-primary-button>{{__('Activate plan')}}</x-primary-button>
                     </form>
                 </div>
@@ -84,7 +84,7 @@
     @endif
 
     @if($active_subscription)
-        You have active subscription
+        You have active subscription.
     @endif
 
 </x-app-layout>

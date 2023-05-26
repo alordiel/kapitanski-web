@@ -59,10 +59,10 @@ class SubscriptionController extends Controller
     {
         $user = Auth::user();
         if ($user === null) {
-             return back()->with('message', __('You need to login in order to perform this action.'));
+            return back()->with('message', __('You need to login in order to perform this action.'));
         }
         $orders = $user->orders;
-        $subscription_created = true;
+        $subscription_created = false;
         if (!empty($orders)) {
             // check if order has a subscription attached or needs one to be activated
             foreach ($orders as $order) {
@@ -78,10 +78,10 @@ class SubscriptionController extends Controller
                     Subscription::create($data);
 
                     // check user role and change it accordingly
-                    $user_role = $user->getRoleNames();
-                    if (in_array('member', $user_role, true)) {
+                    $user_role = $user->getRoleNames()->last();
+                    if ('member' === $user_role) {
                         $user->syncRoles('student');
-                    } elseif (in_array('partner', $user_role, true)) {
+                    } elseif ('partner' === $user_role) {
                         $user->syncRoles('student-partner');
                     }
 
