@@ -58,7 +58,11 @@ class SubscriptionController extends Controller
     public function activate(): RedirectResponse
     {
         $user = Auth::user();
+        if ($user === null) {
+             return back()->with('message', __('You need to login in order to perform this action.'));
+        }
         $orders = $user->orders;
+        $subscription_created = true;
         if (!empty($orders)) {
             // check if order has a subscription attached or needs one to be activated
             foreach ($orders as $order) {
@@ -83,8 +87,12 @@ class SubscriptionController extends Controller
 
                     $order->used_credits++;
                     $order->save();
+                    $subscription_created = true;
                     break;
                 }
+            }
+            if (!$subscription_created) {
+                return back()->with('message', __('No free credits were found. You will need to purchased an exam.'));
             }
         } else {
 
