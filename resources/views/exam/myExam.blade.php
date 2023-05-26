@@ -7,6 +7,11 @@
     <x-slot name="header">
         <x-subheader title="{{__('My exam')}}"/>
     </x-slot>
+
+    @if(session()->has('message'))
+        <x-success-message message="{{session('message')}}"/>
+    @endif
+
     @php
         $subscription_expired = false;
         $activate_subscription = false;
