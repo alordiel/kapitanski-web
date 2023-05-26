@@ -38,7 +38,7 @@ class OrderController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $role = $isSingle ? 'active-member' : 'partner';
+            $role = $isSingle ? 'student' : 'partner';
             $user->assignRole($role);
 
             event(new Registered($user));

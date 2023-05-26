@@ -10,7 +10,7 @@
                 {{ __('Exams') }}
             </x-nav-link>
         </div>
-        @role('suspended-member')
+        @role('member')
         <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
             <x-nav-link :href="route('buy')" :active="request()->routeIs('buy')">
                 {{ __('Exams') }}

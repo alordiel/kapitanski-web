@@ -42,8 +42,8 @@ class RoleAndPermissionSeeder extends Seeder
 
 
         $adminRole = Role::create(['name' => 'super-admin']);
-        $activeMemberRole = Role::create(['name' => 'active-member']);
-        $inactiveMemberRole = Role::create(['name' => 'suspended-member']);
+        $activeMemberRole = Role::create(['name' => 'student']);
+        $inactiveMemberRole = Role::create(['name' => 'member']);
         $partnerRole = Role::create(['name' => 'partner']);
         $studentPartnerRole = Role::create(['name' => 'student-partner']);
 
@@ -58,6 +58,6 @@ class RoleAndPermissionSeeder extends Seeder
         $user2 = User::where('id', 2)->get();
         $user2[0]->assignRole('partner');
         $user3 = User::where('id', 3)->get();
-        $user3[0]->assignRole('active-member');
+        $user3[0]->assignRole('student');
     }
 }

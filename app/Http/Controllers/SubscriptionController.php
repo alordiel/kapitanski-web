@@ -75,8 +75,8 @@ class SubscriptionController extends Controller
 
                     // check user role and change it accordingly
                     $user_role = $user->getRoleNames();
-                    if (in_array('suspended-member', $user_role, true)) {
-                        $user->syncRoles('active-member');
+                    if (in_array('member', $user_role, true)) {
+                        $user->syncRoles('student');
                     } elseif (in_array('partner', $user_role, true)) {
                         $user->syncRoles('student-partner');
                     }
