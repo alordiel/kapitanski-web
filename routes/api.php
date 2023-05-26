@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\MultipleUploadController;
 use App\Http\Controllers\ExamController;
-use \App\Http\Controllers\API\SubscriptionAPIController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,4 +22,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/v1/file-upload', [MultipleUploadController::class, 'store']);
 Route::post('/v1/save-questions', [ExamController::class, 'manageQuestions']);
-Route::post('/v1/activate-subscription', [SubscriptionAPIController::class, 'activate']);
