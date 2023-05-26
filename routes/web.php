@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
         return view('exam.myExam');
     });
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
+    Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal']);
 });
 
 Route::middleware(['auth', 'role:super-admin'])->group(function () {

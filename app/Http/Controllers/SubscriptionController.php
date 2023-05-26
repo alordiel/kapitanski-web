@@ -22,6 +22,10 @@ class SubscriptionController extends Controller
         ]);
     }
 
+    public function showPersonal(): View {
+        return view('subscription.personal');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
