@@ -31,13 +31,13 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'edit-exams']);
         Permission::create(['name' => 'delete-exams']);
 
-        Permission::create(['name' => 'create-members']);
-        Permission::create(['name' => 'edit-members']);
-        Permission::create(['name' => 'delete-members']);
+        Permission::create(['name' => 'create-students']);
+        Permission::create(['name' => 'edit-students']);
+        Permission::create(['name' => 'delete-students']);
 
         Permission::create(['name' => 'take-exam']);
 
-        Permission::create(['name' => 'view-members-statistics']);
+        Permission::create(['name' => 'view-students-statistics']);
         Permission::create(['name' => 'view-all-statistics']);
 
 
@@ -48,8 +48,8 @@ class RoleAndPermissionSeeder extends Seeder
         $studentPartnerRole = Role::create(['name' => 'student-partner']);
 
         $adminRole->givePermissionTo(Permission::all());
-        $partnerRole->givePermissionTo(['create-members','view-members-statistics']);
-        $studentPartnerRole->givePermissionTo(['take-exam',  'create-members',]);
+        $partnerRole->givePermissionTo(['create-students','view-students-statistics']);
+        $studentPartnerRole->givePermissionTo(['take-exam',  'create-students',]);
         $activeMemberRole->givePermissionTo(['take-exam']);
         $inactiveMemberRole->givePermissionTo([]);
 
