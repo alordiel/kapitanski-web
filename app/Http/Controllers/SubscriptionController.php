@@ -26,6 +26,12 @@ class SubscriptionController extends Controller
         return view('subscription.personal');
     }
 
+    public function manageStudents(Order $order): View {
+        return view('subscription.manageStudents',[
+            'order' => $order
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

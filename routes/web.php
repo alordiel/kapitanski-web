@@ -59,6 +59,8 @@ Route::middleware('auth')->group(function () {
     })->name('my-exam');
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
+    Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
+    Route::get('/my-subscriptions/students/{order}',[SubscriptionController::class,'manageStudents'])->name('subscription.students');
 });
 
 Route::middleware(['auth', 'role:super-admin'])->group(function () {
