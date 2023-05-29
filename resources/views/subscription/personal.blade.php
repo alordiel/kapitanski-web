@@ -32,7 +32,8 @@
                             $subscriptions_status = $is_active ? __('Active') : __('Expired');
                             $expiration_date = $is_active ? __('Expires on') : __('Expired on');
                         @endphp
-                        <div class="w-64 border rounded px-3 py-5">
+                        <div class="mb-5 mx-3 w-64 border rounded px-3 py-5">
+                            <p><strong>Order</strong> #{{$order->id}} </p>
                             <p><strong>{{__('Status')}}:</strong>
                                 <span
                                     class="{{ $is_active ? 'bg-green-400' : 'bg-red-500'}} inline-block text-white rounded px-3">
@@ -46,10 +47,14 @@
                                 <p><a href="#">{{'Download Invoice'}}</a></p>
                             @endif
                         </div>
-                    @elseif(count($order->subscriptions) > 1)
-                        has order with more than 1 credit
+                    @elseif($order->credits > 1)
+                        <div class="mb-5 w-64 border p-5 mx-3 rounded dark:border-indigo-500">
+                            Your <strong>order #{{$order->id}}</strong> from {{date('d-m-Y', strtotime($order->created_at))}} is still not active. You
+                            can activate it from this <a href="{{route('my-exam')}}"> page</a>. <br>
+                            You can download your invoice <a href="#">here</a>.
+                        </div>
                     @else
-                        has only order        </div>
+                        has only order
                     @endif
                 @endforeach
             </div>
