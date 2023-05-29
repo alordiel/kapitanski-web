@@ -73,7 +73,8 @@
     @endif
 
     {{-- User have an order that hasn't got a subscription so let's suggest activating it --}}
-    @if($activate_subscription)
+    {{-- Also we check for non active subscription, it is possible that the user has two orders, one active and one inactive --}}
+    @if($activate_subscription && !$active_subscription)
         <div class="flex justify-center flex-wrap">
             <p class="my-8 text-center w-full text-xl font-bold">{{__("Your subscription is still inactive. You can activate it by clicking the button below.")}}</p>
             <div class="w-1/4">
