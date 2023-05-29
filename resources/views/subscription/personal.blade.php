@@ -56,6 +56,7 @@
                             <p><strong>{{ __('Total credits') }}:</strong> {{ $order->credits }}</strong></p>
                             <p><strong>{{ __('Used credits') }}:</strong> {{ $order->used_credits }}</strong></p>
                             <p><a href="{{ route('subscription.students', ['order'=> $order]) }}">{{ __('Manage students') }}</a></p>
+                            <p><a href="#">{{'Download Invoice'}}</a></p>
                         </div>
                     @else
                         {{-- Order has only one credit and is not activated yet. We displays only the order  --}}
