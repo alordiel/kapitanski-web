@@ -60,8 +60,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
-    Route::get('/my-subscriptions/students/{order}',[SubscriptionController::class,'manageStudents'])
-        ->middleware(['can:create-students'])
+    Route::get('/my-subscriptions/students/{order}', [SubscriptionController::class, 'manageStudents'])
+        ->middleware(['permission:create-students'])
         ->name('subscription.students');
 });
 
