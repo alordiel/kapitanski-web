@@ -56,7 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/my-exam', static function () {
         return view('exam.myExam');
-    });
+    })->name('my-exam');
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
 });
