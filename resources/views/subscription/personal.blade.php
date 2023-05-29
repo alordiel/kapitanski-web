@@ -32,7 +32,7 @@
                             $subscriptions_status = $is_active ? __('Active') : __('Expired');
                             $expiration_date = $is_active ? __('Expires on') : __('Expired on');
                         @endphp
-                        <div class="mb-5 mx-3 w-64 border rounded px-3 py-5">
+                        <div class="mb-5 mx-3 w-64 border rounded px-3 py-5 dark:border-indigo-500">
                             <p><strong>{{ __('Order') }}:</strong> #{{ $order->id}} </p>
                             <p><strong>{{ __('Status') }}:</strong>
                                 <span
