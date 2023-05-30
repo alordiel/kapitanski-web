@@ -47,16 +47,21 @@
                 {{-- The form for subscribing the students --}}
                 @if($order->credits > $order->used_credits)
                     <div>
-                        <form action="{{ route('subscription.students.store') }}" method="POST" class="mb-5">
+                        <form action="{{ route('subscription.students.store') }}" method="POST" class="mb-5"
+                              id="store-students">
                             @csrf
-                            <div class="flex flex-wrap mb-4">
+                            <div class="flex flex-wrap mb-4" data-number="1">
                                 <div class="mr-5">
                                     <x-input-label for="name-1" :value="__('Full name')"/>
                                     <x-text-input class="w-60 lg:w-72 xl:w-80" id="name-1" type="text"/>
+                                    <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
+                                       id="name-error-1">
                                 </div>
                                 <div>
                                     <x-input-label for="email-1" :value="__('Email')"/>
                                     <x-text-input class="w-60 lg:w-72 xl:w-80" id="email-1" type="email"/>
+                                    <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
+                                       id="email-error-1">
                                 </div>
                             </div>
                             <div id="add-another-student" class="mb-4">
@@ -87,11 +92,43 @@
                             document.addEventListener('DOMContentLoaded', function () {
                                 let addedElements = 0;
 
-                                document.querySelectorAll('.remove-row').forEach(element => {
-                                    element.addEventListener('click', function (row) {
-                                        row.parentNode.remove();
-                                    })
-                                })
+                                document.getElementById('store-students').addEventListener('submit', function () {
+                                    const listOfRows = addedElements + 1;
+                                    let hasErrors = false;
+                                    // validate the form
+                                    for (let i = 0; i < listOfRows; i++) {
+                                        const row = i + 1;
+                                        const nameError = document.getElementById('name-error-' + row);
+                                        const emailError = document.getElementById('email-error-' + row);
+                                        // Clear any old errors
+                                        nameError.innerText = '';
+                                        nameError.style.display = 'none';
+                                        emailError.innerText = '';
+                                        emailError.style.display = 'none';
+                                        // Check for errors the name and email fields;
+                                        if (document.getElementById('name-' + row).value === '') {
+                                            nameError.innerText = "{{__('Field can not be empty')}}";
+                                            nameError.style.display = 'block';
+                                            hasErrors = true;
+                                        }
+                                        if (document.getElementById('email-' + row).value === '') {
+                                            emailError.innerText = "{{__('Field can not be empty')}}";
+                                            emailError.style.display = 'block';
+                                            hasErrors = true;
+                                        }
+                                        if(!document.getElementById('email-' + row).validity.valid) {
+                                            emailError.innerText = "{{__('Invalid email address')}}";
+                                            emailError.style.display = 'block';
+                                            hasErrors = true;
+                                        }
+                                    }
+                                    // cancel submission if we have errors
+                                    if (hasErrors) {
+                                        event.preventDefault();
+                                        return false;
+                                    }
+                                    return true;
+                                });
 
                                 document.getElementById('add-field').addEventListener('click', function () {
                                     // Prevent adding new rows if we are out of credits
@@ -100,7 +137,7 @@
                                     }
                                     const button = this;
                                     const wrapper = document.getElementById('add-another-student')
-                                    const newRow = '<div class="flex flex-wrap items-center mb-4"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"></div><button class="remove-row rounded-full border-2 border-red-500 text-red-500 block w-7 h-7 ml-5 mt-4 flex items-center justify-center" type="button">X</button></div>';
+                                    const newRow = '<div class="flex flex-wrap items-center mb-4" data-number="0"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></p></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></div><button class="remove-row rounded-full border-2 border-red-500 text-red-500 block w-7 h-7 ml-5 mt-4 flex items-center justify-center" type="button">X</button></div>';
                                     const range = document.createRange();
                                     range.selectNodeContents(wrapper);
                                     const fragment = range.createContextualFragment(newRow);
@@ -108,19 +145,27 @@
                                     // change the names, ids, and `for`
                                     const nameID = 'name-' + (addedElements + 2)// we add 2 because we already have name-1 and our counter starts from 0
                                     const emailID = 'email-' + (addedElements + 2)
+                                    const nameErrorID = 'name-error-' + (addedElements + 2)
+                                    const emailErrorID = 'email-error-' + (addedElements + 2)
                                     const nameLabel = fragment.firstChild.children[0].children[0];
                                     const nameInput = fragment.firstChild.children[0].children[1];
+                                    const nameError = fragment.firstChild.children[0].children[2];
 
                                     nameLabel.setAttribute('for', nameID);
                                     nameInput.setAttribute('name', nameID);
                                     nameInput.id = nameID;
+                                    nameError.id = nameErrorID;
 
                                     const emailLabel = fragment.firstChild.children[1].children[0];
                                     const emailInput = fragment.firstChild.children[1].children[1];
+                                    const emailError = fragment.firstChild.children[1].children[2];
 
                                     emailLabel.setAttribute('for', emailID);
                                     emailInput.setAttribute('name', emailID);
                                     emailInput.id = emailID;
+                                    emailError.id = emailErrorID;
+
+                                    fragment.firstChild.dataset.number = addedElements + 2;
 
                                     fragment.firstChild.children[2].addEventListener('click', function (e) {
                                         e.target.parentElement.remove();
