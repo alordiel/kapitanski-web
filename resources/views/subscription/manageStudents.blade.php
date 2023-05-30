@@ -47,7 +47,8 @@
                 {{-- The form for subscribing the students --}}
                 @if($order->credits > $order->used_credits)
                     <div>
-                        <form action="" method="POST" class="mb-5">
+                        <form action="{{ route('subscription.students.store') }}" method="POST" class="mb-5">
+                            @csrf
                             <div class="flex flex-wrap mb-4">
                                 <div class="mr-5">
                                     <x-input-label for="name-1" :value="__('Full name')"/>
@@ -67,6 +68,7 @@
                                 @endif
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                             </div>
+                            <input type="hidden" value="{{$order->id}}" name="order-details">
                         </form>
                         <p class="text-red-600 dark:text-yellow-500">
                             <svg class="inline-block" stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -78,6 +80,7 @@
                             {{ __('Note that once you save the list you will not be able to edit the user\'s email.') }}
                         </p>
                     </div>
+
                     @if($credits_left > 0)
                         <script> const availableCredits = {{ $order->credits - $order->used_credits }}</script>
                         <script>

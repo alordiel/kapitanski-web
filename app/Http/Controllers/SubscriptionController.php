@@ -65,6 +65,12 @@ class SubscriptionController extends Controller
         return redirect(route('subscription.manage'))->with('message', 'Successfully created');
     }
 
+    public function storeStudents(Request $request): RedirectResponse
+    {
+
+        return back()->with('message', __('Successfully added') );
+    }
+
     public function activate(): RedirectResponse
     {
         $user = Auth::user();

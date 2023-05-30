@@ -63,8 +63,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-subscriptions/students/{order}', [SubscriptionController::class, 'manageStudents'])
         ->middleware(['permission:create-students'])
         ->name('subscription.students');
+    Route::post('/my-subscriptions/students/store',[SubscriptionController::class, 'storeStudents'])
+        ->middleware(['permission:create-students'])
+        ->name('subscription.students.store');
 });
 
+
+// ADMIN ROUTES
 Route::middleware(['auth', 'role:super-admin'])->group(function () {
     // User Routes
     Route::get('/admin/users', [ProfileController::class, 'adminIndex'])->name('user.admin.manage');
