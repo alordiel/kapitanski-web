@@ -81,16 +81,23 @@
                     @if($credits_left > 0)
                         <script> const availableCredits = {{ $order->credits - $order->used_credits }}</script>
                         <script>
-                            document.addEventListener('DOMContentLoaded',function() {
+                            document.addEventListener('DOMContentLoaded', function () {
                                 let addedElements = 0;
-                                document.getElementById('add-field').addEventListener('click', function(){
+
+                                document.querySelectorAll('.remove-row').forEach(element => {
+                                    element.addEventListener('click', function (row) {
+                                        row.parentNode.remove();
+                                    })
+                                })
+
+                                document.getElementById('add-field').addEventListener('click', function () {
                                     // Prevent adding new rows if we are out of credits
                                     if (availableCredits - addedElements === 0) {
                                         return
                                     }
 
                                     const wrapper = document.getElementById('add-another-student')
-                                    const newRow = '<div class="flex flex-wrap mb-4"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"></div></div>';
+                                    const newRow = '<div class="flex flex-wrap items-center mb-4"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"></div><button class="remove-row rounded-full border-2 border-red-500 text-red-500 block w-7 h-7 ml-5 mt-4 flex items-center justify-center" type="button">X</button></div>';
                                     const range = document.createRange();
                                     range.selectNodeContents(wrapper);
                                     const fragment = range.createContextualFragment(newRow);
@@ -98,23 +105,27 @@
                                     // change the names, ids, and `for`
                                     const nameID = 'name-' + (addedElements + 2)// we add 2 because we already have name-1 and our counter starts from 0
                                     const emailID = 'email-' + (addedElements + 2)
-                                    const nameLabel =  fragment.firstChild.children[0].children[0];
-                                    const nameInput =  fragment.firstChild.children[0].children[1];
+                                    const nameLabel = fragment.firstChild.children[0].children[0];
+                                    const nameInput = fragment.firstChild.children[0].children[1];
 
-                                    nameLabel.setAttribute('for',nameID);
-                                    nameInput.setAttribute('name',nameID);
+                                    nameLabel.setAttribute('for', nameID);
+                                    nameInput.setAttribute('name', nameID);
                                     nameInput.id = nameID;
 
-                                    const emailLabel =  fragment.firstChild.children[1].children[0];
-                                    const emailInput =  fragment.firstChild.children[1].children[1];
+                                    const emailLabel = fragment.firstChild.children[1].children[0];
+                                    const emailInput = fragment.firstChild.children[1].children[1];
 
-                                    emailLabel.setAttribute('for',emailID);
-                                    emailInput.setAttribute('name',emailID);
+                                    emailLabel.setAttribute('for', emailID);
+                                    emailInput.setAttribute('name', emailID);
                                     emailInput.id = emailID;
+
+                                    fragment.firstChild.children[2].addEventListener('click', function (e) {
+                                        e.target.parentElement.remove();
+                                    });
 
                                     wrapper.appendChild(fragment);
                                     addedElements++;
-                                })
+                                });
                             });
                         </script>
                     @endif
