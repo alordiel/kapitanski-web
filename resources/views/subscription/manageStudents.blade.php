@@ -1,7 +1,7 @@
 @php
-    use \App\Models\Subscription;
     use Illuminate\Support\Facades\Auth;
     $user = Auth::user();
+    $oldValues = [];
 @endphp
 
 <x-app-layout>
@@ -15,20 +15,23 @@
                 <div class="mb-5">
                     <p>{{sprintf( __("Order #%d has %d used credits from total of %d credits.") ,$order->id, $order->used_credits, $order->credits )}}</p>
                     @role('student-partner')
-                    <p>{{ __('You can manage your the other accounts below.') }}</p>
+                        <p>{{ __('You can manage your the other accounts below.') }}</p>
                     @else
                         <p>{{ __('You can manage your students below') }}</p>
-                        @endrole
+                    @endrole
                 </div>
 
-                @if(count($errors->all()) > 0  )
-                    <x-input-error :messages="$errors->all()" class="my-4"/>
+                @if(count($errors->general->all()) > 0  )
+                    <x-input-error :messages="$errors->general->all()" class="my-4"/>
                 @endif
 
                 @if(session()->has('message'))
                     <x-success-message message="{{session('message')}}"/>
                 @endif
 
+                @if(count($errors->form->all()) > 0  )
+                    @php($oldValues = old())
+                @endif
                 {{-- This is the list of the current subscriptions --}}
                 @php($subscriptions = $order->subscriptions)
                 @php($credits_left = $order->credits - $order->used_credits)
@@ -54,21 +57,28 @@
                         <form action="{{ route('subscription.students.store') }}" method="POST" class="mb-5"
                               id="store-students">
                             @csrf
-                            <div class="flex flex-wrap mb-4" data-number="1">
-                                <div class="mr-5">
-                                    <x-input-label for="name-1" :value="__('Full name')"/>
-                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="name-1" name="name-1" type="text"/>
-                                    <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
-                                       id="name-error-1">
-                                </div>
-                                <div>
-                                    <x-input-label for="email-1" :value="__('Email')"/>
-                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="email-1" name="email-1"
-                                                  type="email"/>
-                                    <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
-                                       id="email-error-1">
-                                </div>
-                            </div>
+
+                            @php($index = 0)
+                            @php($form_errors = $errors->form->getMessages())
+                            @forelse($oldValues as $oldValue)
+
+                                @php($errorEmail = !empty($form_errors[$index . '.email'][0]) ?  $form_errors[$index . '.email'][0] : '')
+                                @php($errorName =  !empty($form_errors[$index . '.name'][0]) ?  $form_errors[$index . '.name'][0] : '')
+                                <x-student-row
+                                    :index="$index"
+                                    :name="$oldValue['name']"
+                                    :email="$oldValue['email']"
+                                    :error-name="$errorName"
+                                    :error-email="$errorEmail"
+                                />
+                                @php($index++)
+
+                            @empty
+
+                                <x-student-row :index="0"/>
+
+                            @endforelse
+
                             <div id="add-another-student" class="mb-4">
                                 {{-- this div is used as wrapper for adding the rest of the students --}}
                             </div>
@@ -93,12 +103,12 @@
                     </div>
 
                     @if($credits_left > 0)
-                        <script> const availableCredits = {{ $order->credits - $order->used_credits }}</script>
                         <script>
+                            const availableCredits = {{ $credits_left }};
                             document.addEventListener('DOMContentLoaded', function () {
                                 let addedElements = 0;
 
-                                document.getElementById('store-students').addEventListener('submit', function () {
+                                document.getElementById('store-students').addEventListener('submit', function (event) {
                                     const numberOfRows = addedElements + 1;
                                     let hasErrors = false;
                                     // validate the form
@@ -113,17 +123,17 @@
                                         emailError.style.display = 'none';
                                         // Check for errors the name and email fields;
                                         if (document.getElementById('name-' + row).value === '') {
-                                            nameError.innerText = "{{__('Field can not be empty')}}";
+                                            nameError.innerText = "{{ __('Field can not be empty') }}";
                                             nameError.style.display = 'block';
                                             hasErrors = true;
                                         }
                                         if (document.getElementById('email-' + row).value === '') {
-                                            emailError.innerText = "{{__('Field can not be empty')}}";
+                                            emailError.innerText = "{{ __('Field can not be empty') }}";
                                             emailError.style.display = 'block';
                                             hasErrors = true;
                                         }
                                         if (!document.getElementById('email-' + row).validity.valid) {
-                                            emailError.innerText = "{{__('Invalid email address')}}";
+                                            emailError.innerText = "{{ __('Invalid email address') }}";
                                             emailError.style.display = 'block';
                                             hasErrors = true;
                                         }
@@ -179,7 +189,7 @@
                                         addedElements--;
                                         // show the "add" button if there are still some more credits
                                         if (availableCredits - addedElements !== 0) {
-                                            button.style.opacity = 1;
+                                            button.style.opacity = '1';
                                         }
                                     });
                                     wrapper.appendChild(fragment);
