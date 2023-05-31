@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Subscription;
+use App\Models\User;
 use App\Rules\hasCredits;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -82,11 +85,13 @@ class SubscriptionController extends Controller
         }
 
         $validator = Validator::make($students, [
-            '*.name' => 'required',
-            '*.email' => ['required', 'email:dns']
+            '*.name' => ['required', 'string', 'max:255'],
+            '*.email' => ['required', 'email']
         ], [
             'email' => __('This seems to be invalid email'),
-            'required' => __('This field is required')
+            'required' => __('This field is required'),
+            'max:255' => __('Field can not have more then 255 characters'),
+            'string' => __('Field should contain only strings'),
         ]);
 
         if ($validator->fails()) {
@@ -103,10 +108,34 @@ class SubscriptionController extends Controller
         }
 
         // Validate the number of available credits
-        if (($order->credits - $order->used_credits) < 100) {
+        if (($order->credits - $order->used_credits) < $numberOfStudents) {
             return back()
                 ->withInput($students)
                 ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
+        }
+
+        foreach ($students as $student) {
+            // Check if the user doesn't exist already
+            $user = User::where('email', $student['email'])->first();
+            if ($user === null) {
+                $user = User::create([
+                    'name' => $student['name'],
+                    'email' => $student['email'],
+                    'password' => Hash::make(uniqid(true))
+                ]);
+                $user->syncRoles('member');
+                event(new Registered($user));
+            }
+
+            // add the subscription
+            Subscription::create([
+                'exam_id' => 1,
+                'created_at' => null,
+                'expires_on' => null,
+                'user_id' => $user->id,
+                'order_id' => $order->id,
+                'created_by' => $order->user_id,
+            ]);
         }
 
         return back()->with('message', __('Successfully added'));

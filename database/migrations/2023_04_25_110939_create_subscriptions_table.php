@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('order_id');
             $table->integer('created_by');
-            $table->date('expires_on');
+            $table->date('expires_on')->nullable();
             $table->timestamps();
         });
     }

@@ -41,7 +41,7 @@
                         <ul>
                             @foreach($subscriptions as $subscription)
                                 <li>
-                                    {{$subscription->user->name ($subscription->user->name)}}
+                                    {{$subscription->user['name'] . ' (' . $subscription->user['email'] .')'}}
                                     @if($user->hasPermissionTo('view-students-statistics'))
                                         <a href="#">{{ __('View stats') }}</a>
                                     @endif
