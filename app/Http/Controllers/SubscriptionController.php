@@ -8,6 +8,7 @@ use App\Rules\hasCredits;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class SubscriptionController extends Controller
@@ -22,12 +23,14 @@ class SubscriptionController extends Controller
         ]);
     }
 
-    public function showPersonal(): View {
+    public function showPersonal(): View
+    {
         return view('subscription.personal');
     }
 
-    public function manageStudents(Order $order): View {
-        return view('subscription.manageStudents',[
+    public function manageStudents(Order $order): View
+    {
+        return view('subscription.manageStudents', [
             'order' => $order
         ]);
     }
@@ -67,8 +70,20 @@ class SubscriptionController extends Controller
 
     public function storeStudents(Request $request): RedirectResponse
     {
+        $numberOfRows = $request->input('number-of-rows');
+        $students = [];
+        for ($i = 0; $i <= $numberOfRows; $i++) {
+            $students[] = [
+                'name' => $request->input('name-' . $i),
+                'email' => $request->input('email-' . $i),
+            ];
+        }
 
-        return back()->with('message', __('Successfully added') );
+        Validator::validate($students,[
+            'name' => 'required',
+            'email' => ['required','email']
+        ]);
+        return back()->with('message', __('Successfully added'));
     }
 
     public function activate(): RedirectResponse

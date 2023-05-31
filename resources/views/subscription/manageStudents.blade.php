@@ -74,6 +74,7 @@
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                             </div>
                             <input type="hidden" value="{{$order->id}}" name="order-details">
+                            <input type="hidden" value="1" name="number-of-rows" id="number-of-rows">
                         </form>
                         <p class="text-red-600 dark:text-yellow-500">
                             <svg class="inline-block" stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -93,10 +94,10 @@
                                 let addedElements = 0;
 
                                 document.getElementById('store-students').addEventListener('submit', function () {
-                                    const listOfRows = addedElements + 1;
+                                    const numberOfRows = addedElements + 1;
                                     let hasErrors = false;
                                     // validate the form
-                                    for (let i = 0; i < listOfRows; i++) {
+                                    for (let i = 0; i < numberOfRows; i++) {
                                         const row = i + 1;
                                         const nameError = document.getElementById('name-error-' + row);
                                         const emailError = document.getElementById('email-error-' + row);
@@ -127,6 +128,7 @@
                                         event.preventDefault();
                                         return false;
                                     }
+                                    document.getElementById('number-of-rows').value = numberOfRows;
                                     return true;
                                 });
 
