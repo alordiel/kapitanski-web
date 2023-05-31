@@ -74,7 +74,7 @@ class SubscriptionController extends Controller
         $students = [];
         // since the form is dynamic we need to build an array with all the students
         for ($i = 0; $i < $numberOfStudents; $i++) {
-            $index = $i+1;
+            $index = $i + 1;
             $students[] = [
                 'name' => $request->input('name-' . $index),
                 'email' => $request->input('email-' . $index),
@@ -84,23 +84,26 @@ class SubscriptionController extends Controller
         $validator = Validator::make($students, [
             '*.name' => 'required',
             '*.email' => ['required', 'email:dns']
+        ], [
+            'email' => __('This seems to be invalid email'),
+            'required' => __('This field is required')
         ]);
 
         if ($validator->fails()) {
             return back()
-                        ->withErrors($validator, 'form')
-                        ->withInput($students);
+                ->withErrors($validator, 'form')
+                ->withInput($students);
         }
 
         // Validate the order that belongs to the same user
         $user = Auth::user();
         $order = Order::find((int)$request->input('orderId'));
         if ($order->user_id !== $user->id) {
-            return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')] , 'general');
+            return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')], 'general');
         }
 
         // Validate the number of available credits
-        if ( ($order->credits - $order->used_credits) < 100 ) {
+        if (($order->credits - $order->used_credits) < 100) {
             return back()
                 ->withInput($students)
                 ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
