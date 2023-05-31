@@ -12,10 +12,9 @@
     @if(session()->has('message'))
         <x-success-message message="{{session('message')}}"/>
     @endif
-
-    @error('message')
-        <x-input-error :messages="$message" class="my-4"/>
-    @enderror
+    @if(count($errors->all()) > 0  )
+        <x-input-error :messages="$errors->all()" class="my-4"/>
+    @endif
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
