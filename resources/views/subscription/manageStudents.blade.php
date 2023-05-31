@@ -9,13 +9,6 @@
         <x-subheader title="{{__('Manage subscriptions')}}"/>
     </x-slot>
 
-    @if(session()->has('message'))
-        <x-success-message message="{{session('message')}}"/>
-    @endif
-    @if(count($errors->all()) > 0  )
-        <x-input-error :messages="$errors->all()" class="my-4"/>
-    @endif
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
@@ -27,6 +20,14 @@
                         <p>{{ __('You can manage your students below') }}</p>
                         @endrole
                 </div>
+
+                @if(count($errors->all()) > 0  )
+                    <x-input-error :messages="$errors->all()" class="my-4"/>
+                @endif
+
+                @if(session()->has('message'))
+                    <x-success-message message="{{session('message')}}"/>
+                @endif
 
                 {{-- This is the list of the current subscriptions --}}
                 @php($subscriptions = $order->subscriptions)
@@ -56,13 +57,14 @@
                             <div class="flex flex-wrap mb-4" data-number="1">
                                 <div class="mr-5">
                                     <x-input-label for="name-1" :value="__('Full name')"/>
-                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="name-1" type="text"/>
+                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="name-1" name="name-1" type="text"/>
                                     <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
                                        id="name-error-1">
                                 </div>
                                 <div>
                                     <x-input-label for="email-1" :value="__('Email')"/>
-                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="email-1" type="email"/>
+                                    <x-text-input class="w-60 lg:w-72 xl:w-80" id="email-1" name="email-1"
+                                                  type="email"/>
                                     <p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"
                                        id="email-error-1">
                                 </div>
@@ -120,7 +122,7 @@
                                             emailError.style.display = 'block';
                                             hasErrors = true;
                                         }
-                                        if(!document.getElementById('email-' + row).validity.valid) {
+                                        if (!document.getElementById('email-' + row).validity.valid) {
                                             emailError.innerText = "{{__('Invalid email address')}}";
                                             emailError.style.display = 'block';
                                             hasErrors = true;

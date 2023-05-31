@@ -81,19 +81,19 @@ class SubscriptionController extends Controller
         }
 
         Validator::validate($students, [
-            'name' => 'required',
-            'email' => ['required', 'email']
+            '*.name' => 'required',
+            '*.email' => ['required', 'email']
         ]);
         // Validate the order that belongs to the same user
-        $user = Auth::user()->id;
+        $user = Auth::user();
         $order = Order::find((int)$request->input('orderId'));
-        if ($order->user_is !== $user->id) {
-            return back()->withErrors('message', __('It seems that you are not the owner of this order.'));
+        if ($order->user_id !== $user->id) {
+            return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')]);
         }
 
         // Validate the number of available credits
         if ( ($order->credits - $order->used_credits) < $numberOfStudents ) {
-            return back()->withErrors('message', __('It seems that you do not have enough credits.'));
+            return back()->withErrors(['message' => __('It seems that you do not have enough credits.')]);
         }
 
         return back()->with('message', __('Successfully added'));
