@@ -73,7 +73,7 @@
                                 @endif
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                             </div>
-                            <input type="hidden" value="{{$order->id}}" name="order-details">
+                            <input type="hidden" value="{{$order->id}}" name="orderId">
                             <input type="hidden" value="1" name="number-of-rows" id="number-of-rows">
                         </form>
                         <p class="text-red-600 dark:text-yellow-500">

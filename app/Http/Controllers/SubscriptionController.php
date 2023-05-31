@@ -70,19 +70,32 @@ class SubscriptionController extends Controller
 
     public function storeStudents(Request $request): RedirectResponse
     {
-        $numberOfRows = $request->input('number-of-rows');
+        $numberOfStudents = $request->input('number-of-rows');
         $students = [];
-        for ($i = 0; $i <= $numberOfRows; $i++) {
+        // since the form is dynamic we need to build an array with all the students
+        for ($i = 1; $i <= $numberOfStudents; $i++) {
             $students[] = [
                 'name' => $request->input('name-' . $i),
                 'email' => $request->input('email-' . $i),
             ];
         }
 
-        Validator::validate($students,[
+        Validator::validate($students, [
             'name' => 'required',
-            'email' => ['required','email']
+            'email' => ['required', 'email']
         ]);
+        // Validate the order that belongs to the same user
+        $user = Auth::user()->id;
+        $order = Order::find((int)$request->input('orderId'));
+        if ($order->user_is !== $user->id) {
+            return back()->withErrors('message', __('It seems that you are not the owner of this order.'));
+        }
+
+        // Validate the number of available credits
+        if ( ($order->credits - $order->used_credits) < $numberOfStudents ) {
+            return back()->withErrors('message', __('It seems that you do not have enough credits.'));
+        }
+
         return back()->with('message', __('Successfully added'));
     }
 
