@@ -127,7 +127,7 @@
                         <script>
                             const availableCredits = {{ $credits_left }};
                             document.addEventListener('DOMContentLoaded', function () {
-                                let addedElements = 0;
+                                let addedElements = 1;
 
                                 document.getElementById('store-students').addEventListener('submit', function (event) {
                                     const numberOfRows = addedElements + 1;
@@ -181,10 +181,10 @@
                                     const fragment = range.createContextualFragment(newRow);
 
                                     // change the names, ids, and `for`
-                                    const nameID = 'name-' + (addedElements + 2)// we add 2 because we already have name-1 and our counter starts from 0
-                                    const emailID = 'email-' + (addedElements + 2)
-                                    const nameErrorID = 'name-error-' + (addedElements + 2)
-                                    const emailErrorID = 'email-error-' + (addedElements + 2)
+                                    const nameID = 'name-' + (addedElements + 1)// we add 2 because we already have name-1 and our counter starts from 0
+                                    const emailID = 'email-' + (addedElements + 1)
+                                    const nameErrorID = 'name-error-' + (addedElements + 1)
+                                    const emailErrorID = 'email-error-' + (addedElements + 1)
                                     const nameLabel = fragment.firstChild.children[0].children[0];
                                     const nameInput = fragment.firstChild.children[0].children[1];
                                     const nameError = fragment.firstChild.children[0].children[2];
@@ -203,7 +203,7 @@
                                     emailInput.id = emailID;
                                     emailError.id = emailErrorID;
 
-                                    fragment.firstChild.dataset.number = addedElements + 2;
+                                    fragment.firstChild.dataset.number = addedElements + 1;
 
                                     fragment.firstChild.children[2].addEventListener('click', function (e) {
                                         e.target.parentElement.remove();
