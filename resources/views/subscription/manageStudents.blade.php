@@ -1,5 +1,6 @@
 @php
     use Illuminate\Support\Facades\Auth;
+    use App\Models\User;
     $user = Auth::user();
     $oldValues = [];
 @endphp
@@ -13,7 +14,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="mb-5">
-                    <h2 class="text-3xl font-bold mb-5">{{ sprintf( __("Order #%d") ,$order->id )}}</h2>
+                    <div class="flex justify-between">
+                        <h2 class="text-3xl font-bold mb-5">{{ sprintf( __("Order #%d") ,$order->id )}}</h2>
+                        <a href="{{route('subscription.personal')}}">{{ __('My orders') }}</a>
+                    </div>
                     <p>{{sprintf( __("This order has %d used credits from total of %d credits."), $order->used_credits, $order->credits )}}</p>
                 </div>
 
@@ -50,7 +54,7 @@
                                     <strong>{{ __('Subscription status') }}:</strong>
                                     @if($subscription['expires_on'] === null)
                                         {{ __('Not activated')}}
-                                    @elseif( date('Y-m-d', strtotime('Y-m-d', $subscription['expires_on'])) < date('Y-m-d'))
+                                    @elseif( date('Y-m-d', strtotime($subscription['expires_on'])) < date('Y-m-d'))
                                         {{__('Expired')}}
                                     @else
                                         {{ __('Activated')}}
@@ -63,7 +67,7 @@
                                     </p>
                                 @endif
 
-                                @if($user->hasPermissionTo('view-students-statistics') && count($user->examTakings) > 0 )
+                                @if($user->hasPermissionTo('view-students-statistics') && count(User::find($subscription['user_id'])->examTakings) > 0 )
                                     <p>
                                         <a href="#">{{ __('View stats') }}</a>
                                     </p>

@@ -59,7 +59,6 @@ Route::middleware('auth')->group(function () {
     })->name('my-exam');
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
-    Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
     Route::get('/my-subscriptions/students/{order}', [SubscriptionController::class, 'manageStudents'])
         ->middleware(['permission:create-students'])
         ->name('subscription.students');

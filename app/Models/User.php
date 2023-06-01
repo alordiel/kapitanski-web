@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function examTakings(): HasMany
     {
-        return $this->hasMany(ExamTaking::class);
+        return $this->hasMany(ExamTaking::class, 'user_id');
     }
 
     public function orders(): HasMany
