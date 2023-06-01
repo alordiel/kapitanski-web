@@ -38,10 +38,10 @@
 
                 @if(count($subscriptions) > 0)
 
-                    <div class="mb-5 flex flex-wrap">
+                    <div class="mb-5 grid grid-cols-2 lg:grid-cols-3 gap-4">
                         @foreach($subscriptions as $subscription)
                             <div
-                                class="first:ml-0 ml-5 border dark:border-indigo-500 border-gray-300 rounded max-w-4xl px-3 py-5 ">
+                                class="border dark:border-indigo-500 border-gray-300 rounded max-w-4xl px-3 py-5 ">
                                 <p>
                                     <strong>{{ __('Name') }}:</strong> {{ $subscription->user['name'] }}
                                 </p>
