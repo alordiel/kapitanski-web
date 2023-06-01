@@ -86,7 +86,7 @@ class SubscriptionController extends Controller
 
         $validator = Validator::make($students, [
             '*.name' => ['required', 'string', 'max:255'],
-            '*.email' => ['required', 'email']
+            '*.email' => ['required', 'email:dns']
         ], [
             'email' => __('This seems to be invalid email'),
             'required' => __('This field is required'),

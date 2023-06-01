@@ -142,19 +142,20 @@
                                         nameError.style.display = 'none';
                                         emailError.innerText = '';
                                         emailError.style.display = 'none';
+
                                         // Check for errors the name and email fields;
                                         if (document.getElementById('name-' + row).value === '') {
-                                            nameError.innerText = "{{ __('Field can not be empty') }}";
+                                            nameError.innerText = "{{ __('This field is required') }}";
                                             nameError.style.display = 'block';
                                             hasErrors = true;
                                         }
                                         if (document.getElementById('email-' + row).value === '') {
-                                            emailError.innerText = "{{ __('Field can not be empty') }}";
+                                            emailError.innerText = "{{ __('This field is required') }}";
                                             emailError.style.display = 'block';
                                             hasErrors = true;
                                         }
                                         if (!document.getElementById('email-' + row).validity.valid) {
-                                            emailError.innerText = "{{ __('Invalid email address') }}";
+                                            emailError.innerText = "{{ __('This seems to be invalid email') }}";
                                             emailError.style.display = 'block';
                                             hasErrors = true;
                                         }
