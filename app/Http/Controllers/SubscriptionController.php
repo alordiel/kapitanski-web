@@ -95,7 +95,6 @@ class SubscriptionController extends Controller
                 'email' => $request->input('email-' . $index),
             ];
         }
-        dd($request->input());
 
         // Validate the number of available credits
         if (($order->credits - $order->used_credits) < $numberOfStudents) {
@@ -106,7 +105,7 @@ class SubscriptionController extends Controller
 
         $validator = Validator::make($students, [
             '*.name' => ['required', 'string', 'max:255'],
-            '*.email' => ['required', 'email:dns']
+            '*.email' => ['required', 'email']
         ], [
             'email' => __('This seems to be invalid email'),
             'required' => __('This field is required'),

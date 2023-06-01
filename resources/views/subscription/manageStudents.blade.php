@@ -127,16 +127,23 @@
                         <script>
                             const availableCredits = {{ $credits_left }};
                             document.addEventListener('DOMContentLoaded', function () {
+                                // we always have this first row there
                                 let addedElements = 1;
 
                                 document.getElementById('store-students').addEventListener('submit', function (event) {
-                                    const numberOfRows = addedElements + 1;
+
                                     let hasErrors = false;
+                                    document.getElementById('number-of-rows').value = addedElements;
+                                    console.log(document.getElementById('number-of-rows').value)
                                     // validate the form
-                                    for (let i = 0; i < numberOfRows; i++) {
+                                    for (let i = 0; i < addedElements; i++) {
                                         const row = i + 1;
                                         const nameError = document.getElementById('name-error-' + row);
                                         const emailError = document.getElementById('email-error-' + row);
+                                        // check if fields actually exist
+                                        if (nameError === null || emailError === null) {
+                                            continue;
+                                        }
                                         // Clear any old errors
                                         nameError.innerText = '';
                                         nameError.style.display = 'none';
@@ -165,7 +172,7 @@
                                         event.preventDefault();
                                         return false;
                                     }
-                                    document.getElementById('number-of-rows').value = numberOfRows;
+
                                     return true;
                                 });
 
