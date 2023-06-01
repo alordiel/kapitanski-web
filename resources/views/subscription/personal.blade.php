@@ -15,7 +15,7 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <x-subheader title="{{ __('My subscriptions') }}"/>
+        <x-subheader title="{{ __('Orders and Subscriptions') }}"/>
     </x-slot>
     <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
         @if(!empty($orders) && count($orders) > 0)
