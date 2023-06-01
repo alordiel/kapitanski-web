@@ -104,7 +104,7 @@
                                 {{-- this div is used as wrapper for adding the rest of the students --}}
                             </div>
                             <div class="flex justify-between flex-wrap max-w-2xl">
-                                @if($credits_left > 0)
+                                @if($credits_left > 1)
                                     <x-secondary-button id="add-field">{{ __('Add empty field') }}</x-secondary-button>
                                 @endif
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
@@ -176,59 +176,61 @@
                                     return true;
                                 });
 
-                                document.getElementById('add-field').addEventListener('click', function () {
-                                    // Prevent adding new rows if we are out of credits
-                                    if (availableCredits - addedElements === 0) {
-                                        return
-                                    }
-                                    const button = this;
-                                    const counter = addedElements + 1;
-                                    const wrapper = document.getElementById('add-another-student')
-                                    const newRow = '<div class="flex flex-wrap mb-4" data-number="0"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></p></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></div><button class="remove-row rounded-full border-2 border-red-500 text-red-500 block w-7 h-7 ml-5 mt-7 flex items-center justify-center" type="button">X</button></div>';
-                                    const range = document.createRange();
-                                    range.selectNodeContents(wrapper);
-                                    const fragment = range.createContextualFragment(newRow);
+                                if (document.getElementById('add-field') !== null) {
+                                    document.getElementById('add-field').addEventListener('click', function () {
+                                        // Prevent adding new rows if we are out of credits
+                                        if (availableCredits - addedElements === 0) {
+                                            return
+                                        }
+                                        const button = this;
+                                        const counter = addedElements + 1;
+                                        const wrapper = document.getElementById('add-another-student')
+                                        const newRow = '<div class="flex flex-wrap mb-4" data-number="0"><div class="mr-5"><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="name">Full name</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="name" type="text"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></p></div><div><label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="email">Email</label><input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-60 lg:w-72 xl:w-80" id="email" type="email"><p class="text-sm text-red-600 dark:text-red-400 space-y-1" style="display:none"></div><button class="remove-row rounded-full border-2 border-red-500 text-red-500 block w-7 h-7 ml-5 mt-7 flex items-center justify-center" type="button">X</button></div>';
+                                        const range = document.createRange();
+                                        range.selectNodeContents(wrapper);
+                                        const fragment = range.createContextualFragment(newRow);
 
-                                    // change the names, ids, and `for`
-                                    const nameID = 'name-' + counter// we add 2 because we already have name-1 and our counter starts from 0
-                                    const emailID = 'email-' + counter
-                                    const nameErrorID = 'name-error-' + counter
-                                    const emailErrorID = 'email-error-' + counter
-                                    const nameLabel = fragment.firstChild.children[0].children[0];
-                                    const nameInput = fragment.firstChild.children[0].children[1];
-                                    const nameError = fragment.firstChild.children[0].children[2];
+                                        // change the names, ids, and `for`
+                                        const nameID = 'name-' + counter// we add 2 because we already have name-1 and our counter starts from 0
+                                        const emailID = 'email-' + counter
+                                        const nameErrorID = 'name-error-' + counter
+                                        const emailErrorID = 'email-error-' + counter
+                                        const nameLabel = fragment.firstChild.children[0].children[0];
+                                        const nameInput = fragment.firstChild.children[0].children[1];
+                                        const nameError = fragment.firstChild.children[0].children[2];
 
-                                    nameLabel.setAttribute('for', nameID);
-                                    nameInput.setAttribute('name', nameID);
-                                    nameInput.id = nameID;
-                                    nameError.id = nameErrorID;
+                                        nameLabel.setAttribute('for', nameID);
+                                        nameInput.setAttribute('name', nameID);
+                                        nameInput.id = nameID;
+                                        nameError.id = nameErrorID;
 
-                                    const emailLabel = fragment.firstChild.children[1].children[0];
-                                    const emailInput = fragment.firstChild.children[1].children[1];
-                                    const emailError = fragment.firstChild.children[1].children[2];
+                                        const emailLabel = fragment.firstChild.children[1].children[0];
+                                        const emailInput = fragment.firstChild.children[1].children[1];
+                                        const emailError = fragment.firstChild.children[1].children[2];
 
-                                    emailLabel.setAttribute('for', emailID);
-                                    emailInput.setAttribute('name', emailID);
-                                    emailInput.id = emailID;
-                                    emailError.id = emailErrorID;
+                                        emailLabel.setAttribute('for', emailID);
+                                        emailInput.setAttribute('name', emailID);
+                                        emailInput.id = emailID;
+                                        emailError.id = emailErrorID;
 
-                                    fragment.firstChild.dataset.number = counter;
+                                        fragment.firstChild.dataset.number = counter;
 
-                                    fragment.firstChild.children[2].addEventListener('click', function (e) {
-                                        e.target.parentElement.remove();
-                                        addedElements--;
-                                        // show the "add" button if there are still some more credits
-                                        if (availableCredits - addedElements !== 0) {
-                                            button.style.opacity = '1';
+                                        fragment.firstChild.children[2].addEventListener('click', function (e) {
+                                            e.target.parentElement.remove();
+                                            addedElements--;
+                                            // show the "add" button if there are still some more credits
+                                            if (availableCredits - addedElements !== 0) {
+                                                button.style.opacity = '1';
+                                            }
+                                        });
+                                        wrapper.appendChild(fragment);
+                                        addedElements++;
+
+                                        if (availableCredits - addedElements === 0) {
+                                            this.style.opacity = 0;
                                         }
                                     });
-                                    wrapper.appendChild(fragment);
-                                    addedElements++;
-
-                                    if (availableCredits - addedElements === 0) {
-                                        this.style.opacity = 0;
-                                    }
-                                });
+                                }
                             });
                         </script>
                     @endif
