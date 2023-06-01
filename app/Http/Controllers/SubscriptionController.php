@@ -81,13 +81,6 @@ class SubscriptionController extends Controller
             return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')], 'general');
         }
 
-        // Validate the number of available credits
-        if (($order->credits - $order->used_credits) < $numberOfStudents) {
-            return back()
-                ->withInput($students)
-                ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
-        }
-
         $numberOfStudents = $request->input('number-of-rows');
         $students = [];
         // since the form is dynamic we need to build an array with all the students
@@ -103,6 +96,14 @@ class SubscriptionController extends Controller
             ];
         }
         dd($request->input());
+
+        // Validate the number of available credits
+        if (($order->credits - $order->used_credits) < $numberOfStudents) {
+            return back()
+                ->withInput($students)
+                ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
+        }
+
         $validator = Validator::make($students, [
             '*.name' => ['required', 'string', 'max:255'],
             '*.email' => ['required', 'email:dns']
