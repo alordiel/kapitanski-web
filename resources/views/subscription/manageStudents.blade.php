@@ -13,12 +13,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="mb-5">
-                    <p>{{sprintf( __("Order #%d has %d used credits from total of %d credits.") ,$order->id, $order->used_credits, $order->credits )}}</p>
-                    @role('student-partner')
-                    <p>{{ __('You can manage your the other accounts below.') }}</p>
-                    @else
-                        <p>{{ __('You can manage your students below') }}</p>
-                        @endrole
+                    <h2 class="text-3xl font-bold mb-5">{{ sprintf( __("Manage subscription for Order #%d") ,$order->id )}}</h2>
+                    <p>{{sprintf( __("This order has %d used credits from total of %d credits."), $order->used_credits, $order->credits )}}</p>
                 </div>
 
                 @if(count($errors->general->all()) > 0  )
@@ -37,7 +33,9 @@
                 @php($credits_left = $order->credits - $order->used_credits)
 
                 @if(count($subscriptions) > 0)
-
+                    <div class="mb-5 pt-5 border-t-2  dark:border-indigo-500 border-gray-300">
+                        <h3 class="text-2xl">{{ __('List of subscriptions') }}</h3>
+                    </div>
                     <div class="mb-5 grid grid-cols-2 lg:grid-cols-3 gap-4">
                         @foreach($subscriptions as $subscription)
                             <div
@@ -78,6 +76,14 @@
                 {{-- The form for subscribing the students --}}
                 @if($order->credits > $order->used_credits)
                     <div>
+                        <div class="mb-5 pt-5 border-t-2  dark:border-indigo-500 border-gray-300">
+                            <h3 class="text-2xl">{{ __('Add students') }}</h3>
+                            @if($credits_left=== 1)
+                                <p>{{ __('You can add one more student.') }}</p>
+                            @else
+                                <p>{{ sprintf(__('You can add %d more students.'), $credits_left ) }}</p>
+                            @endif
+                        </div>
                         <form action="{{ route('subscription.students.store') }}" method="POST" class="mb-5"
                               id="store-students">
                             @csrf
