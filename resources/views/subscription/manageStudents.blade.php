@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="mb-5">
-                    <h2 class="text-3xl font-bold mb-5">{{ sprintf( __("Manage subscription for Order #%d") ,$order->id )}}</h2>
+                    <h2 class="text-3xl font-bold mb-5">{{ sprintf( __("Order #%d") ,$order->id )}}</h2>
                     <p>{{sprintf( __("This order has %d used credits from total of %d credits."), $order->used_credits, $order->credits )}}</p>
                 </div>
 
@@ -118,15 +118,20 @@
                             <input type="hidden" value="{{$order->id}}" name="orderId">
                             <input type="hidden" value="1" name="number-of-rows" id="number-of-rows">
                         </form>
-                        <p class="text-red-600 dark:text-yellow-500">
-                            <svg class="inline-block" stroke="currentColor" fill="currentColor" stroke-width="0"
-                                 viewBox="0 0 576 512"
-                                 height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path>
-                            </svg>
-                            {{ __('Note that once you save the list you will not be able to edit the user\'s email.') }}
-                        </p>
+                        <div
+                            class="text-orange-700 dark:text-yellow-500 border rounder border-orange-700 dark:border-yellow-500 py-2 px-4 border-l-4">
+                            <p>
+                                <svg class="inline-block mr-2" stroke="currentColor" fill="currentColor" stroke-width="0"
+                                     viewBox="0 0 576 512"
+                                     height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path>
+                                </svg>
+                                {{ __('Note that once you save the list you will not be able to edit the user\'s email.') }}
+                            </p>
+                            <p class="pl-7">{{ __('Adding the students won\'t automatically activate their 30 days subscription period.') }}</p>
+                            <p class="pl-7" >{{ __('They will be able to activate the subscription whenever they want.') }}</p>
+                        </div>
                     </div>
 
                     @if($credits_left > 0)
