@@ -18,6 +18,8 @@ class OrderController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * Triggered by the /checkout form
      */
     public function store(Request $request): RedirectResponse
     {
@@ -61,6 +63,20 @@ class OrderController extends Controller
         ];
         $order = Order::create($orderFields);
 
+        // In case of single purchase we will add an unactivated subscription
+        if ($isSingle) {
+            Subscription::create([
+                'exam_id' => 1,
+                'expires_on' => null,
+                'user_id' => $user->id,
+                'order_id' => $order->id,
+                'created_by' => $user->user_id,
+            ]);
+
+            $order->used_credits++;
+            $order->save();
+        }
+
         return redirect(route('dashboard'))->with('message', __('Your order was successfully created'));
     }
 
@@ -69,7 +85,7 @@ class OrderController extends Controller
      */
     public function adminStore(Request $request): RedirectResponse
     {
-          // store the order
+        // store the order
         $data = $request->validate([
             'user_id' => ['required'],
             'credits' => ['required'],
@@ -83,10 +99,10 @@ class OrderController extends Controller
 
         Order::create($data);
 
-        return redirect(route('order.manage'))->with('message','Order created');
+        return redirect(route('order.manage'))->with('message', 'Order created');
     }
 
-        /**
+    /**
      * Display a listing of the resource.
      */
     public function index(): View
@@ -101,7 +117,7 @@ class OrderController extends Controller
      */
     public function create(): View
     {
-       return view('order.create');
+        return view('order.create');
     }
 
     /**
@@ -131,7 +147,7 @@ class OrderController extends Controller
         $data['user_id'] = $order->user_id;
         $order->update($data);
 
-        return back()->with('message','Successfully updated');
+        return back()->with('message', 'Successfully updated');
     }
 
     /**
