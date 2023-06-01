@@ -63,7 +63,7 @@
             </div>
         </div>
     @elseif($active_subscription)
-        You have active subscription.
+        <x-exam-list/>
     @else
         <h3 class="text-center font-bold text-3xl">You don't have any subscription yet</h3>
         <h4 class="text-center font-bold text-2xl">
