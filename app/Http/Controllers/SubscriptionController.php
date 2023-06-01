@@ -149,50 +149,54 @@ class SubscriptionController extends Controller
         return back()->with('message', __('Successfully added'));
     }
 
+    /**
+     * Activation of subscription. By default, every user that has an order also has a subscription.
+     * The subscription can be unactivated (no started), active (the expiration date is in the future), expired
+     * The method below will check if there is inactive subscription and will activate it.
+     *
+     * @return RedirectResponse
+     */
     public function activate(): RedirectResponse
     {
         $user = Auth::user();
         if ($user === null) {
             return back()->with('message', __('You need to login in order to perform this action.'));
         }
-        $orders = $user->orders;
-        $subscription_created = false;
-        if (!empty($orders)) {
+
+        $subscriptions = $user->subscriptions;
+        $subscription_activated = false;
+        if (!empty($subscriptions)) {
             // check if order has a subscription attached or needs one to be activated
-            foreach ($orders as $order) {
-                if ($order->credits > $order->used_credits) {
-                    $data = [
-                        'exam_id' => 1,
-                        'user_id' => $user->id,
-                        'order_id' => $order->id,
-                        'created_by' => $user->id,
-                        'expires_on' => date('Y-m-d', strtotime('+31 days')),
-                    ];
-
-                    Subscription::create($data);
-
-                    // check user role and change it accordingly
-                    $user_role = $user->getRoleNames()->last();
-                    if ('member' === $user_role) {
-                        $user->syncRoles('student');
-                    } elseif ('partner' === $user_role) {
-                        $user->syncRoles('student-partner');
-                    }
-
-                    $order->used_credits++;
-                    $order->save();
-                    $subscription_created = true;
-                    break;
+            foreach ($subscriptions as $subscription) {
+                // the subscription is considered activated if it has expiration date
+                if ($subscription->expires_on !== null) {
+                    continue;
                 }
+
+                $subscription->expires_on = date('Y-m-d', strtotime('+31 days'));
+                $subscription->save();
+
+                // check user role and change it accordingly
+                $user_role = $user->getRoleNames()->last();
+                if ('member' === $user_role) {
+                    $user->syncRoles('student');
+                } elseif ('partner' === $user_role) {
+                    $user->syncRoles('student-partner');
+                }
+
+                $subscription_activated = true;
+                break;
             }
-            if (!$subscription_created) {
-                return back()->with('message', __('No free credits were found. You will need to purchased an exam.'));
+
+            if (!$subscription_activated) {
+                return back()->with('message', __('Your subscription has expired. You will need to purchase a new one.'));
             }
         } else {
 
-            return back()->with('message', __('No order was found. Have you purchased an exam.'));
+            return back()->with('message', __('No subscription was found. Have you purchased an exam.'));
         }
-        return back()->with('message', __('Your subscription was activated. You can proceed with the tests'));
+
+        return back()->with('message', __('Your subscription was activated. You can proceed with the tests.'));
     }
 
     /**
