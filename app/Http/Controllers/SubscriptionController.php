@@ -73,17 +73,36 @@ class SubscriptionController extends Controller
 
     public function storeStudents(Request $request): RedirectResponse
     {
+
+        // Validate the order that belongs to the same user
+        $user = Auth::user();
+        $order = Order::find((int)$request->input('orderId'));
+        if ($order->user_id !== $user->id) {
+            return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')], 'general');
+        }
+
+        // Validate the number of available credits
+        if (($order->credits - $order->used_credits) < $numberOfStudents) {
+            return back()
+                ->withInput($students)
+                ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
+        }
+
         $numberOfStudents = $request->input('number-of-rows');
         $students = [];
         // since the form is dynamic we need to build an array with all the students
         for ($i = 0; $i < $numberOfStudents; $i++) {
             $index = $i + 1;
+            // prevent records of empty rows
+            if (empty($request->input('name-' . $index)) && empty($request->input('email-' . $index))) {
+                continue;
+            }
             $students[] = [
                 'name' => $request->input('name-' . $index),
                 'email' => $request->input('email-' . $index),
             ];
         }
-
+        dd($request->input());
         $validator = Validator::make($students, [
             '*.name' => ['required', 'string', 'max:255'],
             '*.email' => ['required', 'email:dns']
@@ -98,20 +117,6 @@ class SubscriptionController extends Controller
             return back()
                 ->withErrors($validator, 'form')
                 ->withInput($students);
-        }
-
-        // Validate the order that belongs to the same user
-        $user = Auth::user();
-        $order = Order::find((int)$request->input('orderId'));
-        if ($order->user_id !== $user->id) {
-            return back()->withErrors(['message' => __('It seems that you are not the owner of this order.')], 'general');
-        }
-
-        // Validate the number of available credits
-        if (($order->credits - $order->used_credits) < $numberOfStudents) {
-            return back()
-                ->withInput($students)
-                ->withErrors(['message' => __('It seems that you do not have enough credits.')], 'general');
         }
 
         foreach ($students as $student) {
