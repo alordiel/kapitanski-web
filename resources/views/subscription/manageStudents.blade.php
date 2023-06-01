@@ -15,10 +15,10 @@
                 <div class="mb-5">
                     <p>{{sprintf( __("Order #%d has %d used credits from total of %d credits.") ,$order->id, $order->used_credits, $order->credits )}}</p>
                     @role('student-partner')
-                        <p>{{ __('You can manage your the other accounts below.') }}</p>
+                    <p>{{ __('You can manage your the other accounts below.') }}</p>
                     @else
                         <p>{{ __('You can manage your students below') }}</p>
-                    @endrole
+                        @endrole
                 </div>
 
                 @if(count($errors->general->all()) > 0  )
@@ -37,17 +37,41 @@
                 @php($credits_left = $order->credits - $order->used_credits)
 
                 @if(count($subscriptions) > 0)
-                    <div class="mb-5">
-                        <ul>
-                            @foreach($subscriptions as $subscription)
-                                <li>
-                                    {{$subscription->user['name'] . ' (' . $subscription->user['email'] .')'}}
-                                    @if($user->hasPermissionTo('view-students-statistics'))
-                                        <a href="#">{{ __('View stats') }}</a>
+
+                    <div class="mb-5 flex flex-wrap">
+                        @foreach($subscriptions as $subscription)
+                            <div
+                                class="first:ml-0 ml-5 border dark:border-indigo-500 border-gray-300 rounded max-w-4xl px-3 py-5 ">
+                                <p>
+                                    <strong>{{ __('Name') }}:</strong> {{ $subscription->user['name'] }}
+                                </p>
+                                <p>
+                                    <strong>{{ __('Email') }}:</strong> {{ $subscription->user['email'] }}
+                                </p>
+                                <p>
+                                    <strong>{{ __('Subscription status') }}:</strong>
+                                    @if($subscription['expires_on'] === null)
+                                        {{ __('Not activated')}}
+                                    @elseif( date('Y-m-d', strtotime('Y-m-d', $subscription['expires_on'])) < date('Y-m-d'))
+                                        {{__('Expired')}}
+                                    @else
+                                        {{ __('Activated')}}
                                     @endif
-                                </li>
-                            @endforeach
-                        </ul>
+                                </p>
+
+                                @if($subscription['expires_on'] !== null)
+                                    <p>
+                                        <strong>{{__('Expires on')}}:</strong> {{ $subscription['expires_on'] }}
+                                    </p>
+                                @endif
+
+                                @if($user->hasPermissionTo('view-students-statistics') && count($user->examTakings) > 0 )
+                                    <p>
+                                        <a href="#">{{ __('View stats') }}</a>
+                                    </p>
+                                @endif
+                            </div>
+                        @endforeach
                     </div>
                 @endif
 
@@ -60,8 +84,8 @@
 
                             @php($index = 0)
                             @php($form_errors = $errors->form->getMessages())
-                            @forelse($oldValues as $oldValue)
 
+                            @forelse($oldValues as $oldValue)
                                 @php($errorEmail = !empty($form_errors[$index . '.email'][0]) ?  $form_errors[$index . '.email'][0] : '')
                                 @php($errorName =  !empty($form_errors[$index . '.name'][0]) ?  $form_errors[$index . '.name'][0] : '')
                                 <x-student-row
@@ -72,11 +96,8 @@
                                     :error-email="$errorEmail"
                                 />
                                 @php($index++)
-
                             @empty
-
                                 <x-student-row :index="0"/>
-
                             @endforelse
 
                             <div id="add-another-student" class="mb-4">

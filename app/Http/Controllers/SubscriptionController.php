@@ -136,6 +136,9 @@ class SubscriptionController extends Controller
                 'order_id' => $order->id,
                 'created_by' => $order->user_id,
             ]);
+
+            $order->used_credits++;
+            $order->save();
         }
 
         return back()->with('message', __('Successfully added'));
