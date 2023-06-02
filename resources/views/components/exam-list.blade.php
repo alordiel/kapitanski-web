@@ -1,3 +1,7 @@
+@php
+    use \App\Models\QuestionCategory;
+    $categories = QuestionCategory::all();
+@endphp
 <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
     {{-- JS translations --}}
     @php
@@ -62,7 +66,10 @@
                         </svg>
                     </button>
                     <div class="flex justify-center">
-                        <x-secondary-button @click="openExamConfig('mistaken')">{{__("Start")}}</x-secondary-button>
+                        <x-secondary-button  @click="openExamConfig('mistaken')">
+                            {{__("Start")}}
+
+                        </x-secondary-button>
                     </div>
                 </div>
             </div>
@@ -105,6 +112,24 @@
                 class="w-60 lg:w-1/4 xl:w-1/5 bg-gray-300 py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
                 <h3 class="text-xl font-bold text-center">@{{examConfiguration.examTitle}}</h3>
                 <div class="mb-4">
+
+                    <div class="block mt-4" v-show="examConfiguration.type === 'category'">
+                        <label for="question-categories"
+                           class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                            {{__('Question category')}} <br>
+                        <select v-model="examConfiguration.selectedCategory" id="question-categories"
+                                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            <option
+                                v-for="(category, key) in questionCategories"
+                                :key="'qo-'+key"
+                                :value="category.id"
+                            >
+                                @{{category.name}}
+                            </option>
+                        </select>
+                    </label>
+                    </div>
+
                     <div class="block mt-4" v-show="examConfiguration.type === 'all'">
                         <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Test type')}}<br>
@@ -181,6 +206,7 @@
     </div>
     <script>
         const {createApp} = Vue;
+         const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK); ?>;
 
         createApp({
             data() {
@@ -190,6 +216,7 @@
                         category: '{{$examTitles['category']}}',
                         mistaken: '{{$examTitles['mistaken']}}',
                     },
+                    questionCategories: questionCategories,
                     showResults: false,
                     examType: '',
                     showInfoModal: false,
@@ -204,9 +231,11 @@
                         variation: 'custom',
                         numberOfQuestions: 20,
                         showCorrectAnswer: true,
+                        selectedCategory: ''
                     },
                     loading: {
                         startExam: false,
+                        directStart: false,
                         finalResult: false,
                     }
                 }
