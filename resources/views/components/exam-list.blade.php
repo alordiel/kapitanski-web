@@ -32,7 +32,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center">
-                        <x-secondary-button @click="examType = 'allQuestions'">{{__("Start")}}</x-secondary-button>
+                        <x-secondary-button @click="openExamConfig('all')">{{__("Start")}}</x-secondary-button>
                     </div>
                 </div>
                 <div class="border rounded border-gray-300 dark:border-indigo-600 py-5 px-7 relative">
@@ -47,7 +47,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center">
-                        <x-secondary-button @click="examType = 'byCategory'">{{__("Start")}}</x-secondary-button>
+                        <x-secondary-button @click="openExamConfig('category')">{{__("Start")}}</x-secondary-button>
                     </div>
                 </div>
                 <div class="border rounded border-gray-300 dark:border-indigo-600  py-5 px-7  relative">
@@ -62,7 +62,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center">
-                        <x-secondary-button @click="examType = 'mistakes'">{{__("Start")}}</x-secondary-button>
+                        <x-secondary-button @click="openExamConfig('mistaken')">{{__("Start")}}</x-secondary-button>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,90 @@
                         @click="showInfoModal = false"
                         class="border border-gray-300 dark:border-indigo-600 rounded py-2 px-5"
                     >
-                        Close
+                        {{__('Close')}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- Exam configuration modal --}}
+        <div
+            class="fixed bg-gray-300/75 dark:bg-slate-800/75 w-screen h-screen top-0 left-0 flex justify-center items-center"
+            v-show="showConfigModal"
+        >
+            <div
+                class="w-60 lg:w-1/4 xl:w-1/5 bg-gray-300 py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
+                <h3 class="text-xl font-bold text-center">@{{examConfiguration.examTitle}}</h3>
+                <div class="mb-4">
+                    <div class="block mt-4" v-show="examConfiguration.type === 'all'">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                            {{__('Test type')}}<br>
+                            <label for="time-test">
+                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
+                                       value="time" id="time-test">
+                                {{__('Time test')}}
+                            </label>
+                            <label for="all-test" class="inline-block ml-4">
+                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
+                                       value="all" id="all-test">
+                                {{__('All questions')}}
+                            </label>
+                            <label for="custom-test" class="inline-block ml-4">
+                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
+                                       value="custom" id="custom-test">
+                                {{__('Custom')}}
+                            </label>
+                        </label>
+                    </div>
+
+                    <div class="block mt-4">
+                        <label  for="show-correct" class="inline-flex items-center">
+                            <input id="show-correct" type="checkbox"
+                                   class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
+                                   name="show-correct"
+                                   v-model="examConfiguration.showCorrectAnswer"
+                            >
+                            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+                                {{ __('Show correct answer after submitting answer') }}
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="block mt-4" v-show="examConfiguration.variation === 'custom'">
+                        <label for="numberOfQuestions"
+                               class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                            {{__('Selected number of questions:')}}
+                            <span id="display-selected">@{{ examConfiguration.numberOfQuestions }}</span>
+                        </label>
+                        <input
+                            class="w-full"
+                            type="range"
+                            id="numberOfQuestions"
+                            name="numberOfQuestions"
+                            v-model="examConfiguration.numberOfQuestions"
+                            min="10"
+                            max="600"
+                            value="20"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        :disabled="loading.startExam"
+                        @click="showConfigModal = false"
+                        class="border border-gray-300 dark:border-indigo-600 rounded py-2 px-5 disabled:opacity-25"
+                    >
+                        {{__('Close')}}
+                    </button>
+                    <button
+                        @click="startExam()"
+                        :disabled="loading.startExam"
+                        class="ml-4 border border-gray-300 dark:border-indigo-600 rounded py-2 px-5 disabled:opacity-25"
+                    >
+                        {{__('Start')}}
+                        <svg v-show="loading.startExam" class="animate-spin inline-block ml-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg>
                     </button>
                 </div>
             </div>
@@ -102,12 +185,29 @@
         createApp({
             data() {
                 return {
+                    examTitles: {
+                        all: '{{$examTitles['all']}}',
+                        category: '{{$examTitles['category']}}',
+                        mistaken: '{{$examTitles['mistaken']}}',
+                    },
                     showResults: false,
                     examType: '',
                     showInfoModal: false,
+                    showConfigModal: false,
                     infoModal: {
                         title: '',
                         body: '',
+                    },
+                    examConfiguration: {
+                        examTitle: '',
+                        type: '',
+                        variation: 'custom',
+                        numberOfQuestions: 20,
+                        showCorrectAnswer: true,
+                    },
+                    loading: {
+                        startExam: false,
+                        finalResult: false,
                     }
                 }
             },
@@ -117,12 +217,12 @@
                 },
             },
             methods: {
+                openExamConfig(type) {
+                    this.examConfiguration.type = type;
+                    this.examConfiguration.examTitle = this.examTitles[type];
+                    this.showConfigModal = true;
+                },
                 openInfo(type) {
-                    const titles = {
-                        all: '{{$examTitles['all']}}',
-                        category: '{{$examTitles['category']}}',
-                        mistaken: '{{$examTitles['mistaken']}}',
-                    };
                     const descriptions = {
                         all: '{{$examDescription['all']}}',
                         category: '{{$examDescription['category']}}',
@@ -130,10 +230,13 @@
                     };
                     this.infoModal = {
                         body: descriptions[type],
-                        title: titles[type],
+                        title: this.examTitles[type],
                     }
                     this.showInfoModal = true;
-                }
+                },
+                startExam() {
+                    this.loading.startExam = true;
+                },
             }
         }).mount('#exam-app')
     </script>
