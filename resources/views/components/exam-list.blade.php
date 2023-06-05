@@ -285,7 +285,6 @@
                 startExam() {
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
-                    console.log(token)
                     this.loading.startExam = true;
                     this.modals.config.error = '';
 
@@ -303,9 +302,13 @@
                         }
                     })
                         .then(res => {
-                            vm.exam = res.data.exam;
+                            if (res.data.status === 'failed'){
+                                vm.modals.config.error = res.data.message;
+                            } else {
+                                vm.exam = res.data.exam;
+                                vm.modals.config.visible = false;
+                            }
                             vm.loading.startExam = false;
-                            vm.modals.config.visible = false;
                         })
                         .catch(error => {
                             vm.loading.startExam = false;

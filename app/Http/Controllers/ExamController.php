@@ -135,8 +135,15 @@ class ExamController extends Controller
         ], 201);
     }
 
-    public function getExamQuestions(): JsonResponse
+    public function getExamQuestions(Request $request): JsonResponse
     {
+        if (!$request->user()->hasPermissionTo('take-exam')) {
+            return response()->json([
+                'status' => 'failed',
+                'message' => 'No permission to take exam'
+            ], 403);
+        }
+
         return response()->json([
             'status' => 'success',
             'exam' => [],
