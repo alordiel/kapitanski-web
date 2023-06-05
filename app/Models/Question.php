@@ -15,7 +15,7 @@ class Question extends Model
      * @var bool
      */
     public $timestamps = false;
-    protected $fillable = ['question', 'correct_answer', 'category_id', 'type'];
+    protected $fillable = ['question', 'correct_answer', 'category_id', 'type', 'explanation'];
 
     public function questionCategory(): BelongsTo
     {

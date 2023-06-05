@@ -247,6 +247,7 @@
                         numberOfQuestions: 20,
                         showCorrectAnswer: true,
                         selectedCategory: '',
+                        showExplanation: false,
                     },
                     loading: {
                         startExam: false,
