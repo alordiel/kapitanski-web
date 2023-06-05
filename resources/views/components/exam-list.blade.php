@@ -87,7 +87,7 @@
             v-show="showInfoModal"
         >
             <div
-                class="w-60 lg:w-1/4 xl:w-1/5 bg-gray-300 py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
+                class="w-60 lg:w-1/4 xl:w-1/5 bg-white py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
                 <h3 class="text-xl font-bold text-center">@{{infoModal.title}}</h3>
                 <div class="mb-4">
                     @{{infoModal.body}}
@@ -109,7 +109,7 @@
             v-show="showConfigModal"
         >
             <div
-                class="w-60 lg:w-1/4 xl:w-1/5 bg-gray-300 py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
+                class="w-60 lg:w-1/4 xl:w-1/5 bg-white py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
                 <h3 class="text-xl font-bold text-center">@{{examConfiguration.examTitle}}</h3>
                 <div class="mb-4">
 
@@ -151,19 +151,6 @@
                         </label>
                     </div>
 
-                    <div class="block mt-4">
-                        <label  for="show-correct" class="inline-flex items-center">
-                            <input id="show-correct" type="checkbox"
-                                   class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
-                                   name="show-correct"
-                                   v-model="examConfiguration.showCorrectAnswer"
-                            >
-                            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                                {{ __('Show correct answer after submitting answer') }}
-                            </span>
-                        </label>
-                    </div>
-
                     <div class="block mt-4" v-show="examConfiguration.variation === 'custom'">
                         <label for="numberOfQuestions"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
@@ -182,6 +169,19 @@
                         >
                     </div>
 
+                    <div class="block mt-4">
+                        <label  for="show-correct" class="inline-flex items-center">
+                            <input id="show-correct" type="checkbox"
+                                   class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
+                                   name="show-correct"
+                                   v-model="examConfiguration.showCorrectAnswer"
+                            >
+                            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+                                {{ __('Show correct answer after submitting answer') }}
+                            </span>
+                        </label>
+                    </div>
+
                 </div>
 
                 <div class="flex justify-center">
@@ -195,7 +195,7 @@
                     <button
                         @click="startExam()"
                         :disabled="loading.startExam"
-                        class="ml-4 border border-gray-300 dark:border-indigo-600 rounded py-2 px-5 disabled:opacity-25"
+                        class="ml-4 border border-sky-600 dark:border-indigo-600 bg-sky-700 text-white dark:bg-indigo-600 rounded py-2 px-5 disabled:opacity-25"
                     >
                         {{__('Start')}}
                         <svg v-show="loading.startExam" class="animate-spin inline-block ml-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg>
