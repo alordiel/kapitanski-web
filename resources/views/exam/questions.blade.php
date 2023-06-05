@@ -107,7 +107,7 @@
                         <input
                             type="radio"
                             :checked="(question.textAnswers[textIndex].isCorrect === true)"
-                            :name="'correctAnswer' + textIndex"
+                            :name="'correctAnswer' + questionIndex"
                             @change="changeOfCorrect(questionIndex, textIndex)"
                         /> is the correct answer
                     </label>
