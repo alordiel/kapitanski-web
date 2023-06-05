@@ -73,6 +73,12 @@ class ExamController extends Controller
     public function manageQuestions(Request $request): JsonResponse
     {
 
+        if(!$request->user()->hasPermissionTo('create-exams')) {
+            return response()->json([
+                'message' => 'No permission to create questions',
+            ], 403);
+        }
+
         $request->validate([
             'examId' => ['required', 'numeric'],
             'questions' => 'required'
@@ -94,7 +100,6 @@ class ExamController extends Controller
             $question->type = $question_entry['type'];
             $question->question_category_id = $question_entry['category'];
             $question->save();
-
 
             // $question->questionCategory()->save($questionCategory);
             // $exam->question()->save($question);
@@ -123,7 +128,7 @@ class ExamController extends Controller
                 }
                 // connect the answer to the question
                 $question->save();
-                $question->answer()->save($answer);
+                $question->answers()->save($answer);
             } // end foreach answer
             unset($answer_entry);
 
@@ -143,6 +148,17 @@ class ExamController extends Controller
                 'message' => 'No permission to take exam'
             ], 403);
         }
+
+        // Validate the request
+        $request->validate([
+            'type' => 'required',
+            'showCorrectAnswer' => 'required',
+            'showExplanation' => 'required',
+        ]);
+
+
+        // Check what is the type of the exam and what questions we need to provide
+
 
         return response()->json([
             'status' => 'success',

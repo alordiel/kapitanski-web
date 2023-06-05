@@ -272,6 +272,7 @@
                     this.modals.config.visible = true;
                     this.modals.config.error = '';
                 },
+
                 openInfo(type) {
                     const descriptions = {
                         all: '{{$examDescription['all']}}',
@@ -282,6 +283,7 @@
                     this.modals.info.title = this.examTitles[type];
                     this.modals.info.visible = true;
                 },
+
                 startExam() {
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
@@ -292,17 +294,15 @@
 
                     axios({
                         url: '/api/v1/get-questions',
-                        method: 'get',
-                        data: {
-                            config: this.examConfiguration,
-                        },
+                        method: 'post',
+                        data: this.examConfiguration,
                         headers: {
                             Authorization: `Bearer ${token}`,
                             Accept: 'application/json',
                         }
                     })
                         .then(res => {
-                            if (res.data.status === 'failed'){
+                            if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
                             } else {
                                 vm.exam = res.data.exam;
@@ -311,10 +311,13 @@
                             vm.loading.startExam = false;
                         })
                         .catch(error => {
+                            if (error.response.data !== undefined && error.response.data.message !== undefined) {
+                                vm.modals.config.error = error.response.data.message;
+                            } else {
+                                vm.modals.config.error = error.message;
+                            }
                             vm.loading.startExam = false;
-                            vm.modals.config.error = error;
-                            console.log(error)
-                        })
+                        });
                 },
             }
         }).mount('#exam-app')

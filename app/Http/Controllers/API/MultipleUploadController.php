@@ -15,6 +15,12 @@ class MultipleUploadController extends Controller
     public function store(Request $request): JsonResponse
     {
 
+        if(!$request->user()->hasPermissionTo('upload-images')) {
+            return response()->json([
+                'message' => 'No permission to upload images',
+            ], 403);
+        }
+
         $request->validate([
             'type' => 'required',
             'image' => 'required',

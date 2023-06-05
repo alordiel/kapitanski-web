@@ -234,11 +234,18 @@
 
                 saveQuestions() {
                     const vm = this;
+                    const token = '{{ auth()->user()->createToken('wow', ['save-exam'])->plainTextToken }}'
                     // TODO - validate the answers
                     axios.post('/api/v1/save-questions', {
                         examId: document.getElementById('exam-id').value,
                         questions: this.questions
-                    })
+                    },
+                        {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            Accept: 'application/json',
+                            }
+                        })
                         .then(res => {
                             alert(res.data.message)
                             vm.questions = res.data.questions;
