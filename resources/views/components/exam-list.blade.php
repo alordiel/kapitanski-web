@@ -225,6 +225,9 @@
                         title: '',
                         body: '',
                     },
+                    exam:{
+
+                    },
                     examConfiguration: {
                         examTitle: '',
                         type: '',
@@ -264,7 +267,24 @@
                     this.showInfoModal = true;
                 },
                 startExam() {
+                    const vm = this;
                     this.loading.startExam = true;
+
+                    axios.post('/api/v1/get-questions', {
+                        examId: document.getElementById('exam-id').value,
+                        config: this.examConfiguration,
+                    })
+                        .then(res => {
+                            alert(res.data.message)
+                            vm.exam = res.data.exam;
+                            vm.loading.startExam = 'false';
+                            vm.showConfigModal = 'false';
+                        })
+                        .catch(error => {
+                            vm.loading.startExam = 'false';
+                            console.log(error)
+                            alert(error)
+                        })
                 },
             }
         }).mount('#exam-app')
