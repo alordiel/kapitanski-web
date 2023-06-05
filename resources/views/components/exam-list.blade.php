@@ -66,7 +66,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center">
-                        <x-secondary-button  @click="openExamConfig('mistaken')">
+                        <x-secondary-button @click="openExamConfig('mistaken')">
                             {{__("Start")}}
 
                         </x-secondary-button>
@@ -115,19 +115,19 @@
 
                     <div class="block mt-4" v-show="examConfiguration.type === 'category'">
                         <label for="question-categories"
-                           class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                               class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Question category')}} <br>
-                        <select v-model="examConfiguration.selectedCategory" id="question-categories"
-                                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                            <option
-                                v-for="(category, key) in questionCategories"
-                                :key="'qo-'+key"
-                                :value="category.id"
-                            >
-                                @{{category.name}}
-                            </option>
-                        </select>
-                    </label>
+                            <select v-model="examConfiguration.selectedCategory" id="question-categories"
+                                    class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                <option
+                                    v-for="(category, key) in questionCategories"
+                                    :key="'qo-'+key"
+                                    :value="category.id"
+                                >
+                                    @{{category.name}}
+                                </option>
+                            </select>
+                        </label>
                     </div>
 
                     <div class="block mt-4" v-show="examConfiguration.type === 'all'">
@@ -170,7 +170,7 @@
                     </div>
 
                     <div class="block mt-4">
-                        <label  for="show-correct" class="inline-flex items-center">
+                        <label for="show-correct" class="inline-flex items-center">
                             <input id="show-correct" type="checkbox"
                                    class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
                                    name="show-correct"
@@ -198,7 +198,12 @@
                         class="ml-4 border border-sky-600 dark:border-indigo-600 bg-sky-700 text-white dark:bg-indigo-600 rounded py-2 px-5 disabled:opacity-25"
                     >
                         {{__('Start')}}
-                        <svg v-show="loading.startExam" class="animate-spin inline-block ml-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg>
+                        <svg v-show="loading.startExam" class="animate-spin inline-block ml-4" stroke="currentColor"
+                             fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -206,7 +211,7 @@
     </div>
     <script>
         const {createApp} = Vue;
-         const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK); ?>;
+        const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK); ?>;
 
         createApp({
             data() {
@@ -220,7 +225,7 @@
                     showResults: false,
                     examType: '',
                     modals: {
-                        info:{
+                        info: {
                             title: '',
                             body: '',
                             visible: false,
@@ -230,8 +235,10 @@
                             visible: false,
                         }
                     },
-                    exam:{
-
+                    exam: {},
+                    timer: {
+                      active: false,
+                      duration: 40 * 60,
                     },
                     examConfiguration: {
                         examTitle: '',
@@ -239,7 +246,7 @@
                         variation: 'custom',
                         numberOfQuestions: 20,
                         showCorrectAnswer: true,
-                        selectedCategory: ''
+                        selectedCategory: '',
                     },
                     loading: {
                         startExam: false,
@@ -266,27 +273,26 @@
                         category: '{{$examDescription['category']}}',
                         mistaken: '{{$examDescription['mistaken']}}',
                     };
-                    this.modals.info.body =  descriptions[type];
+                    this.modals.info.body = descriptions[type];
                     this.modals.info.title = this.examTitles[type];
                     this.modals.info.visible = true;
                 },
                 startExam() {
                     const vm = this;
                     this.loading.startExam = true;
-                    this.modals.config.error = false;
+                    this.modals.config.error = '';
 
                     axios.post('/api/v1/get-questions', {
                         examId: document.getElementById('exam-id').value,
                         config: this.examConfiguration,
                     })
                         .then(res => {
-                            alert(res.data.message)
                             vm.exam = res.data.exam;
-                            vm.loading.startExam = 'false';
-                            vm.modals.config.visible = 'false';
+                            vm.loading.startExam = false;
+                            vm.modals.config.visible = false;
                         })
                         .catch(error => {
-                            vm.loading.startExam = 'false';
+                            vm.loading.startExam = false;
                             vm.modals.config.error = error;
                             console.log(error)
                             alert(error)
