@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Answer;
 use App\Models\Exam;
 use App\Models\Question;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -152,17 +153,31 @@ class ExamController extends Controller
         // Validate the request
         $request->validate([
             'type' => 'required',
-            'showCorrectAnswer' => 'required',
-            'showExplanation' => 'required',
         ]);
 
-
+        $questions = [];
+        $qController = new QuestionController();
         // Check what is the type of the exam and what questions we need to provide
+        switch($request->input('type')) {
+            case 'all':
+
+                $questions = $qController->getAllQuestions();
+                break;
+            case 'category':
+                $data = $request->validate([
+                    'numberOfQuestions' => 'required',
+                    'categoryID' => ['required', 'numeric'],
+                ]);
+                $questions = $qController->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
+                break;
+            case 'mistaken':
+                $questions = $qController->getMistakenQuestions();
+        }
 
 
         return response()->json([
             'status' => 'success',
-            'exam' => [],
+            'exam' => $questions,
         ], 201);
     }
 
@@ -170,7 +185,7 @@ class ExamController extends Controller
     {
         return response()->json([
             'status' => 'success',
-            'exam' => [],
+            'exam' => QuestionController::getDemoQuestions(),
         ], 201);
     }
 }
