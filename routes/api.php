@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/v1/file-upload', [MultipleUploadController::class, 'store'])->middleware(['permission:upload-files']);
 Route::post('/v1/save-questions', [ExamController::class, 'manageQuestions'])->middleware(['permission:create-exam']);
-Route::get('/v1/get-questions', [ExamController::class, 'getExamQuestions'])->middleware(['permission:create-exam']);
+Route::get('/v1/get-questions', [ExamController::class, 'getExamQuestions'])->middleware(['auth:sanctum','abilities:get-exam']);
 Route::get('/v1/get-demo-questions', [ExamController::class, 'getDemoExamQuestions']);

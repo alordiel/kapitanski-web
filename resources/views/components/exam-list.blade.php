@@ -184,6 +184,10 @@
 
                 </div>
 
+                <div class="text-center mb-5" v-show="modals.config.error !== ''">
+                    <p class="w-full border border-red-500 text-red-600">@{{ modals.config.error }}</p>
+                </div>
+
                 <div class="flex justify-center">
                     <button
                         :disabled="loading.startExam"
@@ -237,8 +241,8 @@
                     },
                     exam: {},
                     timer: {
-                      active: false,
-                      duration: 40 * 60,
+                        active: false,
+                        duration: 40 * 60,
                     },
                     examConfiguration: {
                         examTitle: '',
@@ -280,12 +284,23 @@
                 },
                 startExam() {
                     const vm = this;
+                    const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
+                    console.log(token)
                     this.loading.startExam = true;
                     this.modals.config.error = '';
 
-                    axios.post('/api/v1/get-questions', {
-                        examId: document.getElementById('exam-id').value,
-                        config: this.examConfiguration,
+                    axios.defaults.withCredentials = true;
+
+                    axios({
+                        url: '/api/v1/get-questions',
+                        method: 'get',
+                        data: {
+                            config: this.examConfiguration,
+                        },
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            Accept: 'application/json',
+                        }
                     })
                         .then(res => {
                             vm.exam = res.data.exam;
@@ -296,7 +311,6 @@
                             vm.loading.startExam = false;
                             vm.modals.config.error = error;
                             console.log(error)
-                            alert(error)
                         })
                 },
             }

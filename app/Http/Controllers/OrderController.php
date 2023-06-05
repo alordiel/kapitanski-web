@@ -70,7 +70,7 @@ class OrderController extends Controller
                 'expires_on' => null,
                 'user_id' => $user->id,
                 'order_id' => $order->id,
-                'created_by' => $user->user_id,
+                'created_by' => $user->id,
             ]);
 
             $order->used_credits++;

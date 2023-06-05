@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Answer;
 use App\Models\Exam;
 use App\Models\Question;
-use App\Models\QuestionCategory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -136,11 +135,19 @@ class ExamController extends Controller
         ], 201);
     }
 
-    public function getExamQuestions() {
-
+    public function getExamQuestions(): JsonResponse
+    {
+        return response()->json([
+            'status' => 'success',
+            'exam' => [],
+        ], 201);
     }
 
-    public function getDemoExamQuestions() {
-
+    public function getDemoExamQuestions(): JsonResponse
+    {
+        return response()->json([
+            'status' => 'success',
+            'exam' => [],
+        ], 201);
     }
 }
