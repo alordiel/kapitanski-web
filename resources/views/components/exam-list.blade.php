@@ -84,17 +84,17 @@
         {{-- Info Modal --}}
         <div
             class="fixed bg-gray-300/75 dark:bg-slate-800/75 w-screen h-screen top-0 left-0 flex justify-center items-center"
-            v-show="showInfoModal"
+            v-show="modals.info.visible"
         >
             <div
                 class="w-60 lg:w-1/4 xl:w-1/5 bg-white py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
-                <h3 class="text-xl font-bold text-center">@{{infoModal.title}}</h3>
+                <h3 class="text-xl font-bold text-center">@{{modals.info.title}}</h3>
                 <div class="mb-4">
-                    @{{infoModal.body}}
+                    @{{modals.info.body}}
                 </div>
                 <div class="flex justify-center">
                     <button
-                        @click="showInfoModal = false"
+                        @click="modals.info.visible = false"
                         class="border border-gray-300 dark:border-indigo-600 rounded py-2 px-5"
                     >
                         {{__('Close')}}
@@ -106,7 +106,7 @@
         {{-- Exam configuration modal --}}
         <div
             class="fixed bg-gray-300/75 dark:bg-slate-800/75 w-screen h-screen top-0 left-0 flex justify-center items-center"
-            v-show="showConfigModal"
+            v-show="modals.config.visible"
         >
             <div
                 class="w-60 lg:w-1/4 xl:w-1/5 bg-white py-7 px-5 dark:bg-slate-800 border-gray-300 dark:border-indigo-600 rounded border-2">
@@ -187,7 +187,7 @@
                 <div class="flex justify-center">
                     <button
                         :disabled="loading.startExam"
-                        @click="showConfigModal = false"
+                        @click="modals.config.visible = false"
                         class="border border-gray-300 dark:border-indigo-600 rounded py-2 px-5 disabled:opacity-25"
                     >
                         {{__('Close')}}
@@ -219,11 +219,16 @@
                     questionCategories: questionCategories,
                     showResults: false,
                     examType: '',
-                    showInfoModal: false,
-                    showConfigModal: false,
-                    infoModal: {
-                        title: '',
-                        body: '',
+                    modals: {
+                        info:{
+                            title: '',
+                            body: '',
+                            visible: false,
+                        },
+                        config: {
+                            error: '',
+                            visible: false,
+                        }
                     },
                     exam:{
 
@@ -252,7 +257,8 @@
                 openExamConfig(type) {
                     this.examConfiguration.type = type;
                     this.examConfiguration.examTitle = this.examTitles[type];
-                    this.showConfigModal = true;
+                    this.modals.config.visible = true;
+                    this.modals.config.error = '';
                 },
                 openInfo(type) {
                     const descriptions = {
@@ -260,15 +266,14 @@
                         category: '{{$examDescription['category']}}',
                         mistaken: '{{$examDescription['mistaken']}}',
                     };
-                    this.infoModal = {
-                        body: descriptions[type],
-                        title: this.examTitles[type],
-                    }
-                    this.showInfoModal = true;
+                    this.modals.info.body =  descriptions[type];
+                    this.modals.info.title = this.examTitles[type];
+                    this.modals.info.visible = true;
                 },
                 startExam() {
                     const vm = this;
                     this.loading.startExam = true;
+                    this.modals.config.error = false;
 
                     axios.post('/api/v1/get-questions', {
                         examId: document.getElementById('exam-id').value,
@@ -278,10 +283,11 @@
                             alert(res.data.message)
                             vm.exam = res.data.exam;
                             vm.loading.startExam = 'false';
-                            vm.showConfigModal = 'false';
+                            vm.modals.config.visible = 'false';
                         })
                         .catch(error => {
                             vm.loading.startExam = 'false';
+                            vm.modals.config.error = error;
                             console.log(error)
                             alert(error)
                         })
