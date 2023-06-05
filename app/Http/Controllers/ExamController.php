@@ -135,4 +135,12 @@ class ExamController extends Controller
             'questions' => $questions,
         ], 201);
     }
+
+    public function getExamQuestions() {
+
+    }
+
+    public function getDemoExamQuestions() {
+
+    }
 }
