@@ -27,9 +27,15 @@ class QuestionRepository extends Controller
     public function getAllQuestions(string $type, int $count_of_questions)
     {
         if($type === 'all') {
-            $questions = Question::where('exam_id', 1)->take(-1)->get();
+            $questions = Question::where('exam_id', 1)
+                ->with('answers')
+                ->take(-1)
+                ->get();
         } else {
-            $questions = Question::where('exam_id', 1)->take($count_of_questions)->get();
+            $questions = Question::where('exam_id', 1)
+                ->with('answers')
+                ->take($count_of_questions)
+                ->get();
         }
 
         return $questions;

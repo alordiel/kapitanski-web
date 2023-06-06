@@ -105,22 +105,21 @@ class ExamController
         ]);
 
         $questions = [];
-        $qController = new QuestionController();
         // Check what is the type of the exam and what questions we need to provide
         switch ($request->input('type')) {
             case 'all':
 
-                $questions = $qController->getAllQuestions();
+                $questions = $this->questions->getAllQuestions('all',0);
                 break;
             case 'category':
                 $data = $request->validate([
                     'numberOfQuestions' => 'required',
                     'categoryID' => ['required', 'numeric'],
                 ]);
-                $questions = $qController->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
+                $questions = $this->questions->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
                 break;
             case 'mistaken':
-                $questions = $qController->getMistakenQuestions();
+                $questions = $this->questions->getMistakenQuestions();
         }
 
 
