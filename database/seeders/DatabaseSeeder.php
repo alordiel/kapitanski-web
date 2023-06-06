@@ -58,6 +58,30 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+        DB::table('orders')->insert([
+            'user_id' => 1,
+            'credits' => 1,
+            'used_credits' => 1,
+            'single_price' => 49,
+            'total' => 49,
+            'order_status' => 'completed',
+            'payment_id' => 1,
+            'payment_method' => 'paysera',
+            'invoice_number' => '000001',
+            'created_at' => '2023-05-23 14:43:05',
+            'updated_at' => '2023-05-23 14:43:05',
+        ]);
+
+        DB::table('subscriptions')->insert([
+            'exam_id' => 1,
+            'user_id' => 1,
+            'order_id' => 1,
+            'created_by' => 1,
+            'expires_on' => '2023-07-05 00:00:00',
+            'created_at' => '2023-06-05 00:00:00',
+            'updated_at' => '2023-07-05 07:34:00',
+        ]);
+
         DB::table('exams')->insert([
             ['name' => 'Captains course 40BT'],
             ['name' => 'Demo of Captains course 40BT'],
@@ -69,13 +93,13 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'mapping'
             ], [
                 'name' => 'Части на кораба',
-                'slug' => 'ship-parts'
+                'slug' => 'ship - parts'
             ], [
                 'name' => 'Флагове',
                 'slug' => 'flags'
             ], [
                 'name' => 'Морски знаци',
-                'slug' => 'sea-signs'
+                'slug' => 'sea - signs'
             ],
         ]);
 
@@ -86,13 +110,13 @@ class DatabaseSeeder extends Seeder
                 'exam_id' => 1,
                 'type' => 'text',
             ],
-            ['question' => 'Основен навигационен прибор на кораба /задължителен за всички кораби/ е:',
+            ['question' => 'Основен навигационен прибор на кораба / задължителен за всички кораби / е:',
                 'correct_answer' => 8,
                 'question_category_id' => 1,
                 'exam_id' => 1,
                 'type' => 'text',
             ],
-            ['question' => 'Поддържащата течност /компасната течност/ на картушката при корабния магнитен компас е:',
+            ['question' => 'Поддържащата течност / компасната течност / на картушката при корабния магнитен компас е:',
                 'correct_answer' => 11,
                 'question_category_id' => 1,
                 'exam_id' => 1,
@@ -101,18 +125,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('answers')->insert([
-            ['answer' => 'Определяне на проплавано разстояние.', 'question_id' => 1,],
-            ['answer' => 'Определяне на дълбочината.', 'question_id' => 1,],
-            ['answer' => 'Определяне курса на кораба и снемане на пеленги.', 'question_id' => 1,],
-            ['answer' => 'Определяне скоростта на кораба.', 'question_id' => 1,],
-            ['answer' => 'Секстанта.', 'question_id' => 2,],
-            ['answer' => 'Радиолокационната станция.', 'question_id' => 2,],
-            ['answer' => 'Лот и ехолот.', 'question_id' => 2,],
-            ['answer' => 'Магнитен компас.', 'question_id' => 2,],
-            ['answer' => 'Дестилирана вода.', 'question_id' => 3,],
-            ['answer' => 'Воден разтвор на етилов спирт.', 'question_id' => 3,],
-            ['answer' => 'Машинно масло.', 'question_id' => 3,],
-            ['answer' => 'Дизелово гориво.', 'question_id' => 3,],
+            ['answer' => 'Определяне на проплавано разстояние . ', 'question_id' => 1,],
+            ['answer' => 'Определяне на дълбочината . ', 'question_id' => 1,],
+            ['answer' => 'Определяне курса на кораба и снемане на пеленги . ', 'question_id' => 1,],
+            ['answer' => 'Определяне скоростта на кораба . ', 'question_id' => 1,],
+            ['answer' => 'Секстанта . ', 'question_id' => 2,],
+            ['answer' => 'Радиолокационната станция . ', 'question_id' => 2,],
+            ['answer' => 'Лот и ехолот . ', 'question_id' => 2,],
+            ['answer' => 'Магнитен компас . ', 'question_id' => 2,],
+            ['answer' => 'Дестилирана вода . ', 'question_id' => 3,],
+            ['answer' => 'Воден разтвор на етилов спирт . ', 'question_id' => 3,],
+            ['answer' => 'Машинно масло . ', 'question_id' => 3,],
+            ['answer' => 'Дизелово гориво . ', 'question_id' => 3,],
         ]);
 
         $this->call([
