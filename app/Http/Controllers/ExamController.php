@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Answer;
 use App\Models\Exam;
-use App\Models\Question;
-use App\Http\Controllers\QuestionController;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ExamController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(): View
     {
         return view('exam.index', [
