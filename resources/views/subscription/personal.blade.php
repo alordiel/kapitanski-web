@@ -26,8 +26,8 @@
 
                         @php
                             $subscription = $order->subscriptions[0];
-                            $created_on = date('d-m-Y', strtotime($subscription->created_at));
-                            $expires_on = date('d-m-Y', strtotime($subscription->expires_on));
+                            $created_on = date('Y-m-d', strtotime($subscription->created_at));
+                            $expires_on = date('Y-m-d', strtotime($subscription->expires_on));
                             $is_active  = $expires_on > date("Y-m-d");
                             $subscriptions_status = $is_active ? __('Active') : __('Expired');
                             $expiration_date = $is_active ? __('Expires on') : __('Expired on');
@@ -52,7 +52,7 @@
                         <div class="mb-5 w-64 border p-5 mx-3 rounded dark:border-indigo-500">
                             <p><strong>{{ __('Order') }}:</strong> #{{ $order->id }}</strong></p>
                             <p><strong>{{ __('Order status') }}:</strong> {{ $order->order_status }}</strong></p>
-                            <p><strong>{{ __('Order date') }}:</strong> {{ date('d-m-Y', strtotime($order->created_at)) }}</p>
+                            <p><strong>{{ __('Order date') }}:</strong> {{ date('Y-m-d', strtotime($order->created_at)) }}</p>
                             <p><strong>{{ __('Total credits') }}:</strong> {{ $order->credits }}</strong></p>
                             <p><strong>{{ __('Used credits') }}:</strong> {{ $order->used_credits }}</strong></p>
                             <p><a href="{{ route('subscription.students', ['order'=> $order]) }}">{{ __('Manage students') }}</a></p>
@@ -63,7 +63,7 @@
                         <div class="mb-5 w-64 border p-5 mx-3 rounded dark:border-indigo-500">
                             <p><strong>{{ __('Order') }}:</strong> #{{ $order->id}}</strong></p>
                             <p><strong>{{ __('Order status') }}:</strong> {{ $order->order_status}}</strong></p>
-                            <p><strong>{{ __('Order date') }}:</strong> {{date('d-m-Y', strtotime($order->created_at)) }}
+                            <p><strong>{{ __('Order date') }}:</strong> {{date('Y-m-d', strtotime($order->created_at)) }}
                             </p>
                             <p><strong>{{ __('Invoice') }}:</strong> <a href="#">{{'Download'}}</a></p>
                             <p>{{ __('Subscription is inactive.') }}</p>
@@ -77,8 +77,8 @@
             <div class="flex flex-wrap">
                 @foreach($subscriptions as $subscription)
                     @php
-                        $created_on = date('d-m-Y', strtotime($subscription->created_at));
-                        $expires_on = date('d-m-Y', strtotime($subscription->expires_on));
+                        $created_on = date('Y-m-d', strtotime($subscription->created_at));
+                        $expires_on = date('Y-m-d', strtotime($subscription->expires_on));
                         $is_active  = $expires_on > date("Y-m-d");
                         $subscriptions_status = $is_active ? __('Active') : __('Expired');
                         $expiration_date = $is_active ? __('Expires on') : __('Expired on');
