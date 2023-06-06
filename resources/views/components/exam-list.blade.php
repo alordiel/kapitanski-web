@@ -116,7 +116,7 @@
                     <div class="block mt-4" v-show="examConfiguration.type === 'category'">
                         <label for="question-categories"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
-                            {{__('Question category')}} <br>
+                            {{__('Select category')}} <br>
                             <select v-model="examConfiguration.categoryID" id="question-categories"
                                     class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                 <option
@@ -151,7 +151,7 @@
                         </label>
                     </div>
 
-                    <div class="block mt-4" v-show="examConfiguration.variation === 'custom'">
+                    <div class="block mt-4" v-show="examConfiguration.variation === 'custom' && examConfiguration.type === 'all'">
                         <label for="numberOfQuestions"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Selected number of questions:')}}
@@ -285,6 +285,12 @@
                 },
 
                 startExam() {
+
+                    if (this.examConfiguration.type === 'category' && this.examConfiguration.categoryID === '') {
+                        this.modals.config.error = '{{__('Please select a category.')}}'
+                        return;
+                    }
+
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
                     this.loading.startExam = true;
