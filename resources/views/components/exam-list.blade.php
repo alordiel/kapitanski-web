@@ -2,7 +2,8 @@
     use \App\Models\QuestionCategory;
     $categories = QuestionCategory::all();
 @endphp
-<div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+
+<div class="p-4 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
     {{-- JS translations --}}
     @php
         $examTitles = [
@@ -20,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <div id="exam-app">
-        <div v-if="!selectedExamType">
+        <div v-if="exam.length === 0">
             <h3 class="text-center font-bold text-3xl mb-3">{{ __('Select exam type') }}</h3>
             <p class="text-center mb-7">{{__('You can click the info icon for more details on the types')}}</p>
             <div class="grid gird-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -74,9 +75,33 @@
                 </div>
             </div>
         </div>
-        <div v-if="examType !== '' && !showResults">
-            You have selected @{{ examType }}
+
+        {{-- Exam with questions panel --}}
+        <div v-if="!showResults && exam.length >0">
+            <div class="flex flex-wrap">
+                <div
+                    class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
+                    v-for="(question,questionIndex) in exam"
+                    :title="question.question"
+                    @click="questions.currentQuestion = questionIndex"
+                ></div>
+            </div>
+            <div>
+                <div>@{{ exam[questions.currentQuestion].question }}</div>
+                <div class="grid grid-cols-2">
+
+                <div
+                    v-for="(answer, answerIndex) in exam[questions.currentQuestion].answers"
+                    :key="'answer'+answerIndex"
+                    @click="selectAnswer(answer.id)"
+                >
+                    @{{ answer.answer }}
+                </div>
+                </div>
+            </div>
         </div>
+
+        {{-- Results --}}
         <div v-if="showResults">
             Results
         </div>
@@ -227,7 +252,6 @@
                     },
                     questionCategories: questionCategories,
                     showResults: false,
-                    examType: '',
                     modals: {
                         info: {
                             title: '',
@@ -239,7 +263,10 @@
                             visible: false,
                         }
                     },
-                    exam: {},
+                    exam: [],
+                    questions:{
+                      currentQuestion: 0,
+                    },
                     timer: {
                         active: false,
                         duration: 40 * 60,
@@ -261,9 +288,7 @@
                 }
             },
             computed: {
-                selectedExamType() {
-                    return this.examType !== '';
-                },
+
             },
             methods: {
                 openExamConfig(type) {
@@ -319,6 +344,10 @@
                             vm.loading.startExam = false;
                         });
                 },
+
+                selectAnswer(answerID){
+
+                }
             }
         }).mount('#exam-app')
     </script>
