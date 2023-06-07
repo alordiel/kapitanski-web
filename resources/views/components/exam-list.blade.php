@@ -82,22 +82,48 @@
                 <div
                     class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
                     v-for="(question,questionIndex) in exam"
+                    :key="'question-' + questionIndex"
                     :title="question.question"
                     @click="questions.currentQuestion = questionIndex"
                 ></div>
             </div>
             <div>
-                <div>@{{ exam[questions.currentQuestion].question }}</div>
+                <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
                 <div class="grid grid-cols-2">
 
-                <div
-                    v-for="(answer, answerIndex) in exam[questions.currentQuestion].answers"
-                    :key="'answer'+answerIndex"
-                    @click="selectAnswer(answer.id)"
-                >
-                    @{{ answer.answer }}
+                    <div
+                        class="py-3 px-4 m-3 border border-gray-300 dark:border-indigo-600 cursor-pointer"
+                        :class="{'bg-gray-400': answer.id === question.userAnswer}"
+                        v-for="(answer, answerIndex) in exam[questions.currentQuestion].answers"
+                        :key="'answer'+answerIndex"
+                        @click="selectAnswer(answer.id)"
+                    >
+                        @{{ answer.answer }}
+                    </div>
                 </div>
-                </div>
+            </div>
+            <div
+                class="grid grid-cols-2"
+                v-show="exam[questions.currentQuestion].userAnswer !== 0"
+            >
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.currentQuestion !== 0"
+                    @click="questions.currentQuestion--"
+                >< {{__('Previous')}}</button>
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.currentQuestion + 1 !== exam.length"
+                    @click="questions.currentQuestion++"
+                >{{__('Next')}} ></button>
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.allAnswered"
+                    @click="submitExam"
+                >{{__('Finish')}}</button>
             </div>
         </div>
 
@@ -264,8 +290,11 @@
                         }
                     },
                     exam: [],
-                    questions:{
-                      currentQuestion: 0,
+                    questions: {
+                        currentQuestion: 0,
+                        allAnswered: false,
+                        numberOfAnswered: 0,
+                        totalQuestions: 0,
                     },
                     timer: {
                         active: false,
@@ -287,9 +316,7 @@
                     }
                 }
             },
-            computed: {
-
-            },
+            computed: {},
             methods: {
                 openExamConfig(type) {
                     this.examConfiguration.type = type;
@@ -330,7 +357,14 @@
                             if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
                             } else {
-                                vm.exam = res.data.exam;
+                                if (res.data.exam.length > 0 ) {
+                                    vm.questions.totalQuestions = res.data.exam.length;
+                                    vm.exam = res.data.exam;
+                                    // add the user's answer property
+                                    vm.exam.forEach(entry => {
+                                        entry.userAnswer = 0;
+                                    })
+                                }
                                 vm.modals.config.visible = false;
                             }
                             vm.loading.startExam = false;
@@ -345,7 +379,13 @@
                         });
                 },
 
-                selectAnswer(answerID){
+                selectAnswer(answerID) {
+                    this.exam[this.questions.currentQuestion].userAnswer = answerID;
+                    this.questions.numberOfAnswered++
+                    this.questions.allAnswered = (this.questions.numberOfAnswered === this.questions.totalQuestions)
+                },
+
+                finishExam() {
 
                 }
             }
