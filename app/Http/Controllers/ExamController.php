@@ -160,15 +160,13 @@ class ExamController extends Controller
         // Check what is the type of the exam and what questions we need to provide
         switch($request->input('type')) {
             case 'all':
-
                 $questions = $qController->getAllQuestions();
                 break;
             case 'category':
                 $data = $request->validate([
-                    'numberOfQuestions' => 'required',
                     'categoryID' => ['required', 'numeric'],
                 ]);
-                $questions = $qController->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
+                $questions = $qController->getQuestionsByCategory($data['categoryID']);
                 break;
             case 'mistaken':
                 $questions = $qController->getMistakenQuestions();

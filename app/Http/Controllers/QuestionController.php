@@ -70,18 +70,17 @@ class QuestionController extends Controller
         return $questions->answers()->where('exam_id', 2)->take(20)->get();
     }
 
-    public function getQuestionsByCategory(int $category_id, int $count_of_questions): Collection
+    public function getQuestionsByCategory(int $category_id): Collection
     {
-        $questions = new Question();
-        return $questions->answers()
-            ->where('question_category_id', $category_id)
-            ->take($count_of_questions)
+        return Question::where('question_category_id', $category_id)
+            ->take(-1)
+            ->with('answers')
             ->get();
     }
 
     public function getAllQuestions(string $type, int $count_of_questions)
     {
-        if($type === 'all') {
+        if ($type === 'all') {
             $questions = Question::where('exam_id', 1)->take(-1)->get();
         } else {
             $questions = Question::where('exam_id', 1)->take($count_of_questions)->get();
