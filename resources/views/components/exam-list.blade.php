@@ -2,7 +2,8 @@
     use \App\Models\QuestionCategory;
     $categories = QuestionCategory::all();
 @endphp
-<div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+
+<div class="p-4 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
     {{-- JS translations --}}
     @php
         $examTitles = [
@@ -20,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <div id="exam-app">
-        <div v-if="!selectedExamType">
+        <div v-if="exam.length === 0">
             <h3 class="text-center font-bold text-3xl mb-3">{{ __('Select exam type') }}</h3>
             <p class="text-center mb-7">{{__('You can click the info icon for more details on the types')}}</p>
             <div class="grid gird-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -74,9 +75,59 @@
                 </div>
             </div>
         </div>
-        <div v-if="examType !== '' && !showResults">
-            You have selected @{{ examType }}
+
+        {{-- Exam with questions panel --}}
+        <div v-if="!showResults && exam.length >0">
+            <div class="flex flex-wrap">
+                <div
+                    class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
+                    v-for="(question,questionIndex) in exam"
+                    :key="'question-' + questionIndex"
+                    :title="question.question"
+                    @click="questions.currentQuestion = questionIndex"
+                ></div>
+            </div>
+            <div>
+                <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
+                <div class="grid grid-cols-2">
+
+                    <div
+                        class="py-3 px-4 m-3 border border-gray-300 dark:border-indigo-600 cursor-pointer"
+                        :class="{'bg-gray-400': answer.id === question.userAnswer}"
+                        v-for="(answer, answerIndex) in exam[questions.currentQuestion].answers"
+                        :key="'answer'+answerIndex"
+                        @click="selectAnswer(answer.id)"
+                    >
+                        @{{ answer.answer }}
+                    </div>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-2"
+                v-show="exam[questions.currentQuestion].userAnswer !== 0"
+            >
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.currentQuestion !== 0"
+                    @click="questions.currentQuestion--"
+                >< {{__('Previous')}}</button>
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.currentQuestion + 1 !== exam.length"
+                    @click="questions.currentQuestion++"
+                >{{__('Next')}} ></button>
+                <button
+                    type="button"
+                    class=""
+                    v-show="questions.allAnswered"
+                    @click="submitExam"
+                >{{__('Finish')}}</button>
+            </div>
         </div>
+
+        {{-- Results --}}
         <div v-if="showResults">
             Results
         </div>
@@ -227,7 +278,6 @@
                     },
                     questionCategories: questionCategories,
                     showResults: false,
-                    examType: '',
                     modals: {
                         info: {
                             title: '',
@@ -239,7 +289,13 @@
                             visible: false,
                         }
                     },
-                    exam: {},
+                    exam: [],
+                    questions: {
+                        currentQuestion: 0,
+                        allAnswered: false,
+                        numberOfAnswered: 0,
+                        totalQuestions: 0,
+                    },
                     timer: {
                         active: false,
                         duration: 40 * 60,
@@ -260,11 +316,7 @@
                     }
                 }
             },
-            computed: {
-                selectedExamType() {
-                    return this.examType !== '';
-                },
-            },
+            computed: {},
             methods: {
                 openExamConfig(type) {
                     this.examConfiguration.type = type;
@@ -311,7 +363,14 @@
                             if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
                             } else {
-                                vm.exam = res.data.exam;
+                                if (res.data.exam.length > 0 ) {
+                                    vm.questions.totalQuestions = res.data.exam.length;
+                                    vm.exam = res.data.exam;
+                                    // add the user's answer property
+                                    vm.exam.forEach(entry => {
+                                        entry.userAnswer = 0;
+                                    })
+                                }
                                 vm.modals.config.visible = false;
                             }
                             vm.loading.startExam = false;
@@ -325,6 +384,16 @@
                             vm.loading.startExam = false;
                         });
                 },
+
+                selectAnswer(answerID) {
+                    this.exam[this.questions.currentQuestion].userAnswer = answerID;
+                    this.questions.numberOfAnswered++
+                    this.questions.allAnswered = (this.questions.numberOfAnswered === this.questions.totalQuestions)
+                },
+
+                finishExam() {
+
+                }
             }
         }).mount('#exam-app')
     </script>
