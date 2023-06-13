@@ -77,24 +77,27 @@
         </div>
 
         {{-- Exam with questions panel --}}
-        <div v-if="!showResults && exam.length >0">
+        <div v-if="!showResults && exam.length > 0">
+            {{-- The indicator of the questions --}}
             <div class="flex flex-wrap">
                 <div
+                     v-for="(eachQuestion,questionIndex) in exam"
+                    :key="'questions-tab-' + questionIndex"
                     class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
-                    v-for="(question,questionIndex) in exam"
-                    :key="'question-' + questionIndex"
-                    :title="question.question"
+                    :title="eachQuestion.question"
                     @click="questions.currentQuestion = questionIndex"
                 ></div>
             </div>
+
+            {{-- The questions --}}
             <div>
                 <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
                 <div class="grid grid-cols-2">
 
                     <div
-                        class="py-3 px-4 m-3 border border-gray-300 dark:border-indigo-600 cursor-pointer"
-                        :class="{'bg-gray-400': answer.id === question.userAnswer}"
                         v-for="(answer, answerIndex) in exam[questions.currentQuestion].answers"
+                        class="py-3 px-4 m-3 border border-gray-300 dark:border-indigo-600 cursor-pointer"
+                        :class="{'bg-gray-400': answer.id === exam[questions.currentQuestion].userAnswer}"
                         :key="'answer'+answerIndex"
                         @click="selectAnswer(answer.id)"
                     >
@@ -111,19 +114,25 @@
                     class=""
                     v-show="questions.currentQuestion !== 0"
                     @click="questions.currentQuestion--"
-                >< {{__('Previous')}}</button>
+                >
+                   < {{__('Previous')}}
+                </button>
                 <button
                     type="button"
                     class=""
                     v-show="questions.currentQuestion + 1 !== exam.length"
                     @click="questions.currentQuestion++"
-                >{{__('Next')}} ></button>
+                >
+                    {{__('Next')}} >
+                </button>
                 <button
                     type="button"
                     class=""
                     v-show="questions.allAnswered"
                     @click="submitExam"
-                >{{__('Finish')}}</button>
+                >
+                    {{__('Finish')}}
+                </button>
             </div>
         </div>
 
@@ -265,7 +274,7 @@
         </div>
     </div>
     <script>
-        const {createApp} = Vue;
+        const {createApp, nextTick} = Vue;
         const questionCategories = <?php echo json_encode($categories, JSON_NUMERIC_CHECK); ?>;
 
         createApp({
@@ -359,24 +368,27 @@
                             Accept: 'application/json',
                         }
                     })
-                        .then(res => {
+                        .then(async res => {
+                            console.log(res.data.exam)
                             if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
                             } else {
-                                if (res.data.exam.length > 0 ) {
-                                    vm.questions.totalQuestions = res.data.exam.length;
-                                    vm.exam = res.data.exam;
+                                if (res.data.exam.length > 0) {
                                     // add the user's answer property
-                                    vm.exam.forEach(entry => {
+                                    res.data.exam.forEach(entry => {
                                         entry.userAnswer = 0;
                                     })
+                                    vm.questions.totalQuestions = res.data.exam.length;
+                                    vm.exam = res.data.exam;
+                                    await nextTick();
                                 }
                                 vm.modals.config.visible = false;
                             }
                             vm.loading.startExam = false;
                         })
                         .catch(error => {
-                            if (error.response.data !== undefined && error.response.data.message !== undefined) {
+                            console.log(error)
+                            if (error.response !== undefined && error.response.data !== undefined && error.response.data.message !== undefined) {
                                 vm.modals.config.error = error.response.data.message;
                             } else {
                                 vm.modals.config.error = error.message;
