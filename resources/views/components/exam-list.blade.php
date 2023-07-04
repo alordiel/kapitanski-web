@@ -7,45 +7,45 @@
     {{-- JS translations --}}
     @php
         $examTitles = [
-            'all' => __('Practice'),
-            'real' => __('Real exam'),
-            'category' => __('Tests by category'),
+            'practice' => __('Practice'),
+            'real'     => __('Real exam'),
             'mistaken' => __('Practice mistaken')
-        ];
-        $examDescription = [
-          'all' => __('Random number of questions will be selected from all the 600 questions. The exam will be made in such a way that it will get all the questions that have never been displayed before. The exam algorithm is keeping track of what questions have being selected and it will go through all the possible questions before starting to repeat them.'),
-          'real' => __('Start a real exam with time limit. This follows the exact requirmets from the Ministry of Transport'),
-          'category' => __('You will be able to select a specific category of questions. This will make it easier for you to remember the questions. We recommend to start with this type of test as it is proven to have a better memory effect.'),
-          'mistaken' => __('Starting with the other two test types you will (eventually) make some mistakes. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)'),
         ];
     @endphp
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <div class="">
+        <h3 class="text-center font-bold text-3xl mb-3">{{ __('Select exam type') }}</h3>
+        <p>{{__("There are 3 types of exams that you can choose from. Each of them have their specific purposes and idea.")}}</p>
+        <p>{{__("The <strong>'Practice'</strong> tests gives you the option to select your own number of questions per test, as well if you want to practice particular category of questions. This type of tests will give you always the lest seen questions so it is a good starting point for learning the questions. Random number of questions will be selected from all the 600 questions. The exam will be made in such a way that it will get all the questions that have never been displayed before. The exam algorithm is keeping track of what questions have being selected and it will go through all the possible questions before starting to repeat them.")}}</p>
+        <p>{{__("The 'Real exam' is following the requirements from the Ministry of Transport and Communication. With this test you can check if you are ready for the actual exam. The test is with time limit of 30min and you will have 60 questions from all the categories. You need to make less then 6 mistakes to pass the exam.")}}</p>
+        <p>{{__("Starting with the other two test types you will (eventually) make some mistakes. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)")}}</p>
+    </div>
+
     <div id="exam-app">
         <div v-if="exam.length === 0">
-            <h3 class="text-center font-bold text-3xl mb-3">{{ __('Select exam type') }}</h3>
             <p class="text-center mb-7">{{__('You can click the info icon for more details on the types')}}</p>
             <div class="grid gird-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
 
                 @foreach($examTitles as $examKey => $examTitle)
-                <div class="border rounded border-gray-300 dark:border-indigo-600  py-5 px-7  relative  ">
-                    <h5 class="text-center text-xl my-7 text-2xl uppercase font-bold">
-                        {{ $examTitle }}
-                    </h5>
-                    <button class="absolute top-3 right-3" @click="openInfo('{{ $examKey }}')">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
-                             height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
-                        </svg>
-                    </button>
-                    <div class="flex justify-center">
-                        <x-secondary-button @click="openExamConfig('{{ $examKey }}')">
-                            {{__("Start")}}
-                        </x-secondary-button>
+                    <div class="border rounded border-gray-300 dark:border-indigo-600  py-5 px-7  relative  ">
+                        <h5 class="text-center text-xl my-7 text-2xl uppercase font-bold">
+                            {{ $examTitle }}
+                        </h5>
+                        <button class="absolute top-3 right-3" @click="openInfo('{{ $examKey }}')">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                 height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
+                            </svg>
+                        </button>
+                        <div class="flex justify-center">
+                            <x-secondary-button @click="openExamConfig('{{ $examKey }}')">
+                                {{__("Start")}}
+                            </x-secondary-button>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
@@ -56,10 +56,10 @@
             {{-- The indicator of the questions --}}
             <div class="flex flex-wrap">
                 <div
-                     v-for="(eachQuestion,questionIndex) in exam"
+                    v-for="(eachQuestion,questionIndex) in exam"
                     :key="'questions-tab-' + questionIndex"
                     class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
-                     :class="{'dark:border-pink-900 border-blue-600 border-2':questionIndex === questions.currentQuestion}"
+                    :class="{'dark:border-pink-900 border-blue-600 border-2':questionIndex === questions.currentQuestion}"
                     :title="eachQuestion.question"
                     @click="questions.currentQuestion = questionIndex"
                 ></div>
@@ -91,7 +91,7 @@
                     v-show="questions.currentQuestion !== 0"
                     @click="questions.currentQuestion--"
                 >
-                   < {{__('Previous')}}
+                    < {{__('Previous')}}
                 </button>
                 <button
                     type="button"
@@ -166,7 +166,7 @@
                         </label>
                     </div>
 
-                    <div class="block mt-4" v-show="examConfiguration.type === 'all'">
+                    <div class="block mt-4" v-show="examConfiguration.type === 'practice'">
                         <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Test type')}}<br>
                             <label for="time-test">
@@ -187,7 +187,8 @@
                         </label>
                     </div>
 
-                    <div class="block mt-4" v-show="examConfiguration.variation === 'custom' && examConfiguration.type === 'all'">
+                    <div class="block mt-4"
+                         v-show="examConfiguration.variation === 'custom' && examConfiguration.type === 'practice'">
                         <label for="numberOfQuestions"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Selected number of questions:')}}
@@ -257,8 +258,7 @@
             data() {
                 return {
                     examTitles: {
-                        all: '{{$examTitles['all']}}',
-                        category: '{{$examTitles['category']}}',
+                        all: '{{$examTitles['practice']}}',
                         mistaken: '{{$examTitles['mistaken']}}',
                         real: '{{$examTitles['real']}}',
                     },
@@ -313,8 +313,7 @@
 
                 openInfo(type) {
                     const descriptions = {
-                        all: '{{$examDescription['all']}}',
-                        category: '{{$examDescription['category']}}',
+                        all: '{{$examDescription['practice']}}',
                         mistaken: '{{$examDescription['mistaken']}}',
                         real: '{{$examDescription['real']}}',
                     };
