@@ -250,23 +250,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="mt-7" v-show="exam.length === 0">
+            <p class="mb-3">{{__("Description")}}</p>
+            <p class="mb-3">
+                {!! __("The <strong>'Practice'</strong> tests gives you the option to select your own number of questions per test, as well if you want to practice particular category of questions. This type of tests will give you always the lest seen questions so it is a good starting point for learning the questions. Random number of questions will be selected from all the 600 questions. The exam will be made in such a way that it will get all the questions that have never been displayed before. The exam algorithm is keeping track of what questions have being selected and it will go through all the possible questions before starting to repeat them.") !!}
+            </p>
+            <p class="mb-3">
+                {!! __("The <strong>'Real exam'</strong> is following the requirements from the Ministry of Transport and Communication. With this test you can check if you are ready for the actual exam. The test is with time limit of 30min and you will have 60 questions from all the categories. You need to make less then 6 mistakes to pass the exam.") !!}
+            </p>
+            @if($countOfMistaken > 10)
+                <p class="mb-3">
+                    {!! __("The <strong>'Mistakes'</strong> test will help you improve the mistakes you have done previously. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)") !!}
+                </p>
+            @endif
+            <p><em>{{__("Good luck!")}}</em></p>
+        </div>
     </div>
 
-    <div>
-        <p class="mb-3">{{__("There are 3 types of exams that you can choose from. Each of them have their specific purposes and idea.")}}</p>
-        <p class="mb-3">
-            {!! __("The <strong>'Practice'</strong> tests gives you the option to select your own number of questions per test, as well if you want to practice particular category of questions. This type of tests will give you always the lest seen questions so it is a good starting point for learning the questions. Random number of questions will be selected from all the 600 questions. The exam will be made in such a way that it will get all the questions that have never been displayed before. The exam algorithm is keeping track of what questions have being selected and it will go through all the possible questions before starting to repeat them.") !!}
-        </p>
-        <p class="mb-3">
-            {!! __("The <strong>'Real exam'</strong> is following the requirements from the Ministry of Transport and Communication. With this test you can check if you are ready for the actual exam. The test is with time limit of 30min and you will have 60 questions from all the categories. You need to make less then 6 mistakes to pass the exam.") !!}
-        </p>
-        @if($countOfMistaken > 10)
-            <p class="mb-3">
-                {!! __("The <strong>'Mistakes'</strong> test will help you improve the mistakes you have done previously. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)") !!}
-            </p>
-        @endif
-        <p><em>{{__("Good luck!")}}</em></p>
-    </div>
 
     <script>
         const {createApp, nextTick} = Vue;

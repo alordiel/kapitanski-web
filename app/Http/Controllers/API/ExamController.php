@@ -8,8 +8,6 @@ use App\Models\Question;
 use App\Repositories\QuestionRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Http\Controllers\QuestionController;
-use Illuminate\Http\RedirectResponse;
 
 class ExamController
 {
@@ -107,16 +105,19 @@ class ExamController
         $questions = [];
         // Check what is the type of the exam and what questions we need to provide
         switch ($request->input('type')) {
-            case 'all':
-
-                $questions = $this->questions->getAllQuestions('all',0);
-                break;
-            case 'category':
+            case 'practice':
                 $data = $request->validate([
                     'numberOfQuestions' => 'required',
                     'categoryID' => ['required', 'numeric'],
                 ]);
-                $questions = $this->questions->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
+                if ($data['categoryID'] === -1) {
+                    $questions = $this->questions->getAllQuestions('all', $data['numberOfQuestions']);
+                } else {
+                    $questions = $this->questions->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
+                }
+                break;
+            case 'real':
+                $questions = $this->questions->getAllQuestions('real',60);
                 break;
             case 'mistaken':
                 $questions = $this->questions->getMistakenQuestions();
@@ -125,7 +126,7 @@ class ExamController
 
         return response()->json([
             'status' => 'success',
-            'exam' => $questions,
+            'exam'   => $questions,
         ], 201);
     }
 
@@ -133,7 +134,7 @@ class ExamController
     {
         return response()->json([
             'status' => 'success',
-            'exam' => QuestionController::getDemoQuestions(),
+            'exam'   => QuestionRepository::getDemoQuestions(),
         ], 201);
     }
 }
