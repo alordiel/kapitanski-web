@@ -27,9 +27,32 @@
                             {{ $examTitle }}
                         </h5>
                         <div class="flex justify-center">
-                            <x-secondary-button @click="openExamConfig('{{ $examKey }}')">
+                            <button
+                                class="secondary-button"
+                                @if($examKey === 'real')
+                                    :disabled="loading.startReal"
+                                @elseif($examKey === 'mistaken')
+                                    :disabled="loading.startMistaken"
+                                @endif
+                                @click="openExamConfig('{{ $examKey }}')"
+                            >
                                 {{__("Start")}}
-                            </x-secondary-button>
+                                @if($examKey !== 'practice')
+                                    <svg class="animate-spin inline-block ml-4"
+                                         @if($examKey === 'real')
+                                             v-show="loading.startReal"
+                                         @elseif($examKey === 'mistaken')
+                                             v-show="loading.startMistaken"
+                                         @endif
+                                         stroke="currentColor"
+                                         fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                                         width="1em"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
+                                    </svg>
+                                @endif
+                            </button>
                         </div>
                     </div>
                 @endforeach
@@ -51,7 +74,7 @@
                 ></div>
             </div>
 
-            {{-- The questions --}}
+            {{-- The questions' header --}}
             <div>
                 <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
                 <div class="grid grid-cols-2">
@@ -67,6 +90,8 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Single question --}}
             <div
                 class="grid grid-cols-2"
                 v-show="exam[questions.currentQuestion].userAnswer !== 0"
@@ -239,7 +264,7 @@
             data() {
                 return {
                     examTitles: {
-                        all: '{{$examTitles['practice']}}',
+                        practice: '{{$examTitles['practice']}}',
                         mistaken: '{{$examTitles['mistaken']}}',
                         real: '{{$examTitles['real']}}',
                     },
@@ -290,7 +315,7 @@
                     this.examConfiguration.type = type;
                     this.examConfiguration.examTitle = this.examTitles[type];
 
-                    if(type==='practice') {
+                    if (type === 'practice') {
                         this.modals.config.visible = true;
                         this.modals.config.error = '';
                     } else {
@@ -321,7 +346,7 @@
                             Accept: 'application/json',
                         }
                     })
-                        .then( res => {
+                        .then(res => {
                             console.log(res.data.exam)
                             if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
@@ -356,16 +381,16 @@
                 },
 
                 loaderController(loadingState) {
-                  switch (this.examConfiguration){
-                      case 'real':
-                        this.loading.startReal = loadingState;
-                        break;
-                      case 'mistaken':
-                          this.loading.startMistaken = loadingState;
-                          break;
-                      default:
-                          this.loading.statPractice = loadingState;
-                  }
+                    switch (this.examConfiguration) {
+                        case 'real':
+                            this.loading.startReal = loadingState;
+                            break;
+                        case 'mistaken':
+                            this.loading.startMistaken = loadingState;
+                            break;
+                        default:
+                            this.loading.statPractice = loadingState;
+                    }
                 },
 
                 finishExam() {
