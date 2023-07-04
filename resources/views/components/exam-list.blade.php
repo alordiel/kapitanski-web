@@ -135,12 +135,13 @@
                 <h3 class="text-xl font-bold text-center">@{{examConfiguration.examTitle}}</h3>
                 <div class="mb-4">
 
-                    <div class="block mt-4" v-show="examConfiguration.type === 'category'">
+                    <div class="block mt-4">
                         <label for="question-categories"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Select category')}} <br>
                             <select v-model="examConfiguration.categoryID" id="question-categories"
                                     class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                <option value="-1">{{__('All categories')}}</option>
                                 <option
                                     v-for="(category, key) in questionCategories"
                                     :key="'qo-'+key"
@@ -152,29 +153,8 @@
                         </label>
                     </div>
 
-                    <div class="block mt-4" v-show="examConfiguration.type === 'practice'">
-                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
-                            {{__('Test type')}}<br>
-                            <label for="time-test">
-                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
-                                       value="time" id="time-test">
-                                {{__('Time test')}}
-                            </label>
-                            <label for="all-test" class="inline-block ml-4">
-                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
-                                       value="all" id="all-test">
-                                {{__('All questions')}}
-                            </label>
-                            <label for="custom-test" class="inline-block ml-4">
-                                <input type="radio" name="test-type" v-model="examConfiguration.variation"
-                                       value="custom" id="custom-test">
-                                {{__('Custom')}}
-                            </label>
-                        </label>
-                    </div>
-
                     <div class="block mt-4"
-                         v-show="examConfiguration.variation === 'custom' && examConfiguration.type === 'practice'">
+                         v-show="examConfiguration.type === 'practice'">
                         <label for="numberOfQuestions"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Selected number of questions:')}}
@@ -290,10 +270,9 @@
                     examConfiguration: {
                         examTitle: '',
                         type: '',
-                        variation: 'custom',
                         numberOfQuestions: 20,
                         showCorrectAnswer: true,
-                        categoryID: '',
+                        categoryID: 0,
                         showExplanation: false,
                     },
                     loading: {
