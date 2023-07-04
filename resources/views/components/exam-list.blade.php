@@ -7,7 +7,7 @@
     $categories = QuestionCategory::all();
     $userObj = User::find($user->id);
     $mistakenQuestions = $userObj->wrongQuestions;
-    $hasMistaken = count($mistakenQuestions) > 0;
+    $countOfMistaken = count($mistakenQuestions);
 @endphp
 
 <div class="p-4 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
@@ -16,8 +16,11 @@
         $examTitles = [
             'practice' => __('Practice'),
             'real'     => __('Real exam'),
-            'mistaken' => __('Mistakes')
         ];
+        // Show the Practice of mistakes only if we have more than 10
+        if ($countOfMistaken > 10) {
+            $examTitles['mistaken'] = __('Mistakes');
+        }
     @endphp
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -257,9 +260,11 @@
         <p class="mb-3">
             {!! __("The <strong>'Real exam'</strong> is following the requirements from the Ministry of Transport and Communication. With this test you can check if you are ready for the actual exam. The test is with time limit of 30min and you will have 60 questions from all the categories. You need to make less then 6 mistakes to pass the exam.") !!}
         </p>
-        <p class="mb-3">
-            {!! __("The <strong>'Mistakes'</strong> test will help you improve the mistakes you have done previously. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)") !!}
-        </p>
+        @if($countOfMistaken > 10)
+            <p class="mb-3">
+                {!! __("The <strong>'Mistakes'</strong> test will help you improve the mistakes you have done previously. This exam type is created to work with this particular mistaken questions, so repeating them you will get eventually better. Learning from your mistakes is inevitable ;)") !!}
+            </p>
+        @endif
         <p><em>{{__("Good luck!")}}</em></p>
     </div>
 
@@ -272,10 +277,10 @@
                 return {
                     examTitles: {
                         practice: '{{$examTitles['practice']}}',
-                        mistaken: '{{$examTitles['mistaken']}}',
+                        mistaken: '{{__("Practice Mistakes")}}',
                         real: '{{$examTitles['real']}}',
                     },
-                    hasMistakes: {{$hasMistaken}},
+                    countOfMistaken: {{$countOfMistaken}},
                     questionCategories: questionCategories,
                     showResults: false,
                     modals: {
