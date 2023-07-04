@@ -110,8 +110,8 @@ class ExamController
                     'numberOfQuestions' => 'required',
                     'categoryID' => ['required', 'numeric'],
                 ]);
-                if ($data['categoryID'] === -1) {
-                    $questions = $this->questions->getAllQuestions('all', $data['numberOfQuestions']);
+                if ((int)$data['categoryID'] === -1) {
+                    $questions = $this->questions->getAllQuestions('practice', $data['numberOfQuestions']);
                 } else {
                     $questions = $this->questions->getQuestionsByCategory($data['categoryID'], $data['numberOfQuestions']);
                 }
