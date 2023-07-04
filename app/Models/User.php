@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Database\Eloquent\Builder;
 
 class User extends Authenticatable
 {
@@ -65,6 +62,11 @@ class User extends Authenticatable
     public function subscriptionCreatedBy(): HasMany
     {
         return $this->hasMany(Subscription::class, 'created_by');
+    }
+
+    public function wrongQuestions(): HasMany {
+        return $this->hasMany(UserAnswer::class)
+            ->where('is_correct', false);
     }
 
 }

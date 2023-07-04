@@ -1,6 +1,13 @@
 @php
-    use \App\Models\QuestionCategory;
+    use App\Models\QuestionCategory;
+    use Illuminate\Support\Facades\Auth;
+    use App\Models\User;
+
+    $user = Auth::user();
     $categories = QuestionCategory::all();
+    $userObj = User::find($user->id);
+    $mistakenQuestions = $userObj->wrongQuestions;
+    $hasMistaken = count($mistakenQuestions) > 0;
 @endphp
 
 <div class="p-4 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
@@ -268,6 +275,7 @@
                         mistaken: '{{$examTitles['mistaken']}}',
                         real: '{{$examTitles['real']}}',
                     },
+                    hasMistakes: {{$hasMistaken}},
                     questionCategories: questionCategories,
                     showResults: false,
                     modals: {
