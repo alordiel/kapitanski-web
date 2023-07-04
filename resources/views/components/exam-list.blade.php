@@ -189,7 +189,7 @@
                     </div>
 
                     <div class="block mt-4"
-                         v-show="examConfiguration.type === 'practice'">
+                         v-show="examConfiguration.categoryID === '-1'">
                         <label for="numberOfQuestions"
                                class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                             {{__('Selected number of questions:')}}
@@ -251,6 +251,7 @@
             </div>
         </div>
 
+        {{-- Description of the exam types --}}
         <div class="mt-7" v-show="exam.length === 0">
             <p class="mb-3">{{__("Description")}}</p>
             <p class="mb-3">
@@ -311,7 +312,7 @@
                         type: '',
                         numberOfQuestions: 20,
                         showCorrectAnswer: true,
-                        categoryID: 0,
+                        categoryID: "-1",
                         showExplanation: false,
                     },
                     loading: {
