@@ -201,11 +201,11 @@
                     </button>
                     <button
                         @click="startExam()"
-                        :disabled="loading.startExam"
+                        :disabled="loading.startPractice"
                         class="ml-4 border border-sky-600 dark:border-indigo-600 bg-sky-700 text-white dark:bg-indigo-600 rounded py-2 px-5 disabled:opacity-25"
                     >
                         {{__('Start')}}
-                        <svg v-show="loading.startExam" class="animate-spin inline-block ml-4" stroke="currentColor"
+                        <svg v-show="loading.startPractice" class="animate-spin inline-block ml-4" stroke="currentColor"
                              fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -276,9 +276,10 @@
                         showExplanation: false,
                     },
                     loading: {
-                        startExam: false,
-                        directStart: false,
                         finalResult: false,
+                        startReal: false,
+                        startMistaken: false,
+                        startExam: false,
                     }
                 }
             },
@@ -306,7 +307,7 @@
 
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
-                    this.loading.startExam = true;
+                    this.loaderController(true);
                     this.modals.config.error = '';
 
                     axios.defaults.withCredentials = true;
@@ -320,7 +321,7 @@
                             Accept: 'application/json',
                         }
                     })
-                        .then(async res => {
+                        .then( res => {
                             console.log(res.data.exam)
                             if (res.data.status === 'failed') {
                                 vm.modals.config.error = res.data.message;
@@ -332,11 +333,10 @@
                                     })
                                     vm.questions.totalQuestions = res.data.exam.length;
                                     vm.exam = res.data.exam;
-                                    await nextTick();
                                 }
                                 vm.modals.config.visible = false;
                             }
-                            vm.loading.startExam = false;
+                            vm.loaderController(false);
                         })
                         .catch(error => {
                             console.log(error)
@@ -345,7 +345,7 @@
                             } else {
                                 vm.modals.config.error = error.message;
                             }
-                            vm.loading.startExam = false;
+                            vm.loaderController(false);
                         });
                 },
 
@@ -353,6 +353,19 @@
                     this.exam[this.questions.currentQuestion].userAnswer = answerID;
                     this.questions.numberOfAnswered++
                     this.questions.allAnswered = (this.questions.numberOfAnswered === this.questions.totalQuestions)
+                },
+
+                loaderController(loadingState) {
+                  switch (this.examConfiguration){
+                      case 'real':
+                        this.loading.startReal = loadingState;
+                        break;
+                      case 'mistaken':
+                          this.loading.startMistaken = loadingState;
+                          break;
+                      default:
+                          this.loading.statPractice = loadingState;
+                  }
                 },
 
                 finishExam() {
