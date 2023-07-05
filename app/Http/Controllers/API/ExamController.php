@@ -170,7 +170,7 @@ class ExamController
             'user_id' => '',
             'answer_id' => '',
             'is_correct' => '',
-        ])
+        ]);
 
         if ($results['score'] >= 90) {
             $finalMessage = sprintf(__("You have passed with %d%% of correct answers."), $results['score']);
