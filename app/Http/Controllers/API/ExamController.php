@@ -137,4 +137,11 @@ class ExamController
             'exam'   => QuestionRepository::getDemoQuestions(),
         ], 201);
     }
+
+    public function submitExam(): JsonResponse {
+        return response()->json([
+            'status' => 'success',
+            'exam'   => [],
+        ], 201);
+    }
 }

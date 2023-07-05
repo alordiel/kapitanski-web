@@ -112,7 +112,6 @@
             {{-- Question's answers --}}
             <div
                 class="grid grid-cols-2"
-                v-show="exam[questions.currentQuestion].userAnswer !== 0"
             >
                 <button
                     type="button"
@@ -133,7 +132,7 @@
                 <button
                     type="button"
                     class=""
-                    v-show="questions.allAnswered"
+                    v-show="questions.allAnswered || questions.currentQuestion+1 === exam.length"
                     @click="submitExam"
                 >
                     {{__('Finish')}}
@@ -432,8 +431,48 @@
                     }
                 },
 
-                finishExam() {
+                submitExam() {
+                    if (!this.questions.allAnswered) {
+                        this.modals.info.visible = true;
+                        this.modals.info.title = '';
+                        this.modals.info.body = '{{__("You need to answer all question.")}}'
+                        return;
+                    }
 
+                    const vm = this;
+                    const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
+                    this.loading.finalResult = true;
+
+                    axios.defaults.withCredentials = true;
+
+                    axios({
+                        url: '/api/v1/submit-exam',
+                        method: 'post',
+                        data: this.exam,
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            Accept: 'application/json',
+                        }
+                    })
+                        .then(res => {
+                            console.log(res.data.exam)
+                            if (res.data.status === 'failed') {
+                                vm.modals.info.visible = true;
+                                vm.modals.info.body = res.data.message;
+                            } else {
+                                vm.results = res.data.results;
+                            }
+                            vm.loading.finalResult = false;
+                        })
+                        .catch(error => {
+                            console.log(error)
+                            if (error.response !== undefined && error.response.data !== undefined && error.response.data.message !== undefined) {
+                                vm.modals.config.error = error.response.data.message;
+                            } else {
+                                vm.modals.config.error = error.message;
+                            }
+                            vm.loading.finalResult = false;
+                        });
                 }
             }
         }).mount('#exam-app')
