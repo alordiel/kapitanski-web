@@ -271,7 +271,7 @@
 
                 <div class="flex justify-center">
                     <button
-                        :disabled="loading.startExam"
+                        :disabled="loading.startReal"
                         @click="modals.config.visible = false"
                         class="border border-gray-300 dark:border-indigo-600 rounded py-2 px-5 disabled:opacity-25"
                     >
@@ -368,8 +368,8 @@
                     loading: {
                         finalResult: false,
                         startReal: false,
+                        startPractice: false,
                         startMistaken: false,
-                        startExam: false,
                     }
                 }
             },
@@ -499,7 +499,7 @@
                 },
 
                 loaderController(loadingState) {
-                    switch (this.examConfiguration) {
+                    switch (this.examConfiguration.type) {
                         case 'real':
                             this.loading.startReal = loadingState;
                             break;
@@ -507,7 +507,7 @@
                             this.loading.startMistaken = loadingState;
                             break;
                         default:
-                            this.loading.statPractice = loadingState;
+                            this.loading.startPractice = loadingState;
                     }
                 },
 
