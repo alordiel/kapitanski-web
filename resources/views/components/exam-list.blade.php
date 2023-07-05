@@ -127,8 +127,15 @@
                     class="primary-button mx-5 w-32 text-center block"
                     v-show="questions.allAnswered || questions.currentQuestion+1 === exam.length"
                     @click="submitExam"
+                    :disabled="loading.submitExam"
                 >
                     {{__('Finish')}}
+                    <svg v-show="loading.submitExam" class="animate-spin inline-block ml-4" stroke="currentColor"
+                             fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
+                        </svg>
                 </button>
 
                 <button
@@ -366,7 +373,7 @@
                         showExplanation: false,
                     },
                     loading: {
-                        finalResult: false,
+                        submitExam: false,
                         startReal: false,
                         startPractice: false,
                         startMistaken: false,
@@ -522,7 +529,7 @@
 
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
-                    this.loading.finalResult = true;
+                    this.loading.submitExam = true;
                     this.calculateFinalResult();
 
                     axios.defaults.withCredentials = true;
@@ -553,7 +560,7 @@
                     })
                         .then(res => {
                             console.log(res.data.exam)
-                            vm.loading.finalResult = false;
+                            vm.loading.submitExam = false;
                             if (res.data.status === 'failed') {
                                 vm.modals.info.visible = true;
                                 vm.modals.info.body = res.data.message;
@@ -569,7 +576,7 @@
                             } else {
                                 vm.modals.config.error = error.message;
                             }
-                            vm.loading.finalResult = false;
+                            vm.loading.submitExam = false;
                         });
                 },
 
