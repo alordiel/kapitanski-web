@@ -157,7 +157,10 @@
             </p>
 
             <div v-if="finalResult.wrong > 0">
-                <button @click="finalResult.showWrongAnswers = true">{{__('Show wrong answers')}}</button>
+                <button class="underline" v-show="!finalResult.showWrongAnswers" @click="finalResult.showWrongAnswers = true">
+                    {{__('Show wrong answers')}}
+                </button>
+                <h4 v-show="finalResult.showWrongAnswers" class="text-xl font-bold">{{__('Wrong answers')}}</h4>
                 <div v-show="finalResult.showWrongAnswers">
                     <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)" :key="'wrong-'+qIndex">
                         <p class="font-bold mb-3">@{{question.question}}</p>
