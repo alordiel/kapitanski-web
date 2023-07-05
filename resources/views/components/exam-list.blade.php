@@ -146,8 +146,19 @@
             <p>@{{ finalResult.message }}</p>
             <p>
                 <button @click="reDoExam">{{__('Redo the exam')}}</button>
-                <button @click="resetExam(forceReset = falsetrue)">{{__('Start a new exam')}}</button>
+                <button @click="resetExam(forceReset(true))">{{__('Start a new exam')}}</button>
             </p>
+            <div v-if="finalResult.wrong > 0">
+                <button>{{__('Show wrong answers')}}</button>
+                <div v-show="finalResult.showWrongAnswers">
+                    <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)" :key="'wrong-'+qIndex">
+                        <p class="font-bold mb-3">@{{question.question}}</p>
+                        <p class="text-green-600">Correct: @{{question.answers.find(e=>e.id === question.correct_answer).answer}}</p>
+                        <p class="text-red-600">Wrong: @{{question.answers.find(e=>e.id === question.userAnswer).answer}}</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         {{-- Info Modal --}}
