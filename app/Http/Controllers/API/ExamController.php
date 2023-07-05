@@ -134,19 +134,39 @@ class ExamController
     {
         return response()->json([
             'status' => 'success',
-            'exam' => QuestionRepository::getDemoQuestions(),
+            'results' => QuestionRepository::getDemoQuestions(),
         ], 201);
     }
 
-    public function submitExam(): JsonResponse
+    public function submitExam(Request $request): JsonResponse
     {
+         if (!$request->user()->hasPermissionTo('take-exam')) {
+            return response()->json([
+                'status' => 'failed',
+                'message' => 'No permission to take exam'
+            ], 403);
+        }
+
+        // Validate the request
+        $request->validate([
+            'exam' => 'required',
+            'results' => 'required',
+        ]);
+         $results = $request->input('results');
+         $exam = $request->input('exam');
         // Save the exam taking
 
         // Save each user's answer
 
+        if($results['score'] > 10) {
+            $finalMessage = sprintf(__("You have passed with %d %% of wrong answers."), $results['score']);
+        } else {
+            $finalMessage = sprintf(__("You have failed with %d %% of wrong answers."), $results['score']);
+        }
+
         return response()->json([
             'status' => 'success',
-            'exam' => [],
+            'results' => $finalMessage,
         ], 201);
     }
 }

@@ -71,7 +71,7 @@
         </div>
 
         {{-- Exam with questions panel --}}
-        <div v-if="!showResults && exam.length > 0">
+        <div v-if="!finalResult.visible && exam.length > 0">
             <div class="relative w-100 h-5">
                 <div class="absolute top-3 right-5">
                     <button @click="resetExam">{{__('Reset exam')}}</button>
@@ -141,7 +141,7 @@
         </div>
 
         {{-- Results --}}
-        <div v-if="showResults">
+        <div v-if="finalResult.visible">
             Results
         </div>
 
@@ -291,7 +291,14 @@
                     },
                     countOfMistaken: {{$countOfMistaken}},
                     questionCategories: questionCategories,
-                    showResults: false,
+                    finalResult: {
+                        visible: false,
+                        message: '',
+                        totalQuestions: 0,
+                        wrong: 0,
+                        percentWrong: 0,
+                        showWrongAnswers: false,
+                    },
                     modals: {
                         info: {
                             title: '',
@@ -432,6 +439,7 @@
                 },
 
                 submitExam() {
+
                     if (!this.questions.allAnswered) {
                         this.modals.info.visible = true;
                         this.modals.info.title = '';
@@ -442,7 +450,7 @@
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
                     this.loading.finalResult = true;
-                    const finalResults = this.calculateFinalResult();
+                    this.calculateFinalResult();
 
                     axios.defaults.withCredentials = true;
 
@@ -451,7 +459,11 @@
                         method: 'post',
                         data: {
                             exam: this.exam,
-                            results: finalResults
+                            results: {
+                                score: this.finalResult.percentWrong,
+                                totalQuestions: this.finalResult.totalQuestions,
+                                wrong: this.finalResult.wrong
+                            }
                         },
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -460,13 +472,14 @@
                     })
                         .then(res => {
                             console.log(res.data.exam)
+                            vm.loading.finalResult = false;
                             if (res.data.status === 'failed') {
                                 vm.modals.info.visible = true;
                                 vm.modals.info.body = res.data.message;
                             } else {
-                                vm.results = res.data.results;
+                                vm.finalResult.message = res.data.results;
+                                vm.finalResult.visible = true;
                             }
-                            vm.loading.finalResult = false;
                         })
                         .catch(error => {
                             console.log(error)
@@ -482,17 +495,15 @@
                 calculateFinalResult() {
                     const countOfQuestions = this.exam.length;
                     let wrong = 0;
-                    for(let question of this.exam) {
-                        if(question.userAnswer !== question.correct_answer) {
+                    for (let question of this.exam) {
+                        if (question.userAnswer !== question.correct_answer) {
                             wrong++;
                         }
                     }
 
-                    return {
-                        total: countOfQuestions,
-                        wrong: wrong,
-                        percentWrong: Math.round( (wrong / countOfQuestions) * 100),
-                    }
+                    this.finalResult.totalQuestions = countOfQuestions;
+                    this.finalResult.wrong = wrong;
+                    this.finalResult.percentWrong = Math.round((wrong / countOfQuestions) * 100);
                 }
             }
         }).mount('#exam-app')
