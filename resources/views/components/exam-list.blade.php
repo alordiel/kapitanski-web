@@ -144,6 +144,10 @@
         <div v-if="finalResult.visible">
             Results
             <p>@{{ finalResult.message }}</p>
+            <p>
+                <button @click="reDoExam">{{__('Redo the exam')}}</button>
+                <button @click="resetExam(forceReset = falsetrue)">{{__('Start a new exam')}}</button>
+            </p>
         </div>
 
         {{-- Info Modal --}}
@@ -353,8 +357,8 @@
                     }
                 },
 
-                resetExam() {
-                    if (confirm("{{__('Resetting the exam will delete your progress. Are you sure you want to proceed?')}}")) {
+                resetExam(forceReset = false) {
+                    if (forceReset || confirm("{{__('Resetting the exam will delete your progress. Are you sure you want to proceed?')}}")) {
                         this.exam = [];
                         this.questions = {
                             currentQuestion: 0,
@@ -366,7 +370,41 @@
                             active: false,
                             duration: 40 * 60,
                         };
+                        this.finalResult = {
+                            visible: false,
+                            message: '',
+                            totalQuestions: 0,
+                            wrong: 0,
+                            percentCorrect: 0,
+                            showWrongAnswers: false,
+                        };
                     }
+                },
+
+                reDoExam() {
+                    // reset the old answers
+                    this.exam.each(e => {
+                        e.userAnswer = 0;
+                    })
+                    // reset some properties to their defualt values
+                    this.questions = {
+                        currentQuestion: 0,
+                        allAnswered: false,
+                        numberOfAnswered: 0,
+                        totalQuestions: 0,
+                    };
+                    this.timer = {
+                        active: false,
+                        duration: 40 * 60,
+                    };
+                    this.finalResult = {
+                        visible: false,
+                        message: '',
+                        totalQuestions: 0,
+                        wrong: 0,
+                        percentCorrect: 0,
+                        showWrongAnswers: false,
+                    };
                 },
 
                 startExam() {

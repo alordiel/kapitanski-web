@@ -159,7 +159,7 @@ class ExamController
         // Save each user's answer
 
         if ($results['score'] >= 90) {
-            $finalMessage = sprintf(__("You have passed with %d %% of correct answers."), $results['score']);
+            $finalMessage = sprintf(__("You have passed with %d%% of correct answers."), $results['score']);
         } else {
             $finalMessage = sprintf(__("You have failed the test. You've got %d wrong answers out of %d questions with final score of %d%%."), $results['wrong'], $results['totalQuestions'], $results['score']);
         }
