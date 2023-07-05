@@ -111,50 +111,62 @@
 
             {{-- Question's answers --}}
             <div
-                class="grid grid-cols-2"
+                class="flex justify-center flex-wrap"
             >
                 <button
                     type="button"
-                    class=""
+                    class="secondary-button mx-3 w-32 text-center blcok"
                     v-show="questions.currentQuestion !== 0"
                     @click="questions.currentQuestion--"
                 >
                     < {{__('Previous')}}
                 </button>
+
                 <button
                     type="button"
-                    class=""
-                    v-show="questions.currentQuestion + 1 !== exam.length"
-                    @click="questions.currentQuestion++"
-                >
-                    {{__('Next')}} >
-                </button>
-                <button
-                    type="button"
-                    class=""
+                    class="primary-button mx-5 w-32 text-center block"
                     v-show="questions.allAnswered || questions.currentQuestion+1 === exam.length"
                     @click="submitExam"
                 >
                     {{__('Finish')}}
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button mx-3 w-32 text-center block"
+                    v-show="questions.currentQuestion + 1 !== exam.length"
+                    @click="questions.currentQuestion++"
+                >
+                    {{__('Next')}} >
                 </button>
             </div>
         </div>
 
         {{-- Results --}}
         <div v-if="finalResult.visible">
-            Results
-            <p>@{{ finalResult.message }}</p>
-            <p>
-                <button @click="reDoExam">{{__('Redo the exam')}}</button>
-                <button @click="resetExam(forceReset(true))">{{__('Start a new exam')}}</button>
+            <h3 class="text-2xl font-bold mb-3">{{__('Results')}}</h3>
+            <p class="font-bold text-xl mb-3">@{{ finalResult.message }}</p>
+            <p class="my-5">
+                <button class="secondary-button mr-4" @click="reDoExam">
+                    {{__('Redo the exam')}}
+                </button>
+                <span class="px-4 inline-block">{{__('OR')}}</span>
+                <button class="secondary-button" @click="resetExam(true)">
+                    {{__('Start a new exam')}}
+                </button>
             </p>
+
             <div v-if="finalResult.wrong > 0">
                 <button @click="finalResult.showWrongAnswers = true">{{__('Show wrong answers')}}</button>
                 <div v-show="finalResult.showWrongAnswers">
                     <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)" :key="'wrong-'+qIndex">
                         <p class="font-bold mb-3">@{{question.question}}</p>
-                        <p class="text-green-600">Correct: @{{question.answers.find(e=>e.id === question.correct_answer).answer}}</p>
-                        <p class="text-red-600">Wrong: @{{question.answers.find(e=>e.id === question.userAnswer).answer}}</p>
+                        <p class="text-green-600">
+                            <strong>{{__('Correct')}}</strong>: @{{question.answers.find(e=>e.id === question.correct_answer).answer}}
+                        </p>
+                        <p class="text-red-600">
+                            <strong>{{__('Wrong')}}</strong>: @{{question.answers.find(e=>e.id === question.userAnswer).answer}}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -394,7 +406,7 @@
 
                 reDoExam() {
                     // reset the old answers
-                    this.exam.each(e => {
+                    this.exam.forEach(e => {
                         e.userAnswer = 0;
                     })
                     // reset some properties to their default values
