@@ -82,8 +82,11 @@
                 <div
                     v-for="(eachQuestion,questionIndex) in exam"
                     :key="'questions-tab-' + questionIndex"
-                    class="w-10 h-10 mx-4 bg-gray-500 dark:bg-green-300 cursor-pointer"
-                    :class="{'dark:border-pink-900 border-blue-600 border-2':questionIndex === questions.currentQuestion}"
+                    class="w-10 h-10 mx-4 bg-gray-500 cursor-pointer"
+                    :class="[
+                            {'dark:border-pink-900 border-blue-600 border-2':questionIndex === questions.currentQuestion},
+                            eachQuestion.userAnswer !== 0 ? 'dark:bg-green-300' : 'dark:bg-gray-300'
+                        ]"
                     :title="eachQuestion.question"
                     @click="questions.currentQuestion = questionIndex"
                 ></div>
