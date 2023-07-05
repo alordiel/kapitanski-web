@@ -149,7 +149,7 @@
                 <button @click="resetExam(forceReset(true))">{{__('Start a new exam')}}</button>
             </p>
             <div v-if="finalResult.wrong > 0">
-                <button>{{__('Show wrong answers')}}</button>
+                <button @click="finalResult.showWrongAnswers = true">{{__('Show wrong answers')}}</button>
                 <div v-show="finalResult.showWrongAnswers">
                     <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)" :key="'wrong-'+qIndex">
                         <p class="font-bold mb-3">@{{question.question}}</p>
