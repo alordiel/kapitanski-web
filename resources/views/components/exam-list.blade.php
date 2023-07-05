@@ -145,7 +145,12 @@
         {{-- Results --}}
         <div v-if="finalResult.visible">
             <h3 class="text-2xl font-bold mb-3">{{__('Results')}}</h3>
-            <p class="font-bold text-xl mb-3">@{{ finalResult.message }}</p>
+            <p
+                class="font-bold text-xl mb-3"
+                :class="[finalResult.percentCorrect >= 90 ? 'text-green-500' : 'text-red-600']"
+            >
+                @{{ finalResult.message }}
+            </p>
             <p class="my-5">
                 <button class="secondary-button mr-4" @click="reDoExam">
                     {{__('Redo the exam')}}
