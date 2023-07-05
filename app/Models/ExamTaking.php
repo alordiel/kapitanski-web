@@ -11,7 +11,7 @@ class ExamTaking extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'exam_id', 'exam_type', 'result'];
+    protected $fillable = ['user_id', 'exam_id', 'exam_type', 'result', 'total_questions', 'wrong_answers'];
 
     public function user(): BelongsTo
     {

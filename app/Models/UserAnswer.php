@@ -11,7 +11,7 @@ class UserAnswer extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['exam_taking_id', 'question_id', 'answer_id', 'is_correct'];
+    protected $fillable = ['user_id','exam_taking_id', 'question_id', 'answer_id', 'is_correct'];
 
     public function examTaking(): BelongsTo
     {

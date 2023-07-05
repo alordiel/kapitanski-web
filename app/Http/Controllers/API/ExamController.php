@@ -153,24 +153,30 @@ class ExamController
         $request->validate([
             'exam' => 'required',
             'examId' => 'required',
+            'examType' => 'required',
             'results' => 'required',
         ]);
         $results = $request->input('results');
         $exam = $request->input('exam');
         // Save the exam taking
         $exam_taking = ExamTaking::create([
-            'exam_id' => '',
-            'type' => '',
-            'result' => '',
+            'user_id' => $request->user()->id,
+            'exam_id' =>  $request->input('examId'),
+            'exam_type' =>  $request->input('examType'),
+            'result' => (int) $results['score'],
+            'total_questions' => (int) $results['totalQuestions'],
+            'wrong_answers' => (int) $results['wrong']
         ]);
         // Save each user's answer
-        UserAnswer::create([
-            'exam_taking_id' => '',
-            'question_id' => '',
-            'user_id' => '',
-            'answer_id' => '',
-            'is_correct' => '',
-        ]);
+        foreach ($exam as $question){
+            UserAnswer::create([
+                'user_id' => $request->user()->id,
+                'exam_taking_id' => $exam_taking->id,
+                'question_id' => $question['questionId'],
+                'answer_id' => $question['userAnswer'],
+                'is_correct' => $question['isCorrect'],
+            ]);
+        }
 
         if ($results['score'] >= 90) {
             $finalMessage = sprintf(__("You have passed with %d%% of correct answers."), $results['score']);

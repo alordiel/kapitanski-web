@@ -519,6 +519,7 @@
                                 }
                             }),
                             examId: 1,
+                            examType: this.examConfiguration.type,
                             results: {
                                 score: this.finalResult.percentCorrect,
                                 totalQuestions: this.finalResult.totalQuestions,
