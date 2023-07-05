@@ -143,6 +143,7 @@
         {{-- Results --}}
         <div v-if="finalResult.visible">
             Results
+            <p>@{{ finalResult.message }}</p>
         </div>
 
         {{-- Info Modal --}}
@@ -296,7 +297,7 @@
                         message: '',
                         totalQuestions: 0,
                         wrong: 0,
-                        percentWrong: 0,
+                        percentCorrect: 0,
                         showWrongAnswers: false,
                     },
                     modals: {
@@ -460,7 +461,7 @@
                         data: {
                             exam: this.exam,
                             results: {
-                                score: this.finalResult.percentWrong,
+                                score: this.finalResult.percentCorrect,
                                 totalQuestions: this.finalResult.totalQuestions,
                                 wrong: this.finalResult.wrong
                             }
@@ -503,7 +504,7 @@
 
                     this.finalResult.totalQuestions = countOfQuestions;
                     this.finalResult.wrong = wrong;
-                    this.finalResult.percentWrong = Math.round((wrong / countOfQuestions) * 100);
+                    this.finalResult.percentCorrect = 100 - Math.round((wrong / countOfQuestions) * 100);
                 }
             }
         }).mount('#exam-app')

@@ -140,7 +140,7 @@ class ExamController
 
     public function submitExam(Request $request): JsonResponse
     {
-         if (!$request->user()->hasPermissionTo('take-exam')) {
+        if (!$request->user()->hasPermissionTo('take-exam')) {
             return response()->json([
                 'status' => 'failed',
                 'message' => 'No permission to take exam'
@@ -152,16 +152,16 @@ class ExamController
             'exam' => 'required',
             'results' => 'required',
         ]);
-         $results = $request->input('results');
-         $exam = $request->input('exam');
+        $results = $request->input('results');
+        $exam = $request->input('exam');
         // Save the exam taking
 
         // Save each user's answer
 
-        if($results['score'] > 10) {
-            $finalMessage = sprintf(__("You have passed with %d %% of wrong answers."), $results['score']);
+        if ($results['score'] >= 90) {
+            $finalMessage = sprintf(__("You have passed with %d %% of correct answers."), $results['score']);
         } else {
-            $finalMessage = sprintf(__("You have failed with %d %% of wrong answers."), $results['score']);
+            $finalMessage = sprintf(__("You have failed the test. You've got %d wrong answers out of %d questions with final score of %d%%."), $results['wrong'], $results['totalQuestions'], $results['score']);
         }
 
         return response()->json([
