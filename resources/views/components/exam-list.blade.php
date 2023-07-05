@@ -442,13 +442,17 @@
                     const vm = this;
                     const token = '{{ auth()->user()->createToken('lol',['get-exam'])->plainTextToken }}';
                     this.loading.finalResult = true;
+                    const finalResults = this.calculateFinalResult();
 
                     axios.defaults.withCredentials = true;
 
                     axios({
                         url: '/api/v1/submit-exam',
                         method: 'post',
-                        data: this.exam,
+                        data: {
+                            exam: this.exam,
+                            results: finalResults
+                        },
                         headers: {
                             Authorization: `Bearer ${token}`,
                             Accept: 'application/json',
@@ -473,6 +477,22 @@
                             }
                             vm.loading.finalResult = false;
                         });
+                },
+
+                calculateFinalResult() {
+                    const countOfQuestions = this.exam.length;
+                    let wrong = 0;
+                    for(let question of this.exam) {
+                        if(question.userAnswer !== question.correct_answer) {
+                            wrong++;
+                        }
+                    }
+
+                    return {
+                        total: countOfQuestions,
+                        wrong: wrong,
+                        percentWrong: Math.round( (wrong / countOfQuestions) * 100),
+                    }
                 }
             }
         }).mount('#exam-app')

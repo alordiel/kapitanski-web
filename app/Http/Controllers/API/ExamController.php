@@ -117,7 +117,7 @@ class ExamController
                 }
                 break;
             case 'real':
-                $questions = $this->questions->getAllQuestions('real',60);
+                $questions = $this->questions->getAllQuestions('real', 60);
                 break;
             case 'mistaken':
                 $questions = $this->questions->getMistakenQuestions();
@@ -126,7 +126,7 @@ class ExamController
 
         return response()->json([
             'status' => 'success',
-            'exam'   => $questions,
+            'exam' => $questions,
         ], 201);
     }
 
@@ -134,14 +134,19 @@ class ExamController
     {
         return response()->json([
             'status' => 'success',
-            'exam'   => QuestionRepository::getDemoQuestions(),
+            'exam' => QuestionRepository::getDemoQuestions(),
         ], 201);
     }
 
-    public function submitExam(): JsonResponse {
+    public function submitExam(): JsonResponse
+    {
+        // Save the exam taking
+
+        // Save each user's answer
+
         return response()->json([
             'status' => 'success',
-            'exam'   => [],
+            'exam' => [],
         ], 201);
     }
 }
