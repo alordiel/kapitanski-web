@@ -72,6 +72,11 @@
 
         {{-- Exam with questions panel --}}
         <div v-if="!showResults && exam.length > 0">
+            <div class="relative w-100 h-5">
+                <div class="absolute top-3 right-5">
+                    <button @click="resetExam">{{__('Reset exam')}}</button>
+                </div>
+            </div>
             {{-- The indicator of the questions --}}
             <div class="flex flex-wrap">
                 <div
@@ -84,7 +89,7 @@
                 ></div>
             </div>
 
-            {{-- The questions' header --}}
+            {{-- The question text --}}
             <div>
                 <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
                 <div class="grid grid-cols-2">
@@ -101,7 +106,7 @@
                 </div>
             </div>
 
-            {{-- Single question --}}
+            {{-- Question's answers --}}
             <div
                 class="grid grid-cols-2"
                 v-show="exam[questions.currentQuestion].userAnswer !== 0"
@@ -335,6 +340,22 @@
                         this.modals.config.error = '';
                     } else {
                         this.startExam();
+                    }
+                },
+
+                resetExam() {
+                    if (confirm("{{__('Resetting the exam will delete your progress. Are you sure you want to proceed?')}}")) {
+                        this.exam = [];
+                        this.questions = {
+                            currentQuestion: 0,
+                            allAnswered: false,
+                            numberOfAnswered: 0,
+                            totalQuestions: 0,
+                        };
+                        this.timer = {
+                            active: false,
+                            duration: 40 * 60,
+                        };
                     }
                 },
 
