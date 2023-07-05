@@ -459,8 +459,11 @@
                 },
 
                 selectAnswer(answerID) {
+                    // check if this is not answered and only then increase the number of Answered questions
+                    if (this.exam[this.questions.currentQuestion].userAnswer === 0) {
+                        this.questions.numberOfAnswered++
+                    }
                     this.exam[this.questions.currentQuestion].userAnswer = answerID;
-                    this.questions.numberOfAnswered++
                     this.questions.allAnswered = (this.questions.numberOfAnswered === this.questions.totalQuestions)
                 },
 
