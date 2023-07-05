@@ -25,8 +25,8 @@ class QuestionRepository extends Controller
     {
         return Question::where([
             ['exam_id', '=', 1],
-            ['question_category_id','=', $category_id]
-            ])
+            ['question_category_id', '=', $category_id]
+        ])
             ->with('answers')
             ->take($count_of_questions)
             ->get();
@@ -35,14 +35,31 @@ class QuestionRepository extends Controller
     public function getAllQuestions(string $type, int $count_of_questions)
     {
         if ($type === 'practice') {
-            $alreadySeen = $this->getAlreadySeenQuestions();
-            return Question::where('exam_id', 1)
-                ->with('answers')
-                ->take($count_of_questions)
-                ->inRandomOrder()
-                ->get();
+            $alreadySeen = $this->getAlreadySeenQuestions($count_of_questions);
+            if ($alreadySeen === []) {
+                // First time answering questions
+                return Question::where('exam_id', 1)
+                    ->with('answers')
+                    ->take($count_of_questions)
+                    ->inRandomOrder()
+                    ->get();
+            } else if ($alreadySeen[0] === 'whereIN') {
+                return Question::where('exam_id', 1)
+                    ->whereIn('id', $alreadySeen[1])
+                    ->with('answers')
+                    ->take($count_of_questions)
+                    ->inRandomOrder()
+                    ->get();
+            } else {
+                return Question::where('exam_id', 1)
+                    ->whereNotIn('id',$alreadySeen[1])
+                    ->with('answers')
+                    ->take($count_of_questions)
+                    ->inRandomOrder()
+                    ->get();
+            }
         }
-
+        // this is the real test, so we just pick up some 60 random questions
         return Question::where('exam_id', 1)
             ->with('answers')
             ->take(60)
@@ -108,9 +125,9 @@ class QuestionRepository extends Controller
             $sortedByRepeat[$repeated][] = $questionId;
         }
         // check if all seen questions have at same level of repeating
-        if (count($sortedByRepeat) === 1 ) {
+        if (count($sortedByRepeat) === 1) {
             $questions = array_values($sortedByRepeat)[0];
-            $question_ids  = array_splice($questions,0, $countOfNeededQuestions);
+            $question_ids = array_splice($questions, 0, $countOfNeededQuestions);
             return ['whereIN', $question_ids];
         }
 
@@ -118,17 +135,17 @@ class QuestionRepository extends Controller
         foreach ($sortedByRepeat as $questions) {
             $countOfCurrentLevel = count($questions);
             // we will fill the needed questions from the lowest levels first and add from the next until we get to the needed amount
-            if ($countOfNeededQuestions <= $countOfCurrentLevel){
+            if ($countOfNeededQuestions <= $countOfCurrentLevel) {
                 shuffle($questions);
-                array_splice($questions,0, $countOfNeededQuestions);
+                array_splice($questions, 0, $countOfNeededQuestions);
                 $question_ids = array_merge($question_ids, $questions);
-               break;
+                break;
             } else {
                 $countOfNeededQuestions -= $countOfCurrentLevel;
                 $question_ids = array_merge($question_ids, $questions);
             }
         }
-        return ['whereIN',$question_ids];
+        return ['whereIN', $question_ids];
     }
 
 }
