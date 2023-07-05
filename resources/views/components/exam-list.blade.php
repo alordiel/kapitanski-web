@@ -397,7 +397,7 @@
                     this.exam.each(e => {
                         e.userAnswer = 0;
                     })
-                    // reset some properties to their defualt values
+                    // reset some properties to their default values
                     this.questions = {
                         currentQuestion: 0,
                         allAnswered: false,
@@ -511,7 +511,14 @@
                         url: '/api/v1/submit-exam',
                         method: 'post',
                         data: {
-                            exam: this.exam,
+                            exam: this.exam.map(e=>{
+                                return {
+                                    questionId: e.id,
+                                    userAnswer: e.userAnswer,
+                                    isCorrect: e.userAnswer === e.correct_answer
+                                }
+                            }),
+                            examId: 1,
                             results: {
                                 score: this.finalResult.percentCorrect,
                                 totalQuestions: this.finalResult.totalQuestions,

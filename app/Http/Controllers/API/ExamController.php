@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Models\Answer;
 use App\Models\Exam;
+use App\Models\ExamTaking;
 use App\Models\Question;
+use App\Models\UserAnswer;
 use App\Repositories\QuestionRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -150,13 +152,25 @@ class ExamController
         // Validate the request
         $request->validate([
             'exam' => 'required',
+            'examId' => 'required',
             'results' => 'required',
         ]);
         $results = $request->input('results');
         $exam = $request->input('exam');
         // Save the exam taking
-
+        $exam_taking = ExamTaking::create([
+            'exam_id' => '',
+            'type' => '',
+            'result' => '',
+        ]);
         // Save each user's answer
+        UserAnswer::create([
+            'exam_taking_id' => '',
+            'question_id' => '',
+            'user_id' => '',
+            'answer_id' => '',
+            'is_correct' => '',
+        ])
 
         if ($results['score'] >= 90) {
             $finalMessage = sprintf(__("You have passed with %d%% of correct answers."), $results['score']);
