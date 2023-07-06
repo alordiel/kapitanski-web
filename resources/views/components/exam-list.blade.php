@@ -71,6 +71,10 @@
 
         {{-- Exam with questions panel --}}
         <div v-if="!finalResult.visible && exam.length > 0">
+            <div v-show="timer.active">
+                <div :class="{'text-red-600':timer.left < 5 * 60}">@{{ timer.running }}</div>
+            </div>
+            {{-- Reset the exam link --}}
             <div class="relative w-100 h-5">
                 <div class="absolute top-3 right-5">
                     <button @click="resetExam">{{__('Reset exam')}}</button>
@@ -130,11 +134,11 @@
                 >
                     {{__('Finish')}}
                     <svg v-show="loading.submitExam" class="animate-spin inline-block ml-4" stroke="currentColor"
-                             fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
-                        </svg>
+                         fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
+                    </svg>
                 </button>
 
                 <button
@@ -168,18 +172,22 @@
             </p>
 
             <div v-if="finalResult.wrong > 0">
-                <button class="underline" v-show="!finalResult.showWrongAnswers" @click="finalResult.showWrongAnswers = true">
+                <button class="underline" v-show="!finalResult.showWrongAnswers"
+                        @click="finalResult.showWrongAnswers = true">
                     {{__('Show wrong answers')}}
                 </button>
                 <h4 v-show="finalResult.showWrongAnswers" class="text-xl font-bold">{{__('Wrong answers')}}</h4>
                 <div v-show="finalResult.showWrongAnswers">
-                    <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)" :key="'wrong-'+qIndex">
+                    <div class="mb-5" v-for="(question, qIndex) in exam.filter(e=>e.userAnswer !== e.correct_answer)"
+                         :key="'wrong-'+qIndex">
                         <p class="font-bold mb-3">@{{question.question}}</p>
                         <p class="text-green-600">
-                            <strong>{{__('Correct')}}</strong>: @{{question.answers.find(e=>e.id === question.correct_answer).answer}}
+                            <strong>{{__('Correct')}}</strong>: @{{question.answers.find(e=>e.id ===
+                            question.correct_answer).answer}}
                         </p>
                         <p class="text-red-600">
-                            <strong>{{__('Wrong')}}</strong>: @{{question.answers.find(e=>e.id === question.userAnswer).answer}}
+                            <strong>{{__('Wrong')}}</strong>: @{{question.answers.find(e=>e.id ===
+                            question.userAnswer).answer}}
                         </p>
                     </div>
                 </div>
@@ -360,7 +368,11 @@
                     },
                     timer: {
                         active: false,
-                        duration: 40 * 60,
+                        duration: 30 * 60,
+                        running: '',
+                        left: 30 * 60,
+                        minutes: 0,
+                        seconds: 0,
                     },
                     examConfiguration: {
                         examTitle: '',
@@ -478,6 +490,10 @@
                                     })
                                     vm.questions.totalQuestions = res.data.exam.length;
                                     vm.exam = res.data.exam;
+                                    // if this is a real exam we need to start the timer
+                                    if (vm.examConfiguration.type === 'real') {
+                                        vm.startTimer();
+                                    }
                                 }
                                 vm.modals.config.visible = false;
                             }
@@ -492,6 +508,32 @@
                             }
                             vm.loaderController(false);
                         });
+                },
+
+                startTimer() {
+
+                    // Get the timer display element
+                    const vm = this;
+
+                    let intervalId = setInterval(function () {
+                        vm.timer.minutes = Math.floor(vm.timer.left / 60);
+                        vm.timer.seconds = vm.timer.left % 60;
+
+                        // Update the timer display
+                        let time = vm.timer.minutes * 60 + vm.timer.seconds;
+                        let minutesText = Math.floor(time / 60).toString();
+                        let secondsText = (time % 60).toString();
+                        vm.timer.running = `${minutesText.padStart(2, '0')}:${secondsText.padStart(2, '0')}`;
+
+                        // Decrement the timer
+                        vm.timer.left--;
+
+                        // Check if the timer has finished
+                        if (vm.timer.left <= 0) {
+                            clearInterval(intervalId);
+                            vm.submitExam(true);
+                        }
+                    }, 1000);
                 },
 
                 selectAnswer(answerID) {
@@ -516,9 +558,9 @@
                     }
                 },
 
-                submitExam() {
+                submitExam(skipQuestionsCheck) {
 
-                    if (!this.questions.allAnswered) {
+                    if (!skipQuestionsCheck && !this.questions.allAnswered) {
                         this.modals.info.visible = true;
                         this.modals.info.title = '';
                         this.modals.info.body = '{{__("You need to answer all question.")}}'
@@ -536,7 +578,7 @@
                         url: '/api/v1/submit-exam',
                         method: 'post',
                         data: {
-                            exam: this.exam.map(e=>{
+                            exam: this.exam.map(e => {
                                 return {
                                     questionId: e.id,
                                     userAnswer: e.userAnswer,
