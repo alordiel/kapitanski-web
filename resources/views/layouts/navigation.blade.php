@@ -83,6 +83,9 @@
                             <x-dropdown-link :href="route('subscription.personal')">
                                 {{ __('Subscriptions') }}
                             </x-dropdown-link>
+                            <x-dropdown-link :href="route('my-statistics')">
+                                {{ __('Statistics') }}
+                            </x-dropdown-link>
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
@@ -137,6 +140,10 @@
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
 
+                    <x-responsive-nav-link :href="route('my-statistics')">
+                        {{ __('Statistics') }}
+                    </x-responsive-nav-link>
+
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -175,7 +182,7 @@
                         >
                             {{__('Log in')}}
                         </a>
-                        <x-light-mode />
+                        <x-light-mode/>
                     </div>
                 </div>
             </div>
