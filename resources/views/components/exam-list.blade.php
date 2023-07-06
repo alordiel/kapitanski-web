@@ -484,16 +484,16 @@
                                 vm.modals.config.error = res.data.message;
                             } else {
                                 if (res.data.exam.length > 0) {
+                                    // if this is a real exam we need to start the timer
+                                    if (vm.examConfiguration.type === 'real') {
+                                        vm.startTimer();
+                                    }
                                     // add the user's answer property
                                     res.data.exam.forEach(entry => {
                                         entry.userAnswer = 0;
                                     })
                                     vm.questions.totalQuestions = res.data.exam.length;
                                     vm.exam = res.data.exam;
-                                    // if this is a real exam we need to start the timer
-                                    if (vm.examConfiguration.type === 'real') {
-                                        vm.startTimer();
-                                    }
                                 }
                                 vm.modals.config.visible = false;
                             }
@@ -511,19 +511,16 @@
                 },
 
                 startTimer() {
-
+                    this.timer.active = true;
                     // Get the timer display element
                     const vm = this;
 
                     let intervalId = setInterval(function () {
-                        vm.timer.minutes = Math.floor(vm.timer.left / 60);
-                        vm.timer.seconds = vm.timer.left % 60;
+                        const minutesText = Math.floor(vm.timer.left / 60).toString().padStart(2, '0');
+                        const secondsText = (vm.timer.left % 60).toString().padStart(2, '0');
 
                         // Update the timer display
-                        let time = vm.timer.minutes * 60 + vm.timer.seconds;
-                        let minutesText = Math.floor(time / 60).toString();
-                        let secondsText = (time % 60).toString();
-                        vm.timer.running = `${minutesText.padStart(2, '0')}:${secondsText.padStart(2, '0')}`;
+                        vm.timer.running = `${minutesText}:${secondsText}`;
 
                         // Decrement the timer
                         vm.timer.left--;
