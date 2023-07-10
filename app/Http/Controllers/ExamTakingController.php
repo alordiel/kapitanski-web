@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\ExamTaking;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ExamTakingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
-        //
+        return view('examTaking.index', [
+            'examTakings' => ExamTaking::all()
+        ]);
     }
 
     /**

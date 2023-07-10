@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
         return view('exam.myExam');
     })->name('my-exam');
     Route::get('/statistics', static function () {
-        return view('examTakings.myStats');
+        return view('examTaking.myStats');
     })->name('my-statistics');
     Route::post('/subscription/activate', [SubscriptionController::class, 'activate'])->name('subscription.activate');
     Route::get('/my-subscriptions',[SubscriptionController::class,'showPersonal'])->name('subscription.personal');
