@@ -10,12 +10,12 @@
     <ul>
         @foreach($takings as $taking)
             <li class="flex">
-                Order: #{{$taking->id}} | Total: {{$taking->total}} BGN | Credits: {{$taking->credits}} |
-                Status: {{$taking->order_status}} |
+                ID: #{{$taking->id}} | User: {{$taking->user->name}} | Score: {{$taking->score}} |
+                Date: {{$taking->created_at}} |
                 <a href="{{route('user.admin.show',['user'=>$taking->user])}}">{{$taking->user->name}}</a>
-                <x-edit-entry url="{{route('order.edit',['order'=>$taking])}}" title="Edit order"/>
-                <x-delete-entry url="{{route('order.destroy',['order'=>$taking])}}" entry="order"
-                                button-title="Delete order"/>
+                <x-edit-entry url="{{route('examTaking.edit',['taking'=>$taking])}}" title="View taking"/>
+                <x-delete-entry url="{{route('examTaking.destroy',['taking'=>$taking])}}" entry="taking"
+                                button-title="Delete taking"/>
             </li>
         @endforeach
     </ul>

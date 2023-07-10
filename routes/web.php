@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExamTakingController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
@@ -118,6 +119,10 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::get('/admin/subscription/{subscription}/edit', [SubscriptionController::class, 'edit'])->name("subscription.edit");
     Route::put('/admin/subscription/{subscription}', [SubscriptionController::class, 'update'])->name("subscription.update");
     Route::delete('/admin/subscription/{subscription}', [SubscriptionController::class, 'destroy'])->name("subscription.destroy");
+    // Exam takings
+    Route::get('/admin/exam-takings/',[ExamTakingController::class, 'index'])->name("examTaking.manage");
+    Route::get('/admin/exam-taking/{examTaking}',[ExamTakingController::class,'show'])->name('examTaking.show');
+    Route::delete('/admin/exam-taking/{examTaking}',[ExamTakingController::class,'destroy'])->name('examTaking.destroy');
 });
 
 

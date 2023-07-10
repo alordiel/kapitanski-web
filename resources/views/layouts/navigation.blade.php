@@ -46,7 +46,7 @@
                                 <x-dropdown-link :href="route('questionCategory.manage')">
                                     {{ __('Question categories') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="'#'">
+                                <x-dropdown-link :href="route('examTaking.manage')">
                                     {{ __('Exam takings') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('order.manage')">
