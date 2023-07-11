@@ -66,7 +66,7 @@
                         <x-text-input type="text" v-model="question.body"/>
                     </label>
                 </p>
-                <p class="w-1/3">
+               {{-- <p class="w-1/3">
                     <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Question type<br>
                         <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type"
@@ -75,7 +75,7 @@
                         <input type="radio" :name="'question-type-' + questionIndex" v-model="question.type"
                                value="image"> Image
                     </label>
-                </p>
+                </p>--}}
                 <p class="w-1/3">
                     <label :for="'cat-' + questionIndex"
                            class="block font-medium text-sm text-gray-700 dark:text-gray-300">
