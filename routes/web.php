@@ -24,6 +24,11 @@ Route::get('/', static function () {
     return view('welcome');
 });
 
+Route::get('/scraper', static function () {
+    return view('scrape');
+});
+
+
 Route::get('/admin', static function () {
     return view('admin');
 })->middleware(['auth', 'role:super-admin'])->name('admin');
