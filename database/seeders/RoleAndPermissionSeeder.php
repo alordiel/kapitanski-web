@@ -19,6 +19,8 @@ class RoleAndPermissionSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
+        Permission::create(['name' => 'submit-scraped-data']);
+
         Permission::create(['name' => 'upload-files']);
         Permission::create(['name' => 'delete-files']);
 

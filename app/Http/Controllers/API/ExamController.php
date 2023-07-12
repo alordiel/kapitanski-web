@@ -10,6 +10,7 @@ use App\Models\UserAnswer;
 use App\Repositories\QuestionRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
 
 class ExamController
 {
@@ -161,14 +162,14 @@ class ExamController
         // Save the exam taking
         $exam_taking = ExamTaking::create([
             'user_id' => $request->user()->id,
-            'exam_id' =>  $request->input('examId'),
-            'exam_type' =>  $request->input('examType'),
-            'result' => (int) $results['score'],
-            'total_questions' => (int) $results['totalQuestions'],
-            'wrong_answers' => (int) $results['wrong']
+            'exam_id' => $request->input('examId'),
+            'exam_type' => $request->input('examType'),
+            'result' => (int)$results['score'],
+            'total_questions' => (int)$results['totalQuestions'],
+            'wrong_answers' => (int)$results['wrong']
         ]);
         // Save each user's answer
-        foreach ($exam as $question){
+        foreach ($exam as $question) {
             UserAnswer::create([
                 'user_id' => $request->user()->id,
                 'exam_taking_id' => $exam_taking->id,
@@ -187,6 +188,30 @@ class ExamController
         return response()->json([
             'status' => 'success',
             'results' => $finalMessage,
+        ], 201);
+    }
+
+    function storeScrapedData(Request $request): JsonResponse
+    {
+        if (!$request->user()->hasPermissionTo('submit-scraped-data')) {
+            return response()->json([
+                'status' => 'failed',
+                'message' => 'No permission to save data'
+            ], 403);
+        }
+
+        $request->validate([
+            'examName' => 'required',
+            'scrapedData' => 'required',
+        ]);
+
+        $fileName = $request->input('examName') . '.json';
+        $data = json_encode($request->input('scrapedData'), JSON_UNESCAPED_UNICODE); //UTF8 flag
+        Storage::disk('local')->put($fileName, $data);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Data successfully stored',
         ], 201);
     }
 }
