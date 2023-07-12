@@ -259,9 +259,10 @@
                             name="numberOfQuestions"
                             v-model="examConfiguration.numberOfQuestions"
                             min="10"
-                            max="600"
+                            max="848"
                             value="20"
                         >
+                        {{-- TODO the number of the max questions should be dynamic  --}}
                     </div>
 
                     <div class="block mt-4">
