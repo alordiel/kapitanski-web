@@ -76,7 +76,7 @@
                 <div  v-show="timer.active" :class="{'text-red-600':timer.left < 5 * 60}">@{{ timer.running }}</div>
                 {{-- Reset the exam link --}}
                 <div class="absolute top-0 right-5">
-                    <button @click="resetExam">{{__('Reset exam')}}</button>
+                    <button @click="resetExam(false)">{{__('Reset exam')}}</button>
                 </div>
             </div>
             {{-- The indicator of the questions --}}
@@ -405,7 +405,7 @@
                     }
                 },
 
-                resetExam(forceReset = false) {
+                resetExam(forceReset) {
                     if (forceReset || confirm("{{__('Resetting the exam will delete your progress. Are you sure you want to proceed?')}}")) {
                         this.exam = [];
                         this.questions = {
