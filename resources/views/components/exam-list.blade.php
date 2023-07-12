@@ -97,7 +97,7 @@
 
             {{-- The question text --}}
             <div>
-                <div class="font-bold text-xl mb-3">@{{ exam[questions.currentQuestion].question }}</div>
+                <div class="font-bold text-xl mb-3" v-html="exam[questions.currentQuestion].question"></div>
                 <div class="grid grid-cols-2">
 
                     <div
