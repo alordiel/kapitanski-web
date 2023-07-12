@@ -1673,21 +1673,21 @@
 				<td class="the-answer correct-answer">От спускането на вода.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате зелена веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_cf7822917ff97222.png"></td>
+				<td class="the-question">Плавате в район B, виждате зелена веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_cf7822917ff97222.png"></td>
 				<td class="the-answer">Знак, поставен в Системата за разделно движение.</td>
 				<td class="the-answer">Мини на Запад от мен.</td>
 				<td class="the-answer">Основният път е наляво.</td>
 				<td class="the-answer correct-answer">Лява страна на основната посока за движение.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате червен коничен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_942e61f7d7443ac0.png"></td>
+				<td class="the-question">Плавате в район B, виждате червен коничен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_942e61f7d7443ac0.png"></td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer">Район за военни учения.</td>
 				<td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer">Основният път е надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате червен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_13baee342b469b93.png"></td>
+				<td class="the-question">Плавате в район B, виждате червен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_13baee342b469b93.png"></td>
 				<td class="the-answer">Района е за отдих и развлечения.</td>
 				<td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Юг от мен.</td>
@@ -1695,21 +1695,21 @@
 				<td class="the-answer"><br></td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате цилиндричен  буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_275f67a8306a2466.png"></td>
+				<td class="the-question">Плавате в район B, виждате цилиндричен  буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_275f67a8306a2466.png"></td>
 				<td class="the-answer">Знак, поставен в Системата за разделно движение.</td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer correct-answer">Основният път е надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате стълбовиден  буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_ed0276bbbaa69694.png"></td>
+				<td class="the-question">Плавате в район B, виждате стълбовиден  буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ed0276bbbaa69694.png"></td>
 				<td class="the-answer correct-answer">Основният път е надясно.</td>
 				<td class="the-answer">Мини на Запад от мен.</td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Район за военни учения.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_a23d0ba32229515.png"></td>
+				<td class="the-question">Плавате в район B, виждате веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a23d0ba32229515.png"></td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer correct-answer">Основният път е надясно.</td>
 				<td class="the-answer">Място, където преминават подводни кабели.</td>
@@ -1821,21 +1821,21 @@
 				<td class="the-answer">1. предна топова, 2. втора топова и 3.бордови.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате коничен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_19c92a450468de0a.png"></td>
+				<td class="the-question">Плавате в район B, виждате коничен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_19c92a450468de0a.png"></td>
 				<td class="the-answer">Знак за означаване на средствата от Системата за събиране на данни са Световния океан.</td>
 				<td class="the-answer">Мини на Изток от мен.</td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer correct-answer">Основният път е наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_cd347d4b576e507f.png"></td>
+				<td class="the-question">Плавате в район B, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_cd347d4b576e507f.png"></td>
 				<td class="the-answer">Границите на подводни кариери.</td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer correct-answer">Основният път е наляво.</td>
 				<td class="the-answer">Мини на Изток от мен.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_7c2b84a8ed53d168.png"></td>
+				<td class="the-question">Плавате в район B, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7c2b84a8ed53d168.png"></td>
 				<td class="the-answer">Мини на Изток от мен.</td>
 				<td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer">Основният път е наляво.</td>
@@ -1877,28 +1877,28 @@
 				<td class="the-answer">Зелен и червен.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/Vyprosi_html_25fdd66a7f5de47c.png"></td>
+				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_25fdd66a7f5de47c.png"></td>
 				<td class="the-answer">Знак за изолирана опасност.</td>
 				<td class="the-answer">Латерален.</td>
 				<td class="the-answer correct-answer">Северен кардинален.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/Vyprosi_html_85c2c4bc18e275d5.png"></td>
+				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_85c2c4bc18e275d5.png"></td>
 				<td class="the-answer">Знак за изолирана опасност.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Северен латерален.</td>
 				<td class="the-answer correct-answer">Източен кардинален.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/Vyprosi_html_f289ad32613cbebd.png"></td>
+				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_f289ad32613cbebd.png"></td>
 				<td class="the-answer">Латерален, "Основният път е надясно".</td>
 				<td class="the-answer">Знак за изолирана опасност.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Южен кардинален.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/Vyprosi_html_73b88c82eb9036e1.png"></td>
+				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_73b88c82eb9036e1.png"></td>
 				<td class="the-answer">Латерален, "Основният път е наляво".</td>
 				<td class="the-answer correct-answer">Западен кардинален.</td>
 				<td class="the-answer">Знак за изолирана опасност.</td>
@@ -1919,21 +1919,21 @@
 				<td class="the-answer">Червен.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_4a89431f1d07943e.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4a89431f1d07943e.png"></td>
 				<td class="the-answer">Специален.       "Тук преминават подводни кабели".</td>
 				<td class="the-answer">Безопасни води.    "Тук водите са плавателни."</td>
 				<td class="the-answer">Латерален.   "Основният път е надясно."</td>
 				<td class="the-answer correct-answer">Северен кардинален. "Мини на Север от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб трябва да носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3ec8391e9ec66d3c.png"></td>
+				<td class="the-question">Кой кораб трябва да носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3ec8391e9ec66d3c.png"></td>
 				<td class="the-answer correct-answer">Кораб с механичен двигател на ход с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Ветроходен кораб идващ срещу нас.</td>
 				<td class="the-answer">Кораб с механичен двигател на ход с дължина по-голяма от 50 метра.</td>
 				<td class="the-answer">Кораб зает с влачене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб трябва да носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_6476e768ac00dc60.png"></td>
+				<td class="the-question">Кой кораб трябва да носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_6476e768ac00dc60.png"></td>
 				<td class="the-answer">Кораб с механичен двигател на ход с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Ветроходен кораб идващ срещу нас.</td>
 				<td class="the-answer correct-answer">Кораб с механичен двигател на ход с дължина по-голяма от 50 метра.</td>
@@ -1947,14 +1947,14 @@
 				<td class="the-answer">1.предна топова,  2.втора топова и 3.бордови.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_91ab9f363b56307e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_91ab9f363b56307e.png"></td>
 				<td class="the-answer correct-answer">Кораб с механичен двигател на ход с дължина по-голяма от 50 метра движи се наляво.</td>
 				<td class="the-answer">Ветроходен кораб идващ срещу нас.</td>
 				<td class="the-answer">Кораб с механичен двигател на ход с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Кораб зает с влачене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_d87e5fea4a250205.png"></td>
+				<td class="the-question">Кой кораб носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d87e5fea4a250205.png"></td>
 				<td class="the-answer">Кораб с механичен двигател на ход с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Кораб зает с влачене.</td>
 				<td class="the-answer correct-answer">Кораб с механичен двигател на ход с дължина по-голяма от 50 метра движи се надясно.</td>
@@ -1968,21 +1968,21 @@
 				<td class="the-answer">Зелена кръгововидима пробляскваща светлина.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_f260f15e6cab5aa4.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_f260f15e6cab5aa4.png"></td>
 				<td class="the-answer">Ветроходен кораб, идва срещу нас.</td>
 				<td class="the-answer">Кораб зает с влачене, идва срещу нас.</td>
 				<td class="the-answer correct-answer">Кораб на въздушна възглавница, идва срещу нас.</td>
 				<td class="the-answer">Риболовен кораб,  идва срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_24b0027f112932ac.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_24b0027f112932ac.png"></td>
 				<td class="the-answer correct-answer">Кораб на въздушна възглавница, виждаме кърмата.</td>
 				<td class="the-answer">Ветроходен кораб, виждаме кърмата.</td>
 				<td class="the-answer">Пилотски кораб, виждаме кърмата.</td>
 				<td class="the-answer">Риболовен кораб, виждаме кърмата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_c55cba0718d97094.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c55cba0718d97094.png"></td>
 				<td class="the-answer correct-answer">WIG водолетателен съд, когато излита, каца и лети близо до повърхноста .</td>
 				<td class="the-answer">Кораб на въздушна възглавница.</td>
 				<td class="the-answer">Пилотски кораб.</td>
@@ -1996,189 +1996,189 @@
 				<td class="the-answer">Високо интензивна  кръгововидима пробляскваща бяла светлина.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_160d5616333a16ac.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_160d5616333a16ac.png"></td>
 				<td class="the-answer">Кораб на въздушна възглавница.</td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer correct-answer">Кораб с механичен двигател на ход, с дължина по-малка от 7 метра и скорост по-малка от 7 възла.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3489b56c5bcd52bc.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3489b56c5bcd52bc.png"></td>
 				<td class="the-answer">Кораб, тласкан напред, не е свързан с тласкача твърдо в едно цяло.</td>
 				<td class="the-answer">Кораб, влачен на борд.</td>
 				<td class="the-answer correct-answer">Кораб, по-къс от 50 метра влачи друг кораб.</td>
 				<td class="the-answer">Влачен кораб, или частично потопен обект.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_1dcfa85dc11da7bc.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1dcfa85dc11da7bc.png"></td>
 				<td class="the-answer">Специален.       "Тук преминават подводни тръбопроводи."</td>
 				<td class="the-answer correct-answer">Северен кардинален знак. "Мини на Север от мен."</td>
 				<td class="the-answer">Безопасни води.      "Тук водите са плавателни."</td>
 				<td class="the-answer">Латерален.   "Основния път е  наляво."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_c6861875448655e6.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c6861875448655e6.png"></td>
 				<td class="the-answer correct-answer">Източен кардинален знак. "Мини на изток от мен."</td>
 				<td class="the-answer">Специален.  "Това са граници на подводни кариери."</td>
 				<td class="the-answer">Безопасни води.  "Тук водите са плавателни."</td>
 				<td class="the-answer">Латерален.   "Основния път е  наляво."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_62b71d514cfa59da.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_62b71d514cfa59da.png"></td>
 				<td class="the-answer">Специален.   "Район за отдих и развлечения".</td>
 				<td class="the-answer correct-answer">Южен кардинален. "Мини на Юг от мен."</td>
 				<td class="the-answer">Латерален.   "Основния път е надясно"</td>
 				<td class="the-answer">Безопасни води.     "Тук водите са плавателни."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_475858ed53607919.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_475858ed53607919.png"></td>
 				<td class="the-answer">Безопасни води.    "Тук водите са плавателни."</td>
 				<td class="the-answer">Специален.  "Това е район за военни учения."</td>
 				<td class="the-answer">Латерален.   "Основният път е  наляво"</td>
 				<td class="the-answer correct-answer">Източен кардинален знак. "Мини на Изток от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_4d805524046ab577.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4d805524046ab577.png"></td>
 				<td class="the-answer">Безопасни води.     "Тук водите са плавателни."</td>
 				<td class="the-answer correct-answer">Южен кардинален. "Мини на Юг от мен."</td>
 				<td class="the-answer">Специален.  "Това е район за военни учения."</td>
 				<td class="the-answer">Латерален.   "Основният път е надясно"<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_5fc6cdd3976c0f62.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5fc6cdd3976c0f62.png"></td>
 				<td class="the-answer">Латерален."Основният път е  наляво"</td>
 				<td class="the-answer">Безопасни води."Тук водите са плавателни."</td>
 				<td class="the-answer correct-answer">Западен кардинален. "Мини на Запад от мен."</td>
 				<td class="the-answer">Специален."Район за отдих и развлечения".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_34fc29c512b389c2.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_34fc29c512b389c2.png"></td>
 				<td align="center" valign=top>Безопасни води. "Тук водите са плавателни."</td>
 				<td class="the-answer">Специален.  "Това е район за военни учения."</td>
 				<td class="the-answer">Латерален."Основният път е надясно"</td>
 				<td class="the-answer correct-answer">Западен кардинален. "Мини на Запад от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_12bf33286e99474a.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_12bf33286e99474a.png"></td>
 				<td class="the-answer correct-answer">Северен кардинален. "Мини на Север от мен."</td>
 				<td class="the-answer">Латерален."Основният път е надясно."</td>
 				<td class="the-answer">Латерален."Основният път е наляво."</td>
 				<td class="the-answer">Безопасни води."Тук водите са плавателни."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_b216f997d4a480a7.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b216f997d4a480a7.png"></td>
 				<td class="the-answer">Безопасни води."Тук водите са плавателни."</td>
 				<td class="the-answer">Латерален."Основния път е  надясно."</td>
 				<td class="the-answer">Латерален."Основният път е наляво."</td>
 				<td class="the-answer correct-answer">Северен кардинален. "Мини на Север от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_a47b3eaa5c15c8f.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a47b3eaa5c15c8f.png"></td>
 				<td class="the-answer">Специален."Това са граници на подводни кариери."</td>
 				<td class="the-answer correct-answer">Източен кардинален. "Мини на Изток</td>
 				<td class="the-answer">Латерален."Основният път е наляво."</td>
 				<td class="the-answer">Северен кардинален. "Мини на Север от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_41df934bbca174c7.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_41df934bbca174c7.png"></td>
 				<td class="the-answer">Специален."Тук преминават подводни тръбопроводи."</td>
 				<td class="the-answer">Латерален."Основният път е  наляво."</td>
 				<td class="the-answer correct-answer">Южен кардинален. "Мини на Юг от мен."</td>
 				<td class="the-answer">Северен кардинален. "Мини на Север от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_a70821eda0718d6.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a70821eda0718d6.png"></td>
 				<td class="the-answer correct-answer">Западен кардинален. "Мини на Запад от мен."</td>
 				<td class="the-answer">Източен кардинален. "Мини на Запад</td>
 				<td class="the-answer">Латерален."Основният път е наляво."</td>
 				<td class="the-answer">Специален."Район за отдих и развлечения".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_c1d1eaeeb4d67e0d.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c1d1eaeeb4d67e0d.png"></td>
 				<td class="the-answer">Безопасни води."Тук водите са плавателни."</td>
 				<td class="the-answer">Латерален."Основният път е</td>
 				<td class="the-answer">Специален.  "Това е район за военни учения."</td>
 				<td class="the-answer correct-answer">Западен кардинален. "Мини на Запад от мен."<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3489b56c5bcd52bc.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3489b56c5bcd52bc.png"></td>
 				<td class="the-answer">Кораб, тласкан напред, не е свързан с тласкача твърдо в едно цяло.</td>
 				<td class="the-answer">Кораб, влачен на борд.</td>
 				<td class="the-answer">Влачен кораб, или частично потопен обект.</td>
 				<td class="the-answer correct-answer">Кораб, по-дълъг от 50 метра влачи  друг кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_676e4f823fa407f9.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_676e4f823fa407f9.png"></td>
 				<td class="the-answer correct-answer">Кораб, по-дълъг от 50 метра, влачи друг кораб, дължина на влекалото по-голяма от 200 метра.</td>
 				<td class="the-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се надясно.</td>
 				<td class="the-answer">Влачен кораб, или частично потопен обект, широк повече от 25 метра.</td>
 				<td class="the-answer">Кораб, влачен на борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб носи този знак през деня?<br><img alt="question-image" src="/images/exams/Vyprosi_html_5033f1c10beb594e.png"></td>
+				<td class="the-question">Кой кораб носи този знак през деня?<br><img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5033f1c10beb594e.png"></td>
 				<td class="the-answer">Кораб, тласкан напред, не е свързан с тласкача твърдо в едно цяло.</td>
 				<td class="the-answer">Влачен кораб, или частично потопен обект.</td>
 				<td class="the-answer correct-answer">Влачещ кораб, дължината на влекалото е повече от 200 метра.</td>
 				<td class="the-answer">Влачещ кораб, дължината на влекалото е по-малка от 200 метра.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_5033f1c10beb594e.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5033f1c10beb594e.png"></td>
 				<td class="the-answer">Влачен кораб, дължината на влекалото е по-малка от 200 метра.</td>
 				<td class="the-answer correct-answer">Влачен кораб, дължината на влекалото е повече от 200 метра.</td>
 				<td class="the-answer">Кораб, влачен на борд.</td>
 				<td class="the-answer">Кораб, тласкан напред.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3d80bef3ebc5ec1f.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3d80bef3ebc5ec1f.png"></td>
 				<td class="the-answer">Кораб, по-дълъг от 50 метра, влачи друг кораб, дължина на влекалото по-голяма  от 200 метра.</td>
 				<td class="the-answer">Влачен кораб, дължината на влекалото е повече от 200 метра.</td>
 				<td class="the-answer correct-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се надясно.</td>
 				<td class="the-answer">Кораб, тласкан напред.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_575a3b533330c895.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_575a3b533330c895.png"></td>
 				<td class="the-answer correct-answer">Кораб, по- дълъг от 50 метра, влачи друг кораб, дължина на влекалото по- голяма от 200 метра,движи се надясно.</td>
 				<td class="the-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се надясно.</td>
 				<td class="the-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се наляво.</td>
 				<td class="the-answer">Влачещ кораб, дължината на влекалото е по-малка от 200 метра.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_458503947e0fa5b8.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_458503947e0fa5b8.png"></td>
 				<td class="the-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се надясно.</td>
 				<td class="the-answer">Кораб, тласкан напред.</td>
 				<td class="the-answer">Влачещ кораб, дължината на влекалото е по-голяма от 200 метра.</td>
 				<td class="the-answer correct-answer">Кораб, по-къс от 50 метра влачи друг кораб, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_525a2543957ba3b4.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_525a2543957ba3b4.png"></td>
 				<td class="the-answer">Кораб, буксиращ друг кораб на борд, движи се надясно.</td>
 				<td class="the-answer">Кораб, буксиращ друг кораб на борд, движи се наляво.</td>
 				<td class="the-answer correct-answer">Кораб, буксиращ друг кораб на борд, идва срещу нас.</td>
 				<td class="the-answer">Кораб, тласка напред.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_d03d6cf37e0afe80.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d03d6cf37e0afe80.png"></td>
 				<td class="the-answer">Кораб, по-къс от 50метратласка друг кораб, движи се надясно.</td>
 				<td class="the-answer">Кораб, буксиращ друг кораб на борд, идва срещу нас.</td>
 				<td class="the-answer correct-answer">Кораб, по-къс от 50 метра тласка друг кораб, движи се срещу нас.</td>
 				<td class="the-answer">Кораб, тласкан напред.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_4fed7470a7681f0f.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4fed7470a7681f0f.png"></td>
 				<td class="the-answer correct-answer">Koраб, по-дълъг от 50 метра, буксира друг кораб и е ограничен във възможността си да маневрира, влекалото е по- дълго от 200 метра.</td>
 				<td class="the-answer">Кораб, по-къс от 50 метра, влачи кораб и е ограничен във възможността си да маневрира.</td>
 				<td class="the-answer">Влачещ кораб, дължината на влекалото е по-голяма от 200 метра, влачи кораб ограничен от своето газене.</td>
 				<td class="the-answer">Влачещ кораб, дължината на влекалото е по-голяма от 200 метра, влачи кораб без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_9de73f7a022505a0.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9de73f7a022505a0.png"></td>
 				<td class="the-answer">Риболовен кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer">Пилотски кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer correct-answer">Кораб, зает с влачене и е ограничен в способността си да маневрира.</td>
 				<td class="the-answer">Кораб, ограничен от своето газене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_b9cf8dae830f056b.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b9cf8dae830f056b.png"></td>
 				<td class="the-answer correct-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-малка от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-голяма от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-дълъг от 100 метра и ширина, по-малка от 25 метра.</td>
@@ -2199,7 +2199,7 @@
 				<td class="the-answer">Две червени сфери една над друга.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/Vyprosi_html_564d9cb6f70ba10e.png"></td>
+				<td class="the-question">Виждате следните топови фигури. На какъв знак се поставят?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_564d9cb6f70ba10e.png"></td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Латерален знак.</td>
@@ -2220,28 +2220,28 @@
 				<td class="the-answer">Червена или  зелена групово пробляскваща.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_7703b0bdc25623e8.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7703b0bdc25623e8.png"></td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer correct-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Латерален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_946280d73dbb4c3c.png"></td>
+				<td class="the-question">Виждате следния знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_946280d73dbb4c3c.png"></td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Знак за отделни опасности.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_f5c09142fbe6d58b.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_f5c09142fbe6d58b.png"></td>
 				<td class="the-answer correct-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer">Кардинален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/Vyprosi_html_4611c90354870339.png"></td>
+				<td class="the-question">Виждате следните знаци. Какво означават?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4611c90354870339.png"></td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Знак за отделна опасност.</td>
 				<td class="the-answer">Латерален знак.</td>
@@ -2269,119 +2269,119 @@
 				<td class="the-answer">Черни, с жълти хоризонтални ленти.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния сферичен знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_62491628a3ea64ec.png"></td>
+				<td class="the-question">Виждате следния сферичен знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_62491628a3ea64ec.png"></td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer correct-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer">Кардинален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_33b617043ed1dfdc.png"></td>
+				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_33b617043ed1dfdc.png"></td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer correct-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_ddae728a8a9b3554.png"></td>
+				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ddae728a8a9b3554.png"></td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer correct-answer">Знак за безопасни води.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следната веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_75e39abc80cd1082.png"></td>
+				<td class="the-question">Виждате следната веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_75e39abc80cd1082.png"></td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer">Латерален знак.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer correct-answer">Знак за безопасни води.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_fddcd5cd3d6bfe2.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_fddcd5cd3d6bfe2.png"></td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-дълъг от 100 метра и ширина, по-голяма от 25 метра.</td>
 				<td class="the-answer correct-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-голяма от 25 метра</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-малка от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-дълъг от 100 метра и ширина, по-малка от 25 метра.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_9128f1f9054e108.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9128f1f9054e108.png"></td>
 				<td class="the-answer correct-answer">Влачен незабележим или частично потопен обект, по-дълъг от 100 метра и ширина, по-голяма от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-малка от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-дълъг от 100 метра и ширина, по-малка от 25 метра.</td>
 				<td class="the-answer">Влачен незабележим или частично потопен обект, по-къс от 100 метра и ширина, по-голяма от 25 метра.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_8b2fd977b53e8099.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8b2fd977b53e8099.png"></td>
 				<td class="the-answer correct-answer">Ветроходен кораб на ход, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer">Кораб, зает с риболов и не трали.</td>
 				<td class="the-answer">Кораб без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_a4ecf496fe63b881.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a4ecf496fe63b881.png"></td>
 				<td class="the-answer">Влачен полупотънал, или частично потопен обект.</td>
 				<td class="the-answer">Ветроходен кораб, по-дълъг от 20 метра, идващ срещу нас.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer correct-answer">Ветроходен кораб, по-къс от 20 метра, идващ срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_addd4d7a3a22154b.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_addd4d7a3a22154b.png"></td>
 				<td class="the-answer correct-answer">Ветроходен кораб под ветрила, на който работи и механичния двигател.</td>
 				<td class="the-answer">Кораб, зает с тралене.</td>
 				<td class="the-answer">Влачен полупотънал, или частично потопен обект.</td>
 				<td class="the-answer">Кораб, ограничен от своето газене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_d0c6205a8e4e756e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d0c6205a8e4e756e.png"></td>
 				<td class="the-answer">Ветроходен кораб, по- дълъг от 20 метра, движи се надясно.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-дълъг от 50 метра, виждаме левия му борд.</td>
 				<td class="the-answer">Риболовен траулер, спуска мрежите си.</td>
 				<td class="the-answer">Риболовен траулер, вдига мрежите си.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_2244c84c69484606.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2244c84c69484606.png"></td>
 				<td class="the-answer">Кораб, зает с риболов, с изключение на корабите, заети с тралене.</td>
 				<td class="the-answer">Риболовен траулер, вдига мрежите си.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-къс от 50 метра, движи се срещу нас.</td>
 				<td class="the-answer">Кораб, без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_c3610f3439b0af08.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c3610f3439b0af08.png"></td>
 				<td class="the-answer">Влачен полупотънал, или частично потопен обект, влекалото е по-дълго от 200 метра.</td>
 				<td class="the-answer">Кораб, движи се едновременно с ветрила и механичен двигател.</td>
 				<td class="the-answer">Кораб, без управление.</td>
 				<td class="the-answer correct-answer">Кораб, зает с риболов.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_89296d80d9f1c53e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_89296d80d9f1c53e.png"></td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, закачил трала си.</td>
 				<td class="the-answer">Кораб, зает с риболов, с изключение на корабите, заети с тралене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_5852539d5ad48571.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5852539d5ad48571.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си, движи се срещу нас.</td>
 				<td class="the-answer">Кораб, зает с риболов, с изключение на корабите, заети с тралене.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, закачил трала си.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_517b87afb38687b0.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_517b87afb38687b0.png"></td>
 				<td class="the-answer correct-answer">Риболовен траулер, закачил трала си, няма ход относно водата.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си.</td>
 				<td class="the-answer">Кораб, зает с риболов, с изключение на корабите, заети с тралене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_fbbf8701d5e6a9d7.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_fbbf8701d5e6a9d7.png"></td>
 				<td class="the-answer">Кораб, зает с риболов, с изключение на корабите, заети с тралене.</td>
 				<td class="the-answer">Риболовен траулер, закачил трала си.</td>
 				<td class="the-answer">Риболовен траулер, обира трала си.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, спуска трала си, виждаме кърмата му.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следната веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_83778eca155edc8e.png"></td>
+				<td class="the-question">Виждате следната веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_83778eca155edc8e.png"></td>
 				<td class="the-answer correct-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Латерален знак.</td>
@@ -2417,21 +2417,21 @@
 				<td class="the-answer"><br></td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следната топова фигура. На какъв знак се поставя?<img alt="question-image" src="/images/exams/Vyprosi_html_2cb2d332ae15789a.png"></td>
+				<td class="the-question">Виждате следната топова фигура. На какъв знак се поставя?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2cb2d332ae15789a.png"></td>
 				<td class="the-answer">За изолирана опасност.</td>
 				<td class="the-answer">За безопасни води.</td>
 				<td class="the-answer">Кардинален.</td>
 				<td class="the-answer correct-answer">Специален.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_782adc9daec2cf5.png"></td>
+				<td class="the-question">Виждате следния стълбовиден знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_782adc9daec2cf5.png"></td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Специален знак.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Кардинален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния цилиндричен знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_b19d8e5b9df1383b.png"></td>
+				<td class="the-question">Виждате следния цилиндричен знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b19d8e5b9df1383b.png"></td>
 				<td class="the-answer">Специален знак.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
@@ -2447,98 +2447,98 @@
 				<td class="the-answer"><br></td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния цилиндричен знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_59dff2aadfe05af5.png"></td>
+				<td class="the-question">Виждате следния цилиндричен знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_59dff2aadfe05af5.png"></td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer correct-answer">Специален знак.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния сферичен знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_ac60dd2a4db9e586.png"></td>
+				<td class="the-question">Виждате следния сферичен знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ac60dd2a4db9e586.png"></td>
 				<td class="the-answer correct-answer">Специален знак.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Кардинален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следния коничен знак. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_fa86ec5cb2ba9714.png"></td>
+				<td class="the-question">Виждате следния коничен знак. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_fa86ec5cb2ba9714.png"></td>
 				<td class="the-answer">Кардинален знак.</td>
 				<td class="the-answer correct-answer">Специален знак.</td>
 				<td class="the-answer">Знак за безопасни води.</td>
 				<td class="the-answer">Знак за отделни опасности.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_369f4c7458ab7928.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_369f4c7458ab7928.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си.</td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, мрежите му са разстояние над 150 метра от него.</td>
 				<td class="the-answer">Риболовен траулер, спуска трала си, виждаме кърмата му.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_7e1ddd4f8c7f3647.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7e1ddd4f8c7f3647.png"></td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, няма ход относно водата или риболува на котва.</td>
 				<td class="the-answer">Риболовен траулер, спуска трала си, виждаме кърмата му.</td>
 				<td class="the-answer">Ветроходен кораб на ход, виждаме кърмата му.</td>
 				<td class="the-answer">Кораб без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_a65835a639341379.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a65835a639341379.png"></td>
 				<td class="the-answer">Риболовен кораб, който не е траулер, няма ход относно водата или риболува на котва.</td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него.</td>
 				<td class="the-answer">Ветроходен кораб на ход, виждаме кърмата му.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_e2ca3b0b9f6c1992.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e2ca3b0b9f6c1992.png"></td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, няма ход относно водата, мрежите му са над 150 метра от него.</td>
 				<td class="the-answer">Ветроходен кораб на ход, виждаме кърмата му.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Риболовен траулер, спуска трала си, виждаме кърмата му.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_af30f4b6025ec3ea.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_af30f4b6025ec3ea.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си.</td>
 				<td class="the-answer">Риболовен траулер, спуска трала си, виждаме кърмата му.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3bb15e80cba10510.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3bb15e80cba10510.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си.</td>
 				<td class="the-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-дълъг от 50 метра, спуска трала си, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_5852539d5ad48571.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5852539d5ad48571.png"></td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен траулер, по-дълъг от 50 метра, спуска трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_773a8d5e61038f7a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_773a8d5e61038f7a.png"></td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него, движи се наляво.</td>
 				<td class="the-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_1cedf332d70d886d.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1cedf332d70d886d.png"></td>
 				<td class="the-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer correct-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от левия му борд, виждаме кърмата</td>
 				<td class="the-answer">Риболовен кораб, който не е траулер, мрежите му са над 150 метра от него, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_4104b609e44e73bc.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4104b609e44e73bc.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-дълъг от 50 метра, спуска трала си, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_7f62b041caae340e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7f62b041caae340e.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, спуска трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
@@ -2636,56 +2636,56 @@
 				<td class="the-answer">"Съгласен съм да бъда изпреварен".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_8b5da143d9aed6e6.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8b5da143d9aed6e6.png"></td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-къс от 50 метра,спуска трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра,спуска трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_d3b49a9c8e376b03.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d3b49a9c8e376b03.png"></td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра,спуска трала си, движи се наляво.</td>
 				<td class="the-answer">Риболовен траулер, по-къс от 50 метра,спуска трала си, движи се надясно.</td>
 				<td class="the-answer correct-answer">Риболовен траулер, по-къс от 50 метра, обира трала си, движи се надясно.</td>
 				<td class="the-answer">Риболовен траулер, по-дълъг от 50 метра, обира трала си, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_44327112091246a3.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_44327112091246a3.png"></td>
 				<td class="the-answer">Кораб без управление, вижда се кърмовата му част.</td>
 				<td class="the-answer">Пилотски кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer correct-answer">Ветроходен кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer">Риболовен кораб, виждаме кърмата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните светлини. Те са показват от:<img alt="question-image" src="/images/exams/Vyprosi_html_249eb2248071f66.png"></td>
+				<td class="the-question">Виждате следните светлини. Те са показват от:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_249eb2248071f66.png"></td>
 				<td class="the-answer correct-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, движат се наляво.</td>
 				<td class="the-answer">Риболовни кораби по къси от 50 метра, тралят с близначен трал, движат се надясно.</td>
 				<td class="the-answer">Риболовни кораби по дълги от 50 метра, тралят с близначен трал, движат се наляво.</td>
 				<td class="the-answer">Риболовни кораби по-дълги от 50 метра, тралят с близначен трал, движат се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните светлини:<img alt="question-image" src="/images/exams/Vyprosi_html_b2bb5afb27e16ec0.png"></td>
+				<td class="the-question">Виждате следните светлини:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b2bb5afb27e16ec0.png"></td>
 				<td class="the-answer correct-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, който е закачен за препятствие, не се движат относно водата.</td>
 				<td class="the-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, движат се наляво.</td>
 				<td class="the-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, движат се надясно.</td>
 				<td class="the-answer">Риболовни кораби по-дълги от 50 метра, тралят с близначен трал, движат се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате следните светлини:<img alt="question-image" src="/images/exams/Vyprosi_html_b27d644bf06d9094.png"></td>
+				<td class="the-question">Виждате следните светлини:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b27d644bf06d9094.png"></td>
 				<td class="the-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, движат се наляво.</td>
 				<td class="the-answer">Риболовни кораби по-къси от 50 метра, тралят с близначен трал, движат се надясно.</td>
 				<td class="the-answer">Риболовни кораби по-дълги от 50 метра, тралят с близначен трал, движат се наляво.</td>
 				<td class="the-answer correct-answer">Риболовни кораби по-дълги от 50 метра, тралят с близначен трал, движат се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_e103773a6de572c1.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e103773a6de572c1.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира.</td>
 				<td class="the-answer correct-answer">Кораб без управление, няма ход относно водата.</td>
 				<td class="the-answer">Риболовен кораб, който не трали.</td>
 				<td class="the-answer">Ветроходен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_cccdbf2095c8f5ed.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_cccdbf2095c8f5ed.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира.</td>
 				<td class="the-answer correct-answer">Кораб без управление.</td>
 				<td class="the-answer">Риболовен кораб, който не трали.</td>
@@ -2720,21 +2720,21 @@
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Влачен кораб.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен в способността си да маневрира.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Влачен кораб.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 				<td class="the-answer correct-answer">Кораб, без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене.</td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Влачен кораб.</td>
@@ -2742,42 +2742,42 @@
 				<td class="the-answer"><br></td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer correct-answer">Ветроходен кораб.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 				<td class="the-answer">Влачен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 				<td class="the-answer correct-answer">Кораб, зает с риболов.</td>
 				<td class="the-answer">Влачен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и два къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer correct-answer">Кораб, който влачи или тласка друг кораб.</td>
 				<td class="the-answer">Влачен кораб.</td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате един продължителен и три къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/Vyprosi_html_a4e008eb49c3ab0d.png"></td>
+				<td class="the-question">При ограничена видимост чувате един продължителен и три къси звука  през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a4e008eb49c3ab0d.png"></td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer correct-answer">Влачен кораб, или последния от тях, ако има екипаж.</td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате чести удари с камбана последвани от един къс, един дълъг и един къс сигнала със свирка:<img alt="question-image" src="/images/exams/Vyprosi_html_f2edf7fc20fad297.png"></td>
+				<td class="the-question">При ограничена видимост чувате чести удари с камбана последвани от един къс, един дълъг и един къс сигнала със свирка:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_f2edf7fc20fad297.png"></td>
 				<td class="the-answer">Влачен кораб, или последния от тях, ако има екипаж.</td>
 				<td class="the-answer">Кораб, зает с риболов.</td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer correct-answer">Кораб на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">При ограничена видимост чувате:<img alt="question-image" src="/images/exams/Vyprosi_html_d765dfebf519a475.png"></td>
+				<td class="the-question">При ограничена видимост чувате:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d765dfebf519a475.png"></td>
 				<td class="the-answer">Влачен кораб, или последния от тях, ако има екипаж.</td>
 				<td class="the-answer">Кораб, зает с риболов.</td>
 				<td class="the-answer correct-answer">Заседнал кораб.</td>
@@ -2847,21 +2847,21 @@
 				<td class="the-answer correct-answer">Корабите заети с риболов.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Какво означава звуковия сигнал в ограничена видимост?<img alt="question-image" src="/images/exams/Vyprosi_html_a44a9c0e51cd0c5f.png"></td>
+				<td class="the-question">Какво означава звуковия сигнал в ограничена видимост?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a44a9c0e51cd0c5f.png"></td>
 				<td class="the-answer">Кораб, зает с риболов.</td>
 				<td class="the-answer correct-answer">Кораб, изпълняващ пилотски задължения на ход.</td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Кораб на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Какво означава звуковия сигнал подаван през 2 минути в ораничена видимост?<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">Какво означава звуковия сигнал подаван през 2 минути в ораничена видимост?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен в способността си да маневрира, изпълнява дейността си на котва.</td>
 				<td class="the-answer">Кораб, изпълняващ пилотски задължениа на ход.</td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Какво означава звуковия сигнал подаван през 2 минути в ограничена видимост?<img alt="question-image" src="/images/exams/Vyprosi_html_b8ef0e98dc559219.png"></td>
+				<td class="the-question">Какво означава звуковия сигнал подаван през 2 минути в ограничена видимост?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
 				<td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
 				<td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
 				<td class="the-answer correct-answer">Кораб, зает с риболов, когато е на котва.</td>
@@ -3226,7 +3226,7 @@
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате червени звездни ракети през кратки интервали от време:<br><img alt="question-image" src="/images/exams/Vyprosi_html_d94077d1200950e1.png"></td>
+				<td class="the-question">Виждате червени звездни ракети през кратки интервали от време:<br><img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d94077d1200950e1.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer">Кораб е загубил управление.</td>
@@ -3234,42 +3234,42 @@
 				<td class="the-answer"><br></td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Чувате по радиотелеграфа или друга сигнална система (SOS) по Морзовата азбука:<img alt="question-image" src="/images/exams/Vyprosi_html_354426bdeb06b979.png"></td>
+				<td class="the-question">Чувате по радиотелеграфа или друга сигнална система (SOS) по Морзовата азбука:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_354426bdeb06b979.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer">Кораб е загубил управление.</td>
 				<td class="the-answer">Сигнал за обръщане на внимание.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Чувате по радиотелефона думата "Мейдей":<img alt="question-image" src="/images/exams/Vyprosi_html_71cec68f68143f44.png"></td>
+				<td class="the-question">Чувате по радиотелефона думата "Мейдей":<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_71cec68f68143f44.png"></td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
 				<td class="the-answer">Кораб е загубил управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">По Международния код за сигналите виждате флаговете NC (Новембер-Чарли):<img alt="question-image" src="/images/exams/Vyprosi_html_4e2999c0d763afdc.png"></td>
+				<td class="the-question">По Международния код за сигналите виждате флаговете NC (Новембер-Чарли):<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4e2999c0d763afdc.png"></td>
 				<td class="the-answer">Кораб е загубил управление.</td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате квадратен флаг с поставена над или под него сфера или предмет, подобен на сфера:<img alt="question-image" src="/images/exams/Vyprosi_html_1daa08ce2f1b1915.png"></td>
+				<td class="the-question">Виждате квадратен флаг с поставена над или под него сфера или предмет, подобен на сфера:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1daa08ce2f1b1915.png"></td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer">Корабът ми е под карантина.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">По Международния код за сигналите виждате флаговете NC (Новембер-Чарли)<img alt="question-image" src="/images/exams/Vyprosi_html_4e2999c0d763afdc.png"></td>
+				<td class="the-question">По Международния код за сигналите виждате флаговете NC (Новембер-Чарли)<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4e2999c0d763afdc.png"></td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer">Кораб, поставящ кабели.</td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате квадратен флаг с поставена над или под него сфера или предмет, подобен на сфера:<img alt="question-image" src="/images/exams/Vyprosi_html_779d7c026dcf6a0e.png"></td>
+				<td class="the-question">Виждате квадратен флаг с поставена над или под него сфера или предмет, подобен на сфера:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_779d7c026dcf6a0e.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
@@ -3290,7 +3290,7 @@
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате излизащи от някакви съдове пламъци на палубата от друг кораб:<img alt="question-image" src="/images/exams/Vyprosi_html_a1a7e62f9f222f16.png"></td>
+				<td class="the-question">Виждате излизащи от някакви съдове пламъци на палубата от друг кораб:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a1a7e62f9f222f16.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
 				<td class="the-answer">Кораб обслужва водолази.</td>
@@ -3423,7 +3423,7 @@
 				<td class="the-answer">Нужен ми е буксир.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Виждате бавно и повтарящо се вдигане и спускане на ръце, протегнати встрани:<img alt="question-image" src="/images/exams/Vyprosi_html_aee14b0d66e4d6e.png"></td>
+				<td class="the-question">Виждате бавно и повтарящо се вдигане и спускане на ръце, протегнати встрани:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_aee14b0d66e4d6e.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Кораб, поставящ кабели.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
@@ -3444,7 +3444,7 @@
 				<td class="the-answer correct-answer">Не се допуска.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">За разпознаване от въздуха виждате на палубата на кораб  оранжево платнище с вписани черен квадрат и кръг.<img alt="question-image" src="/images/exams/Vyprosi_html_94551492bab021a7.png"></td>
+				<td class="the-question">За разпознаване от въздуха виждате на палубата на кораб  оранжево платнище с вписани черен квадрат и кръг.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_94551492bab021a7.png"></td>
 				<td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
 				<td class="the-answer">Кораб, поставящ кабели.</td>
 				<td class="the-answer">Нужен ми е буксир.</td>
@@ -3500,14 +3500,14 @@
 				<td class="the-answer correct-answer">Райони А и B.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате червен цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_d1154213a4c2abd8.png"></td>
+				<td class="the-question">Плавате в район А, виждате червен цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d1154213a4c2abd8.png"></td>
 				<td class="the-answer">Района е за отдих и развлечения.</td>
 				<td class="the-answer">Мини на Запад от мен.</td>
 				<td class="the-answer correct-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Основният път е на надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате червен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_ba44fc1f65a146b4.png"></td>
+				<td class="the-question">Плавате в район А, виждате червен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ba44fc1f65a146b4.png"></td>
 				<td class="the-answer">Мини на Запад от мен.</td>
 				<td class="the-answer correct-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Основният път е на наляво.</td>
@@ -3647,28 +3647,28 @@
 				<td class="the-answer correct-answer">135 градуса.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате зелен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_dcf84302705b70eb.png"></td>
+				<td class="the-question">Плавате в район А, виждате зелен стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_dcf84302705b70eb.png"></td>
 				<td class="the-answer">Границите на подводни кариери.</td>
 				<td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer">Основният път е надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате зелена веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_d594d627fddf441e.png"></td>
+				<td class="the-question">Плавате в район А, виждате зелена веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d594d627fddf441e.png"></td>
 				<td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer">Знак, поставен в Системата за разделно движение.</td>
 				<td class="the-answer">Основният път е надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_70ec9640dd5de6f9.png"></td>
+				<td class="the-question">Плавате в район А, виждате цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_70ec9640dd5de6f9.png"></td>
 				<td class="the-answer">Знак за означаване на средствата от Системата за събиране на данни са Световния океан.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer correct-answer">Основният път е надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате  веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_4977393b1ec7d9a9.png"></td>
+				<td class="the-question">Плавате в район А, виждате  веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4977393b1ec7d9a9.png"></td>
 				<td class="the-answer">Дясна страна на основната посока за движение.</td>
 				<td class="the-answer correct-answer">Основният път е надясно.</td>
 				<td class="the-answer">Знак, поставен в Системата за разделно движение.</td>
@@ -3676,7 +3676,7 @@
 				<td class="the-answer correct-answer">да</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате коничен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_b0e954b3c0b474c4.png"></td>
+				<td class="the-question">Плавате в район А, виждате коничен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b0e954b3c0b474c4.png"></td>
 				<td class="the-answer correct-answer">Основният път е наляво.</td>
 				<td class="the-answer">Границите на подводни кариери.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
@@ -3684,7 +3684,7 @@
 				<td class="the-answer correct-answer">да</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_b8e21a8ad99c9960.png"></td>
+				<td class="the-question">Плавате в район А, виждате стълбовиден буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8e21a8ad99c9960.png"></td>
 				<td class="the-answer">Знак за означаване на средствата от Системата за събиране на данни са Световния океан.</td>
 				<td class="the-answer correct-answer">Основният път е наляво.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
@@ -3692,7 +3692,7 @@
 				<td class="the-answer correct-answer">да</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район А, виждате веха. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_6e2934336c0873ea.png"></td>
+				<td class="the-question">Плавате в район А, виждате веха. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_6e2934336c0873ea.png"></td>
 				<td class="the-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer correct-answer">Основният път е наляво.</td>
@@ -3700,7 +3700,7 @@
 				<td class="the-answer correct-answer">да</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Плавате в район B, виждате зелен цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_e854613d365c849f.png"></td>
+				<td class="the-question">Плавате в район B, виждате зелен цилиндричен буй. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e854613d365c849f.png"></td>
 				<td class="the-answer correct-answer">Лява страна на основната посока за движение.</td>
 				<td class="the-answer">Мини на Север от мен.</td>
 				<td class="the-answer">Основният път е наляво.</td>
@@ -3708,105 +3708,105 @@
 				<td class="the-answer correct-answer">да</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_d80b9ba9ab7b1a78.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d80b9ba9ab7b1a78.png"></td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, движи се наляво.</td>
 				<td class="the-answer correct-answer">Кораб без управление, движи се наляво.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, движи се наляво.</td>
 				<td class="the-answer">Ветроходен кораб, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_dc96720613f00d3.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_dc96720613f00d3.png"></td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, движи се надясно.</td>
 				<td class="the-answer">Ветроходен кораб, движи се надясно.</td>
 				<td class="the-answer correct-answer">Кораб без управление, движи се надясно.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_35b4bbdb98cfc221.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_35b4bbdb98cfc221.png"></td>
 				<td class="the-answer correct-answer">Кораб, по-дълъг от 50 метра, ограничен в  способността си да маневрира, движи се надясно.</td>
 				<td class="the-answer">Кораб, по-къс от 50 метра, ограничен в впособността си да маневрира, движи се надясно.</td>
 				<td class="the-answer">Кораб, зает със сложна буксировка, движи се надясно.</td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра, без управление, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_285cda932362476f.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_285cda932362476f.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен в  способността си да маневрира, няма ход относно водата.</td>
 				<td class="the-answer">Кораб без управление, движи се надясно.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, движи се надясно.</td>
 				<td class="the-answer">Ветроходен кораб, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_95cba3b9abe517ba.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_95cba3b9abe517ba.png"></td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра,  без управление, движи се срещу нас.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен в  способността си да маневрира, извършва буксировка.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, движи се срещу нас.</td>
 				<td class="the-answer">Ветроходен кораб, движи се срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3966c2ed69332ed9.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3966c2ed69332ed9.png"></td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, извършва буксировка.</td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра,  без управление, движи се срещу нас.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен в  способността си да маневрира, по-къс от  50 метра.</td>
 				<td class="the-answer">Ветроходен кораб, движи се срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_b919c139f9008585.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b919c139f9008585.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен в  способността си да маневрира, извършва буксировка.</td>
 				<td class="the-answer">Кораб без управление, по-дълъг от 100 метра движи се срещу нас.</td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, по-къс от  50 метра.</td>
 				<td class="the-answer">Кораб, по-дълъг от 50 метра,  без управление, движи се срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_3c1c7aa163c6df2e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_3c1c7aa163c6df2e.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен в  способността си да маневрира, вижда се кърмата му.</td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра,  без управление, вижда се кърмата му.</td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, извършва буксировка.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, вижда се кърмата му.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/Vyprosi_html_31404ec4ef7e8da3.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_31404ec4ef7e8da3.png"></td>
 				<td class="the-answer">Кораб, ограничен от своето газене, на котва.</td>
 				<td class="the-answer">Кораб без управление, на котва.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, на котва.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_b214e43cde202077.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b214e43cde202077.png"></td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, няма ход относно водата.</td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра,  без управление, вижда се кърмата му.</td>
 				<td class="the-answer correct-answer">Кораб, зает с буксировка и е ограничен във възможността си да маневрира.</td>
 				<td class="the-answer">Риболовен кораб, който не трали, вижда се кърмата му<td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_5a92531c0f2d98.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5a92531c0f2d98.png"></td>
 				<td class="the-answer correct-answer">Кораб, зает с драгажни дейности на ход, свободен за преминаване е левия му борд.</td>
 				<td class="the-answer">Кораб без управление, свободен за преминаване е левия му борд.</td>
 				<td class="the-answer">Кораб, зает с драгажни дейности на котва.</td>
 				<td class="the-answer">Риболовен кораб, мрежите  са от десния му борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_9ec6328b049a0a86.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9ec6328b049a0a86.png"></td>
 				<td class="the-answer correct-answer">Кораб, зает с драгажни дейности на котва, свободен за преминаване е левия му борд.</td>
 				<td class="the-answer">Кораб без управление, свободен за преминаване е левия му борд</td>
 				<td class="the-answer">Кораб, зает с драгажни дейности на котва.</td>
 				<td class="the-answer">Риболовен кораб, мрежите  са от десния му борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_bb1e6240584e481a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_bb1e6240584e481a.png"></td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина под 50 метра, движи се надясно.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина под 50 метра, движи се наляво.</td>
 				<td class="the-answer correct-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се наляво.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_c0866de8c3db5ec1.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c0866de8c3db5ec1.png"></td>
 				<td class="the-answer correct-answer">Кораб, зает с тралене на мини с дължина под 50 метра, движи се надясно.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се наляво.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се надясно.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина под 50 метра, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/Vyprosi_html_7bc415812230d595.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7bc415812230d595.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира.</td>
 				<td class="the-answer correct-answer">Кораб, зает с миночистачни дейности.</td>
 				<td class="the-answer">Кораб без управление.</td>
@@ -3820,210 +3820,210 @@
 				<td class="the-answer">Опасно е приближаването на друг кораб на разстояние, по-малко от 500 метра.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_35b4bbdb98cfc221.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_35b4bbdb98cfc221.png"></td>
 				<td class="the-answer">Кораб, ограничен в  способността си да маневрира, няма ход относно водата.</td>
 				<td class="the-answer">Кораб, зает с буксировка и е ограничен във възможността си да маневрира.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен в способността си да маневрира, вижда се десния борд.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да манев-рира, вижда се левия.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_ccd40a493601e5c4.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ccd40a493601e5c4.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 				<td class="the-answer correct-answer">Кораб без управление, вижда се кърмовата му част.</td>
 				<td class="the-answer">Риболовен кораб, няма движение относно водата.</td>
 				<td class="the-answer">Пилотски кораб, вижда се кърмовата му част.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_4fed7470a7681f0f.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4fed7470a7681f0f.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, по-дълъг от 50 метра, влачи друг кораб, движи се наляво.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, вижда се десния борд.</td>
 				<td class="the-answer">Кораб по-дълъг от 50  метра,  без управление, вижда се левия му борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_8c4ebd1cccef2d3e.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8c4ebd1cccef2d3e.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен в способността си да маневрира, по-къс от 50 метра, влачи друг кораб, движи се надясно.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, вижда се левия борд.</td>
 				<td class="the-answer">Кораб по-дълъг от 50 метра,  без управление, вижда се левия му борд.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/Vyprosi_html_456229d9b4de021.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи знаци?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_456229d9b4de021.png"></td>
 				<td class="the-answer">Кораб, зает с буксировка и е ограничен във възможността си да маневрира.</td>
 				<td class="the-answer correct-answer">Кораб ограничен в способността си да маневрира.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_ea39739f0593c34a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ea39739f0593c34a.png"></td>
 				<td class="the-answer">Кораб, зает с буксировка и е ограничен във възможността си да маневрира.</td>
 				<td class="the-answer">Кораб без управление, вижда се левия му борд.</td>
 				<td class="the-answer correct-answer">Кораб ограничен в способността си да маневрира, движи се наляво.</td>
 				<td class="the-answer">Кораб ограничен в способността си да маневрира, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_617963251f903e12.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_617963251f903e12.png"></td>
 				<td class="the-answer">Пилотски кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer">Кораб без управление, няма ход относно водата.</td>
 				<td class="the-answer">Риболовен кораб, няма движение относно водата.</td>
 				<td class="the-answer correct-answer">Кораб без управление, на ход, виждаме кърмата му.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_5c8c8cbdcd281f5c.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5c8c8cbdcd281f5c.png"></td>
 				<td class="the-answer">Пилотски кораб, вижда се кърмовата му част.</td>
 				<td class="the-answer">Кораб без управление, няма ход относно водата.</td>
 				<td class="the-answer">Риболовен кораб, няма движение относно водата.</td>
 				<td class="the-answer correct-answer">Кораб без управление, на ход, виждаме десния му борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този флаг през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_b07e404073f390b9.png"></td>
+				<td class="the-question">Кой кораб  носи този флаг през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b07e404073f390b9.png"></td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer correct-answer">Кораб, зает с водолазна дейност.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_285cda932362476f.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_285cda932362476f.png"></td>
 				<td class="the-answer correct-answer">Кораб, зает с водолазна дейност.</td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer">Кораб без управление.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_14800eeee19a5039.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_14800eeee19a5039.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене, по- дълъг от 50 метра, идва срещу нас.</td>
 				<td class="the-answer">Кораб, зает с водолазна дейност, по- дълъг от 50 метра , идва срещу нас.</td>
 				<td class="the-answer">Кораб, зает с водолазна дейност, по- къс от 50 метра , идва срещу нас.</td>
 				<td class="the-answer">Кораб без управление, идва срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_ffd50da8a64bfd19.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ffd50da8a64bfd19.png"></td>
 				<td class="the-answer">Кораб, ограничен от своето газене, по- дълъг от 50 метра, идва срещу нас.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене, по- дълъг от 50 метра, движи се наляво.</td>
 				<td class="the-answer">Кораб без управление, движи се наляво.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_87fe5c51f43eadd0.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_87fe5c51f43eadd0.png"></td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира, на котва.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене, виждаме кърмата.</td>
 				<td class="the-answer">Кораб без управление, на котва.</td>
 				<td class="the-answer">Кораб без управление, вижда се кърмата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_273bada1fead2a79.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_273bada1fead2a79.png"></td>
 				<td class="the-answer">Кораб, ограничен от своето газене, по- дълъг от 50 метра, движи се наляво.</td>
 				<td class="the-answer">Кораб без управление, движи се надясно.</td>
 				<td class="the-answer">Кораб, ограничен от своето газене, по- къс от 50 метра, движи се надясно.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене, по- дълъг от 50 метра, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_87fe5c51f43eadd0.png"></td>
+				<td class="the-question">Кой кораб  носи тeзи светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_87fe5c51f43eadd0.png"></td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Кораб, ограничен в способността си да маневрира.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_642a3b3a89ca6fbb.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_642a3b3a89ca6fbb.png"></td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Кораб на ход.</td>
 				<td class="the-answer">Кораб на котва.</td>
 				<td class="the-answer correct-answer">Кораб, ограничен от своето газене.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_f7e0440b0b030cf2.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_f7e0440b0b030cf2.png"></td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Кораб на котва.</td>
 				<td class="the-answer">Ветроходен кораб.</td>
 				<td class="the-answer correct-answer">Кораб на ход.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_14800eeee19a5039.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_14800eeee19a5039.png"></td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Кораб на котва.</td>
 				<td class="the-answer">Ветроходен кораб.</td>
 				<td class="the-answer correct-answer">Кораб на ход.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_2a071199a3a9c3aa.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2a071199a3a9c3aa.png"></td>
 				<td class="the-answer correct-answer">Пилотски кораб на ход, движи се срещу нас.</td>
 				<td class="the-answer">Ветроходен кораб, движи се срещу нас.</td>
 				<td class="the-answer">Кораб без управление, движи се срещу нас.</td>
 				<td class="the-answer">Риболовен кораб,движи се срещу нас.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_1d2f836563fd686a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1d2f836563fd686a.png"></td>
 				<td class="the-answer">Ветроходен кораб, движи се надясно.</td>
 				<td class="the-answer correct-answer">Пилотски кораб на ход, движи се надясно.</td>
 				<td class="the-answer">Пилотски кораб на ход, движи се наляво.</td>
 				<td class="the-answer">Риболовен кораб, движи се надясно.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_333618dcd89a4e75.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_333618dcd89a4e75.png"></td>
 				<td class="the-answer">Ветроходен кораб, вижда се кърмата.</td>
 				<td class="the-answer correct-answer">Пилотски кораб на ход, вижда се кърмата.</td>
 				<td class="the-answer">Заседнал кораб.</td>
 				<td class="the-answer">Риболовен кораб,вижда се кърмата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_69f933b525f212ec.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_69f933b525f212ec.png"></td>
 				<td class="the-answer">Ветроходен кораб, на ход.</td>
 				<td class="the-answer">Риболовен кораб, движи се наляво.</td>
 				<td class="the-answer correct-answer">Пилотски кораб на ход, движи се наляво.</td>
 				<td class="the-answer">Заседнал кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_e2e7da421bb6e42.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e2e7da421bb6e42.png"></td>
 				<td class="the-answer correct-answer">Пилотски кораб на котва, по-дълъг от 50метра, изпълнява задълженията си.</td>
 				<td class="the-answer">Ветроходен кораб, на ход.</td>
 				<td class="the-answer">Риболовен кораб, на котва.</td>
 				<td class="the-answer">Заседнал кораб на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_dedebc33c7aa7d08.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_dedebc33c7aa7d08.png"></td>
 				<td class="the-answer">Риболовен кораб, на котва.</td>
 				<td class="the-answer">Кораб без управление, движи се на заден ход.</td>
 				<td class="the-answer">Риболовен кораб, мрежите са пуснати, от ляв борд.</td>
 				<td class="the-answer correct-answer">Пилотски кораб на въздушна възглавница.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_fdf916f9c37b9918.png"></td>
+				<td class="the-question">Кой кораб  носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_fdf916f9c37b9918.png"></td>
 				<td class="the-answer">Ветроходен кораб.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer correct-answer">Пилотски кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_66f38e923fe7ba5a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_66f38e923fe7ba5a.png"></td>
 				<td class="the-answer correct-answer">Кораб, по-дълъг от 50 метра, на котва.</td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тази светлина?<img alt="question-image" src="/images/exams/Vyprosi_html_160d5616333a16ac.png"></td>
+				<td class="the-question">Кой кораб  носи тази светлина?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_160d5616333a16ac.png"></td>
 				<td class="the-answer">Пилотски кораб, изпълнява задълженията си.</td>
 				<td class="the-answer">Кораб без управление, на ход.</td>
 				<td class="the-answer correct-answer">Кораб, по-къс от 50 метра, на котва.</td>
 				<td class="the-answer">Риболовен кораб, тралира.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_617963251f903e12.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_617963251f903e12.png"></td>
 				<td class="the-answer">Кораб без управление, виждаме левия му борд.</td>
 				<td class="the-answer correct-answer">Заседнал кораб с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Риболовен кораб, тралира.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_c42c6359c776e26f.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c42c6359c776e26f.png"></td>
 				<td class="the-answer correct-answer">Заседнал кораб с дължина по-голяма от 50 метра</td>
 				<td class="the-answer">Заседнал кораб с дължина по-малка от 50 метра.</td>
 				<td class="the-answer">Пилотски кораб.</td>
 				<td class="the-answer">Риболовен кораб, трали.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези знаци през деня?<img alt="question-image" src="/images/exams/Vyprosi_html_922cba501be8728b.png"></td>
+				<td class="the-question">Кой кораб  носи тези знаци през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_922cba501be8728b.png"></td>
 				<td class="the-answer">Кораб без управление.</td>
 				<td class="the-answer">Риболовен кораб.</td>
 				<td class="the-answer">Пилотски кораб.</td>
@@ -4079,28 +4079,28 @@
 				<td class="the-answer correct-answer">Свирка, камбана и гонг.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Чувате един къс звук или виждате един къс проблясък:<img alt="question-image" src="/images/exams/Vyprosi_html_252a632504dd569c.png"></td>
+				<td class="the-question">Чувате един къс звук или виждате един къс проблясък:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_252a632504dd569c.png"></td>
 				<td class="the-answer">"Имам намерение да ви изпреваря от левия борд".</td>
 				<td class="the-answer">"Имам намерение да ви изпреваря от десния борд.</td>
 				<td class="the-answer">"Изменям своя курс наляво"</td>
 				<td class="the-answer correct-answer">"Изменям своя курс надясно".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Чувате два  къси звука или виждате два къси проблясъка:<img alt="question-image" src="/images/exams/Vyprosi_html_2ada4b71cb39a69f.png"></td>
+				<td class="the-question">Чувате два  къси звука или виждате два къси проблясъка:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2ada4b71cb39a69f.png"></td>
 				<td class="the-answer">"Имам намерение да ви изпреваря от левия борд".</td>
 				<td class="the-answer">"Имам намерение да ви изреваря от десния борд.</td>
 				<td class="the-answer correct-answer">"Изменям своя курс наляво"</td>
 				<td class="the-answer">"Изменям своя курс надясно".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Чувате три  къси звука или виждате три къси проблясъка:<img alt="question-image" src="/images/exams/Vyprosi_html_e5d4620ecb8577e.png"></td>
+				<td class="the-question">Чувате три  къси звука или виждате три къси проблясъка:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e5d4620ecb8577e.png"></td>
 				<td class="the-answer correct-answer">"Двигателите ми работят на заден ход".</td>
 				<td class="the-answer">"Нямам ход относно водата".</td>
 				<td class="the-answer">"Изменям своя курс надясно".</td>
 				<td class="the-answer">"Изменям своя курс наляво".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Намирате се в теснина или фарватер и чувате два продължителни и един къс звук:<img alt="question-image" src="/images/exams/Vyprosi_html_a87f0c5d4627a800.png"></td>
+				<td class="the-question">Намирате се в теснина или фарватер и чувате два продължителни и един къс звук:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a87f0c5d4627a800.png"></td>
 				<td class="the-answer">"Имам намерение да ви изпреваря от левия борд".</td>
 				<td class="the-answer correct-answer">"Имам намерение да ви изпреваря от десния борд".</td>
 				<td class="the-answer">"Изменям своя курс надясно".</td>
@@ -4114,21 +4114,21 @@
 				<td class="the-answer">"Изменям своя курс наляво".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Корабите са във видимост и се сближават, чувате най малко пет къси сигнала:<img alt="question-image" src="/images/exams/Vyprosi_html_d6797ee4a8fe2ec2.png"></td>
+				<td class="the-question">Корабите са във видимост и се сближават, чувате най малко пет къси сигнала:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d6797ee4a8fe2ec2.png"></td>
 				<td class="the-answer correct-answer">"Не разбирам вашите действия, взетите от вас мерки за избягване на сблъскване не са достатъчни".</td>
 				<td class="the-answer">Сигнал за бетствие.</td>
 				<td class="the-answer">"Нямам ход относно водата".</td>
 				<td class="the-answer">"Нямам управление".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">В теснина или фарватер подавате един продължителен звук. Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_4262f8eedd1fdb8.png"></td>
+				<td class="the-question">В теснина или фарватер подавате един продължителен звук. Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4262f8eedd1fdb8.png"></td>
 				<td class="the-answer">"Буксирам друг кораб."</td>
 				<td class="the-answer">"Изменям своя курс надясно".</td>
 				<td class="the-answer correct-answer">"Може да не виждам друг кораб поради завой или препятствие."</td>
 				<td class="the-answer">"Нямам ход относно водата".</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">В теснина или фарватер чувате един продължителен звук Какво означава?<img alt="question-image" src="/images/exams/Vyprosi_html_4262f8eedd1fdb8.png"></td>
+				<td class="the-question">В теснина или фарватер чувате един продължителен звук Какво означава?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4262f8eedd1fdb8.png"></td>
 				<td class="the-answer">Насрещният кораб буксира друг кораб.</td>
 				<td class="the-answer">Насрещният кораб изменя курса си надясно.</td>
 				<td class="the-answer">Насрещният кораб няма управление.</td>
@@ -4142,7 +4142,7 @@
 				<td class="the-answer">Специален знак.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/Vyprosi_html_bb1e6240584e481a.png"></td>
+				<td class="the-question">Кой кораб  носи тези светлини?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_bb1e6240584e481a.png"></td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина под 50 метра, движи се надясно.</td>
 				<td class="the-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се надясно.</td>
 				<td class="the-answer correct-answer">Кораб, зает с тралене на мини с дължина над 50 метра, движи се наляво.</td>
@@ -4730,7 +4730,7 @@
 				<td class="the-answer">Посоката на движение на кораба и източната част на паралела.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_2c5707a09212f7e8.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2c5707a09212f7e8.png"></td>
 				<td class="the-answer correct-answer">ИК (истински курс).</td>
 				<td class="the-answer">ИП (истински пеленг).</td>
 				<td class="the-answer">КЪ (курсов ъгъл).</td>
@@ -4744,7 +4744,7 @@
 				<td class="the-answer">Ъгъл, заключен между източната част на паралела и посоката на даден предмет.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_1f31517a288ac979.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1f31517a288ac979.png"></td>
 				<td class="the-answer">ИК (истински курс).</td>
 				<td class="the-answer">ИП (истински пеленг).</td>
 				<td class="the-answer correct-answer">КЪ (курсов ъгъл).</td>
@@ -4765,7 +4765,7 @@
 				<td class="the-answer correct-answer">От 0° до 360°.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_d78095351c4037d3.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d78095351c4037d3.png"></td>
 				<td class="the-answer">ИК (истински курс).</td>
 				<td class="the-answer correct-answer">ИП (истински пеленг).</td>
 				<td class="the-answer">КЪ (курсов ъгъл).</td>
@@ -4947,77 +4947,77 @@
 				<td class="the-answer">ИК = КЪ ± ΔК.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_18d4e676d4aeb82d.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_18d4e676d4aeb82d.png"></td>
 				<td class="the-answer">Компасен курс.</td>
 				<td class="the-answer">Магнитен курс.</td>
 				<td class="the-answer correct-answer">Истински курс.</td>
 				<td class="the-answer">Корабен курс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_376c69ab4d7a0041.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_376c69ab4d7a0041.png"></td>
 				<td class="the-answer">Компасен курс.</td>
 				<td class="the-answer correct-answer">Магнитен курс.</td>
 				<td class="the-answer">Истински курс.</td>
 				<td class="the-answer">Магнитно склонение.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_d8f6d421b7e805b.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d8f6d421b7e805b.png"></td>
 				<td class="the-answer correct-answer">Компасен курс.</td>
 				<td class="the-answer">Магнитен курс.</td>
 				<td class="the-answer">Магнитно склонение.</td>
 				<td class="the-answer">Истински курс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_1ab62c7d73a44935.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1ab62c7d73a44935.png"></td>
 				<td class="the-answer">Магнитно склонение.</td>
 				<td class="the-answer correct-answer">Обща поправка на компаса ΔК.</td>
 				<td class="the-answer">Девиация на магнитния компас.</td>
 				<td class="the-answer">Истински курс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_70037eaaee748d16.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_70037eaaee748d16.png"></td>
 				<td class="the-answer">Обща поправка на магнитния компас.</td>
 				<td class="the-answer">Девиация на магнитния компас.</td>
 				<td class="the-answer correct-answer">Магнитно склонение.</td>
 				<td class="the-answer">Магнитен курс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_2014d89005553828.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2014d89005553828.png"></td>
 				<td class="the-answer">Истински курсов ъгъл.</td>
 				<td class="the-answer">Курсов ъгъл десен борд.</td>
 				<td class="the-answer">Истински курс.</td>
 				<td class="the-answer correct-answer">Истински пеленг.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_40e959fbd5226243.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_40e959fbd5226243.png"></td>
 				<td class="the-answer">Компасен пеленг.</td>
 				<td class="the-answer">Компасен курсов пеленг.</td>
 				<td class="the-answer">Курсов ъгъл ляв борд.</td>
 				<td class="the-answer correct-answer">Курсов ъгъл десен борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Сумата от тези два ъгъла е равна на:<img alt="question-image" src="/images/exams/Vyprosi_html_63871fe2076010e4.png"></td>
+				<td class="the-question">Сумата от тези два ъгъла е равна на:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_63871fe2076010e4.png"></td>
 				<td class="the-answer correct-answer">Истински пеленг</td>
 				<td class="the-answer">Курсов ъгъл десен борд.</td>
 				<td class="the-answer">Истински курсов ъгъл.</td>
 				<td class="the-answer">Истински курс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_b5163d2d22c88bb4.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b5163d2d22c88bb4.png"></td>
 				<td class="the-answer">Курсов ъгъл десен борд.</td>
 				<td class="the-answer">Истински курсов ъгъл.</td>
 				<td class="the-answer">Компасен пеленг.</td>
 				<td class="the-answer correct-answer">Обратен компасен пеленг.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_454506db9b6da0ff.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_454506db9b6da0ff.png"></td>
 				<td class="the-answer">Обратен компасен пеленг.</td>
 				<td class="the-answer correct-answer">Компасен пеленг.</td>
 				<td class="the-answer">Курсов ъгъл ляв борд.</td>
 				<td class="the-answer">Курсов ъгъл десен борд.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/Vyprosi_html_501a8eeadffb4480.png"></td>
+				<td class="the-question">Този ъгъл наричаме:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_501a8eeadffb4480.png"></td>
 				<td class="the-answer">Обратен компасен пеленг.</td>
 				<td class="the-answer">Кърмови курсов ъгъл.</td>
 				<td class="the-answer correct-answer">Обратен компасен курс.</td>
@@ -5278,14 +5278,14 @@
 				<td class="the-answer">От южния полюс към южната полярна окръжност.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Ветроходът плава на:<img alt="question-image" src="/images/exams/Vyprosi_html_ec3cba4c83ccf4c1.png"></td>
+				<td class="the-question">Ветроходът плава на:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ec3cba4c83ccf4c1.png"></td>
 				<td class="the-answer">Ляв бейдевинд.</td>
 				<td class="the-answer">Ляв халфвинд.</td>
 				<td class="the-answer">Фордевинд.</td>
 				<td class="the-answer correct-answer">Десен галс.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Ветроходът плава на:<img alt="question-image" src="/images/exams/Vyprosi_html_72137afa85075ca.png"></td>
+				<td class="the-question">Ветроходът плава на:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_72137afa85075ca.png"></td>
 				<td class="the-answer correct-answer">Ляв галс.</td>
 				<td class="the-answer">Десен халфвинд.</td>
 				<td class="the-answer">Десен бейдевинд.</td>
@@ -5299,84 +5299,84 @@
 				<td class="the-answer">За големите кораби.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_42dee53eea8f896d.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_42dee53eea8f896d.png"></td>
 				<td class="the-answer">Сух док.</td>
 				<td class="the-answer">Шлюзова преграда.</td>
 				<td class="the-answer">Буна.</td>
 				<td class="the-answer correct-answer">Мол.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_319a713db7a5ab09.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_319a713db7a5ab09.png"></td>
 				<td class="the-answer">Посока и скорост на движение на кораба.</td>
 				<td class="the-answer">Посока и скорост на вятъра във възли.</td>
 				<td class="the-answer">Дълбочина над известен подводен обект.</td>
 				<td class="the-answer correct-answer">Посока и скорост на приливно течение, както са обозначени.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_e7c6956ae05b5273.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e7c6956ae05b5273.png"></td>
 				<td class="the-answer">Дълбочина над неизвестен подводен обект.</td>
 				<td class="the-answer correct-answer">Посочената дълбочина не е потвърдена.</td>
 				<td class="the-answer">Дълбочина над известен подводен обект.</td>
 				<td class="the-answer">Приблизителна дълбочина.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_ba6009a0d094e55f.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ba6009a0d094e55f.png"></td>
 				<td class="the-answer correct-answer">Водорасли.</td>
 				<td class="the-answer">Посока на движение на променливо течение.</td>
 				<td class="the-answer">Зоопланктон.</td>
 				<td class="the-answer">Обичаен път на движение на рибни пасажи.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_a27f7122791754ca.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a27f7122791754ca.png"></td>
 				<td class="the-answer">Скални острови.</td>
 				<td class="the-answer">Забранен за плаване район.</td>
 				<td class="the-answer correct-answer">Скали, показващи се над повърхността на водата на указаната височина.</td>
 				<td class="the-answer">Подводни скали с показана дълбочина над тях.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_5eba51a33b2dae8.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5eba51a33b2dae8.png"></td>
 				<td class="the-answer">Място на разполагане на кораб - мишена.</td>
 				<td class="the-answer">Потънал под водата кораб.</td>
 				<td class="the-answer">Кораб-мишена.</td>
 				<td class="the-answer correct-answer">Потънал кораб, чийто корпус се вижда над водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_4445dbc8324c77e4.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4445dbc8324c77e4.png"></td>
 				<td class="the-answer correct-answer">Останки от потънал кораб, чийто мачта се показва над водата.</td>
 				<td class="the-answer">Изкуствен навигационен ориентир.</td>
 				<td class="the-answer">Потънал под водата кораб.</td>
 				<td class="the-answer">Мачта, на която има поставена УКВ антена.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_35ccea844252965e.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_35ccea844252965e.png"></td>
 				<td class="the-answer correct-answer">Препятствие с най-малка дълбочина над него, както е указана.</td>
 				<td class="the-answer">Отделна изолирана дълбочина.</td>
 				<td class="the-answer">Отделна плитковина с приблизително измерена дълбочина.</td>
 				<td class="the-answer">Препятствие за корабоплаването с посочена височина над водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_445a8f277db67fa.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_445a8f277db67fa.png"></td>
 				<td class="the-answer correct-answer">Опасни останки от потънал кораб, дълбочината е неизвестна.</td>
 				<td class="the-answer">УКВ радио антена с приблизително нанесено място .</td>
 				<td class="the-answer">Отделна плитковина с приблизително нанесено място.</td>
 				<td class="the-answer">Потънал кораб, чийто корпус се вижда над водата.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_2ff56d1e337a23f7.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2ff56d1e337a23f7.png"></td>
 				<td class="the-answer correct-answer">Останки от потънал кораб, дълбочината е неизвестна.</td>
 				<td class="the-answer">Останки от потънал кораб, които не са опасни за корабоплаване по повърхността.</td>
 				<td class="the-answer">Потънал кораб, чийто корпус се вижда над водата.</td>
 				<td class="the-answer">Потънал под водата кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_37aa143fc90d61f0.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_37aa143fc90d61f0.png"></td>
 				<td class="the-answer">Буй за изолирана опасност.</td>
 				<td class="the-answer correct-answer">Платформа с дадено наименование/обозначение.</td>
 				<td class="the-answer">Фар светещ с червена светлина.</td>
 				<td class="the-answer">Буй за безопасни води.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_b877f6eac66feb45.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b877f6eac66feb45.png"></td>
 				<td class="the-answer">Задължително кръгово движение около платформата.</td>
 				<td class="the-answer">Район забранен за риболов.</td>
 				<td class="the-answer correct-answer">Зона за безопасност около отдалечено от брега съоръжение.</td>
@@ -5593,196 +5593,196 @@
 				<td class="the-answer">Предимство има по-големия кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_cd3d618025c2d772.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_cd3d618025c2d772.png"></td>
 				<td class="the-answer">Препоръчителен фарватер.</td>
 				<td class="the-answer">Траектория на променливо морско течение.</td>
 				<td class="the-answer">Фарватер, на който е разрешено заставането на котва.</td>
 				<td class="the-answer correct-answer">Подводен кабел.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_337bcff6be0798d3.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_337bcff6be0798d3.png"></td>
 				<td class="the-answer">Линия обозначаваща подводен кабел.</td>
 				<td class="the-answer">Фарватер, на който е разрешено заставането на котва.</td>
 				<td class="the-answer correct-answer">Подводен тръбопровод за нефт / газ.</td>
 				<td class="the-answer">Подводни кладенци за добив на нефт / газ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_9675a9278cbbe7f8.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9675a9278cbbe7f8.png"></td>
 				<td class="the-answer correct-answer">Водещи/створни знаци.</td>
 				<td class="the-answer">Посоката на положен подводен тръбопровод.</td>
 				<td class="the-answer">Посоката на положен подводен кабел.</td>
 				<td class="the-answer">Направление по което трябва да се избягва движението.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_85c7eaea4b76100f.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_85c7eaea4b76100f.png"></td>
 				<td class="the-answer">Препоръчан път с максимално допустимо въздушно газане, обозначено на него.</td>
 				<td class="the-answer correct-answer">Препоръчан път с максимално допустимо газане, обозначено на него.</td>
 				<td class="the-answer">Посоката на положен подводен тръбопровод с дълбочина над него.</td>
 				<td class="the-answer">Направление по което трябва да се избягва движението в продължение на 7 мили.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_db9658babe2d1058.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_db9658babe2d1058.png"></td>
 				<td class="the-answer correct-answer">Точка, в която трябва да се докладва по радиото.</td>
 				<td class="the-answer">Точка, за която са дадени данни за течението в района.</td>
 				<td class="the-answer">Точка, в която плаването се извършва само по указаната посока.</td>
 				<td class="the-answer">Точка, в която трябва да се смени честотата на която се комуникира с брега.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_2a20313219ab2fdc.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2a20313219ab2fdc.png"></td>
 				<td class="the-answer">Забранено заставането на котва.</td>
 				<td class="the-answer">Безопасно място, където може да се приспусне котвата.</td>
 				<td class="the-answer">Място, при преминаването на което котвата трябва да се приготви за отдаване.</td>
 				<td class="the-answer correct-answer">Място за заставане на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_6904ca681b723273.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_6904ca681b723273.png"></td>
 				<td class="the-answer correct-answer">Котвена стоянка.</td>
 				<td class="the-answer">Място забранено за заставане на котва.</td>
 				<td class="the-answer">Район забранен за заставане на котва.</td>
 				<td class="the-answer">Котвена стоянка за кораби превозващи опасни товари.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_9353487a7ced8ef6.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9353487a7ced8ef6.png"></td>
 				<td class="the-answer">Обичаен път за движение на рибните пасажи.</td>
 				<td class="the-answer correct-answer">Граница на риболовна зона.</td>
 				<td class="the-answer">Зона, в която могат да се движат само риболовни кораби.</td>
 				<td class="the-answer">Зона, забранена за преминаване на всякакви кораби.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_d60f664486013d18.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d60f664486013d18.png"></td>
 				<td class="the-answer">Брегова линия с плажна ивица.</td>
 				<td class="the-answer">Брегова линия с пустиня.</td>
 				<td class="the-answer correct-answer">Брегова линия, която е изследвана.</td>
 				<td class="the-answer">Брегова линия, която не е изследвана.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_311a3800b7754704.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_311a3800b7754704.png"></td>
 				<td class="the-answer">Брегова линия с пустиня.</td>
 				<td class="the-answer">Брегова линия с плажна ивица.</td>
 				<td class="the-answer correct-answer">Брегова линия, която не е изследвана.</td>
 				<td class="the-answer">Приблизително нанесена брегова линия.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_6c96ff7f18dcdbeb.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_6c96ff7f18dcdbeb.png"></td>
 				<td class="the-answer">Бряг с гори в крайбрежната зона.</td>
 				<td class="the-answer">Бряг с дюни близо до брега.</td>
 				<td class="the-answer">Брегова линия, която не е изследвана.</td>
 				<td class="the-answer correct-answer">Стръмен скалист бряг.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_5290e67b771f6d72.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5290e67b771f6d72.png"></td>
 				<td class="the-answer">Бряг с дюни близо до брега.</td>
 				<td class="the-answer">Приблизително нанесена брегова линия.</td>
 				<td class="the-answer">Брегова линия, която не е изследвана.</td>
 				<td class="the-answer correct-answer">Пясъчлив бряг.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_b5489fffc1af635b.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b5489fffc1af635b.png"></td>
 				<td class="the-answer">Триангулачни точки.</td>
 				<td class="the-answer">Приблизителни стойности на нанесените височини.</td>
 				<td class="the-answer correct-answer">Отделни височини на брега.</td>
 				<td class="the-answer">Приблизително нанесени места на височини.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_dabd1432ebf2f4ad.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_dabd1432ebf2f4ad.png"></td>
 				<td class="the-answer">Подводен тръбопровод.</td>
 				<td class="the-answer correct-answer">Кабел високо напрежение на пилони с обозначение на безопасната височина за преминаване.</td>
 				<td class="the-answer">Място където плава ферибот свързващ двата бряга.</td>
 				<td class="the-answer">Линия, на която е забранено заставането на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_e7bccdc672139b81.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_e7bccdc672139b81.png"></td>
 				<td class="the-answer">Място на което преминават във водата подводен / подводни кабели.</td>
 				<td class="the-answer correct-answer">Слип, рампа.</td>
 				<td class="the-answer">Линия / линии, на които е забранено заставането на котва.</td>
 				<td class="the-answer">Място / места от които тръгва фериботна линия.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_613df3aa7bf707fa.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_613df3aa7bf707fa.png"></td>
 				<td class="the-answer">Опасност за корабоплаването, която е над водата.</td>
 				<td class="the-answer correct-answer">Опасни подводни скали с неизвестна дълбочина над тях.</td>
 				<td class="the-answer">Скали, които се виждат над водата.</td>
 				<td class="the-answer">Място, на което е потънал неизвестен кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_cad84e62b7117ac3.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_cad84e62b7117ac3.png"></td>
 				<td class="the-answer">Закотвена пилотска станция, носеща червена светлина.</td>
 				<td class="the-answer">Плаваща УКВ радиоразпръсквателна станция.</td>
 				<td class="the-answer correct-answer">Плаващ фар.</td>
 				<td class="the-answer">Буй с кръстовидна топова фигура, светещ червено.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_8fbf23fe1c716a4f.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8fbf23fe1c716a4f.png"></td>
 				<td class="the-answer correct-answer">Секторна светлина.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който не се вижда.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който свети червено.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който плаването е забранено.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_ed0d66f4955a0559.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ed0d66f4955a0559.png"></td>
 				<td class="the-answer correct-answer">Кръгово видима светлина със сектор, в който не се вижда.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който свети червено.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който плаването е забранено.</td>
 				<td class="the-answer">Кръгово видима светлина със сектор, в който е забранено заставането на котва.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_409499d83a08335.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_409499d83a08335.png"></td>
 				<td class="the-answer">Швартови буй.</td>
 				<td class="the-answer correct-answer">Конически буй.</td>
 				<td class="the-answer">Швартова веха.</td>
 				<td class="the-answer">Цилиндричен буй.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_63e41aa2b873de1e.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_63e41aa2b873de1e.png"></td>
 				<td class="the-answer">Швартови буй.</td>
 				<td class="the-answer">Коническа веха.</td>
 				<td class="the-answer correct-answer">Веха.</td>
 				<td class="the-answer">Швартова веха.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_a9e8c7712c5c1769.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_a9e8c7712c5c1769.png"></td>
 				<td class="the-answer">Цилиндрична веха.</td>
 				<td class="the-answer correct-answer">Швартови буйове.</td>
 				<td class="the-answer">Цилиндричен буй.</td>
 				<td class="the-answer">Веха.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_4cdea700bd9fdc41.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4cdea700bd9fdc41.png"></td>
 				<td class="the-answer">Западен буй многобързо пробляскващ 3 проблясъка за 5 сек. или бързо пробляскващ 3 проблясъка за 10 сек.</td>
 				<td class="the-answer">Северен буй, многобързо 3 проблясъка за 5 сек. или бързо пробляскващ 3 проблясъка за 10 сек..</td>
 				<td class="the-answer">Буй обозначаващ изолирана опасност.</td>
 				<td class="the-answer correct-answer">Източен буй много бързо пробляскващ 3 проблясъка за 5 сек. или бързо пробляскващ 3 проблясъка за 10 сек.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_7cf4a91de0b77ef8.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7cf4a91de0b77ef8.png"></td>
 				<td class="the-answer correct-answer">Западен буй много бързо пробляскващ 9 проблясъка за 10 сек. или бързо пробляскващ 9 проблясъка за 15 сек.</td>
 				<td class="the-answer">Северен буй, много бързо 9 проблясъка за 10 сек. или бързо пробляскващ 9 проблясъка за 15 сек.</td>
 				<td class="the-answer">Източен буй много бързо пробляскващ 25 проблясъка за 10 сек. или бързо пробляскващ 9 проблясъка за 15 сек.</td>
 				<td class="the-answer">Буй обозначаващ безопасни води.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_deb6b5e7957ad027.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_deb6b5e7957ad027.png"></td>
 				<td class="the-answer correct-answer">Веха обозначаващ изолирана опасност.</td>
 				<td class="the-answer">Веха обозначаваща безопасни води.</td>
 				<td class="the-answer">Северна веха, пробляскваща 2 пъти</td>
 				<td class="the-answer">Веха обозначаваща нова опасност, пробляскваща с два червени проблясъка.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_c81866af0a59037a.png"></td>
+				<td class="the-question">Знакът нанесен на морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c81866af0a59037a.png"></td>
 				<td class="the-answer">Южен буй, много бързо или бързо пробляскващ.</td>
 				<td class="the-answer">Буй обозначаващ безопасни води много бързо или бързо пробляскващ.</td>
 				<td class="the-answer">Буй обозначаващ изолирана опасност.</td>
 				<td class="the-answer correct-answer">Северен буй, много бързо или бързо пробляскващ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на българска морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_b9fb7edd2d10899.png"></td>
+				<td class="the-question">Знакът нанесен на българска морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b9fb7edd2d10899.png"></td>
 				<td class="the-answer">Подводен кабел.</td>
 				<td class="the-answer">Надводни скали.</td>
 				<td class="the-answer correct-answer">Подводни скали.</td>
 				<td class="the-answer">Потънал кораб.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Знакът нанесен на българска морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_9193d96d1489e027.png"></td>
+				<td class="the-question">Знакът нанесен на българска морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_9193d96d1489e027.png"></td>
 				<td class="the-answer">Веха с размери.</td>
 				<td class="the-answer">Потънал кораб с части над водата.</td>
 				<td class="the-answer">Оптически кабел.</td>
@@ -5866,91 +5866,91 @@
 				<td class="the-answer correct-answer">Радиофар.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Нанесеното съкращение на българска морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_77b336a2cf80e0cf.png"></td>
+				<td class="the-question">Нанесеното съкращение на българска морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_77b336a2cf80e0cf.png"></td>
 				<td class="the-answer correct-answer">Навигационен знак, пробляскващ 3 пъти за 15 сек. с далечина на видимост 25 мили, подаващ сигнал за мъгла - буквата "н".</td>
 				<td class="the-answer">Фар пробляскващ 15 пъти за 3 сек. С далечина на видимост 25 метра.</td>
 				<td class="the-answer">Фар, затъмняващ 3 пъти за 15 сек., с далечина на видимост 25 мили и мегафон.</td>
 				<td class="the-answer">Фар, светещ постоянно с зелена светлина, далечина на видимост 25 мили и подаващ сигнал за мъгла - буквата "н" с мегафон.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Нанесеният знак и съкращения на българска морска карта означава:<img alt="question-image" src="/images/exams/Vyprosi_html_2b0124c961a6cb7c.png"></td>
+				<td class="the-question">Нанесеният знак и съкращения на българска морска карта означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_2b0124c961a6cb7c.png"></td>
 				<td class="the-answer">Западен буй, пробляскващ 3 пъти за 10 сек. С зелена светлина, оборудван с ревун.</td>
 				<td class="the-answer correct-answer">Източен буй, често пробляскващ 3 пъти за 10 сек. бял оборудван с ревун.</td>
 				<td class="the-answer">Източен буй, пробляскващ 3 пъти за 10 сек. С зелена светлина, оборудван с ревун.</td>
 				<td class="the-answer">Източен буй, често пробляскващ през за 10 сек. С зелена светлина, оборудван с ревун.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_8913534a42f6eb6.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8913534a42f6eb6.png"></td>
 				<td class="the-answer">Флаг "А" - Товаря, разтоварвам опасен товар.</td>
 				<td class="the-answer correct-answer">Флаг "Т" - Не пресичайте моя курс / не минавайте по носа ми.</td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 				<td class="the-answer">Флаг "M" - На борда си имам лекар.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_8d9e59e134fbd5fc.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_8d9e59e134fbd5fc.png"></td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer correct-answer">Флаг "Н" - Имам пилот на борда.</td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 				<td class="the-answer">Флага "U -Вие отивате към опасност.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_c98c63357fb722b2.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_c98c63357fb722b2.png"></td>
 				<td class="the-answer">Флаг "А" - Товаря, разтоварвам опасен товар.</td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer correct-answer">Флаг "N" - Не, отрицание.</td>
 				<td class="the-answer">Флаг "M" - На борда си имам лекар.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_d459a41025cebd73.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_d459a41025cebd73.png"></td>
 				<td class="the-answer">Флаг "А" - Товаря, разтоварвам опасен товар.</td>
 				<td class="the-answer">Флаг "Н" - Имам пилот на борда.</td>
 				<td class="the-answer">Флаг "N" - Не, отрицание.</td>
 				<td class="the-answer correct-answer">Флаг "G" - Искам пилот.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_7486ce92ecfa5475.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_7486ce92ecfa5475.png"></td>
 				<td class="the-answer correct-answer">Флаг "Q" - Моят кораб не е заразен, искам свободна практика.</td>
 				<td class="the-answer">Флаг "Н" - Имам пилот на борда.</td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer">Фраг "V" - Нужна ми е помощ.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_1581f3569fe310a1.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_1581f3569fe310a1.png"></td>
 				<td class="the-answer">Фраг "V" - Нужна ми е помощ.</td>
 				<td class="the-answer correct-answer">Флаг "M" - На борда си имам лекар.</td>
 				<td class="the-answer">Флаг "Q" - Моят кораб не е заразен, искам свободна практика.</td>
 				<td class="the-answer">Флаг "G" - Искам пилот.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_ee2bceca56f3b7ff.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_ee2bceca56f3b7ff.png"></td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer">Флаг "M" - На борда си имам лекар.</td>
 				<td class="the-answer correct-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 				<td class="the-answer">Флаг "Q" - Моят кораб не е заразен, искам свободна практика.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_4420c7710b675085.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4420c7710b675085.png"></td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 				<td class="the-answer">Флага "U -Вие отивате към опасност.</td>
 				<td class="the-answer correct-answer">Флаг "О" - Човек зад борда.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_87630f4e94bbf87b.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_87630f4e94bbf87b.png"></td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 				<td class="the-answer correct-answer">Флага "U -Вие отивате към опасност.</td>
 				<td class="the-answer">Флаг "О" - Човек зад борда.</td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_4175434778c92e45.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_4175434778c92e45.png"></td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
 				<td class="the-answer">Флага "U -Вие отивате към опасност.</td>
 				<td class="the-answer correct-answer">Фраг "V" - Нужна ми е помощ.</td>
 				<td class="the-answer">Флаг "С" - Да, утвърдителен.</td>
 			</tr>
 			<tr class="single-question">
-				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/Vyprosi_html_90f11f6c04ed8357.png"></td>
+				<td class="the-question">Показаният флаг означава:<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_90f11f6c04ed8357.png"></td>
 				<td class="the-answer">Фраг "V" - Нужна ми е помощ.</td>
 				<td class="the-answer">Флаг "О" - Човек зад борда.</td>
 				<td class="the-answer">Флаг "В" - Товаря / разтоварвам опасен товар.</td>
