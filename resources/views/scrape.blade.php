@@ -1696,7 +1696,6 @@
         <td class="the-answer correct-answer">Дясна страна на основната посока за движение.</td>
         <td class="the-answer">Мини на Юг от мен.</td>
         <td class="the-answer">Основният път е наляво.</td>
-        <td class="the-answer"><br></td>
     </tr>
     <tr class="single-question">
         <td class="the-question">Плавате в район B, виждате цилиндричен буй. Какво означава?<img alt="question-image"
@@ -2164,7 +2163,7 @@ src="/images/exams/40BT/Vyprosi_html_c1d1eaeeb4d67e0d.png"></td>
         <td class="the-answer">Кораб, влачен на борд.</td>
     </tr>
     <tr class="single-question">
-        <td class="the-question">Кой кораб носи този знак през деня?<br><img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5033f1c10beb594e.png"></td>
+        <td class="the-question">Кой кораб носи този знак през деня?<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_5033f1c10beb594e.png"></td>
         <td class="the-answer">Кораб, тласкан напред, не е свързан с тласкача твърдо в едно цяло.</td>
         <td class="the-answer">Влачен кораб, или частично потопен обект.</td>
         <td class="the-answer correct-answer">Влачещ кораб, дължината на влекалото е повече от 200 метра.</td>
@@ -2494,7 +2493,7 @@ src="/images/exams/40BT/Vyprosi_html_4611c90354870339.png"></td>
         <td class="the-answer">Червен.</td>
         <td class="the-answer">Зелен.</td>
         <td class="the-answer">Жълт.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Виждате следната топова фигура. На какъв знак се поставя?<img alt="question-image"
@@ -2519,7 +2518,7 @@ src="/images/exams/40BT/Vyprosi_html_4611c90354870339.png"></td>
         <td class="the-answer">Знак за безопасни води.</td>
         <td class="the-answer">Знак за отделни опасности.</td>
         <td class="the-answer">Кардинален знак.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Виждате следната веха. Какво означава?</td>
@@ -2527,7 +2526,7 @@ src="/images/exams/40BT/Vyprosi_html_4611c90354870339.png"></td>
         <td class="the-answer">Знак за отделни опасности.</td>
         <td class="the-answer">Кардинален знак.</td>
         <td class="the-answer">Специален знак.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Виждате следния цилиндричен знак. Какво означава?<img alt="question-image"
@@ -2842,7 +2841,7 @@ src="/images/exams/40BT/Vyprosi_html_4611c90354870339.png"></td>
         <td class="the-answer">Кораб с механичен двигател, движи се относно водата.</td>
         <td class="the-answer">Влачен кораб.</td>
         <td class="the-answer">Кораб с механичен двигател, няма ход относно водата.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">При ограничена видимост чувате един продължителен и два къси звука през интервал около 2 минути.<img alt="question-image" src="/images/exams/40BT/Vyprosi_html_b8ef0e98dc559219.png"></td>
@@ -3100,7 +3099,7 @@ src="/images/exams/40BT/Vyprosi_html_a44a9c0e51cd0c5f.png"></td>
         <td class="the-answer correct-answer">Трябва, доколкото това е практически възможно.</td>
         <td class="the-answer">Не трябва, ако кораба е ветроходен.</td>
         <td class="the-answer">Не трябва, ако кораба е по-малък от 20 метра.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Трябва ли да се избягва пресичане на коридорите на схема за разделно движение?</td>
@@ -3335,13 +3334,13 @@ src="/images/exams/40BT/Vyprosi_html_a44a9c0e51cd0c5f.png"></td>
         <td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
     </tr>
     <tr class="single-question">
-        <td class="the-question">Виждате червени звездни ракети през кратки интервали от време:<br><img
+        <td class="the-question">Виждате червени звездни ракети през кратки интервали от време:<img
    alt="question-image" src="/images/exams/40BT/Vyprosi_html_d94077d1200950e1.png"></td>
         <td class="the-answer correct-answer">Кораб търпи бедствие и се нуждае от помощ.</td>
         <td class="the-answer">Кораб обслужва водолази.</td>
         <td class="the-answer">Кораб е загубил управление.</td>
         <td class="the-answer">Сигнал за обръщане на внимание.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Чувате по радиотелеграфа или друга сигнална система (SOS) по Морзовата азбука:<img
@@ -5291,7 +5290,7 @@ src="/images/exams/40BT/Vyprosi_html_71cec68f68143f44.png"></td>
         <td class="the-answer">Дълбочини.</td>
         <td class="the-answer">Височини.</td>
         <td class="the-answer">Ъгли върху извити повърхности.</td>
-        <td class="the-answer"><br></td>
+
     </tr>
     <tr class="single-question">
         <td class="the-question">Саженът е единица за измерване на:</td>
