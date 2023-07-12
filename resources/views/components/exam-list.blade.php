@@ -71,12 +71,11 @@
 
         {{-- Exam with questions panel --}}
         <div v-if="!finalResult.visible && exam.length > 0">
-            <div v-show="timer.active">
-                <div :class="{'text-red-600':timer.left < 5 * 60}">@{{ timer.running }}</div>
-            </div>
-            {{-- Reset the exam link --}}
-            <div class="relative w-100 h-5">
-                <div class="absolute top-3 right-5">
+            <div  class="relative w-100 h-5 mb-3">
+                {{-- Timer used only for the real exam --}}
+                <div  v-show="timer.active" :class="{'text-red-600':timer.left < 5 * 60}">@{{ timer.running }}</div>
+                {{-- Reset the exam link --}}
+                <div class="absolute top-0 right-5">
                     <button @click="resetExam">{{__('Reset exam')}}</button>
                 </div>
             </div>
