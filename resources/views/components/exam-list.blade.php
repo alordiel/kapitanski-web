@@ -86,8 +86,8 @@
                     :key="'questions-tab-' + questionIndex"
                     class="w-5 h-5 m-1 bg-gray-500 cursor-pointer"
                     :class="[
-                            {'dark:border-pink-900 border-blue-600 border-2':questionIndex === questions.currentQuestion},
-                            eachQuestion.userAnswer !== 0 ? 'dark:bg-green-300' : 'dark:bg-gray-300'
+                            {'dark:border-blue-500 border-blue-600 border-2 dark:border-3':questionIndex === questions.currentQuestion},
+                            eachQuestion.userAnswer !== 0 ? 'bg-green-300' : 'bg-gray-300'
                         ]"
                     :title="eachQuestion.question.replace(/<img(.*?)>/,'')"
                     @click="questions.currentQuestion = questionIndex"
